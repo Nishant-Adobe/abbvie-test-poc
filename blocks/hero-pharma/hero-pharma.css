@@ -1,0 +1,12 @@
+/* stylelint-disable selector-class-pattern, no-descending-specificity */
+
+/* Neutralize EDS block wrapper — inner elements drive layout */
+.hero-pharma {
+  display: contents;
+}
+
+/* Reset EDS default button/link styles within this block */
+main .hero-pharma a.button:any-link,
+main .hero-pharma .button-container {
+  all: unset;
+}

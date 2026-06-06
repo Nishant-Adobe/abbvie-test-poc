@@ -1,0 +1,10 @@
+/* Neutralize EDS block wrapper */
+.columns-promo {
+  display: contents;
+}
+
+/* Reset EDS default button/link styles within this block */
+main .columns-promo a.button:any-link,
+main .columns-promo .button-container {
+  all: unset;
+}

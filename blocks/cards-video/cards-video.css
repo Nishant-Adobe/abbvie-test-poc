@@ -1,0 +1,90 @@
+/* stylelint-disable */
+
+/* Neutralize EDS block wrapper */
+.cards-video {
+  display: contents;
+}
+
+/* Reset EDS default button/link styles within this block */
+main .cards-video a.button:any-link,
+main .cards-video .button-container {
+  all: unset;
+}
+
+/* Video wrapper */
+.cards-video .abbv-video-wrapper {
+  position: relative;
+  overflow: hidden;
+  border-radius: var(--linz-rounded-corner, 16px) var(--linz-rounded-corner, 16px) 0 0;
+}
+
+.cards-video .abbv-video-wrapper video-js,
+.cards-video .abbv-video-wrapper .video-js {
+  width: 100%;
+  padding-top: 56.25%;
+  position: relative;
+}
+
+/* Poster fallback */
+.cards-video .vjs-poster {
+  position: relative;
+  padding-bottom: 56.25%;
+  overflow: hidden;
+}
+
+.cards-video .vjs-poster img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Card content */
+.cards-video .abbv-video-card-content {
+  padding: 16px 20px 24px;
+}
+
+.cards-video .abbv-video-card-content h3 {
+  font-family: Lato, sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--linz-dark-purple, #422e83);
+  margin: 0 0 8px;
+  text-transform: uppercase;
+  line-height: 1.3;
+}
+
+.cards-video .abbv-video-card-content p {
+  font-size: 12px;
+  line-height: 1.4;
+  color: var(--linz-dark-purple, #422e83);
+  margin: 0 0 8px;
+}
+
+.cards-video .video-transcript-link {
+  color: var(--linz-dark-purple, #422e83) !important;
+  text-decoration: underline;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+/* Flex item overrides for video cards */
+.flexbox-video-cards .flexboxitem-v2 .abbv-flex-item-v2 {
+  padding: 0 !important;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+@media (min-width: 986px) {
+  .flexbox-video-cards .flexboxitem-v2 {
+    max-width: 320px;
+  }
+}
+
+@media (max-width: 985px) {
+  .flexbox-video-cards .flexboxitem-v2 {
+    max-width: 100%;
+  }
+}

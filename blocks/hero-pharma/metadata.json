@@ -1,0 +1,39 @@
+{
+  "variantName": "hero-pharma",
+  "baseBlock": "hero",
+  "version": "1.0.0",
+  "created": "2026-06-05T18:07:00.000Z",
+  "sourceContext": {
+    "originUrl": "https://www.linzess.com/",
+    "originPage": "Linzess homepage - pharmaceutical brand landing page",
+    "blockPosition": "top"
+  },
+  "visualCharacteristics": {
+    "colorScheme": "dark",
+    "density": "spacious",
+    "purpose": "pharma-hero",
+    "imagePattern": "large"
+  },
+  "contentPattern": {
+    "structure": "subheading + heading + description + CTA",
+    "buttonCount": 1,
+    "imageCount": 1
+  },
+  "reuseGuidance": {
+    "suitableFor": [
+      "pharmaceutical brand homepages",
+      "healthcare product landing pages",
+      "pages with full-width background image heroes"
+    ],
+    "notSuitableFor": [
+      "text-only hero sections",
+      "hero sections with video backgrounds",
+      "minimal hero sections without background images"
+    ]
+  },
+  "usage": {
+    "pagesUsing": ["/index"],
+    "reuseCount": 1,
+    "lastUsed": "2026-06-05T18:07:00.000Z"
+  }
+}

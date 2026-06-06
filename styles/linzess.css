@@ -1,0 +1,951 @@
+/* stylelint-disable */
+/* ================================================================
+   LINZESS.COM - Original Site CSS (Verbatim)
+   Extracted from https://www.linzess.com/ production stylesheets
+   ================================================================ */
+
+/* CSS Custom Properties — verbatim from linzess.com :root */
+:root {
+  --linz-dark-purple: #422e83;
+  --linz-light-purple: #d9d7f9;
+  --linz-purple: #60579e;
+  --linz-orange: #faa633;
+  --linz-grey: #4d4d4f;
+  --linz-off-white: #f4f6fb;
+  --linz-white: #fff;
+  --linz-black: #000;
+  --linz-rounded-corner: 16px;
+  --linz-rounded-corner-sm: 8px;
+  --body-font-size: 0.875rem;
+  --footnote-font-size: 0.75rem;
+  --eyebrow-font-size: 0.75rem;
+  --heading1-font-size: 2rem;
+  --heading2-font-size: 1.125rem;
+  --heading1-line-height: 1.875rem;
+  --font-size-xl: 2.0625rem;
+  --font-size-md: 1.0625rem;
+}
+
+/* ===== FONT FACES ===== */
+/* Primary body font: Lato (loaded via Google Fonts in head.html)
+   Weights used: 300 (light), 400 (regular), 700 (bold), 900 (black/extra-bold)
+   The site uses font-weight: 800 on buttons which maps to Lato 900 */
+
+/* Primary heading font: Bebas Neue (loaded via Google Fonts in head.html)
+   Weight used: 400 only */
+
+/* Icon font - cross-origin from original AEM instance, CSS fallback chevron used */
+@font-face {
+  font-family: abbv-iconFont;
+  src: url("https://www.linzess.com/etc.clientlibs/common-elements/clientlibs/clientlib-fonts/resources/framework/ui/fonts/abbv_iconFont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* ===== BASE TYPOGRAPHY ===== */
+/* Exact computed values from linzess.com */
+body {
+  font-family: Lato, sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: normal;
+  color: rgb(77 77 79);
+}
+
+h1 {
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 56px;
+  font-weight: 400;
+  line-height: 50.4px;
+  letter-spacing: normal;
+  color: inherit;
+}
+
+h2 {
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 32px;
+  font-weight: 400;
+  line-height: 30px;
+  letter-spacing: normal;
+}
+
+h3 {
+  font-family: Lato, sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: normal;
+  letter-spacing: normal;
+  color: rgb(66 46 131);
+}
+
+.heading-2 {
+  font-family: Lato, sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: normal;
+  letter-spacing: normal;
+  color: rgb(66 46 131);
+}
+
+.footnote {
+  font-family: Lato, sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: normal;
+  color: rgb(77 77 79);
+}
+
+/* ===== ICON FONT FALLBACK ===== */
+i::before,
+i::after,
+.i-b::before,
+.i-a::after {
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  -webkit-font-smoothing: antialiased;
+  display: inline-block;
+}
+
+.i-b::before {
+  margin-right: 10px;
+}
+
+.abbv-icon-keyboard_arrow_right.i-b::before,
+.abbv-icon-keyboard_arrow_right.i-a::after {
+  content: "";
+  width: 10px;
+  height: 10px;
+  border-right: 2.5px solid currentcolor;
+  border-top: 2.5px solid currentcolor;
+  transform: rotate(45deg);
+}
+
+/* ===== GRID SYSTEM ===== */
+.abbv-row-container {
+  position: relative;
+  max-width: 1220px;
+  margin: auto;
+  box-sizing: border-box;
+}
+
+.abbv-row {
+  margin: 0;
+  padding: 0 20px;
+}
+
+.abbv-row-flush {
+  margin: 0;
+  padding: 0;
+}
+
+.abbv-row-container::after,
+.abbv-row::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.abbv-col {
+  float: left;
+  box-sizing: border-box;
+  margin-left: 2%;
+}
+
+.abbv-col-6 {
+  width: 49%;
+}
+
+.abbv-col:first-child {
+  margin-left: 0;
+}
+
+/* ===== BUTTONS ===== */
+/* Computed: font-family Lato, font-size 14.4px, font-weight 800, line-height normal */
+.abbv-button-primary,
+.abbv-button-secondary,
+.abbv-button-tertiary,
+.abbv-button-plain {
+  font-family: Lato, sans-serif;
+  font-size: 0.9rem;
+  font-weight: 800;
+  line-height: normal;
+  letter-spacing: normal;
+  padding: 12px;
+}
+
+a.i-b {
+  padding-left: 26px;
+}
+
+a.i-b::before {
+  position: absolute;
+  left: 0;
+  top: -2px;
+  font-size: 1.3rem;
+}
+
+.abbv-button-primary,
+.abbv-button-primary:visited,
+.abbv-button-secondary,
+.abbv-button-secondary:visited,
+.abbv-button-tertiary,
+.abbv-button-tertiary:visited {
+  box-sizing: border-box;
+  position: relative;
+  color: rgb(7 29 73);
+  text-decoration: none;
+}
+
+.abbv-button-primary.i-a,
+.abbv-button-primary.i-a:visited,
+.abbv-button-secondary.i-a,
+.abbv-button-secondary.i-a:visited {
+  padding-right: 42px;
+}
+
+.abbv-button-primary.i-b,
+.abbv-button-primary.i-b:visited,
+.abbv-button-secondary.i-b,
+.abbv-button-secondary.i-b:visited {
+  padding-left: 42px;
+}
+
+.abbv-button-primary.i-a::after,
+.abbv-button-secondary.i-a::after,
+.abbv-button-tertiary.i-a::after,
+.abbv-button-plain.i-a::after {
+  position: absolute;
+  right: 10px;
+  top: 9px;
+  font-size: 1.3rem;
+  text-decoration: none;
+}
+
+.abbv-button-primary.i-b::before,
+.abbv-button-secondary.i-b::before,
+.abbv-button-tertiary.i-b::before,
+.abbv-button-plain.i-b::before {
+  position: absolute;
+  left: 10px;
+  top: 9px;
+  font-size: 1.3rem;
+  text-decoration: none;
+}
+
+.abbv-button-primary,
+.abbv-button-primary:visited {
+  position: relative;
+  transition: background 0.3s linear;
+  display: inline-block;
+  color: rgb(255 255 255);
+  background: rgb(7 29 73);
+  border: 1px solid rgb(85 85 85);
+  border-radius: 3px;
+}
+
+.abbv-button-primary:hover {
+  transition: background 0.3s linear;
+  color: rgb(255 255 255);
+  background: rgb(31 68 140);
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.abbv-button-secondary,
+.abbv-button-secondary:visited {
+  position: relative;
+  transition: background 0.3s linear;
+  display: inline-block;
+  color: rgb(85 85 85);
+  background: rgb(204 204 204);
+  border: 1px solid rgb(85 85 85);
+  border-radius: 3px;
+}
+
+.abbv-button-secondary:hover {
+  transition: background 0.3s linear;
+  background: rgb(243 243 243);
+  cursor: pointer;
+  text-decoration: none;
+}
+
+/* Linzess overrides */
+.abbv-button-primary,
+.abbv-button-secondary,
+.abbv-button-tertiary {
+  border: 0;
+  border-radius: var(--linz-rounded-corner);
+  font-weight: 800;
+  padding: 16px 56px 16px 32px;
+}
+
+.abbv-button-primary.i-b::before,
+.abbv-button-secondary.i-b::before,
+.abbv-button-tertiary.i-b::before {
+  top: 12px;
+}
+
+.abbv-button-primary.i-a,
+.abbv-button-secondary.i-a {
+  padding-right: 59px;
+}
+
+.abbv-button-primary.i-a::after,
+.abbv-button-secondary.i-a::after {
+  top: 50%;
+  margin-top: -5px;
+  margin-right: 15px;
+}
+
+.abbv-button-primary,
+.abbv-button-primary:visited {
+  color: var(--linz-white);
+  background: var(--linz-dark-purple);
+}
+
+.abbv-button-primary:hover {
+  color: var(--linz-dark-purple);
+  background: var(--linz-off-white);
+}
+
+.abbv-button-secondary,
+.abbv-button-secondary:visited {
+  color: var(--linz-dark-purple);
+  background: var(--linz-white);
+}
+
+.abbv-button-secondary:hover {
+  color: var(--linz-dark-purple);
+  background: var(--linz-light-purple);
+}
+
+/* ===== IMAGE TEXT V2 ===== */
+.abbv-image-text-v2 {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  overflow-wrap: break-word;
+}
+
+.abbv-image-text-v2 .abbv-image-text-content-container-v2 {
+  position: absolute;
+  display: flex;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  font-size: 0.9rem;
+}
+
+.abbv-image-text-v2 .abbv-image-text-content-v2 {
+  margin: 20px;
+  width: 25%;
+  background: rgb(204 204 204 / 80%);
+  position: unset !important;
+}
+
+.abbv-image-text-v2 .abbv-image-text-display-v2 {
+  padding: 20px;
+}
+
+.abbv-image-text-v2 .abbv-image-text-display-v2 p {
+  margin: 0 0 20px;
+}
+
+.abbv-image-text-content-container-v2.middle-middle {
+  flex-wrap: wrap;
+  place-content: center;
+}
+
+.abbv-image-text-v2 .abbv-image-content-container-v2 {
+  position: relative;
+}
+
+.abbv-image-content-container-v2 img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.abbv-image-text-v2 .abbv-stretched-card-body {
+  flex: 1 1 auto;
+  min-height: 1px;
+}
+
+.abbv-image-text-v2 .abbv-stretched-link {
+  position: unset !important;
+}
+
+.abbv-image-text-v2 .abbv-stretched-link::after {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none !important;
+  content: "";
+}
+
+.abbv-image-text-content-container-v2.abbv-image-text-out {
+  position: relative;
+}
+
+.abbv-image-text-v2 .abbv-image-text-content-container-v2.abbv-image-text-out .abbv-image-text-content-v2 {
+  margin: 0;
+  background: 0 center;
+  width: 100%;
+}
+
+.abbv-image-text-content-container-v2.abbv-image-text-out .abbv-image-text-content-v2 .abbv-image-text-display-v2 {
+  padding: 20px 0;
+}
+
+.abbv-image-text-v2 .abbv-image-text-display-v2 p:not(.heading-2):not(.eyebrow):not(.footnote):not(.tout-overlay) {
+  font-size: var(--body-font-size);
+}
+
+.abbv-image-text-v2 .abbv-button-primary {
+  padding-left: 12px;
+}
+
+.abbv-image-text-v2 .abbv-button-primary.i-b::before {
+  position: relative;
+  left: 2px;
+  top: 4px;
+}
+
+/* ===== FLEXBOX V2 ===== */
+.abbv-flex-container-v2 {
+  display: flex;
+}
+
+.flexboxitem-v2 {
+  flex: 1 1 0%;
+}
+
+.abbv-flex-item-v2 {
+  padding: 5px;
+  margin: 10px;
+}
+
+.flexbox-cards .flexboxitem-v2 {
+  display: flex;
+}
+
+.flexbox-cards .flexboxitem-v2 .abbv-flex-item-v2 {
+  width: 100%;
+  padding-left: 16px;
+  padding-right: 16px;
+}
+
+.flexbox-cards:has(.col-2-card) {
+  gap: 80px;
+}
+
+.col-2-card {
+  padding: 0 24px 40px;
+  margin: 0;
+}
+
+.flexbox-video-cards .flexboxitem-v2 .abbv-flex-item-v2 {
+  padding: 0;
+  overflow: hidden;
+}
+
+/* ===== COLOR UTILITIES ===== */
+.c-linz-white,
+.c-linz-white a,
+.c-linz-white a:visited,
+.c-linz-white a:active {
+  color: var(--linz-white);
+}
+
+.c-linz-dark-purple,
+.linzess-text-purple {
+  color: var(--linz-dark-purple) !important;
+}
+
+.background-dark-purple {
+  background-color: var(--linz-dark-purple);
+}
+
+.background-light-purple {
+  background-color: var(--linz-light-purple);
+}
+
+.background-off-white {
+  background-color: var(--linz-off-white);
+}
+
+/* ===== SECTION ARC (curved top border) ===== */
+.background-arc {
+  position: relative;
+  z-index: 1;
+  padding-bottom: 100px;
+}
+
+.background-arc::before {
+  content: "";
+  border-top-left-radius: 100%;
+  border-top-right-radius: 100%;
+  height: 75px;
+  width: 130%;
+  position: absolute;
+  top: -60px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: -5;
+}
+
+.background-white-arc::before {
+  background: var(--linz-white);
+}
+
+.background-dark-purple-arc::before {
+  background: var(--linz-dark-purple);
+}
+
+/* EDS section-level arc for section-metadata styled sections */
+main > .section.white {
+  position: relative;
+  z-index: 1;
+  padding-bottom: 100px;
+}
+
+main > .section.white::before {
+  content: "";
+  border-top-left-radius: 100%;
+  border-top-right-radius: 100%;
+  height: 75px;
+  width: 130%;
+  position: absolute;
+  top: -60px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1;
+  background: var(--linz-white);
+}
+
+main > .section.white::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: var(--linz-white);
+  z-index: 0;
+}
+
+main > .section.dark-purple {
+  position: relative;
+  z-index: 1;
+}
+
+main > .section.dark-purple::before {
+  content: "";
+  border-top-left-radius: 100%;
+  border-top-right-radius: 100%;
+  height: 75px;
+  width: 130%;
+  position: absolute;
+  top: -60px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: -5;
+  background: var(--linz-dark-purple);
+}
+
+/* ===== TYPOGRAPHY ===== */
+h2,
+.heading-2 {
+  font-family: Lato, sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  font-size: var(--heading2-font-size);
+}
+
+.text-align-center {
+  text-align: center;
+}
+
+/* ===== HERO ===== */
+.hero-container {
+  top: -147px;
+}
+
+.hero-container p,
+.hero-container h1 {
+  filter: drop-shadow(rgb(0 0 0 / 50%) 0 0 10px);
+}
+
+.hero-container h1 + p {
+  margin-top: 16px;
+}
+
+.Linzess-home-hero-belly-bnr .abbv-image-text-content-v2 {
+  width: 100%;
+  max-width: 1000px;
+  text-align: left;
+  background: 0 center;
+  padding-top: 75px;
+}
+
+.hero-container.Linzess-home-hero-belly-bnr .abbv-button-primary {
+  background-color: var(--linz-orange);
+  color: var(--linz-dark-purple);
+  display: inline-flex;
+  flex-direction: row-reverse;
+  padding-left: 32px;
+  padding-right: 32px;
+  align-items: center;
+}
+
+.hero-container.Linzess-home-hero-belly-bnr .abbv-button-primary:hover {
+  background-color: var(--linz-light-purple);
+  color: var(--linz-dark-purple);
+}
+
+.hero-container.Linzess-home-hero-belly-bnr .abbv-button-primary.i-b::before {
+  top: 0;
+  left: 16px;
+}
+
+.home-hero-title {
+  font-family: "Bebas Neue", sans-serif;
+  font-weight: 400;
+  line-height: 90%;
+  font-size: 56px !important;
+}
+
+.mb20 {
+  margin-bottom: 20px;
+}
+
+/* ===== LAYOUT UTILITIES ===== */
+.rounded-corners {
+  border-radius: var(--linz-rounded-corner);
+}
+
+.overflow-hidden {
+  overflow: hidden;
+}
+
+.margin-top-80 {
+  margin-top: 80px;
+}
+
+.margin-top-110 {
+  margin-top: 110px;
+}
+
+.icon-image-card img {
+  width: 105px;
+  margin-top: -50px;
+}
+
+/* ===== IMAGE TEXT WRAPPER (COLUMNS) ===== */
+.image-text-wrapper .abbv-row {
+  padding: 0;
+  display: flex;
+}
+
+.image-text-wrapper .abbv-col:first-child {
+  max-width: 440px;
+}
+
+.image-text-wrapper .abbv-col:last-child {
+  align-content: center;
+  margin: 0;
+  padding-left: 80px;
+}
+
+/* ===== RESPONSIVE UTILITIES ===== */
+.desktop-only {
+  display: none;
+}
+
+.mobile-only {
+  display: block;
+}
+
+.mt0 {
+  margin-top: 0 !important;
+}
+
+.mb0 {
+  margin-bottom: 0 !important;
+}
+
+.mb24 {
+  margin-bottom: 24px;
+}
+
+/* ===== RESPONSIVE BREAKPOINTS ===== */
+
+@media (max-width: 600px) {
+  .abbv-col {
+    margin-top: 20px;
+    margin-left: 0;
+    width: 100%;
+  }
+
+  .abbv-col:first-child {
+    margin-top: 0;
+  }
+
+  .abbv-button-primary,
+  .abbv-button-secondary,
+  .abbv-button-tertiary {
+    margin-top: 10px;
+    width: 100%;
+  }
+
+  .abbv-image-text-content-container-v2 .abbv-image-text-content-v2 {
+    width: 100%;
+    margin: 0;
+  }
+
+  .hero-container.Linzess-home-hero-belly-bnr .abbv-button-primary {
+    z-index: 12;
+    padding-left: 24px;
+    padding-right: 24px;
+    margin-top: 0;
+    position: relative !important;
+  }
+
+  .Linzess-home-hero-belly-bnr .abbv-image-text-content-v2 {
+    width: 100%;
+    padding-top: 161px;
+    text-align: center;
+  }
+
+  .Linzess-home-hero-belly-bnr .abbv-image-text-content-v2 .abbv-stretched-card-body p {
+    margin: 0 0 16px;
+  }
+
+  .tl-m {
+    text-align: left;
+  }
+
+  .mb6-m {
+    margin-bottom: 6px !important;
+  }
+
+  .mb15-m {
+    margin-bottom: 15px !important;
+  }
+
+  .mb16-m {
+    margin-bottom: 16px !important;
+  }
+
+  .mb20-m {
+    margin-bottom: 20px;
+  }
+
+  .mb24-m {
+    margin-bottom: 24px !important;
+  }
+
+  .mb32-m {
+    margin-bottom: 32px;
+  }
+
+  .mt0-m {
+    margin-top: 0;
+  }
+
+  .mb0-m {
+    margin-bottom: 0 !important;
+  }
+
+  .mt3-m {
+    margin-top: 30px !important;
+  }
+
+  .home-hero-title {
+    font-size: 40px !important;
+    width: auto;
+  }
+
+  .image-text-wrapper .abbv-col:first-child {
+    max-width: 100%;
+  }
+
+  .image-text-wrapper .abbv-row {
+    flex-direction: column;
+  }
+
+  .image-text-wrapper .abbv-col:last-child {
+    text-align: center;
+    padding: 0 16px;
+  }
+
+  .icon-image-card img {
+    width: 96px;
+  }
+}
+
+@media (min-width: 600px) and (max-width: 985px) {
+  .hero-container {
+    top: -127px;
+  }
+
+  .abbv-button-primary,
+  .abbv-button-secondary,
+  .abbv-button-tertiary {
+    padding: 16px 40px 16px 24px;
+    width: auto;
+  }
+
+  .image-text-wrapper .abbv-col:first-child {
+    max-width: 100%;
+  }
+
+  .image-text-wrapper .abbv-row {
+    flex-direction: column;
+  }
+
+  .image-text-wrapper .abbv-col:last-child {
+    text-align: center;
+    padding: 0 16px;
+  }
+}
+
+@media (max-width: 985px) {
+  .flexbox-column-mobile {
+    flex-direction: column;
+    gap: 60px;
+  }
+
+  .icon-image-card img {
+    width: 96px;
+  }
+
+  .abbv-button-primary,
+  .abbv-button-secondary,
+  .abbv-button-tertiary {
+    padding: 16px 40px 16px 24px;
+    width: auto;
+  }
+}
+
+@media (min-width: 986px) {
+  .desktop-only {
+    display: block;
+  }
+
+  .mobile-only {
+    display: none;
+  }
+
+  .hero-container {
+    top: -138px;
+  }
+
+  .flexbox-cards:has(.col-2-card) {
+    gap: 16px;
+  }
+
+  .flexbox-cards .flexboxitem-v2 .abbv-flex-item-v2 {
+    width: 100%;
+    padding-left: 32px;
+    padding-right: 32px;
+  }
+
+  .flexbox-video-cards .flexboxitem-v2 {
+    max-width: 320px;
+  }
+
+  .eligible-tout {
+    max-width: 802px;
+    overflow: hidden;
+    height: 173px;
+  }
+
+  .image-text-wrapper.eligible-tout .abbv-row {
+    height: inherit;
+  }
+
+  .image-text-wrapper.eligible-tout .abbv-col:first-child {
+    max-width: 322px;
+  }
+
+  .image-text-wrapper.eligible-tout .abbv-col:first-child img {
+    margin-top: -30px;
+  }
+
+  .image-text-wrapper.eligible-tout .abbv-col:last-child {
+    width: auto;
+    padding-left: 40px;
+  }
+}
+
+/* Hide indication footnote text (hidden on original via .linzess-first-container-desktop-hide) */
+main > .section.white > .default-content-wrapper:first-child {
+  display: none;
+}
+
+/* ===== FIX: .abbv-button-primary text color override ===== */
+/* EDS a:any-link sets color to --link-color which is dark purple.
+   .abbv-button-primary needs white text on dark purple background. */
+main a.abbv-button-primary:any-link,
+main a.abbv-button-primary:visited {
+  color: var(--linz-white) !important;
+}
+
+main a.abbv-button-primary:hover {
+  color: var(--linz-dark-purple) !important;
+}
+
+main a.abbv-button-secondary:any-link,
+main a.abbv-button-secondary:visited {
+  color: var(--linz-dark-purple) !important;
+}
+
+/* ===== EDS BUTTON RESET FOR DEFAULT CONTENT ===== */
+/* Reset EDS pill-button styles on default content links in sections */
+main .section.dark-purple a.button:any-link {
+  background-color: var(--linz-white);
+  color: var(--linz-dark-purple);
+  border: 0;
+  border-radius: var(--linz-rounded-corner);
+  font-weight: 800;
+  padding: 16px 56px 16px 32px;
+  font-size: 0.9rem;
+  font-family: Lato, sans-serif;
+  display: inline-block;
+  text-decoration: none;
+  white-space: normal;
+  max-width: none;
+  margin: 12px 0;
+}
+
+main .section.dark-purple a.button:hover {
+  background-color: var(--linz-light-purple);
+  color: var(--linz-dark-purple);
+}
+
+main .section.white a.button:any-link {
+  background-color: var(--linz-dark-purple);
+  color: var(--linz-white);
+  border: 0;
+  border-radius: var(--linz-rounded-corner);
+  font-weight: 800;
+  padding: 16px 56px 16px 32px;
+  font-size: 0.9rem;
+  font-family: Lato, sans-serif;
+  display: inline-block;
+  text-decoration: none;
+  white-space: normal;
+  max-width: none;
+  margin: 12px 0;
+}
+
+main .section.white a.button:hover {
+  background-color: var(--linz-off-white);
+  color: var(--linz-dark-purple);
+}

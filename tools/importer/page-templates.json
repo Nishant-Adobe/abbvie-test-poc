@@ -1,0 +1,68 @@
+{
+  "metadata": {
+    "projectType": "xwalk"
+  },
+  "templates": [
+    {
+      "name": "homepage",
+      "urls": ["https://www.linzess.com/"],
+      "description": "Linzess homepage with hero banner, content cards, statistics, patient video testimonials, savings offer, and Important Safety Information",
+      "blocks": [
+        {
+          "name": "hero-pharma",
+          "instances": [".image-text-v2.parbase > .hero-container"]
+        },
+        {
+          "name": "columns-promo",
+          "instances": [".abbv-row-container.eligible-tout", ".abbv-row-container.background-off-white.image-text-wrapper:not(.savings-card-tout)", ".abbv-row-container.savings-card-tout"]
+        },
+        {
+          "name": "cards-feature",
+          "instances": [".abbv-flex-container-v2.flexbox-cards.margin-top-110"]
+        },
+        {
+          "name": "cards-stats",
+          "instances": [".abbv-flex-container-v2.flexbox-cards.c-dark-purple.margin-top-80"]
+        },
+        {
+          "name": "cards-video",
+          "instances": [".abbv-flex-container-v2.flexbox-video-cards"]
+        }
+      ],
+      "sections": [
+        {
+          "id": "section-hero",
+          "name": "Hero",
+          "selector": ".image-text-v2.parbase:first-of-type",
+          "style": null,
+          "blocks": ["hero-pharma"],
+          "defaultContent": []
+        },
+        {
+          "id": "section-content-cards",
+          "name": "Content Cards",
+          "selector": ".abbv-container.background-white.home-background-white-arc",
+          "style": "white",
+          "blocks": ["columns-promo", "cards-feature", "columns-promo"],
+          "defaultContent": [".abbv-rich-text.ibs-brief-section"]
+        },
+        {
+          "id": "section-stats-experiences",
+          "name": "Statistics and Patient Experiences",
+          "selector": ".abbv-container.background-dark-purple.background-dark-purple-arc",
+          "style": "dark-purple",
+          "blocks": ["cards-stats", "cards-video"],
+          "defaultContent": [".abbv-rich-text.max-690.c-linz-white.mb20-m", ".abbv-rich-text.max-720.c-linz-white"]
+        },
+        {
+          "id": "section-savings",
+          "name": "Savings Offer",
+          "selector": ".abbv-container.background-white.background-white-arc.pb24-m",
+          "style": "white",
+          "blocks": ["columns-promo"],
+          "defaultContent": [".abbv-rich-text.max-690.c-linz-dark-purple", ".abbv-rich-text.footnote.max-auto"]
+        }
+      ]
+    }
+  ]
+}

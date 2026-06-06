@@ -1,0 +1,159 @@
+/* stylelint-disable */
+
+/* ISI Sticky Bar - fixed to bottom of viewport */
+.isi {
+  display: block !important;
+}
+
+.isi .abbv-safety-bar,
+.abbv-safety-bar.linzess-safety-bar {
+  display: block !important;
+}
+
+.abbv-safety-bar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 9998;
+  background: #fff;
+  border-top: 4px solid var(--linz-orange, #faa633);
+  box-shadow: 0 -2px 10px rgb(0 0 0 / 15%);
+  font-family: Lato, sans-serif;
+  font-size: 13px;
+  line-height: 1.4;
+  color: #333;
+  transition: max-height 0.3s ease;
+}
+
+/* Minimized state */
+.abbv-safety-bar.abbv-safety-bar-minimized {
+  max-height: 180px;
+  overflow: hidden;
+}
+
+/* Maximized state */
+.abbv-safety-bar.abbv-safety-bar-maximized {
+  max-height: 60vh;
+  overflow-y: auto;
+}
+
+/* Toggle button */
+.abbv-safety-bar-toggle {
+  position: absolute;
+  top: 8px;
+  right: 16px;
+  width: 32px;
+  height: 32px;
+  border: 2px solid var(--linz-dark-purple, #422e83);
+  border-radius: 50%;
+  background: #fff;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+  padding: 0;
+}
+
+.abbv-safety-bar-toggle-icon {
+  display: block;
+  width: 12px;
+  height: 12px;
+  position: relative;
+}
+
+.abbv-safety-bar-toggle-icon::before,
+.abbv-safety-bar-toggle-icon::after {
+  content: "";
+  position: absolute;
+  background: var(--linz-dark-purple, #422e83);
+}
+
+.abbv-safety-bar-toggle-icon::before {
+  width: 12px;
+  height: 2px;
+  top: 5px;
+  left: 0;
+}
+
+.abbv-safety-bar-toggle-icon::after {
+  width: 2px;
+  height: 12px;
+  top: 0;
+  left: 5px;
+}
+
+.abbv-safety-bar-maximized .abbv-safety-bar-toggle-icon::after {
+  display: none;
+}
+
+/* Content layout */
+.abbv-safety-bar-content {
+  display: flex;
+  gap: 40px;
+  max-width: 1220px;
+  margin: 0 auto;
+  padding: 16px 60px 16px 24px;
+}
+
+.abbv-safety-bar-uses {
+  flex: 0 0 45%;
+}
+
+.abbv-safety-bar-risk {
+  flex: 1;
+}
+
+/* Typography */
+.abbv-safety-bar h3 {
+  font-family: Lato, sans-serif;
+  font-size: 14px;
+  font-weight: 800;
+  color: var(--linz-dark-purple, #422e83);
+  margin: 0 0 8px;
+  text-transform: uppercase;
+}
+
+.abbv-safety-bar p {
+  margin: 0 0 8px;
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.abbv-safety-bar strong {
+  font-weight: 700;
+}
+
+.abbv-safety-bar ul {
+  padding-left: 20px;
+  margin: 0 0 8px;
+}
+
+.abbv-safety-bar li {
+  margin-bottom: 6px;
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.abbv-safety-bar a {
+  color: var(--linz-dark-purple, #422e83) !important;
+  text-decoration: underline;
+}
+
+/* Mobile */
+@media (max-width: 985px) {
+  .abbv-safety-bar-content {
+    flex-direction: column;
+    gap: 16px;
+    padding: 16px 48px 16px 16px;
+  }
+
+  .abbv-safety-bar-uses {
+    flex: none;
+  }
+
+  .abbv-safety-bar.abbv-safety-bar-minimized {
+    max-height: 140px;
+  }
+}

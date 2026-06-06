@@ -1,0 +1,10 @@
+/* Neutralize EDS block wrapper */
+.cards-feature {
+  display: contents;
+}
+
+/* Reset EDS default button/link styles within this block */
+main .cards-feature a.button:any-link,
+main .cards-feature .button-container {
+  all: unset;
+}
