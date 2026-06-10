@@ -1,10 +1,163 @@
-/* Neutralize EDS block wrapper */
+/* Block: columns-promo
+   Neutralizes EDS wrappers so the original framework CSS
+   (abbv-framework.css, linzess-global.css, linzess.css) controls layout.
+   Three variants: eligible-tout (light-purple, 802px), discussion-tout (off-white),
+   savings-card-tout (off-white, overflow hidden). */
+
+/* === 1. Neutralize EDS block & wrapper elements === */
 .columns-promo {
   display: contents;
 }
 
-/* Reset EDS default button/link styles within this block */
+.columns-promo-wrapper {
+  max-width: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+/* === 2. Reset EDS button/link auto-decoration === */
+
+/* EDS transforms <p><a> into a.button with purple pill styling.
+   The block JS creates .abbv-button-primary links instead. */
 main .columns-promo a.button:any-link,
+main .columns-promo a.button:visited {
+  all: unset;
+}
+
 main .columns-promo .button-container {
   all: unset;
+  display: block;
+}
+
+/* === 3. Ensure framework .abbv-button-primary overrides EDS a:any-link === */
+main .columns-promo a.abbv-button-primary:any-link,
+main .columns-promo a.abbv-button-primary:visited {
+  color: var(--linz-white) !important;
+  background-color: var(--linz-dark-purple);
+  padding: 16px 59px 16px 32px;
+  border-radius: var(--linz-rounded-corner);
+  font-size: 14.4px;
+  font-weight: 800;
+  font-family: var(--body-font-family);
+  display: inline-block;
+  text-decoration: none;
+  line-height: normal;
+  border: 0 none;
+  position: relative;
+  box-sizing: border-box;
+  cursor: pointer;
+}
+
+main .columns-promo a.abbv-button-primary:hover {
+  background-color: var(--link-hover-color);
+  color: var(--linz-white) !important;
+  text-decoration: none;
+}
+
+/* CTA arrow: framework .abbv-icon-keyboard_arrow_right.i-a::after draws
+   a CSS border chevron. No additional ::after needed here. */
+
+/* === 4. Eligible-tout specific overrides === */
+
+/* The eligible-tout is a compact card: max-width 802px, auto-centered,
+   with fixed height and overflow hidden on desktop */
+.columns-promo .abbv-row-container.eligible-tout {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* === 5. Rich text spacing === */
+.columns-promo .abbv-rich-text.margin-bottom-24 {
+  margin-bottom: 24px;
+}
+
+.columns-promo .abbv-rich-text p {
+  font-size: 16px !important;
+  line-height: 1.5 !important;
+  color: var(--linz-grey, #4d4d4f);
+  margin: 0 0 12px;
+}
+
+/* === 6. Heading styles (scoped to block) === */
+.columns-promo .abbv-rich-text p.heading-2,
+.columns-promo .heading-2 {
+  font-size: 24px !important;
+  font-weight: 700 !important;
+  line-height: normal !important;
+  font-family: var(--body-font-family);
+  color: var(--linz-dark-purple);
+  margin: 0;
+}
+
+/* Eligible-tout has smaller heading */
+.columns-promo .eligible-tout .heading-2 {
+  font-size: 18px;
+}
+
+/* === 7. Image handling === */
+.columns-promo .abbv-image-content-container-v2 img {
+  max-width: none;
+  width: 100%;
+  height: auto;
+  vertical-align: middle;
+}
+
+/* === 8. Responsive: mobile stacking === */
+@media (width <= 985px) {
+  .columns-promo .image-text-wrapper .abbv-row {
+    flex-direction: column;
+  }
+
+  .columns-promo .image-text-wrapper .abbv-col:first-child {
+    max-width: 100%;
+  }
+
+  .columns-promo .image-text-wrapper .abbv-col:last-child {
+    text-align: center;
+    padding: 16px;
+  }
+
+  .columns-promo .abbv-row-container.eligible-tout {
+    height: auto;
+    overflow: visible;
+    max-width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .columns-promo .eligible-tout .abbv-col:first-child img {
+    margin-top: 0;
+  }
+}
+
+/* === 9. Tablet: keep tout rows side-by-side === */
+@media (width >= 600px) and (width <= 985px) {
+  .columns-promo .tablet-tout-row .abbv-row {
+    flex-direction: row;
+  }
+
+  .columns-promo .tablet-tout-row .abbv-col:last-child {
+    padding: 0 16px;
+  }
+}
+
+/* === 10. Savings card promo in off-white section — lavender tint background === */
+.section.off-white .columns-promo-wrapper {
+  background-color: var(--linz-light-purple, #d9d7f9);
+  border-radius: 16px;
+  max-width: 998px !important;
+  margin: 40px auto !important;
+  padding: 32px !important;
+  overflow: hidden;
+}
+
+.section.off-white .columns-promo-wrapper .columns-promo {
+  display: flex !important;
+  align-items: center;
+  gap: 32px;
+}
+
+.section.off-white .columns-promo-wrapper .columns-promo img {
+  max-width: 280px;
+  height: auto;
 }

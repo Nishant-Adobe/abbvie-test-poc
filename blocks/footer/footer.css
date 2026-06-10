@@ -7,7 +7,30 @@ footer .footer {
 }
 
 footer {
-  background-color: transparent;
+  background-color: var(--linz-dark-purple, #422e83);
+  color: var(--linz-white, #fff);
+  padding: 40px 0 20px;
+  position: relative;
+  overflow: visible;
+}
+
+footer::before {
+  content: "";
+  position: absolute;
+  top: -60px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 130%;
+  height: 255px;
+  background-color: var(--linz-dark-purple, #422e83);
+  border-radius: 100% 100% 0 0;
+  z-index: -1;
+}
+
+footer p,
+footer li {
+  color: var(--linz-white, #fff);
+  font-size: 12px;
 }
 
 /* Footer logo sizing — match original computed values */
@@ -25,6 +48,7 @@ footer {
   width: 80px;
   height: auto;
   display: block;
+  filter: brightness(0) invert(1);
 }
 
 .abbv-footer .abbv-footer-logos li:nth-child(2) img {
@@ -52,6 +76,13 @@ footer {
 
 .abbv-footer .abbv-footer-legal-links li {
   display: inline;
+}
+
+.abbv-footer .abbv-footer-legal-links li + li::before {
+  content: "|";
+  margin-right: 16px;
+  color: var(--linz-white, #fff);
+  text-decoration: none;
 }
 
 .abbv-footer .abbv-footer-legal-links a {

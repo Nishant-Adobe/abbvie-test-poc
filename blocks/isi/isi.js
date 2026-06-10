@@ -7,8 +7,16 @@ async function fetchFragment(path) {
 }
 
 export default async function decorate(block) {
-  const dir = window.location.pathname.replace(/\/$/, '');
-  const fragment = await fetchFragment(`${dir}/isi.plain.html`);
+  const linkEl = block.querySelector('a[href], div');
+  const fragmentPath = linkEl?.textContent?.trim() || '';
+  let isiUrl;
+  if (fragmentPath.startsWith('/')) {
+    isiUrl = `/content${fragmentPath}.plain.html`;
+  } else {
+    const dir = window.location.pathname.replace(/\/$/, '');
+    isiUrl = `${dir}/isi.plain.html`;
+  }
+  const fragment = await fetchFragment(isiUrl);
   if (!fragment) return;
 
   const sections = [...fragment.children];
@@ -27,7 +35,7 @@ export default async function decorate(block) {
   toggleBtn.innerHTML = '<span class="abbv-safety-bar-toggle-icon"></span>';
   isiBar.appendChild(toggleBtn);
 
-  // Content container (minimized view)
+  // Content container
   const contentMin = document.createElement('div');
   contentMin.className = 'abbv-safety-bar-content abbv-safety-bar-content-minimized';
 
@@ -58,19 +66,42 @@ export default async function decorate(block) {
     toggleBtn.setAttribute('aria-label', expanded ? 'Collapse Safety Information' : 'Expand Safety Information');
   });
 
-  // Hide ISI when footer is in view
-  function setupFooterObserver() {
-    const footer = document.querySelector('footer, .footer-wrapper');
-    if (!footer) {
-      setTimeout(setupFooterObserver, 500);
+  // Hide ISI sticky bar when user scrolls to bottom (near footer or ISI section itself)
+  function checkVisibility() {
+    const isiSectionEl = block.closest('.section');
+    const footer = document.querySelector('footer');
+    const windowHeight = window.innerHeight;
+    const pageHeight = document.documentElement.scrollHeight;
+    const scrollPos = window.scrollY + windowHeight;
+
+    // Hide if ISI section is in viewport
+    if (isiSectionEl) {
+      const isiTop = isiSectionEl.getBoundingClientRect().top;
+      if (isiTop < windowHeight) {
+        isiBar.style.display = 'none';
+        return;
+      }
+    }
+
+    // Hide if footer is in viewport
+    if (footer) {
+      const footerTop = footer.getBoundingClientRect().top;
+      if (footerTop < windowHeight) {
+        isiBar.style.display = 'none';
+        return;
+      }
+    }
+
+    // Hide if at bottom of page
+    if (scrollPos >= pageHeight - 50) {
+      isiBar.style.display = 'none';
       return;
     }
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        isiBar.style.display = entry.isIntersecting ? 'none' : 'block';
-      });
-    }, { threshold: 0 });
-    observer.observe(footer);
+
+    isiBar.style.display = '';
   }
-  setupFooterObserver();
+
+  window.addEventListener('scroll', checkVisibility, { passive: true });
+  window.addEventListener('resize', checkVisibility, { passive: true });
+  setTimeout(checkVisibility, 1000);
 }

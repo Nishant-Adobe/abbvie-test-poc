@@ -1,0 +1,41 @@
+{
+  "variantName": "columns-cta",
+  "baseBlock": "columns",
+  "version": "1.0.0",
+  "created": "2026-06-08T18:25:00.000Z",
+  "sourceContext": {
+    "originUrl": "https://www.linzess.com/why-linzess",
+    "originPage": "Why LINZESS - bottom navigation CTA section",
+    "blockPosition": "bottom"
+  },
+  "visualCharacteristics": {
+    "colorScheme": "dark",
+    "density": "minimal",
+    "purpose": "navigation-cta",
+    "imagePattern": "noimg"
+  },
+  "contentPattern": {
+    "structure": "heading + CTA button per column",
+    "buttonCount": 2,
+    "imageCount": 0
+  },
+  "reuseGuidance": {
+    "suitableFor": [
+      "bottom-of-page navigation CTAs",
+      "next-page navigation links",
+      "related content links with buttons",
+      "multi-CTA footer sections"
+    ],
+    "notSuitableFor": [
+      "image + text columns",
+      "promotional cards with imagery",
+      "comparison layouts",
+      "multi-row column content"
+    ]
+  },
+  "usage": {
+    "pagesUsing": ["/why-linzess"],
+    "reuseCount": 1,
+    "lastUsed": "2026-06-08T18:25:00.000Z"
+  }
+}

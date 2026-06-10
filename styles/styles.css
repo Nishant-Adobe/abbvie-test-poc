@@ -258,11 +258,11 @@ main > .section:first-of-type > div {
 }
 
 /* Pull second section up to overlap hero with arc */
-main > .section.hero-pharma-container + .section {
+main > .section.hero-pharma-container + .section:not(.tabs-navigation-container) {
   margin-top: -140px;
   position: relative;
   z-index: 1;
-  padding: 0;
+  padding-top: 0;
 }
 
 /* Section style variants from section-metadata */
@@ -284,6 +284,17 @@ main > .section.white {
 }
 
 main > .section.white > div {
+  position: relative;
+  z-index: 2;
+}
+
+main > .section.off-white {
+  background-color: #f4f6fb;
+  padding: 60px 0 155px;
+  overflow: visible;
+}
+
+main > .section.off-white > div {
   position: relative;
   z-index: 2;
 }

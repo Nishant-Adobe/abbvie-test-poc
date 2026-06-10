@@ -1,0 +1,94 @@
+/* stylelint-disable */
+
+/* Columns CTA — two side-by-side CTA items on dark purple background */
+.columns-cta {
+  display: contents;
+}
+
+.columns-cta > div {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+@media (width >= 900px) {
+  .columns-cta > div {
+    flex-direction: row;
+    gap: 80px;
+    align-items: flex-start;
+  }
+}
+
+/* Each CTA column */
+.columns-cta > div > div {
+  flex: 1;
+  text-align: center;
+}
+
+/* Heading in CTA column */
+.columns-cta > div > div p:first-child {
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 32px;
+  font-weight: 400;
+  color: var(--linz-white, #fff);
+  margin: 0 0 16px;
+  line-height: 1.2;
+  text-transform: uppercase;
+}
+
+/* CTA button link — orange/gold */
+main .section.dark-purple .columns-cta a,
+main .section.dark-purple .columns-cta a.button:any-link {
+  all: unset !important;
+  display: inline-block !important;
+  font-family: Lato, sans-serif !important;
+  font-size: 16px !important;
+  font-weight: 800 !important;
+  color: var(--linz-dark-purple, #422e83) !important;
+  background: var(--linz-orange, #faa633) !important;
+  border-radius: 32px !important;
+  padding: 16px 48px 16px 32px !important;
+  cursor: pointer !important;
+  text-decoration: none !important;
+  transition: background 0.3s linear !important;
+}
+
+main .section.dark-purple .columns-cta a::after,
+main .section.dark-purple .columns-cta a.button::after {
+  content: "" !important;
+  display: inline-block !important;
+  width: 8px !important;
+  height: 8px !important;
+  border-right: 2.5px solid currentcolor !important;
+  border-top: 2.5px solid currentcolor !important;
+  transform: rotate(45deg) !important;
+  margin-left: 12px !important;
+  vertical-align: middle !important;
+  border-left: none !important;
+  border-bottom: none !important;
+}
+
+main .section.dark-purple .columns-cta a:hover,
+main .section.dark-purple .columns-cta a.button:hover {
+  background: #e89a2a !important;
+}
+
+/* Vertical divider between columns */
+@media (width >= 900px) {
+  .columns-cta > div > div:first-child {
+    border-right: 1px solid rgba(255, 255, 255, 0.3);
+    padding-right: 40px;
+  }
+
+  .columns-cta > div > div:last-child {
+    padding-left: 40px;
+  }
+}
+
+/* Hide image column if present */
+.columns-cta .columns-cta-img-col {
+  display: none;
+}

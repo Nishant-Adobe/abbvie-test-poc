@@ -1,0 +1,39 @@
+{
+  "variantName": "tabs-navigation",
+  "baseBlock": "tabs",
+  "version": "1.0.0",
+  "created": "2026-06-08T18:25:00.000Z",
+  "sourceContext": {
+    "originUrl": "https://www.linzess.com/why-linzess",
+    "originPage": "Why LINZESS - content page with in-page section navigation",
+    "blockPosition": "top"
+  },
+  "visualCharacteristics": {
+    "colorScheme": "light",
+    "density": "minimal",
+    "purpose": "section-navigation",
+    "imagePattern": "noimg"
+  },
+  "contentPattern": {
+    "structure": "anchor-links horizontal navigation bar",
+    "buttonCount": 4,
+    "imageCount": 0
+  },
+  "reuseGuidance": {
+    "suitableFor": [
+      "long-form content pages with multiple sections",
+      "pages with sticky in-page navigation",
+      "anchor link navigation bars"
+    ],
+    "notSuitableFor": [
+      "tabbed content panels with switchable content",
+      "accordion-style navigation",
+      "pages with few sections"
+    ]
+  },
+  "usage": {
+    "pagesUsing": ["/why-linzess"],
+    "reuseCount": 1,
+    "lastUsed": "2026-06-08T18:25:00.000Z"
+  }
+}

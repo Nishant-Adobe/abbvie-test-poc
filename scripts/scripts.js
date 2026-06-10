@@ -100,6 +100,137 @@ function a11yLinks(main) {
  * @param {Element} main The main element
  */
 // eslint-disable-next-line import/prefer-default-export
+function decorateSubHeadings(main) {
+  const headingTexts = [
+    'Already Been', 'Need A Savings Card', 'Instructions For Adults',
+    'HOW TO STORE',
+  ];
+  const subHeadingTexts = [
+    'Prepare for Your Visit', 'Choose how you want', 'Take LINZESS',
+  ];
+  main.querySelectorAll('.section.off-white .default-content-wrapper > p').forEach((p) => {
+    const text = p.textContent.trim();
+    if (headingTexts.some((h) => text.startsWith(h)) && text.length < 60) {
+      p.classList.add('section-subheading');
+    } else if (subHeadingTexts.some((h) => text.startsWith(h))) {
+      p.classList.add('section-subsubheading');
+    }
+  });
+  main.querySelectorAll('.section.white .default-content-wrapper > p').forEach((p) => {
+    const text = p.textContent.trim();
+    if (text === 'Prepare for Your Visit With the Gut Check') {
+      p.classList.add('section-subsubheading');
+    }
+    if (text.startsWith('Actor') && text.includes('Portrayal')) {
+      p.classList.add('actor-portrayal');
+    }
+  });
+  // Wrap dosage instruction groups into card containers
+  main.querySelectorAll('.section.off-white .default-content-wrapper > p > picture > img[src*="-blue"]').forEach((img) => {
+    const iconP = img.closest('p');
+    const card = document.createElement('div');
+    card.className = 'dosage-card';
+    iconP.parentNode.insertBefore(card, iconP);
+    card.appendChild(iconP);
+    let next = card.nextElementSibling;
+    while (next && next.tagName === 'P' && !next.querySelector('picture') && !next.classList.contains('section-subheading') && !next.classList.contains('section-subsubheading')) {
+      const current = next;
+      next = next.nextElementSibling;
+      if (current.textContent.trim() === '') break;
+      card.appendChild(current);
+    }
+  });
+  // Wrap Instructions + tabs + dosage cards in a white card container
+  main.querySelectorAll('.section.off-white .default-content-wrapper').forEach((wrapper) => {
+    const instrHeading = Array.from(wrapper.querySelectorAll(':scope > p.section-subheading')).find(
+      (p) => p.textContent.trim().startsWith('Instructions'),
+    );
+    if (!instrHeading) return;
+    const storeHeading = Array.from(wrapper.querySelectorAll(':scope > p.section-subheading')).find(
+      (p) => p.textContent.trim().startsWith('HOW TO STORE'),
+    );
+    if (!storeHeading) return;
+    const whiteCard = document.createElement('div');
+    whiteCard.className = 'instructions-card';
+    wrapper.insertBefore(whiteCard, instrHeading);
+    let el = instrHeading;
+    while (el && el !== storeHeading) {
+      const current = el;
+      el = el.nextElementSibling;
+      whiteCard.appendChild(current);
+    }
+  });
+  // Tab switching for dosage instructions (Adults / Pediatric)
+  main.querySelectorAll('.instructions-card').forEach((card) => {
+    const allSubheadings = Array.from(card.querySelectorAll(':scope > p.section-subsubheading'))
+      .filter((p) => p.textContent.trim() === 'Take LINZESS');
+    if (allSubheadings.length < 2) return;
+
+    // Group content into adult (before 2nd "Take LINZESS") and pediatric (from 2nd onwards)
+    const adultElements = [];
+    const pediatricElements = [];
+    let isAdult = true;
+    let passedFirstTake = false;
+    Array.from(card.children).forEach((child) => {
+      if (child.classList.contains('section-subsubheading')
+        && child.textContent.trim() === 'Take LINZESS') {
+        if (passedFirstTake) {
+          isAdult = false;
+        }
+        passedFirstTake = true;
+      }
+      if (child.classList.contains('section-subheading')
+        || child.classList.contains('button-container')) return;
+      if (!isAdult) {
+        pediatricElements.push(child);
+        child.style.display = 'none';
+      } else if (passedFirstTake) {
+        adultElements.push(child);
+      }
+    });
+
+    // Add click handlers to tab buttons
+    const tabs = card.querySelectorAll(':scope > p.button-container');
+    if (tabs.length < 2) return;
+    const adultTab = tabs[0].querySelector('a');
+    const pedTab = tabs[1].querySelector('a');
+
+    function showAdult(e) {
+      if (e) e.preventDefault();
+      adultElements.forEach((el) => { el.style.display = ''; });
+      pediatricElements.forEach((el) => { el.style.display = 'none'; });
+      if (adultTab) {
+        adultTab.style.backgroundColor = 'var(--linz-dark-purple, #422e83)';
+        adultTab.style.color = '#fff';
+      }
+      if (pedTab) {
+        pedTab.style.backgroundColor = 'var(--linz-light-purple, #d9d7f9)';
+        pedTab.style.color = 'var(--linz-dark-purple, #422e83)';
+      }
+    }
+
+    function showPediatric(e) {
+      if (e) e.preventDefault();
+      adultElements.forEach((el) => { el.style.display = 'none'; });
+      pediatricElements.forEach((el) => { el.style.display = ''; });
+      if (pedTab) {
+        pedTab.style.backgroundColor = 'var(--linz-dark-purple, #422e83)';
+        pedTab.style.color = '#fff';
+      }
+      if (adultTab) {
+        adultTab.style.backgroundColor = 'var(--linz-light-purple, #d9d7f9)';
+        adultTab.style.color = 'var(--linz-dark-purple, #422e83)';
+      }
+    }
+
+    if (adultTab) adultTab.addEventListener('click', showAdult);
+    if (pedTab) pedTab.addEventListener('click', showPediatric);
+
+    // Default: show adult, hide pediatric
+    showAdult(null);
+  });
+}
+
 export function decorateMain(main) {
   // hopefully forward compatible button decoration
   decorateButtons(main);
@@ -109,6 +240,8 @@ export function decorateMain(main) {
   decorateBlocks(main);
   // add aria-label to links
   a11yLinks(main);
+  // style sub-section headings in content sections
+  decorateSubHeadings(main);
 }
 
 /**

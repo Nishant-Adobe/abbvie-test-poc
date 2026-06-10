@@ -7,7 +7,7 @@
 
 .isi .abbv-safety-bar,
 .abbv-safety-bar.linzess-safety-bar {
-  display: block !important;
+  display: block;
 }
 
 .abbv-safety-bar {
@@ -92,7 +92,7 @@
 .abbv-safety-bar-content {
   display: flex;
   gap: 40px;
-  max-width: 1220px;
+  max-width: 1280px;
   margin: 0 auto;
   padding: 16px 60px 16px 24px;
 }

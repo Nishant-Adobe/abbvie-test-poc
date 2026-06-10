@@ -1,0 +1,41 @@
+{
+  "variantName": "cards-checklist",
+  "baseBlock": "cards",
+  "version": "1.0.0",
+  "created": "2026-06-08T18:25:00.000Z",
+  "sourceContext": {
+    "originUrl": "https://www.linzess.com/why-linzess",
+    "originPage": "Why LINZESS - symptom checklist cards and timeline cards",
+    "blockPosition": "middle"
+  },
+  "visualCharacteristics": {
+    "colorScheme": "light",
+    "density": "spacious",
+    "purpose": "symptom-checklist",
+    "imagePattern": "noimg"
+  },
+  "contentPattern": {
+    "structure": "circle-badge + checklist or paragraph text",
+    "buttonCount": 0,
+    "imageCount": 0
+  },
+  "reuseGuidance": {
+    "suitableFor": [
+      "symptom/condition comparison cards",
+      "side-by-side information cards with badges",
+      "treatment benefit checklists",
+      "timeline/expectation cards"
+    ],
+    "notSuitableFor": [
+      "cards with images or icons",
+      "cards with CTAs/buttons",
+      "feature highlight cards",
+      "video or media cards"
+    ]
+  },
+  "usage": {
+    "pagesUsing": ["/why-linzess"],
+    "reuseCount": 1,
+    "lastUsed": "2026-06-08T18:25:00.000Z"
+  }
+}

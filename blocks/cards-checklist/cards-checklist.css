@@ -1,0 +1,103 @@
+/* stylelint-disable */
+
+/* Cards Checklist — side-by-side rounded cards with circle badges and checklist items */
+.cards-checklist {
+  display: contents;
+}
+
+.cards-checklist > ul {
+  list-style: none;
+  margin: 80px auto 0;
+  padding: 0 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  max-width: 998px;
+}
+
+@media (width >= 900px) {
+  .cards-checklist > ul {
+    flex-direction: row;
+    gap: 16px;
+    padding: 0;
+  }
+}
+
+/* Card items */
+.cards-checklist > ul > li {
+  flex: 1 1 0%;
+  background-color: var(--linz-off-white, #f4f6fb);
+  border-radius: var(--linz-rounded-corner, 16px);
+  border: none;
+  padding: 5px 32px 0;
+  text-align: left;
+}
+
+.cards-checklist > ul > li:nth-child(even) {
+  background-color: var(--linz-light-purple, #d9d7f9);
+}
+
+/* Badge (circle with text) — only the first paragraph's strong (IBS-C / CIC heading) */
+.cards-checklist .cards-checklist-card-body > p:first-child strong {
+  font-family: Lato, sans-serif;
+  font-size: 24px;
+  font-weight: 400;
+  color: var(--linz-dark-purple, #422e83);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 136px;
+  height: 136px;
+  border-radius: 50%;
+  background-color: var(--linz-light-purple, #d9d7f9);
+  margin: 0 auto 16px;
+  text-align: center;
+}
+
+/* Checklist items */
+.cards-checklist .cards-checklist-card-body ul {
+  list-style: none;
+  padding: 0;
+  margin: 16px 0;
+  text-align: left;
+}
+
+.cards-checklist .cards-checklist-card-body li {
+  position: relative;
+  padding-left: 28px;
+  margin-bottom: 10px;
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--linz-dark-purple, #422e83);
+  line-height: 1.4;
+}
+
+.cards-checklist .cards-checklist-card-body li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: var(--linz-dark-purple, #422e83);
+  font-weight: 700;
+  font-size: 16px;
+}
+
+/* Paragraph text in cards */
+.cards-checklist .cards-checklist-card-body p {
+  font-size: 14px;
+  color: var(--linz-dark-purple, #422e83);
+  margin: 8px 0;
+  line-height: 1.4;
+}
+
+/* Footnote text */
+.cards-checklist .cards-checklist-card-body p:last-child:not(:first-child) {
+  font-size: 12px;
+  font-style: italic;
+  margin-top: 12px;
+}
+
+/* Card image (hidden in this variant - no images used) */
+.cards-checklist .cards-checklist-card-image {
+  display: none;
+}

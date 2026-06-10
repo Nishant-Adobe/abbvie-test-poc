@@ -1,6 +1,12 @@
 /* stylelint-disable */
 
-/* Neutralize EDS block wrapper */
+/* Block: cards-video
+ * Source: linzess.com .abbv-flex-container-v2.flexbox-video-cards
+ * Three video cards in a row on desktop, stacked on mobile.
+ * Light purple cards with rounded corners, 16:9 video poster, title + transcript link.
+ */
+
+/* Neutralize EDS block wrapper — let inner container control layout */
 .cards-video {
   display: contents;
 }
@@ -11,24 +17,80 @@ main .cards-video .button-container {
   all: unset;
 }
 
-/* Video wrapper */
+/* ===== Flex container (created by decorate()) ===== */
+.cards-video .abbv-flex-container-v2 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+  padding: 0 20px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+@media (width >= 986px) {
+  .cards-video .abbv-flex-container-v2 {
+    flex-direction: row;
+    flex-wrap: nowrap;
+    gap: 0;
+    padding: 0 48px;
+  }
+}
+
+/* ===== Card item (.flexboxitem-v2) ===== */
+.cards-video .flexboxitem-v2 {
+  flex: 1 1 0%;
+  max-width: 100%;
+  width: 100%;
+}
+
+@media (width >= 986px) {
+  .cards-video .flexboxitem-v2 {
+    max-width: 320px;
+  }
+}
+
+/* ===== Inner card (.abbv-flex-item-v2) ===== */
+.cards-video .abbv-flex-item-v2 {
+  background-color: transparent;
+  border-radius: var(--linz-rounded-corner, 16px);
+  padding: 0;
+  overflow: visible;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ===== Video player area ===== */
+.cards-video .abbv-video-player {
+  position: relative;
+  width: 100%;
+}
+
+/* Video wrapper — contains the video/poster with 16:9 aspect ratio */
 .cards-video .abbv-video-wrapper {
   position: relative;
+  width: 100%;
+  padding-top: 56.25%; /* 16:9 aspect ratio */
   overflow: hidden;
   border-radius: var(--linz-rounded-corner, 16px) var(--linz-rounded-corner, 16px) 0 0;
 }
 
+/* Brightcove video-js element */
 .cards-video .abbv-video-wrapper video-js,
 .cards-video .abbv-video-wrapper .video-js {
+  position: absolute;
+  inset: 0;
   width: 100%;
-  padding-top: 56.25%;
-  position: relative;
+  height: 100%;
 }
 
-/* Poster fallback */
+/* Poster fallback (when no video ID available) */
 .cards-video .vjs-poster {
-  position: relative;
-  padding-bottom: 56.25%;
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
   overflow: hidden;
 }
 
@@ -40,51 +102,105 @@ main .cards-video .button-container {
   object-fit: cover;
 }
 
-/* Card content */
-.cards-video .abbv-video-card-content {
-  padding: 16px 20px 24px;
+/* ===== Play button overlay ===== */
+.cards-video .vjs-big-play-button {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.85);
+  border: none;
+  cursor: pointer;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.3s;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
 }
 
-.cards-video .abbv-video-card-content h3 {
-  font-family: Lato, sans-serif;
+.cards-video .vjs-big-play-button:hover {
+  background-color: rgba(255, 255, 255, 1);
+}
+
+.cards-video .vjs-big-play-button .vjs-icon-placeholder {
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 10px 0 10px 18px;
+  border-color: transparent transparent transparent var(--linz-dark-purple, #422e83);
+  margin-left: 4px;
+}
+
+.cards-video .vjs-big-play-button .vjs-control-text {
+  position: absolute;
+  clip: rect(0, 0, 0, 0);
+  overflow: hidden;
+  width: 1px;
+  height: 1px;
+}
+
+/* ===== Video title overlay ===== */
+.cards-video .vjs-dock-title {
+  position: absolute;
+  bottom: 12px;
+  left: 0;
+  right: 0;
+  padding: 8px 12px;
+  background: rgba(66, 46, 131, 0.85);
+  color: #fff;
+  font-family: var(--body-font-family);
   font-size: 14px;
   font-weight: 700;
-  color: var(--linz-dark-purple, #422e83);
-  margin: 0 0 8px;
   text-transform: uppercase;
-  line-height: 1.3;
+  z-index: 1;
+  text-align: center;
 }
 
-.cards-video .abbv-video-card-content p {
+/* ===== Card content below video ===== */
+.cards-video .abbv-video-card-content {
+  padding: 10px 10px 12px;
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+  flex-wrap: nowrap;
+  background-color: var(--linz-light-purple, #d9d7f9);
+  border-radius: 0 0 var(--linz-rounded-corner, 16px) var(--linz-rounded-corner, 16px);
+}
+
+/* Title — bold Lato, dark purple */
+.cards-video .abbv-video-card-content h3 {
+  font-family: var(--body-font-family);
   font-size: 12px;
-  line-height: 1.4;
+  font-weight: 700;
   color: var(--linz-dark-purple, #422e83);
-  margin: 0 0 8px;
+  margin: 0;
+  text-transform: none;
+  line-height: normal;
+  white-space: nowrap;
 }
 
+/* Description paragraph — HIDDEN on homepage card view (matches original) */
+.cards-video .abbv-video-card-content p {
+  display: none;
+}
+
+/* Transcript link — inline next to title */
+main .section.dark-purple .cards-video .video-transcript-link,
 .cards-video .video-transcript-link {
   color: var(--linz-dark-purple, #422e83) !important;
   text-decoration: underline;
   font-size: 12px;
   font-weight: 700;
+  font-family: var(--body-font-family);
+  white-space: nowrap;
+  flex-shrink: 0;
 }
 
-/* Flex item overrides for video cards */
-.flexbox-video-cards .flexboxitem-v2 .abbv-flex-item-v2 {
-  padding: 0 !important;
-  overflow: hidden;
-  display: flex;
-  flex-direction: column;
-}
-
-@media (min-width: 986px) {
-  .flexbox-video-cards .flexboxitem-v2 {
-    max-width: 320px;
-  }
-}
-
-@media (max-width: 985px) {
-  .flexbox-video-cards .flexboxitem-v2 {
-    max-width: 100%;
-  }
+main .section.dark-purple .cards-video .video-transcript-link:hover,
+.cards-video .video-transcript-link:hover {
+  color: var(--link-hover-color, #60579e) !important;
 }

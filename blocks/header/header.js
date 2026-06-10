@@ -14,8 +14,9 @@ export default async function decorate(block) {
   if (navMeta) {
     navPath = new URL(navMeta, window.location).pathname;
   } else {
-    const dir = window.location.pathname.replace(/\/$/, '');
-    navPath = `${dir}/nav`;
+    const pathParts = window.location.pathname.replace(/\/$/, '').split('/');
+    const siteRoot = pathParts.slice(0, 3).join('/');
+    navPath = `${siteRoot}/nav`;
   }
   const fragment = await fetchFragment(`${navPath}.plain.html`);
   if (!fragment) return;
@@ -128,27 +129,9 @@ export default async function decorate(block) {
   left.appendChild(logoA);
   content.appendChild(left);
 
-  // Right section (CTA + mobile hamburger)
+  // Right section (mobile hamburger only — CTA goes in nav list)
   const right = document.createElement('div');
   right.className = 'abbv-header-v2-right';
-
-  // CTA link list in right section (framework positions this)
-  if (ctaLink) {
-    const linkList = document.createElement('div');
-    linkList.className = 'abbv-link-list horizontal';
-    linkList.setAttribute('data-highlight-current', 'true');
-    const ctaUl = document.createElement('ul');
-    const ctaLi = document.createElement('li');
-    const ctaA = document.createElement('a');
-    ctaA.className = 'abbv-icon-keyboard_arrow_right i-a abbv-button-tertiary';
-    ctaA.href = ctaLink.getAttribute('href');
-    ctaA.target = '_self';
-    ctaA.textContent = ctaLink.textContent;
-    ctaLi.appendChild(ctaA);
-    ctaUl.appendChild(ctaLi);
-    linkList.appendChild(ctaUl);
-    right.appendChild(linkList);
-  }
 
   const utilIcons = document.createElement('div');
   utilIcons.className = 'util-icons-container';
@@ -225,7 +208,20 @@ export default async function decorate(block) {
     });
   }
 
-  // Add "Check My Symptoms" as last nav item (matches original DOM)
+  // Add home icon nav item (original site has this before CTA)
+  const homeLi = document.createElement('li');
+  homeLi.setAttribute('role', 'none');
+  const homeA = document.createElement('a');
+  homeA.setAttribute('role', 'menuitem');
+  homeA.setAttribute('rel', 'nofollow');
+  homeA.className = 'home-icon';
+  homeA.href = '/';
+  homeA.target = '_self';
+  homeA.textContent = 'home';
+  homeLi.appendChild(homeA);
+  mainUl.appendChild(homeLi);
+
+  // Add "Check My Symptoms" as last nav item (original site has it here)
   if (ctaLink) {
     const ctaNavLi = document.createElement('li');
     ctaNavLi.setAttribute('role', 'none');
@@ -289,7 +285,8 @@ export default async function decorate(block) {
     });
   });
 
-  // Sticky header on scroll
+  // Sticky header on scroll — only hide eyebrow on scroll down
+  // Utility nav (Prescribing Info, Medication Guide...) stays visible always
   const eyebrowEl = header.querySelector('.abbv-eyebrow');
   window.addEventListener('scroll', () => {
     if (window.pageYOffset > 100) {
@@ -297,7 +294,7 @@ export default async function decorate(block) {
       if (eyebrowEl) eyebrowEl.style.display = 'none';
     } else {
       header.classList.remove('abbv-fixed');
-      if (eyebrowEl) eyebrowEl.style.display = 'block';
+      if (eyebrowEl) eyebrowEl.style.display = '';
     }
   }, { passive: true });
 }

@@ -13,9 +13,22 @@ header {
   height: auto !important;
 }
 
-/* Force eyebrow visible (framework JS normally shows it) */
+/* Eyebrow visible by default (hidden on scroll by JS) */
 .abbv-eyebrow[data-enabled="true"] {
   display: flex !important;
+}
+
+.abbv-header-v2.abbv-fixed .abbv-eyebrow {
+  display: none !important;
+}
+
+.abbv-header-v2.abbv-fixed {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 9999;
+  box-shadow: 0 2px 8px rgb(0 0 0 / 15%);
 }
 
 /* Hide icon pseudo on utility nav links (framework adds unwanted arrows) */
@@ -30,17 +43,69 @@ header {
 /* Submenu hidden by default, shown via JS */
 .abbv-header-primary-navigation-submenu {
   display: none;
+  position: absolute;
+  top: 45px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 102;
+  background-color: var(--linz-light-purple, #d9d7f9);
+  border-radius: 16px;
+  box-shadow: rgb(153 153 153) 0 3px 5px 0;
+  text-align: center;
 }
 
 .abbv-header-primary-navigation-submenu.abbv-submenu-open {
-  display: block;
+  display: inline-block;
 }
 
-/* Chevron indicators — no duplicate from global i::before */
+.abbv-header-primary-navigation-submenu ul {
+  list-style: none !important;
+  padding: 24px 32px !important;
+  margin: 0 !important;
+}
+
+.abbv-header-primary-navigation-submenu li {
+  padding: 12px 0;
+  white-space: nowrap;
+}
+
+.abbv-header-primary-navigation-submenu a {
+  color: var(--linz-dark-purple, #422e83) !important;
+  font-size: 15px;
+  font-weight: 400;
+  text-decoration: none;
+}
+
+.abbv-header-primary-navigation-submenu a:hover {
+  font-weight: 700 !important;
+}
+
+/* Orange/green chevron indicators — matches original */
+.abbv-has-submenu + span {
+  display: block;
+  margin-top: 4px;
+  text-align: center;
+}
+
+.abbv-has-submenu + span i {
+  display: inline-block;
+  width: 0;
+  height: 0;
+  border-left: 6px solid transparent;
+  border-right: 6px solid transparent;
+  border-top: 7px solid #faa633;
+  transition: all 0.2s;
+}
+
 .abbv-has-submenu + span i::before,
 .abbv-has-submenu + span i::after {
   display: none !important;
   content: none !important;
+}
+
+/* Nav items need relative position for submenu absolute positioning */
+.abbv-header-v2-primary-navigation ul[role="menu"] > li {
+  position: relative;
 }
 
 /* Hover states */
@@ -52,23 +117,50 @@ header {
   text-decoration: underline;
 }
 
-.abbv-header-v2-primary-navigation ul[role="menu"] > li:hover > .abbv-has-submenu + span i {
+/* Active submenu open: arrow flips UP and turns green/teal */
+.abbv-header-v2-primary-navigation ul[role="menu"] > li:hover > .abbv-has-submenu + span i,
+.abbv-header-v2-primary-navigation ul[role="menu"] > li .abbv-submenu-open ~ span i {
   transform: rotate(180deg);
+  border-top-color: #4db6ac;
 }
 
 .abbv-header-primary-navigation-submenu a[role="menuitem"]:hover {
   font-weight: 700 !important;
+  background-color: var(--linz-off-white, #f4f6fb);
 }
 
-/* Sticky header */
-.abbv-header-v2.abbv-fixed {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: 9999;
-  box-shadow: 0 2px 8px rgb(0 0 0 / 15%);
+/* Fix logo overlap — ensure left section doesn't overlap nav */
+.abbv-header-v2-left {
+  position: relative;
+  z-index: 2;
 }
+
+/* Fix: Prevent nav from overlapping logo — add left margin (only top-level menu) */
+.abbv-header-v2-primary-navigation > nav > ul[role="menu"] {
+  padding-left: 160px !important;
+}
+
+/* Fix: Check My Symptoms button — single line, no wrap */
+.abbv-header-v2-primary-navigation a.check-my-symptoms.abbv-button-tertiary {
+  white-space: nowrap !important;
+}
+
+/* Fix: Home icon uses local SVG — sized to match original (18x22px) */
+.abbv-header-v2-primary-navigation > nav > ul > li > a.home-icon {
+  background: url("/icons/home-icon-white.svg") no-repeat center !important;
+  background-size: 18px 22px !important;
+  width: 24px !important;
+  height: 24px !important;
+}
+
+.abbv-header-v2-primary-navigation > nav > ul > li > a.home-icon:hover {
+  background: url("/icons/home-icon-orange.svg") no-repeat center !important;
+  background-size: 18px 22px !important;
+}
+
+/* Right section hidden on desktop (CTA is in nav list) */
+
+/* (Sticky header rule moved to top of file) */
 
 /* Mobile hamburger lines */
 .abbv-header-v2-mobile-primary-navigation .line {

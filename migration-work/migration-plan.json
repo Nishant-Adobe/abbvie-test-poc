@@ -1,0 +1,99 @@
+{
+  "siteUrl": "https://www.linzess.com",
+  "planCreatedAt": "2026-06-09T00:00:00Z",
+  "planUpdatedAt": "2026-06-09T18:00:00Z",
+  "totalUrlsFromSitemap": 77,
+  "actualPages": 42,
+  "duplicateRedirects": 35,
+  "note": "77 URLs discovered from sitemap. Many pages exist under both /starting-linzess/ and /savings-and-support/ paths (shared content). Deduplicated to ~42 unique content pages.",
+  "templates": [
+    {
+      "name": "homepage",
+      "count": 1,
+      "pages": ["/"],
+      "blocks": ["hero-pharma", "columns-promo", "cards-feature", "cards-stats", "cards-video"],
+      "priority": 1,
+      "iterationsPerPage": 15,
+      "status": "content-migrated, needs visual refinement"
+    },
+    {
+      "name": "content-page",
+      "count": 6,
+      "pages": ["/why-linzess", "/understanding-constipation", "/find-relief", "/resources", "/savings-and-support", "/savings-and-support/faqs"],
+      "blocks": ["hero-pharma", "tabs-navigation", "cards-checklist", "cards-icon", "cards-video", "video-playlist", "columns-promo", "columns-cta"],
+      "priority": 2,
+      "iterationsPerPage": 15,
+      "status": "content-migrated, needs visual refinement"
+    },
+    {
+      "name": "sub-page",
+      "count": 3,
+      "pages": ["/why-linzess/linzess-patient-experiences", "/starting-linzess/healthy-routines", "/starting-linzess/wellness-tips"],
+      "blocks": ["video-playlist", "default-content"],
+      "priority": 3,
+      "iterationsPerPage": 10,
+      "status": "content-migrated"
+    },
+    {
+      "name": "article",
+      "count": 8,
+      "pages": [
+        "/starting-linzess/healthy-routines/otc-and-prescription-treatments",
+        "/starting-linzess/healthy-routines/tackling-ibs-c-triggers",
+        "/starting-linzess/healthy-routines/keeping-in-touch-with-your-doctor",
+        "/starting-linzess/wellness-tips/your-map-to-a-low-fodmap-diet",
+        "/starting-linzess/wellness-tips/good-for-your-gut-flavorful-food-swaps",
+        "/starting-linzess/wellness-tips/make-a-game-plan-for-ibs-c",
+        "/starting-linzess/wellness-tips/5-holiday-low-fodmap-recipes",
+        "/starting-linzess/wellness-tips/is-your-pantry-fodmap-friendly"
+      ],
+      "blocks": ["default-content"],
+      "priority": 4,
+      "iterationsPerPage": 5,
+      "status": "content-migrated"
+    },
+    {
+      "name": "interactive",
+      "count": 3,
+      "pages": ["/find-relief/gutcheck", "/savings-card", "/savings-and-support/from-the-gut"],
+      "blocks": ["form", "interactive"],
+      "priority": 3,
+      "iterationsPerPage": 10,
+      "status": "content-migrated"
+    },
+    {
+      "name": "redirect",
+      "count": 15,
+      "pages": ["(anchor-based sub-URLs that redirect to parent page sections)"],
+      "blocks": [],
+      "priority": 5,
+      "iterationsPerPage": 0,
+      "status": "handled-by-parent-page",
+      "note": "These URLs resolve to #anchor sections on parent pages. No separate migration needed."
+    }
+  ],
+  "migrationOrder": [
+    "Phase 2: Global foundation — ALREADY DONE (header, footer, ISI, design tokens, framework CSS)",
+    "Page 1: / (homepage) — 15 iterations visual refinement",
+    "Page 2: /why-linzess — 15 iterations (partially done, ~80% similarity)",
+    "Page 3: /understanding-constipation — 15 iterations",
+    "Page 4: /find-relief — 15 iterations",
+    "Page 5: /resources — 15 iterations",
+    "Page 6: /savings-and-support — 15 iterations",
+    "Page 7: /savings-and-support/faqs — 15 iterations",
+    "Page 8: /why-linzess/linzess-patient-experiences — 10 iterations",
+    "Page 9: /starting-linzess/healthy-routines — 10 iterations",
+    "Page 10: /starting-linzess/wellness-tips — 10 iterations",
+    "Pages 11-18: Articles — 5 iterations each",
+    "Pages 19-21: Interactive pages — 10 iterations each",
+    "Phase 4: Cross-page verification + base64 CSS conversion"
+  ],
+  "alreadyCompleted": {
+    "globalFoundation": true,
+    "contentImport": "all 22 pages imported as .plain.html",
+    "blockLibrary": "13 blocks created (hero-pharma, tabs-navigation, cards-feature, cards-checklist, cards-icon, cards-video, cards-stats, columns-promo, columns-cta, video-playlist, header, footer, isi)",
+    "designTokens": "Extracted and applied in styles.css + linzess.css",
+    "assets": "7 SVG icons downloaded, hero images referenced from CDN"
+  },
+  "estimatedRemainingEffort": "6-8 sessions (15 iterations per content page, 5-10 for simpler pages)"
+}

@@ -518,13 +518,13 @@ main > .section.white::before {
   content: "";
   border-top-left-radius: 100%;
   border-top-right-radius: 100%;
-  height: 75px;
+  height: 150px;
   width: 130%;
   position: absolute;
-  top: -60px;
+  top: -120px;
   left: 50%;
   transform: translateX(-50%);
-  z-index: 1;
+  z-index: 2;
   background: var(--linz-white);
 }
 
@@ -539,9 +539,42 @@ main > .section.white::after {
   z-index: 0;
 }
 
+main > .section.white.cards-feature-container {
+  padding-bottom: 120px;
+}
+
+main > .section.off-white {
+  position: relative;
+  z-index: 1;
+  background-color: var(--linz-off-white);
+  padding: 60px 0 100px;
+}
+
+main > .section.off-white::before {
+  content: "";
+  border-top-left-radius: 100%;
+  border-top-right-radius: 100%;
+  height: 75px;
+  width: 130%;
+  position: absolute;
+  top: -60px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1;
+  background: var(--linz-off-white);
+}
+
 main > .section.dark-purple {
   position: relative;
   z-index: 1;
+  background-color: var(--linz-dark-purple);
+  color: var(--linz-white);
+  padding: 60px 0 155px;
+}
+
+main > .section.dark-purple > .default-content-wrapper p,
+main > .section.dark-purple > .default-content-wrapper li {
+  color: var(--linz-white);
 }
 
 main > .section.dark-purple::before {
@@ -558,13 +591,173 @@ main > .section.dark-purple::before {
   background: var(--linz-dark-purple);
 }
 
+main > .section.dark-purple::after {
+  content: "";
+  border-top-left-radius: 100%;
+  border-top-right-radius: 100%;
+  height: 75px;
+  width: 130%;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
+  background: var(--linz-white);
+}
+
 /* ===== TYPOGRAPHY ===== */
-h2,
 .heading-2 {
   font-family: Lato, sans-serif;
   font-weight: 700;
   font-style: normal;
   font-size: var(--heading2-font-size);
+}
+
+main .section > .default-content-wrapper h2 {
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 40px;
+  font-weight: 400;
+  line-height: 1.2;
+  text-align: center;
+  text-transform: uppercase;
+  color: var(--linz-dark-purple, #422e83);
+  position: relative;
+  padding-top: 24px;
+  margin-top: 48px;
+}
+
+main .section > .default-content-wrapper h2::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 48px;
+  height: 6px;
+  border-bottom: 3px solid var(--linz-orange, #faa633);
+  border-radius: 0 0 50% 50%;
+}
+
+main .section > .default-content-wrapper h2 + p {
+  font-size: 16px;
+  font-family: Lato, sans-serif;
+  color: var(--linz-grey, #4d4d4f);
+  text-align: center;
+  max-width: 700px;
+  margin: 16px auto 32px;
+  line-height: normal;
+}
+
+main .section.dark-purple > .default-content-wrapper h2 {
+  color: var(--linz-white);
+}
+
+main .section.dark-purple > .default-content-wrapper {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* Dark purple section main heading — Bebas Neue uppercase */
+main .section.dark-purple > .default-content-wrapper:first-child p:first-child {
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 40px;
+  font-weight: 400;
+  line-height: 1.1;
+  text-transform: uppercase;
+  color: var(--linz-white);
+  margin-bottom: 16px;
+}
+
+/* Dark purple section sub-text — bold white */
+main .section.dark-purple > .default-content-wrapper:first-child p:nth-child(2) {
+  font-weight: 700;
+  font-size: 14px;
+  color: var(--linz-white);
+  line-height: 1.5;
+}
+
+/* Decorative orange divider before headings in dark-purple section */
+main .section.dark-purple > .default-content-wrapper:first-child::before,
+main .section.dark-purple > .default-content-wrapper:nth-child(3) h2::before {
+  content: "";
+  display: block;
+  width: 64px;
+  height: 5px;
+  background-image: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjQiIGhlaWdodD0iNSIgdmlld0JveD0iMCAwIDY0IDUiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHBhdGggZD0iTTEuMjgwMDMgNC4yMzk5N1Y0LjIxMDMyQzEuMjgwMDMgNC4yMTAzMiAxNS45NSAxLjcxOTk3IDMyIDEuNzE5OTdDNDguMDggMS43MTk5NyA2Mi43MiA0LjIxMDMyIDYyLjcyIDQuMjEwMzJWNC4yMzk5NyIgc3Ryb2tlPSIjRkFBNjMzIiBzdHJva2Utd2lkdGg9IjEuNSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIi8+PC9zdmc+");
+  background-size: 64px 5px;
+  background-repeat: no-repeat;
+  background-position: center;
+  margin: 0 auto 20px;
+}
+
+/* Footnote text in dark-purple section — smaller */
+main .section.dark-purple > .default-content-wrapper:nth-child(3) p:first-child {
+  font-size: 12px;
+  line-height: 1.4;
+  margin-bottom: 40px;
+}
+
+/* ===== CONTENT SECTION TEXT HIERARCHY ===== */
+/* Pattern: eyebrow (12px uppercase) → orange arc → heading (40px Bebas) → body (16px) */
+/* Applies to .section.white and .section.off-white content pages */
+
+/* Eyebrow: first paragraph in content section (e.g., "How Linzess Can Help") */
+main > .section.white > .default-content-wrapper:first-child > p:first-child,
+main > .section.off-white > .default-content-wrapper:first-child > p:first-child {
+  font-size: 12px;
+  font-weight: 800;
+  font-family: Lato, sans-serif;
+  color: var(--linz-dark-purple);
+  text-transform: uppercase;
+  text-align: center;
+  margin-bottom: 24px;
+  position: relative;
+  padding-bottom: 20px;
+}
+
+/* Orange arc decoration below eyebrow text */
+main > .section.white > .default-content-wrapper:first-child > p:first-child::after,
+main > .section.off-white > .default-content-wrapper:first-child > p:first-child::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 48px;
+  height: 6px;
+  border-bottom: 3px solid var(--linz-orange, #faa633);
+  border-radius: 0 0 50% 50%;
+}
+
+/* Section heading: second visible paragraph (e.g., "LINZESS CAN HELP RELIEVE...") */
+main > .section.white > .default-content-wrapper:first-child > p:nth-child(2),
+main > .section.off-white > .default-content-wrapper:first-child > p:nth-child(2) {
+  font-size: 40px;
+  font-weight: 400;
+  font-family: "Bebas Neue", sans-serif;
+  color: var(--linz-dark-purple);
+  text-align: center;
+  line-height: 36px;
+  margin-bottom: 16px;
+}
+
+/* Body text in content sections */
+main > .section.white > .default-content-wrapper:first-child > p:nth-child(n+3),
+main > .section.off-white > .default-content-wrapper:first-child > p:nth-child(n+3) {
+  font-size: 16px;
+  font-weight: 400;
+  font-family: Lato, sans-serif;
+  color: var(--linz-grey, #4d4d4f);
+  text-align: center;
+  line-height: normal;
+  max-width: 700px;
+  margin: 0 auto 16px;
+}
+
+/* Stats circles — add white border */
+.cards-stats .circle {
+  border: 3px solid var(--linz-white, #fff);
 }
 
 .text-align-center {
@@ -878,6 +1071,47 @@ h2,
     margin-top: -30px;
   }
 
+  .image-text-wrapper.savings-card-tout {
+    max-width: 802px;
+    overflow: hidden;
+    min-height: 173px;
+    height: auto;
+  }
+
+  .image-text-wrapper.savings-card-tout .abbv-row {
+    display: flex;
+    align-items: center;
+    min-height: 173px;
+  }
+
+  .image-text-wrapper.savings-card-tout .abbv-col:first-child {
+    max-width: 322px;
+    flex-shrink: 0;
+  }
+
+  .image-text-wrapper.savings-card-tout .abbv-col:first-child img {
+    margin-top: -30px;
+  }
+
+  .image-text-wrapper.savings-card-tout .abbv-col:last-child {
+    width: auto;
+    padding: 16px 24px 16px 40px;
+  }
+
+  .image-text-wrapper.savings-card-tout .abbv-col:last-child p {
+    font-size: 13px;
+    margin: 0 0 6px;
+    line-height: 1.4;
+  }
+
+  .image-text-wrapper.savings-card-tout .abbv-col:last-child > .rich-text:first-child p {
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--linz-dark-purple);
+    line-height: 1.2;
+    margin: 0 0 10px;
+  }
+
   .image-text-wrapper.eligible-tout .abbv-col:last-child {
     width: auto;
     padding-left: 40px;
@@ -885,8 +1119,182 @@ h2,
 }
 
 /* Hide indication footnote text (hidden on original via .linzess-first-container-desktop-hide) */
-main > .section.white > .default-content-wrapper:first-child {
+main > .section.white.cards-feature-container > .default-content-wrapper:first-child {
   display: none;
+}
+
+/* Savings section heading — "YOU COULD PAY AS LITTLE AS $30" */
+main > .section.white.columns-promo-container:not(.cards-feature-container) > .default-content-wrapper:first-child {
+  text-align: center;
+  padding: 60px 0 0;
+}
+
+main > .section.white.columns-promo-container:not(.cards-feature-container):not(.video-single-container) > .default-content-wrapper:first-child p {
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 40px;
+  font-weight: 400;
+  line-height: 1.2;
+  color: var(--linz-dark-purple);
+  text-transform: uppercase;
+}
+
+/* Footnote/disclaimer text below savings tout */
+main > .section.white:not(.cards-feature-container) > .default-content-wrapper:last-child {
+  max-width: 1220px;
+  margin: 24px auto 0;
+  padding: 0 20px;
+  position: relative;
+  z-index: 2;
+  clear: both;
+}
+
+/* Ensure savings-card-tout wrapper has bottom margin to push footnote down */
+main > .section.white:not(.cards-feature-container) > .columns-promo-wrapper {
+  margin-bottom: 16px;
+}
+
+main > .section.white:not(.cards-feature-container) > .default-content-wrapper:last-child p {
+  font-size: 12px;
+  line-height: 1.5;
+  color: var(--linz-grey, #4d4d4f);
+}
+
+/* ===== Inline ISI Section (abbv_use_statement) ===== */
+/* Section containing USES + IMPORTANT RISK INFORMATION inline content */
+main > .section:has(> .default-content-wrapper > h3:first-child) + .section.isi-container,
+main > .section:has(> .default-content-wrapper > h3:first-child) {
+  /* Only target the ISI inline section — has h3 USES as first child */
+}
+
+main > .section > .default-content-wrapper > h3:first-child {
+  font-size: 16px;
+  font-weight: 400;
+  color: var(--linz-dark-purple);
+  text-transform: uppercase;
+  margin: 0 0 8px;
+  font-family: Lato, sans-serif;
+}
+
+/* The section that contains inline ISI (between savings and footer) */
+main > .section:not(.white):not(.dark-purple):not(.off-white):not(.hero-pharma-container):not(.isi-container) > .default-content-wrapper:only-child {
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 10px 20px 80px;
+}
+
+main > .section:not(.white):not(.dark-purple):not(.off-white):not(.hero-pharma-container):not(.isi-container) > .default-content-wrapper:only-child h3 {
+  font-size: 16px;
+  font-weight: 800;
+  color: var(--linz-dark-purple);
+  text-transform: uppercase;
+  margin: 20px 0 8px;
+  font-family: Lato, sans-serif;
+}
+
+main > .section:not(.white):not(.dark-purple):not(.off-white):not(.hero-pharma-container):not(.isi-container) > .default-content-wrapper:only-child p {
+  font-size: 14px;
+  line-height: 16px;
+  color: rgb(85, 85, 85);
+  margin: 0 0 8px;
+}
+
+main > .section:not(.white):not(.dark-purple):not(.off-white):not(.hero-pharma-container):not(.isi-container) > .default-content-wrapper:only-child ul {
+  padding-left: 20px;
+  margin: 0 0 8px;
+}
+
+main > .section:not(.white):not(.dark-purple):not(.off-white):not(.hero-pharma-container):not(.isi-container) > .default-content-wrapper:only-child li {
+  font-size: 14px;
+  line-height: 16px;
+  color: rgb(85, 85, 85);
+  margin-bottom: 6px;
+}
+
+main > .section:not(.white):not(.dark-purple):not(.off-white):not(.hero-pharma-container):not(.isi-container) > .default-content-wrapper:only-child a {
+  color: var(--linz-dark-purple);
+  text-decoration: underline;
+}
+
+/* ===== CHECKMARK LIST (find-relief page "Talk to Doctor" section) ===== */
+/* Styles the 4-item checklist as a 2x2 grid with icon bullets */
+main .section.white > .default-content-wrapper > ul {
+  list-style: none;
+  margin: 32px auto;
+  max-width: 998px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px 48px;
+  background-color: var(--linz-dark-purple, #422e83);
+  border-radius: 24px;
+  padding: 48px 56px;
+  color: var(--linz-white);
+}
+
+main .section.white > .default-content-wrapper > ul > li {
+  position: relative;
+  padding-left: 40px;
+  text-align: left;
+}
+
+main .section.white > .default-content-wrapper > ul > li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 2px;
+  width: 28px;
+  height: 28px;
+  background-color: var(--linz-orange, #faa633);
+  border-radius: 50%;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='white'%3E%3Cpath d='M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z'/%3E%3C/svg%3E");
+  background-size: 18px;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+main .section.white > .default-content-wrapper > ul > li p:first-child {
+  font-family: Lato, sans-serif;
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--linz-white);
+  margin: 0 0 12px;
+  line-height: 1.2;
+}
+
+main .section.white > .default-content-wrapper > ul > li p:last-child {
+  font-family: Lato, sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  color: var(--linz-white);
+  line-height: 1.5;
+  margin: 0;
+}
+
+main .section.white > .default-content-wrapper > ul > li p strong {
+  font-weight: 700;
+  color: var(--linz-white);
+}
+
+main .section.white > .default-content-wrapper > ul > li a:any-link {
+  color: var(--linz-white) !important;
+  text-decoration: underline;
+  font-weight: 700;
+}
+
+@media (max-width: 768px) {
+  main .section.white > .default-content-wrapper > ul {
+    grid-template-columns: 1fr;
+    padding: 32px 24px;
+    gap: 32px;
+  }
+}
+
+/* Gut Check promo — now handled by columns-promo block (same as homepage) */
+/* Actor Portrayal text (kept for any remaining instances) */
+main .section.white > .default-content-wrapper > p.actor-portrayal {
+  font-size: 11px !important;
+  font-style: italic;
+  color: rgba(77, 77, 79, 0.7) !important;
+  text-align: center !important;
 }
 
 /* ===== FIX: .abbv-button-primary text color override ===== */
@@ -929,6 +1337,20 @@ main .section.dark-purple a.button:hover {
   color: var(--linz-dark-purple);
 }
 
+/* Arrow chevron icon on CTA buttons */
+main .section.dark-purple a.button::after,
+main .section.white a.button::after {
+  content: "";
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-right: 2.5px solid currentcolor;
+  border-top: 2.5px solid currentcolor;
+  transform: rotate(45deg);
+  margin-left: 12px;
+  vertical-align: middle;
+}
+
 main .section.white a.button:any-link {
   background-color: var(--linz-dark-purple);
   color: var(--linz-white);
@@ -948,4 +1370,273 @@ main .section.white a.button:any-link {
 main .section.white a.button:hover {
   background-color: var(--linz-off-white);
   color: var(--linz-dark-purple);
+}
+
+/* ===== "Check My Symptoms" CTA in white sections (light purple variant) ===== */
+main .section.white a.button[href*="gutcheck"]:any-link {
+  background-color: var(--linz-light-purple, #d9d7f9);
+  color: var(--linz-dark-purple);
+  border: 0;
+  border-radius: var(--linz-rounded-corner);
+  font-weight: 800;
+  padding: 16px 42px 16px 32px;
+  font-size: 0.9rem;
+  font-family: Lato, sans-serif;
+  display: inline-block;
+  text-decoration: none;
+}
+
+main .section.white a.button[href*="gutcheck"]:hover {
+  background-color: var(--linz-dark-purple);
+  color: var(--linz-white);
+}
+
+/* ===== CONTENT SECTION DEFAULT-CONTENT-WRAPPER CENTERING ===== */
+/* Patient Experiences and other content page wrappers */
+main > .section.white > .default-content-wrapper:first-child,
+main > .section.off-white > .default-content-wrapper:first-child {
+  max-width: 998px;
+  margin: 0 auto;
+  padding: 40px 20px 0;
+  text-align: center;
+}
+
+/* Instructions section — white card wrapping dosage content (not HOW TO STORE) */
+.instructions-card {
+  background-color: #fff;
+  border-radius: 24px;
+  padding: 48px 40px;
+  max-width: 998px;
+  margin: 0 auto 48px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.04);
+}
+
+/* Dosage instruction cards (JS-wrapped .dosage-card containers) */
+.dosage-card {
+  background-color: #ebeef5;
+  border-radius: 20px;
+  padding: 32px 32px 32px 160px;
+  margin: 24px auto;
+  max-width: 998px;
+  position: relative;
+  min-height: 140px;
+}
+
+.dosage-card > p:has(> picture > img[src*="-blue"]) {
+  position: absolute;
+  left: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 120px;
+  height: 120px;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--linz-light-purple, #d9d7f9);
+  border-radius: 50%;
+}
+
+.dosage-card p > picture > img[src*="icon-"][src*="-blue"] {
+  width: 64px;
+  height: 64px;
+  display: block;
+  object-fit: contain;
+  border: none;
+  padding: 0;
+  margin: 0;
+  border-radius: 0;
+}
+
+/* Dosage card heading (Every Day, Once a Day, etc.) */
+.dosage-card > p:nth-child(2) {
+  font-family: Lato, sans-serif;
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--linz-dark-purple, #422e83);
+  text-align: left;
+  margin: 0 0 8px;
+}
+
+/* Dosage card body text */
+.dosage-card > p:nth-child(n+3) {
+  font-size: 16px;
+  color: var(--linz-grey, #4d4d4f);
+  text-align: left;
+  margin: 0 0 8px;
+  line-height: normal;
+}
+
+@media (max-width: 768px) {
+  .dosage-card {
+    padding: 24px 20px 24px 20px;
+    text-align: center;
+  }
+
+  .dosage-card > p:has(> picture > img[src*="-blue"]) {
+    position: static;
+    transform: none;
+    margin: 0 auto 16px;
+  }
+
+  .dosage-card > p:nth-child(2),
+  .dosage-card > p:nth-child(n+3) {
+    text-align: center;
+  }
+}
+
+/* ===== OFF-WHITE SECTION SUB-HEADINGS ===== */
+/* Now handled by JS .section-subheading class (see p.section-subheading rule below) */
+
+/* Wrapper after cards-signup — needs spacing to clear absolute-positioned icons */
+main > .section.off-white > .cards-signup-wrapper ~ .default-content-wrapper {
+  margin-top: 60px !important;
+  padding: 20px 20px 0;
+  position: relative;
+  z-index: 1;
+}
+
+/* Disclaimer text after cards-signup (small gray) — only non-heading, non-subheading paragraphs */
+main > .section.off-white > .cards-signup-wrapper ~ .default-content-wrapper > p:not(.section-subheading):not(.section-subsubheading):not(.button-container):not(:first-child) {
+  font-size: 12px;
+  color: var(--linz-grey, #4d4d4f);
+  line-height: 1.5;
+  text-align: left;
+  max-width: 998px;
+  margin: 0 auto 12px;
+}
+
+/* Body text after section-subheading (HOW TO STORE, etc.) */
+main > .section.off-white > .cards-signup-wrapper ~ .default-content-wrapper > p.section-subheading ~ p:not(.section-subheading):not(.button-container),
+main > .section.off-white > .default-content-wrapper > p.section-subheading ~ p:not(.section-subheading):not(.button-container) {
+  font-size: 18px !important;
+  color: var(--linz-grey, #4d4d4f) !important;
+  line-height: 1.6 !important;
+  text-align: center !important;
+  max-width: 928px;
+  margin: 0 auto 16px !important;
+}
+
+main > .section.off-white > .cards-signup-wrapper ~ .default-content-wrapper > p.section-subheading ~ p a {
+  color: var(--linz-dark-purple, #422e83) !important;
+  font-weight: 700;
+  text-decoration: underline;
+}
+
+main > .section.off-white > .cards-signup-wrapper ~ .default-content-wrapper > p:first-child {
+  font-size: 18px;
+  font-weight: 400;
+  font-family: Lato, sans-serif;
+  color: var(--linz-dark-purple, #422e83);
+  text-align: center;
+  margin: 32px auto 24px;
+}
+
+main > .section.off-white > .cards-signup-wrapper ~ .default-content-wrapper > p:first-child a {
+  color: var(--linz-dark-purple) !important;
+  font-weight: 700;
+  text-decoration: underline;
+}
+
+/* Sub-sub-headings now handled by JS .section-subsubheading class */
+
+/* Center all text in off-white section default-content-wrappers */
+main > .section.off-white > .default-content-wrapper {
+  max-width: 998px;
+  margin: 0 auto;
+  padding: 0 20px;
+  text-align: center;
+}
+
+/* Section sub-headings (JS-applied .section-subheading class) */
+p.section-subheading {
+  font-size: 40px !important;
+  font-weight: 400 !important;
+  font-family: "Bebas Neue", sans-serif !important;
+  color: var(--linz-dark-purple, #422e83) !important;
+  text-align: center !important;
+  line-height: 36px !important;
+  margin: 80px auto 16px !important;
+  max-width: 998px;
+  position: relative;
+}
+
+p.section-subheading::before {
+  content: "";
+  position: absolute;
+  top: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 48px;
+  height: 6px;
+  border-bottom: 3px solid var(--linz-orange, #faa633);
+  border-radius: 0 0 50% 50%;
+}
+
+/* Section sub-sub-headings (JS-applied .section-subsubheading class) */
+p.section-subsubheading {
+  font-size: 24px !important;
+  font-weight: 700 !important;
+  font-family: Lato, sans-serif !important;
+  color: var(--linz-dark-purple, #422e83) !important;
+  text-align: center !important;
+  margin: 24px auto 16px !important;
+}
+
+p.section-subheading + p.section-subsubheading {
+  margin-top: 4px !important;
+}
+
+/* Dosage instruction tabs (Adults / Pediatric) */
+p.section-subheading + p.button-container,
+p.section-subheading + p.button-container + p.button-container {
+  display: inline-block !important;
+  margin: 0 4px 32px !important;
+  vertical-align: top;
+}
+
+p.section-subheading + p.button-container a,
+p.section-subheading + p.button-container + p.button-container a {
+  all: unset !important;
+  display: inline-block !important;
+  font-family: Lato, sans-serif !important;
+  font-size: 16px !important;
+  font-weight: 700 !important;
+  padding: 16px 40px !important;
+  text-align: center !important;
+  cursor: pointer !important;
+  white-space: nowrap !important;
+  border-radius: 32px !important;
+}
+
+p.section-subheading + p.button-container a {
+  background-color: var(--linz-dark-purple, #422e83) !important;
+  color: #fff !important;
+}
+
+p.section-subheading + p.button-container + p.button-container a {
+  background-color: var(--linz-light-purple, #d9d7f9) !important;
+  color: var(--linz-dark-purple, #422e83) !important;
+}
+
+@media (max-width: 768px) {
+  p.section-subheading + p.button-container,
+  p.section-subheading + p.button-container + p.button-container {
+    display: block !important;
+    margin: 8px auto !important;
+    text-align: center !important;
+  }
+
+  p.section-subheading + p.button-container {
+    margin-left: auto !important;
+  }
+}
+
+/* Actor Portrayal small overlay text */
+p.actor-portrayal {
+  font-size: 12px !important;
+  color: rgba(77, 77, 79, 0.8) !important;
+  text-align: center !important;
+  margin: 8px auto !important;
 }

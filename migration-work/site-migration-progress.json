@@ -1,0 +1,54 @@
+{
+  "domain": "https://www.linzess.com",
+  "phase": "page-migration",
+  "startedAt": "2026-06-09T10:00:00Z",
+  "lastUpdated": "2026-06-09T16:00:00Z",
+  "totalPages": 22,
+  "completed": 0,
+  "inProgress": 2,
+  "remaining": 20,
+  "pages": {
+    "/": { "status": "in-progress", "similarity": "90%", "iterations": 10, "note": "Homepage mostly done, needs final polish" },
+    "/why-linzess": { "status": "in-progress", "similarity": "80%", "iterations": 10, "note": "Major blocks fixed, remaining: patient experiences carousel, dark-purple centering" },
+    "/understanding-constipation": { "status": "pending", "similarity": "~70%", "iterations": 0, "note": "Content migrated, needs visual iterations" },
+    "/find-relief": { "status": "complete", "similarity": "~90%", "iterations": 9, "note": "All visual fixes applied: headings 40px Bebas, sub-headings 24px bold, orange checkmarks, orange arcs, cards-info/signup styled, gut check gray bg card, savings promo lavender bg, tabs pill visible, dosage icons circular. Verified at desktop+mobile. Remaining polish: dosage tab JS interaction, fine spacing." },
+    "/resources": { "status": "pending", "similarity": "~65%", "iterations": 0 },
+    "/savings-and-support": { "status": "pending", "similarity": "~65%", "iterations": 0 },
+    "/savings-and-support/faqs": { "status": "pending", "similarity": "~50%", "iterations": 0 },
+    "/why-linzess/linzess-patient-experiences": { "status": "pending", "similarity": "~60%", "iterations": 0 },
+    "/starting-linzess/healthy-routines": { "status": "pending", "similarity": "~60%", "iterations": 0 },
+    "/starting-linzess/wellness-tips": { "status": "pending", "similarity": "~60%", "iterations": 0 },
+    "/find-relief/gutcheck": { "status": "pending", "similarity": "~40%", "iterations": 0, "note": "Interactive quiz - complex" },
+    "/savings-card": { "status": "pending", "similarity": "~40%", "iterations": 0, "note": "Form page" },
+    "/savings-and-support/from-the-gut": { "status": "pending", "similarity": "~50%", "iterations": 0 },
+    "/starting-linzess/healthy-routines/otc-and-prescription-treatments": { "status": "pending", "iterations": 0 },
+    "/starting-linzess/healthy-routines/tackling-ibs-c-triggers": { "status": "pending", "iterations": 0 },
+    "/starting-linzess/healthy-routines/keeping-in-touch-with-your-doctor": { "status": "pending", "iterations": 0 },
+    "/starting-linzess/wellness-tips/your-map-to-a-low-fodmap-diet": { "status": "pending", "iterations": 0 },
+    "/starting-linzess/wellness-tips/good-for-your-gut-flavorful-food-swaps": { "status": "pending", "iterations": 0 },
+    "/starting-linzess/wellness-tips/make-a-game-plan-for-ibs-c": { "status": "pending", "iterations": 0 },
+    "/starting-linzess/wellness-tips/5-holiday-low-fodmap-recipes": { "status": "pending", "iterations": 0 },
+    "/starting-linzess/wellness-tips/is-your-pantry-fodmap-friendly": { "status": "pending", "iterations": 0 },
+    "/legal-policy": { "status": "pending", "iterations": 0 }
+  },
+  "blocksCreated": [
+    "hero-pharma", "tabs-navigation", "cards-feature", "cards-checklist",
+    "cards-icon", "cards-video", "cards-stats", "columns-promo",
+    "columns-cta", "video-playlist", "cards-signup", "cards-info",
+    "header", "footer", "isi"
+  ],
+  "globalCssFiles": [
+    "styles/styles.css", "styles/linzess.css", "styles/abbv-framework.css",
+    "styles/linzess-global.css", "styles/abbv-fonts.css", "styles/fonts.css"
+  ],
+  "assetsDownloaded": [
+    "content/dam/linzess/images/icon-pill.svg",
+    "content/dam/linzess/images/icon-gut.svg",
+    "content/dam/linzess/images/icon-legs.svg",
+    "content/dam/linzess/images/icon-gut-hands.svg",
+    "content/dam/linzess/images/icon-stethoscope-white.svg",
+    "content/dam/linzess/images/icon-stethoscope.svg",
+    "content/dam/linzess/images/icon-num1-alt.png"
+  ],
+  "nextAction": "Continue with: migrate / (homepage) iteratively 15 — then proceed to remaining pages"
+}

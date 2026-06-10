@@ -13,7 +13,13 @@ export default function decorate(block) {
   // eligible-tout: short heading + single CTA, light purple bg
   // discussion-tout: heading + description + CTA, off-white bg
   const paragraphs = textCell.querySelectorAll('p');
-  const textParagraphs = [...paragraphs].filter((p) => !p.querySelector('a') && !p.querySelector('picture'));
+  const textParagraphs = [...paragraphs].filter((p) => {
+    if (p.querySelector('picture')) return false;
+    const link = p.querySelector('a');
+    if (!link) return true;
+    if (p.textContent.trim() === link.textContent.trim()) return false;
+    return true;
+  });
 
   let variant = 'eligible-tout';
   if (textParagraphs.length >= 3) {

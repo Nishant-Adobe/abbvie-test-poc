@@ -1,0 +1,139 @@
+/* stylelint-disable */
+
+/* Section Navigation — sticky horizontal anchor link bar */
+/* Original: .abbv-section-navigation.abbv-sticky */
+.tabs-navigation {
+  display: inline-block;
+}
+
+main > .section.hero-pharma-container {
+  position: relative;
+  margin-bottom: 0;
+}
+
+main > .section.tabs-navigation-container {
+  position: sticky;
+  top: var(--tabs-sticky-top, 160px);
+  z-index: 100 !important;
+  background-color: transparent;
+  padding: 0;
+  margin: 0;
+  margin-top: -80px;
+  margin-bottom: 0;
+  display: flex;
+  justify-content: center;
+  transition: background-color 0.3s;
+}
+
+main > .section.tabs-navigation-container.tabs-stuck {
+  background-color: var(--linz-dark-purple, #422e83);
+  margin-top: 0;
+  padding: 8px 0;
+  border-radius: 0;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+main > .section.tabs-navigation-container.tabs-stuck .abbv-section-navigation {
+  border-radius: 0;
+  background-color: transparent;
+}
+
+main > .section.tabs-navigation-container.tabs-stuck .section-navigation-list {
+  height: 50px !important;
+}
+
+.section.tabs-navigation-container > div {
+  max-width: none;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+}
+
+/* Navigation container — pill shape overlaid on hero */
+.tabs-navigation .abbv-section-navigation {
+  background-color: var(--linz-dark-purple, #422e83);
+  border-radius: 32px;
+  position: relative;
+  display: inline-block;
+}
+
+.tabs-navigation .abbv-section-navigation-container {
+  margin: 0;
+  padding: 0 8px;
+}
+
+/* Navigation list — override framework accordion collapse */
+.tabs-navigation .section-navigation-list,
+.abbv-section-navigation .abbv-section-navigation-container .section-navigation-list {
+  overflow: visible !important;
+  height: 56px !important;
+  position: static !important;
+  display: flex !important;
+  justify-content: center;
+  align-items: center;
+  gap: 0;
+  margin: 0 !important;
+  padding: 0 !important;
+  list-style: none !important;
+  background: transparent !important;
+  width: auto !important;
+  text-align: center;
+}
+
+/* Navigation items */
+.tabs-navigation .section-navigation-list li,
+.abbv-section-navigation .abbv-section-navigation-container .section-navigation-list li {
+  display: flex !important;
+  align-items: center;
+  height: 100%;
+  width: auto !important;
+  border: none !important;
+  padding: 0 !important;
+}
+
+/* Hide mobile menu controls */
+.tabs-navigation .current-pos,
+.tabs-navigation .abbv-button-plain {
+  display: none !important;
+}
+
+/* Navigation links — override EDS button styles */
+.tabs-navigation .section-navigation-list a,
+.tabs-navigation .section-navigation-list a.button:any-link {
+  all: unset;
+  color: var(--linz-white, #fff) !important;
+  font-family: Lato, sans-serif;
+  font-size: 16px;
+  font-weight: 800;
+  line-height: 56px;
+  padding: 0 32px;
+  text-decoration: none;
+  white-space: nowrap;
+  border-bottom: 3px solid transparent;
+  transition: border-color 0.3s;
+  display: block;
+  height: 56px;
+  box-sizing: border-box;
+  cursor: pointer;
+}
+
+.tabs-navigation .section-navigation-list a:hover {
+  border-bottom-color: var(--linz-orange, #faa633);
+  text-decoration: none;
+}
+
+/* Mobile */
+@media (max-width: 985px) {
+  .tabs-navigation .section-navigation-list {
+    justify-content: flex-start;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .tabs-navigation .section-navigation-list a {
+    font-size: 13px;
+    padding: 0 16px;
+  }
+}
+
+/* (old fixed-position sticky removed — now using CSS position:sticky above) */

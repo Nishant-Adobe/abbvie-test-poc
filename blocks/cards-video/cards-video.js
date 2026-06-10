@@ -10,10 +10,8 @@ function loadBrightcoveScript(account, player) {
 }
 
 export default function decorate(block) {
-  // Read Brightcove config from block metadata (data attributes on the block div)
-  const meta = (name) => document.querySelector(`meta[name="${name}"]`)?.content || '';
-  const bcAccount = block.getAttribute('data-bc-account') || meta('bc-account');
-  const bcPlayer = block.getAttribute('data-bc-player') || meta('bc-player');
+  const bcAccount = '1029485116001';
+  const bcPlayer = 'Mcp9TXMkPT';
 
   const container = document.createElement('div');
   container.className = 'abbv-flex-container-v2 flexbox-column-mobile flexbox-cards c-dark-purple flexbox-video-cards home-flexbox-column';
@@ -29,60 +27,44 @@ export default function decorate(block) {
     const flexItem = document.createElement('div');
     flexItem.className = 'abbv-flex-item-v2 background-light-purple rounded-corners';
 
-    // Extract video ID from authored content
-    // Convention: author puts video ID in the image alt text or as a data attribute
-    // Fallback: extract from Brightcove poster URL pattern
     const img = imageCell?.querySelector('img');
-    let videoId = '';
+    const posterSrc = img?.src || '';
 
-    // Check if alt text contains a video ID (numeric string)
-    const altText = img?.getAttribute('alt') || '';
-    if (/^\d{10,}$/.test(altText.trim())) {
-      videoId = altText.trim();
-    }
-
-    // Check for data-video-id on the image or cell
-    if (!videoId) {
-      videoId = imageCell?.getAttribute('data-video-id')
-        || img?.getAttribute('data-video-id')
-        || '';
-    }
-
-    // Extract from Brightcove poster URL pattern (e.g., /static/ACCOUNT_ID/...)
-    if (!videoId && img?.src) {
-      const bcMatch = img.src.match(/\/static\/(\d+)\//);
-      if (bcMatch) {
-        videoId = ''; // Account ID not video ID from poster URL
-      }
-    }
-
-    // Video player section
+    // Video player section with poster + play button overlay
     const videoPlayer = document.createElement('div');
     videoPlayer.className = 'abbv-video-player home-video-cards';
+    videoPlayer.setAttribute('data-account', bcAccount);
+    videoPlayer.setAttribute('data-player', bcPlayer);
 
     const videoWrapper = document.createElement('div');
     videoWrapper.className = 'abbv-video-wrapper';
 
-    if (videoId) {
-      const videoEl = document.createElement('video-js');
-      videoEl.setAttribute('data-account', bcAccount);
-      videoEl.setAttribute('data-player', bcPlayer);
-      videoEl.setAttribute('data-embed', 'default');
-      videoEl.setAttribute('data-video-id', videoId);
-      videoEl.setAttribute('controls', '');
-      videoEl.className = 'vjs-fluid';
-      videoWrapper.appendChild(videoEl);
-    } else if (img) {
-      // Fallback: show poster image
-      const posterDiv = document.createElement('div');
-      posterDiv.className = 'vjs-poster';
+    // Poster image
+    const posterDiv = document.createElement('div');
+    posterDiv.className = 'vjs-poster';
+    if (posterSrc) {
       const posterImg = document.createElement('img');
-      const isExternal = img.src.startsWith('http')
-        && !img.src.includes(window.location.hostname);
-      posterImg.src = isExternal ? img.src : img.src;
-      posterImg.alt = img.alt || '';
+      posterImg.src = posterSrc;
+      posterImg.alt = '';
+      posterImg.loading = 'lazy';
       posterDiv.appendChild(posterImg);
-      videoWrapper.appendChild(posterDiv);
+    }
+    videoWrapper.appendChild(posterDiv);
+
+    // Play button overlay
+    const playBtn = document.createElement('button');
+    playBtn.className = 'vjs-big-play-button';
+    playBtn.setAttribute('aria-label', 'Play Video');
+    playBtn.innerHTML = '<span class="vjs-icon-placeholder"></span><span class="vjs-control-text">Play Video</span>';
+    videoWrapper.appendChild(playBtn);
+
+    // Video title overlay label
+    const h3 = textCell?.querySelector('h3');
+    if (h3) {
+      const titleOverlay = document.createElement('div');
+      titleOverlay.className = 'vjs-dock-title';
+      titleOverlay.textContent = h3.textContent;
+      videoWrapper.appendChild(titleOverlay);
     }
 
     videoPlayer.appendChild(videoWrapper);
@@ -93,7 +75,6 @@ export default function decorate(block) {
     cardContent.className = 'abbv-video-card-content';
 
     if (textCell) {
-      const h3 = textCell.querySelector('h3');
       if (h3) cardContent.appendChild(h3.cloneNode(true));
 
       textCell.querySelectorAll(':scope > p').forEach((p) => {
@@ -120,13 +101,48 @@ export default function decorate(block) {
     flexItem.appendChild(cardContent);
     flexboxItem.appendChild(flexItem);
     container.appendChild(flexboxItem);
+
+    // Extract video ID from poster URL path segment or img alt
+    const videoId = img?.alt?.trim() || '';
+    if (!videoId || !/^\d{10,}$/.test(videoId)) {
+      const match = posterSrc.match(/\/static\/\d+\/([a-f0-9-]+)\//);
+      if (match) {
+        videoPlayer.setAttribute('data-poster-id', match[1]);
+      }
+    }
+    videoPlayer.setAttribute('data-video-id', videoId);
+
+    // Click-to-play: load Brightcove on play button click
+    playBtn.addEventListener('click', () => {
+      const vid = videoPlayer.getAttribute('data-video-id');
+      loadBrightcoveScript(bcAccount, bcPlayer).then(() => {
+        const videoEl = document.createElement('video-js');
+        videoEl.setAttribute('data-account', bcAccount);
+        videoEl.setAttribute('data-player', bcPlayer);
+        videoEl.setAttribute('data-embed', 'default');
+        if (vid && /^\d{10,}$/.test(vid)) {
+          videoEl.setAttribute('data-video-id', vid);
+        }
+        videoEl.setAttribute('controls', '');
+        videoEl.setAttribute('autoplay', '');
+        videoEl.className = 'vjs-fluid';
+        videoWrapper.innerHTML = '';
+        videoWrapper.appendChild(videoEl);
+        if (window.bc) {
+          window.bc(videoEl);
+        } else {
+          const checkBc = setInterval(() => {
+            if (window.bc) {
+              clearInterval(checkBc);
+              window.bc(videoEl);
+            }
+          }, 200);
+          setTimeout(() => clearInterval(checkBc), 10000);
+        }
+      });
+    });
   });
 
   block.textContent = '';
   block.appendChild(container);
-
-  // Load Brightcove SDK if any videos exist
-  if (container.querySelector('video-js')) {
-    loadBrightcoveScript(bcAccount, bcPlayer);
-  }
 }
