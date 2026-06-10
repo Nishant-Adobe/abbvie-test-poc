@@ -14,8 +14,9 @@ export default async function decorate(block) {
   if (footerMeta) {
     footerPath = new URL(footerMeta, window.location).pathname;
   } else {
-    const dir = window.location.pathname.replace(/\/$/, '');
-    footerPath = `${dir}/footer`;
+    const pathParts = window.location.pathname.replace(/\/$/, '').split('/');
+    const siteRoot = pathParts.slice(0, 3).join('/');
+    footerPath = `${siteRoot}/footer`;
   }
   const fragment = await fetchFragment(`${footerPath}.plain.html`);
   if (!fragment) return;

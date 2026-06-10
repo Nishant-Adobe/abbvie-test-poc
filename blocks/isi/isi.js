@@ -66,7 +66,7 @@ export default async function decorate(block) {
     toggleBtn.setAttribute('aria-label', expanded ? 'Collapse Safety Information' : 'Expand Safety Information');
   });
 
-  // Hide ISI sticky bar when user scrolls to bottom (near footer or ISI section itself)
+  // Hide ISI sticky bar when user scrolls to inline ISI content, footer, or page bottom
   function checkVisibility() {
     const isiSectionEl = block.closest('.section');
     const footer = document.querySelector('footer');
@@ -74,7 +74,26 @@ export default async function decorate(block) {
     const pageHeight = document.documentElement.scrollHeight;
     const scrollPos = window.scrollY + windowHeight;
 
-    // Hide if ISI section is in viewport
+    // Find inline ISI content section (has USES h3 but is NOT the isi-container)
+    const allSections = document.querySelectorAll('main > .section');
+    let inlineIsi = null;
+    allSections.forEach((s) => {
+      const h3 = s.querySelector('h3');
+      if (h3 && h3.textContent === 'USES' && !s.classList.contains('isi-container')) {
+        inlineIsi = s;
+      }
+    });
+
+    // Hide if inline ISI section is in viewport
+    if (inlineIsi) {
+      const inlineTop = inlineIsi.getBoundingClientRect().top;
+      if (inlineTop < windowHeight) {
+        isiBar.style.display = 'none';
+        return;
+      }
+    }
+
+    // Hide if ISI block section is in viewport
     if (isiSectionEl) {
       const isiTop = isiSectionEl.getBoundingClientRect().top;
       if (isiTop < windowHeight) {

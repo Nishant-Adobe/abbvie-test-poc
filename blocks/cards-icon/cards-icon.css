@@ -18,8 +18,8 @@
 /* Individual card */
 .cards-icon > ul > li {
   display: flex;
-  align-items: flex-start;
-  gap: 20px;
+  align-items: center;
+  gap: 33px;
   background-color: var(--linz-off-white, #f4f6fb);
   border-radius: var(--linz-rounded-corner, 16px);
   border: none;
@@ -57,13 +57,13 @@
 
 /* Icon image */
 .cards-icon .cards-icon-card-image {
-  flex: 0 0 60px;
+  flex: 0 0 105px;
   line-height: 0;
 }
 
 .cards-icon .cards-icon-card-image img {
-  width: 60px;
-  height: 60px;
+  width: 105px;
+  height: 105px;
   object-fit: contain;
 }
 

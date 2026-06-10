@@ -95,16 +95,20 @@ export default function decorate(block) {
   pDesc.className = 'mb15-m tl-m';
   pDesc.textContent = description;
 
-  // CTA button
-  const ctaButton = document.createElement('a');
-  ctaButton.className = 'abbv-button-primary abbv-icon-keyboard_arrow_right i-b abbv-image-text-link abbv-stretched-link';
-  ctaButton.setAttribute('href', ctaHref);
-  ctaButton.setAttribute('title', ctaTitle);
-  ctaButton.setAttribute('target', '_self');
-  ctaButton.textContent = ctaText;
+  // CTA button (only if link text and href exist)
+  let ctaButton = null;
+  if (ctaText && ctaHref) {
+    ctaButton = document.createElement('a');
+    ctaButton.className = 'abbv-button-primary abbv-icon-keyboard_arrow_right i-b abbv-image-text-link abbv-stretched-link';
+    ctaButton.setAttribute('href', ctaHref);
+    ctaButton.setAttribute('title', ctaTitle);
+    ctaButton.setAttribute('target', '_self');
+    ctaButton.textContent = ctaText;
+  }
 
   // Assemble the DOM tree
-  cardBody.append(pSubheading, newH1, pDesc, ctaButton);
+  cardBody.append(pSubheading, newH1, pDesc);
+  if (ctaButton) cardBody.appendChild(ctaButton);
   textDisplay.appendChild(cardBody);
   textContent.appendChild(textDisplay);
   textContentContainer.appendChild(textContent);

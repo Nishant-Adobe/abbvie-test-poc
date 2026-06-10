@@ -18,6 +18,7 @@
       "form",
       "hero",
       "image",
+      "isi",
       "quote",
       "search",
       "tabs",
@@ -34,7 +35,19 @@
     ]
   },
   {
+    "id": "cards-checklist",
+    "components": [
+      "card"
+    ]
+  },
+  {
     "id": "cards-feature",
+    "components": [
+      "card"
+    ]
+  },
+  {
+    "id": "cards-icon",
     "components": [
       "card"
     ]
@@ -61,6 +74,21 @@
     "id": "carousel",
     "components": [
       "carousel-item"
+    ]
+  },
+  {
+    "id": "columns-cta",
+    "components": [
+      "column"
+    ]
+  },
+  {
+    "id": "column",
+    "components": [
+      "text",
+      "image",
+      "button",
+      "title"
     ]
   },
   {
@@ -118,10 +146,20 @@
     ]
   },
   {
+    "id": "tabs-navigation",
+    "components": [
+      "tabs-navigation-item"
+    ]
+  },
+  {
     "id": "tabs",
     "components": [
       "tabs-item"
     ]
+  },
+  {
+    "id": "video-playlist",
+    "components": []
   },
   {
     "id": "video",

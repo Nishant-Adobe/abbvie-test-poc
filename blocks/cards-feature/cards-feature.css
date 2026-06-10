@@ -1,10 +1,242 @@
-/* Neutralize EDS block wrapper */
+/* Block: cards-feature
+ * Two feature cards side-by-side with alternating dark/light purple backgrounds,
+ * icon images overflowing above, and CTA buttons.
+ * The decorator creates original AbbVie framework DOM structure; framework CSS
+ * (linzess.css, linzess-global.css) provides most styling via utility classes.
+ * This file neutralizes EDS interference and fills any gaps.
+ */
+
+/* Neutralize EDS block wrapper — let inner framework container control layout */
 .cards-feature {
   display: contents;
+}
+
+/* Neutralize EDS wrapper constraint */
+.cards-feature-wrapper {
+  max-width: none !important;
+  padding: 0 !important;
 }
 
 /* Reset EDS default button/link styles within this block */
 main .cards-feature a.button:any-link,
 main .cards-feature .button-container {
   all: unset;
+}
+
+/* === Container layout (framework provides .abbv-flex-container-v2 flex) === */
+
+/* Extracted: display: flex; gap: 16px; margin-top: 110px */
+.cards-feature .abbv-flex-container-v2.flexbox-cards {
+  display: flex;
+  flex-direction: row;
+  gap: 16px;
+  justify-content: center;
+  padding: 0 16px;
+  box-sizing: border-box;
+}
+
+/* === Flex items (card wrappers) === */
+
+/* Extracted: flex: 1 1 0%; display: flex */
+.cards-feature .flexboxitem-v2 {
+  display: flex;
+  flex: 1 1 0%;
+}
+
+/* === Card inner === */
+
+/* Extracted: border-radius: 16px; padding: 0 32px 40px; text-align: center; width: 100% */
+.cards-feature .abbv-flex-item-v2 {
+  width: 100%;
+  padding: 0 32px 40px;
+  border-radius: var(--linz-rounded-corner);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Dark purple card background */
+
+/* Extracted: background-color: rgb(66, 46, 131) */
+.cards-feature .abbv-flex-item-v2.background-dark-purple {
+  background-color: var(--linz-dark-purple);
+}
+
+/* Light purple card background */
+
+/* Extracted: background-color: rgb(217, 215, 249) */
+.cards-feature .abbv-flex-item-v2.background-light-purple {
+  background-color: var(--linz-light-purple);
+}
+
+/* === Icon images === */
+
+/* Extracted: width: 105px; margin-top: -50px */
+.cards-feature .icon-image-card .abbv-image-content-container-v2 img {
+  width: 105px;
+  margin-top: -50px;
+  height: auto;
+  max-width: none;
+}
+
+/* === Text content === */
+
+/* Extracted: position: relative */
+.cards-feature .abbv-image-text-content-container-v2.abbv-image-text-out {
+  position: relative;
+  width: 100%;
+}
+
+/* Extracted: padding: 20px 0 */
+.cards-feature .abbv-image-text-display-v2 {
+  padding: 20px 0;
+}
+
+/* Stretched card body for vertical alignment */
+
+/* Extracted: flex: 1 1 auto; min-height: 1px */
+.cards-feature .abbv-stretched-card-body {
+  flex: 1 1 auto;
+  min-height: 1px;
+}
+
+/* === Heading text (.heading-2 class created by decorator) === */
+
+/* Extracted: font-size: 24px; font-weight: 700; line-height: normal; margin: 0 0 20px */
+.cards-feature .heading-2 {
+  font-size: 24px;
+  font-weight: 700;
+  font-family: var(--body-font-family);
+  line-height: normal;
+  margin: 0 0 20px;
+}
+
+/* Dark card: white heading text */
+
+/* Extracted: color: rgb(255, 255, 255) */
+.cards-feature .c-linz-white .heading-2 {
+  color: var(--linz-white);
+}
+
+/* Light card: dark purple heading text */
+.cards-feature .abbv-flex-item-v2.background-light-purple .heading-2 {
+  color: var(--linz-dark-purple);
+}
+
+/* === Body paragraph text === */
+
+/* Extracted: font-size: 16px (--body-font-size = .875rem); margin: 0 0 20px */
+.cards-feature .abbv-stretched-card-body p.mb0-m {
+  font-size: var(--body-font-size);
+  font-family: var(--body-font-family);
+  line-height: normal;
+  margin: 0 0 20px;
+}
+
+/* Dark card: white body text */
+
+/* Extracted: color: rgb(255, 255, 255) */
+.cards-feature .c-linz-white .abbv-stretched-card-body p {
+  color: var(--linz-white);
+}
+
+/* Light card: grey body text */
+
+/* Extracted: color: rgb(77, 77, 79) */
+.cards-feature .abbv-flex-item-v2.background-light-purple .abbv-stretched-card-body p {
+  color: var(--linz-grey);
+}
+
+/* === CTA buttons === */
+
+/* Common extracted styles: border-radius: 16px; padding: 16px 59px 16px 32px;
+   font-size: 14.4px; font-weight: 800; display: inline-block; border: 0 */
+.cards-feature .cta {
+  text-align: center;
+  margin-top: auto;
+}
+
+.cards-feature .cta a {
+  display: inline-block;
+  border: 0;
+  border-radius: var(--linz-rounded-corner);
+  padding: 16px 59px 16px 32px;
+  font-size: 14.4px;
+  font-weight: 800;
+  font-family: var(--body-font-family);
+  text-decoration: none;
+  text-align: center;
+  line-height: normal;
+  position: relative;
+  cursor: pointer;
+  transition: background 0.3s linear;
+}
+
+/* Secondary button (dark purple card): white bg, purple text */
+
+/* Extracted: background: rgb(255, 255, 255); color: rgb(66, 46, 131) */
+.cards-feature .cta a.abbv-button-secondary,
+.cards-feature .cta a.abbv-button-secondary:visited {
+  background-color: var(--linz-white);
+  color: var(--linz-dark-purple);
+}
+
+.cards-feature .cta a.abbv-button-secondary:hover {
+  background-color: var(--linz-light-purple);
+  color: var(--linz-dark-purple);
+}
+
+/* Primary button (light purple card): dark purple bg, white text */
+
+/* Extracted: background: rgb(66, 46, 131); color: rgb(255, 255, 255) */
+.cards-feature .cta a.abbv-button-primary,
+.cards-feature .cta a.abbv-button-primary:visited {
+  background-color: var(--linz-dark-purple);
+  color: var(--linz-white) !important;
+}
+
+.cards-feature .cta a.abbv-button-primary:hover {
+  background-color: var(--linz-off-white);
+  color: var(--linz-dark-purple) !important;
+}
+
+/* CTA arrow icon (::after pseudo-element) */
+.cards-feature .cta a.i-a::after {
+  content: "";
+  font-family: abbv-iconFont, sans-serif;
+  position: absolute;
+  right: 24px;
+  top: 50%;
+  margin-top: -5px;
+}
+
+/* === Responsive: mobile stack === */
+@media (width <= 899px) {
+  .cards-feature .abbv-flex-container-v2.flexbox-cards {
+    flex-direction: column;
+    gap: 80px;
+    padding: 0 16px;
+  }
+
+  .cards-feature .flexboxitem-v2 {
+    flex: 1 1 auto;
+  }
+
+  .cards-feature .abbv-flex-item-v2 {
+    padding: 0 16px 40px;
+  }
+
+  .cards-feature .icon-image-card .abbv-image-content-container-v2 img {
+    width: 96px;
+  }
+}
+
+@media (width >= 900px) {
+  .cards-feature .abbv-flex-container-v2.flexbox-cards {
+    max-width: 998px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0;
+  }
 }

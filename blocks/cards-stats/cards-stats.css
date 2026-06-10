@@ -1,25 +1,115 @@
-/* Neutralize EDS block wrapper */
+/* Block: cards-stats
+ * Three stat cards with overlapping circles and alternating backgrounds.
+ * Extracted from source computed styles at 1440px viewport.
+ */
+
+/* Neutralize EDS block wrapper — let inner framework classes control layout */
 .cards-stats {
   display: contents;
 }
 
-/* Stats-specific styles not in shared linzess.css */
+/* Container: flex row, equal-width cards, centered within section */
+.cards-stats .abbv-flex-container-v2 {
+  display: flex;
+  flex-direction: column;
+  margin: 80px auto 0;
+  padding: 0 20px;
+  max-width: 998px;
+}
+
+@media (width >= 900px) {
+  .cards-stats .abbv-flex-container-v2 {
+    flex-direction: row;
+    padding: 0;
+  }
+}
+
+/* Flex items — equal width thirds */
+.cards-stats .flexboxitem-v2 {
+  flex: 1 1 0%;
+  padding: 0 10px;
+  margin: 0;
+}
+
+/* Inner card boxes — shared styles */
+.cards-stats .abbv-flex-item-v2 {
+  padding: 5px 32px 0;
+  border-radius: 16px;
+  text-align: center;
+  margin-top: 68px; /* space for the circle overflow */
+}
+
+/* Alternating card backgrounds */
+.cards-stats .flexboxitem-v2:nth-child(odd) .abbv-flex-item-v2 {
+  background-color: var(--linz-light-purple, #d9d7f9);
+}
+
+.cards-stats .flexboxitem-v2:nth-child(even) .abbv-flex-item-v2 {
+  background-color: var(--linz-off-white, #f4f6fb);
+}
+
+/* Circle indicator — 136px diameter, overlaps top of card */
 .cards-stats .circle {
   width: 136px;
   height: 136px;
   border-radius: 50%;
-  margin: 0 auto 20px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  margin: -68px auto 0;
 }
 
+/* Alternating circle backgrounds (opposite of card) */
+.cards-stats .flexboxitem-v2:nth-child(odd) .circle {
+  background-color: var(--linz-off-white, #f4f6fb);
+}
+
+.cards-stats .flexboxitem-v2:nth-child(even) .circle {
+  background-color: var(--linz-light-purple, #d9d7f9);
+}
+
+/* Large stat numbers inside circles */
 .cards-stats .font-size-xl {
   font-size: 48px;
-  line-height: 1;
+  font-weight: 700;
+  line-height: normal;
+  color: var(--dark-color, #422e83);
+  font-family: var(--body-font-family, Lato, sans-serif);
 }
 
+/* Unit text in circles (e.g., "million") */
 .cards-stats .font-size-md {
-  font-size: 20px;
+  font-size: 24px;
+  line-height: normal;
+  color: var(--dark-color, #422e83);
+  font-family: var(--body-font-family, Lato, sans-serif);
+}
+
+/* Rich text container */
+.cards-stats .abbv-rich-text {
+  color: var(--dark-color, #422e83);
+  font-family: var(--body-font-family, Lato, sans-serif);
+  text-align: center;
+}
+
+/* Description paragraphs below circles */
+.cards-stats .abbv-rich-text p:not(.circle) {
+  font-size: 16px;
+  font-weight: 700;
+  line-height: normal;
+  color: var(--dark-color, #422e83);
+  margin: 16px 0;
+  font-family: var(--body-font-family, Lato, sans-serif);
+}
+
+/* Mobile: stack cards vertically with spacing */
+@media (width < 900px) {
+  .cards-stats .flexboxitem-v2 {
+    margin-bottom: 40px;
+  }
+
+  .cards-stats .abbv-flex-item-v2 {
+    padding: 5px 20px 16px;
+  }
 }

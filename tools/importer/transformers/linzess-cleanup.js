@@ -3,56 +3,69 @@
 
 /**
  * Transformer: Linzess site-wide cleanup.
- * Removes non-authorable content (header, footer, ISI, cookie consent, modals, safety bar, tracking).
- * All selectors validated against captured DOM of https://www.linzess.com/
+ * Removes non-authorable content (header, footer, ISI, cookie consent, modals, safety bar,
+ * back-to-top, dimmer overlay, tracking elements).
+ * All selectors validated against captured DOM of https://www.linzess.com/why-linzess
  */
 const H = { before: 'beforeTransform', after: 'afterTransform' };
 
 export default function transform(hookName, element, payload) {
   if (hookName === H.before) {
-    // Remove OneTrust cookie consent banner (line 3416 in captured DOM)
+    // Remove OneTrust cookie consent banner
     WebImporter.DOMUtils.remove(element, [
       '#onetrust-consent-sdk',
     ]);
 
     // Remove modals that overlay content and may interfere with parsing
-    // Found at lines 2143, 2192, 2325, 2404, 2449, 2494, 2935, 3062 in captured DOM
+    // (line 2727+: <div class="modal parbase"> wrapping <div class="abbv-modal ...">)
     WebImporter.DOMUtils.remove(element, [
-      '.abbv-modal',
+      '.modal.parbase',
     ]);
 
-    // Remove reCAPTCHA badge (line 3405 in captured DOM)
+    // Remove reCAPTCHA badge
     WebImporter.DOMUtils.remove(element, [
       '.grecaptcha-badge',
     ]);
   }
 
   if (hookName === H.after) {
-    // Remove header (line 17 in captured DOM: <header class="abbv-header-v2 linzess-header ...">)
-    WebImporter.DOMUtils.remove(element, ['header.abbv-header-v2']);
+    // Remove header wrapper (line 19: <div class="header-v2 parbase">)
+    WebImporter.DOMUtils.remove(element, ['.header-v2.parbase']);
 
-    // Remove top promotional banner (line 10: <div class="abbv-rich-text linzess-top-banner ...">)
+    // Remove top promotional banner (line 13: <div class="abbv-rich-text linzess-top-banner ...">)
     WebImporter.DOMUtils.remove(element, ['.linzess-top-banner']);
 
-    // Remove sticky anchor (line 226: <div class="abbv-sticky-anchor">)
+    // Remove sticky anchors (lines 229, 265: <div class="abbv-sticky-anchor">)
     WebImporter.DOMUtils.remove(element, ['.abbv-sticky-anchor']);
 
-    // Remove footer (line 1946: <footer class="abbv-footer linzess-footer">)
+    // Remove footer (line 2532: <footer class="abbv-footer linzess-footer">)
     WebImporter.DOMUtils.remove(element, ['footer.abbv-footer']);
 
-    // Remove ISI section - inline use/ISI (line 1864: <div class="abbv-inline-use-isi">)
+    // Remove footer parbase wrapper (line 2530: <div class="footer parbase">)
+    WebImporter.DOMUtils.remove(element, ['.footer.parbase']);
+
+    // Remove ISI section - inline use/ISI (line 2447: <div class="abbv-inline-use-isi">)
     WebImporter.DOMUtils.remove(element, ['.abbv-inline-use-isi']);
 
-    // Remove inline misc ISI (line 1940: <div class="abbv-inline-miscisi">)
+    // Remove inline safety information (line 2463: <div class="abbv-inline-safety ">)
+    WebImporter.DOMUtils.remove(element, ['.abbv-inline-safety']);
+
+    // Remove inline misc ISI (line 2523: <div class="abbv-inline-miscisi">)
     WebImporter.DOMUtils.remove(element, ['.abbv-inline-miscisi']);
 
-    // Remove safety bar / sticky ISI (line 3209: <div class="safety-bar parbase">)
+    // Remove safety bar / sticky ISI (line 3795: <div class="safety-bar parbase">)
     WebImporter.DOMUtils.remove(element, ['.safety-bar.parbase']);
 
-    // Remove empty AEM paragraph containers (lines 3, 229, 2126, 3204, 3394)
+    // Remove dimmer overlay (line 2714: <div class="abbv-dimmer">)
+    WebImporter.DOMUtils.remove(element, ['.abbv-dimmer']);
+
+    // Remove back-to-top button (line 2717: <button class="abbv-back-to-top ...">)
+    WebImporter.DOMUtils.remove(element, ['.abbv-back-to-top']);
+
+    // Remove empty AEM paragraph containers (lines 3, 9, 2724)
     WebImporter.DOMUtils.remove(element, ['.newpar.new.section']);
 
-    // Remove inherited paragraph containers (lines 5, 231, 3206, 3396)
+    // Remove inherited paragraph containers (lines 5, 11, 2726)
     WebImporter.DOMUtils.remove(element, ['.par.iparys_inherited']);
 
     // Remove iframes (tracking pixels, reCAPTCHA frames)
@@ -61,17 +74,34 @@ export default function transform(hookName, element, payload) {
     // Remove link elements and noscript
     WebImporter.DOMUtils.remove(element, ['link', 'noscript']);
 
-    // Remove SVG gradient definitions (line 3398 - inline SVG as data URI img)
+    // Remove SVG gradient definitions (inline SVG as data URI img)
     const svgImgs = element.querySelectorAll('img[src^="data:image/svg+xml"]');
     svgImgs.forEach((img) => img.remove());
 
-    // Remove social copy input (line 3400: <input class="abbv-social-copy">)
+    // Remove social copy input (<input class="abbv-social-copy">)
     WebImporter.DOMUtils.remove(element, ['.abbv-social-copy']);
 
-    // Remove textarea elements (g-recaptcha-response, line 3412)
+    // Remove textarea elements (g-recaptcha-response)
     WebImporter.DOMUtils.remove(element, ['textarea']);
 
-    // Remove footer parbase wrapper (line 1944: <div class="footer parbase">)
-    WebImporter.DOMUtils.remove(element, ['.footer.parbase']);
+    // Remove Brightcove video player internal chrome elements
+    // Keep only the video-js element or poster, strip all player controls/UI
+    const videoPlayers = element.querySelectorAll('.vjs-control-bar, .vjs-loading-spinner, .vjs-text-track-display, .vjs-modal-dialog, .vjs-error-display, .vjs-dock-text, .vjs-poster[tabindex]');
+    videoPlayers.forEach((el) => el.remove());
+
+    // Remove all elements with class containing 'vjs-' except the main video-js container and poster
+    const vjsElements = element.querySelectorAll('[class*="vjs-"]:not(video-js):not(.vjs-poster):not(.vjs-tech)');
+    vjsElements.forEach((el) => {
+      // Only remove if it's inside a video-js or abbv-video-player container
+      if (el.closest('video-js') || el.closest('.abbv-video-player')) {
+        // Don't remove the poster or the main container
+        if (!el.classList.contains('vjs-poster') && el.tagName !== 'VIDEO') {
+          el.remove();
+        }
+      }
+    });
+
+    // Remove script tags injected by video player
+    WebImporter.DOMUtils.remove(element, ['script[src*="vjs"], script[src*="brightcove"], script[src*="videojs"]']);
   }
 }
