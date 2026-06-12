@@ -35,7 +35,7 @@
 
 ## 1. Executive Summary
 
-This document defines the end-to-end solution architecture for migrating AbbVie's AEM Sites platform to Adobe Edge Delivery Services (EDS). The migration covers **151 total sites** (53 Corporate + 98 Commercial), approximately **6,567 pages**, and the development of **164 EDS blocks**.
+This document defines the end-to-end solution architecture for migrating AbbVie's AEM Sites platform to Adobe Edge Delivery Services (EDS). The migration covers **171 total sites** (53 Corporate + 118 Commercial), approximately **6,567 pages**, and the development of **164 EDS blocks**.
 
 The EDS platform replaces the traditional AEM publish-tier delivery model with a CDN-first architecture where content is served directly from the edge. Pages are authored in the Universal Editor (xWalk), published to the EDS content bus, and delivered via `aem.live` (production) and `aem.page` (preview) CDN endpoints.
 
@@ -51,7 +51,7 @@ The repository (`abbvie-nextgen-eds`) is a **multi-brand, multi-locale monorepo*
 
 | Parameter | Corporate | Commercial |
 |---|---|---|
-| Sites in Scope | Up to 53 sites (abbvie.com + 45 regional + 7 others) | Up to 98 sites |
+| Sites in Scope | Up to 53 sites (abbvie.com + 45 regional + 7 others) | Up to 118 sites |
 | Total Pages | ~3,814 pages | ~2,753 pages |
 | Duration | ~6 to 7 months | ~18 weeks (parallel) |
 | EDS Blocks | Up to 94 (66 Small, 23 Medium, 5 Complex) | Up to 70 (60 Small, 8 Medium, 2 Complex) |
