@@ -352,7 +352,7 @@ var CustomImportScript = (() => {
     element.replaceWith(block);
   }
 
-  // tools/importer/parsers/columns-promo.js
+  // tools/importer/parsers/promo-tout.js
   function parse8(element, { document }) {
     const columns = element.querySelectorAll(":scope .abbv-col");
     const cells = [];
@@ -379,7 +379,10 @@ var CustomImportScript = (() => {
       ctas.forEach((cta) => {
         cell2.push(cta);
       });
-      cells.push([cell1, cell2]);
+      cell1.unshift(document.createComment(" field:image "));
+      cell2.unshift(document.createComment(" field:text "));
+      cells.push([cell1]);
+      cells.push([cell2]);
     } else {
       const image = element.querySelector("picture") || element.querySelector("img");
       const heading = element.querySelector('.heading-2, .heading-3, h2, h3, [class*="heading"]');
@@ -395,9 +398,12 @@ var CustomImportScript = (() => {
       ctas.forEach((cta) => {
         cell2.push(cta);
       });
-      cells.push([cell1, cell2]);
+      cell1.unshift(document.createComment(" field:image "));
+      cell2.unshift(document.createComment(" field:text "));
+      cells.push([cell1]);
+      cells.push([cell2]);
     }
-    const block = WebImporter.Blocks.createBlock(document, { name: "columns-promo", cells });
+    const block = WebImporter.Blocks.createBlock(document, { name: "promo-tout", cells });
     element.replaceWith(block);
   }
 
@@ -523,7 +529,7 @@ var CustomImportScript = (() => {
     "cards-video": parse5,
     "video-playlist": parse6,
     "video-single": parse7,
-    "columns-promo": parse8,
+    "promo-tout": parse8,
     "columns-cta": parse9
   };
   var transformers = [
@@ -576,7 +582,7 @@ var CustomImportScript = (() => {
         instances: [".abbv-flex-container-v2.flexbox-video-cards.flexbox-video-cards--single"]
       },
       {
-        name: "columns-promo",
+        name: "promo-tout",
         instances: [".abbv-row-container.savings-card-tout"]
       },
       {
@@ -634,7 +640,7 @@ var CustomImportScript = (() => {
         name: "Patient Experiences",
         selector: ".abbv-container.background-white.background-white-arc.text-align-center",
         style: "white",
-        blocks: ["video-playlist", "columns-promo"],
+        blocks: ["video-playlist", "promo-tout"],
         defaultContent: [".abbv-rich-text:has(.eyebrow)", ".abbv-rich-text.footnote"]
       },
       {
