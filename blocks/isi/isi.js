@@ -23,8 +23,32 @@ export default async function decorate(block) {
 
   const sections = [...fragment.children];
   const isiSection = sections[0];
-  const usesDiv = isiSection?.querySelector(':scope > div:first-child');
-  const riskDiv = isiSection?.querySelector(':scope > div:last-child');
+  // The original fragment had two child <div>s (uses, risk). The EDS
+  // .plain.html pipeline flattens them into a single <div> with the USES and
+  // IMPORTANT RISK INFORMATION content as sibling elements split by <h3>s.
+  // Build uses/risk HTML resiliently: prefer the original two-div structure,
+  // otherwise split the flattened content at the second <h3>.
+  let usesHtml = '';
+  let riskHtml = '';
+  const childDivs = isiSection ? [...isiSection.querySelectorAll(':scope > div')] : [];
+  if (childDivs.length >= 2) {
+    usesHtml = childDivs[0].innerHTML;
+    riskHtml = childDivs[childDivs.length - 1].innerHTML;
+  } else {
+    // Flattened: walk children, switch buckets at the "IMPORTANT RISK" heading.
+    const container = childDivs[0] || isiSection;
+    const nodes = container ? [...container.children] : [];
+    let inRisk = false;
+    nodes.forEach((el) => {
+      const isRiskHeading = el.tagName === 'H3' && /important risk/i.test(el.textContent);
+      if (isRiskHeading) inRisk = true;
+      if (inRisk) riskHtml += el.outerHTML;
+      else usesHtml += el.outerHTML;
+    });
+  }
+  // Back-compat objects so the rest of the decorator can stay unchanged.
+  const usesDiv = usesHtml ? { innerHTML: usesHtml } : null;
+  const riskDiv = riskHtml ? { innerHTML: riskHtml } : null;
 
   // Build ISI sticky bar DOM matching original
   const isiBar = document.createElement('div');
