@@ -95,18 +95,40 @@ export default async function decorate(block) {
     const logosUl = document.createElement('ul');
     logosUl.className = 'abbv-footer-logos';
     const logoParagraphs = logosSection.querySelectorAll('p');
+    // The .plain.html pipeline strips the authored <img> (code-repo assets),
+    // so a logo paragraph arrives as a bare <a>. Restore the brand logo from
+    // the code repo by matching the link href.
+    const base = window.hlx?.codeBasePath || '';
+    // Brand logos in source order (abbvie, then ironwood). The .plain.html
+    // pipeline strips the <img>, so restore by href domain, then by order.
+    const brandLogos = [
+      { match: 'abbvie', src: `${base}/icons/abbvie-logo.png`, alt: 'Abbvie logo' },
+      { match: 'ironwood', src: `${base}/icons/ironwood-logo.png`, alt: 'Ironwood logo' },
+    ];
+    let logoOrder = 0;
     [...logoParagraphs].forEach((p) => {
       const li = document.createElement('li');
       const a = p.querySelector('a');
       const img = p.querySelector('img');
-      if (a && img) {
+      if (a) {
+        const href = a.getAttribute('href') || '';
         const newA = document.createElement('a');
-        newA.href = a.getAttribute('href');
+        newA.href = href;
         const newImg = document.createElement('img');
-        newImg.alt = img.getAttribute('alt') || '';
-        newImg.src = img.getAttribute('src');
+        if (img) {
+          newImg.alt = img.getAttribute('alt') || '';
+          newImg.src = img.getAttribute('src');
+        } else {
+          // Match by href domain; if it can't be matched (e.g. Ironwood's "#"),
+          // fall back to source order.
+          const fallback = brandLogos.find((l) => href.includes(l.match))
+            || brandLogos[Math.min(logoOrder, brandLogos.length - 1)];
+          newImg.src = fallback.src;
+          newImg.alt = fallback.alt;
+        }
         newA.appendChild(newImg);
         li.appendChild(newA);
+        logoOrder += 1;
       } else {
         li.className = 'abbv-footer-copyright';
         li.innerHTML = p.innerHTML;

@@ -21,16 +21,18 @@ export default async function decorate(block) {
   const eyebrowSection = sections[1];
   const utilitySection = sections[2];
 
-  // Parse authored content
-  const navDivs = [...navSection.querySelectorAll(':scope > div')];
-  const logoDiv = navDivs[0];
-  const linksDiv = navDivs[1];
-  const ctaDiv = navDivs[2];
-
-  const logoImg = logoDiv?.querySelector('img');
-  const logoHref = logoDiv?.querySelector('a')?.getAttribute('href') || '/';
-  const navItems = linksDiv?.querySelector('ul');
-  const ctaLink = ctaDiv?.querySelector('a');
+  // Parse authored content. The EDS .plain.html pipeline flattens the inner
+  // <div> wrappers and STRIPS the logo <img> (code-repo asset, not a managed
+  // content asset), so query the navSection directly rather than by div index,
+  // and supply the brand logo from the code repo.
+  const logoImg = navSection.querySelector('img');
+  const logoLink = navSection.querySelector('a[href="/"], a[href]');
+  const logoHref = logoLink?.getAttribute('href') || '/';
+  // The primary nav is the first top-level <ul> in the nav section.
+  const navItems = navSection.querySelector(':scope > ul') || navSection.querySelector('ul');
+  // Optional CTA: a standalone link that is not inside the nav <ul>.
+  const ctaLink = [...navSection.querySelectorAll(':scope > p > a, :scope > a')]
+    .find((a) => a.getAttribute('href') !== '/');
 
   const eyebrowText = eyebrowSection?.querySelector('p')?.textContent || '';
   const eyebrowLink = eyebrowSection?.querySelectorAll('p')?.[1]?.querySelector('a');
@@ -112,15 +114,15 @@ export default async function decorate(block) {
   left.className = 'abbv-header-v2-left';
   const logoA = document.createElement('a');
   logoA.href = logoHref;
-  if (logoImg) {
-    const img = document.createElement('img');
-    img.src = logoImg.getAttribute('src');
-    img.alt = logoImg.getAttribute('alt') || 'LINZESS logo';
-    img.title = 'Linzess logo';
-    img.width = 253;
-    img.height = 126;
-    logoA.appendChild(img);
-  }
+  const img = document.createElement('img');
+  // Fall back to the brand logo in the code repo: the .plain.html pipeline
+  // strips the authored <img> from the nav fragment.
+  img.src = logoImg?.getAttribute('src') || `${window.hlx?.codeBasePath || ''}/icons/linzess-logo-nav.png`;
+  img.alt = logoImg?.getAttribute('alt') || 'LINZESS logo';
+  img.title = 'Linzess logo';
+  img.width = 253;
+  img.height = 126;
+  logoA.appendChild(img);
   left.appendChild(logoA);
   content.appendChild(left);
 
@@ -156,7 +158,9 @@ export default async function decorate(block) {
 
   if (navItems) {
     [...navItems.children].forEach((li) => {
-      const topLink = li.querySelector(':scope > a');
+      // The pipeline may wrap the top link in a <p> (<li><p><a></p><ul>),
+      // so match a direct <a> or one inside a direct <p>.
+      const topLink = li.querySelector(':scope > a, :scope > p > a');
       const subUl = li.querySelector(':scope > ul');
 
       const newLi = document.createElement('li');
