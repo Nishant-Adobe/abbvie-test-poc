@@ -27,8 +27,35 @@ export default function decorate(block) {
     }
   });
 
+  // "JUMP TO:" dropdown toggle bar
+  const currentPos = document.createElement('div');
+  currentPos.className = 'current-pos';
+  const firstLink = ul.querySelector('a');
+  currentPos.innerHTML = '<span class="jump-label">JUMP TO:</span>'
+    + ` <span class="jump-text">${firstLink?.textContent || ''}`
+    + '</span>'
+    + '<button class="abbv-button-plain"'
+    + ' aria-label="Toggle navigation"></button>';
+
+  container.appendChild(currentPos);
   container.appendChild(ul);
   nav.appendChild(container);
+
+  // Toggle dropdown on click
+  currentPos.addEventListener('click', () => {
+    ul.classList.toggle('abbv-active');
+    currentPos.classList.toggle('abbv-active');
+  });
+
+  // Update "JUMP TO" text on link click
+  ul.querySelectorAll('a').forEach((a) => {
+    a.addEventListener('click', () => {
+      const jumpText = currentPos.querySelector('.jump-text');
+      if (jumpText) jumpText.textContent = a.textContent;
+      ul.classList.remove('abbv-active');
+      currentPos.classList.remove('abbv-active');
+    });
+  });
 
   block.textContent = '';
   block.appendChild(nav);
@@ -76,18 +103,23 @@ export default function decorate(block) {
   if (!section) return;
 
   const updateStickyTop = () => {
+    // Only a fixed/sticky header occupies viewport space the tab bar must clear.
+    // A relative (scroll-away) header does not, so we leave the CSS default in place.
     const fixedHeader = document.querySelector('.abbv-header-v2');
     if (fixedHeader) {
-      const rect = fixedHeader.getBoundingClientRect();
-      const bottom = Math.max(0, rect.bottom);
-      section.style.setProperty(
-        '--tabs-sticky-top',
-        `${bottom}px`,
-      );
+      const pos = getComputedStyle(fixedHeader).position;
+      if (pos === 'fixed' || pos === 'sticky') {
+        // Park the bar at header height + half the tab bar's own height so the
+        // bar sits fully visible just below the header.
+        const tabHeight = block.offsetHeight || section.offsetHeight || 0;
+        const stickyTop = Math.round(fixedHeader.offsetHeight + tabHeight / 2);
+        section.style.setProperty('--tabs-sticky-top', `${stickyTop}px`);
+      } else {
+        section.style.removeProperty('--tabs-sticky-top');
+      }
     }
   };
 
-  window.addEventListener('scroll', updateStickyTop);
   window.addEventListener('resize', updateStickyTop);
   updateStickyTop();
 }

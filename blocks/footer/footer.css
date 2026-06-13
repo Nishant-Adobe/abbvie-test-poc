@@ -12,6 +12,10 @@ footer {
   padding: 40px 0 20px;
   position: relative;
   overflow: visible;
+
+  /* Sit above the preceding inline-ISI region (z-index 3) so the purple arch
+     dome (::before) curves up over it instead of being covered by its white bg. */
+  z-index: 4;
 }
 
 footer::before {

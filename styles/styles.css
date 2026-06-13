@@ -257,12 +257,23 @@ main > .section:first-of-type > div {
   padding: 0;
 }
 
-/* Pull second section up to overlap hero with arc */
+/* Pull second section up so its white arch dome overlaps the hero photo
+   (original overlaps ~42px into the photo; -140px left the dome below the
+   photo edge, making the white-on-white curve invisible). */
 main > .section.hero-pharma-container + .section:not(.tabs-navigation-container) {
-  margin-top: -140px;
+  margin-top: -200px;
   position: relative;
   z-index: 1;
   padding-top: 0;
+}
+
+/* When a sticky tabs bar sits between the hero and the first content section,
+   the tabs overlap the hero (see tabs-navigation.css) and the content section
+   below pulls up too so its white arch dome curves up over the hero photo. */
+main > .section.hero-pharma-container + .section.tabs-navigation-container + .section {
+  margin-top: -60px;
+  position: relative;
+  z-index: 1;
 }
 
 /* Section style variants from section-metadata */

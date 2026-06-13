@@ -284,31 +284,76 @@ var CustomImportScript = (() => {
         placeholderAlt = posterImg.getAttribute("alt") || "";
       }
     }
-    const cells = [];
-    const contentCell = document.createDocumentFragment();
-    contentCell.appendChild(document.createComment(" field:uri "));
+    const uriCell = document.createDocumentFragment();
+    uriCell.appendChild(document.createComment(" field:uri "));
     if (videoUrl) {
       const link = document.createElement("a");
       link.href = videoUrl;
       link.textContent = videoUrl;
-      contentCell.appendChild(link);
+      uriCell.appendChild(link);
     }
+    const cells = [[uriCell]];
     if (placeholderSrc) {
-      contentCell.appendChild(document.createComment(" field:placeholder_image "));
+      const placeholderCell = document.createDocumentFragment();
+      placeholderCell.appendChild(document.createComment(" field:placeholder_image "));
       const picture = document.createElement("picture");
       const img = document.createElement("img");
       img.src = placeholderSrc;
       img.alt = placeholderAlt;
       picture.appendChild(img);
-      contentCell.appendChild(picture);
+      placeholderCell.appendChild(picture);
+      cells.push([placeholderCell]);
     }
-    cells.push([contentCell]);
     const block = WebImporter.Blocks.createBlock(document, { name: "video-playlist", cells });
     element.replaceWith(block);
   }
 
-  // tools/importer/parsers/columns-promo.js
+  // tools/importer/parsers/video-single.js
   function parse7(element, { document }) {
+    const videoJsEl = element.querySelector("video-js[data-video-id], [data-video-id]");
+    const videoId = videoJsEl ? (videoJsEl.getAttribute("data-video-id") || "").trim() : "";
+    let posterSrc = "";
+    const posterEl = element.querySelector("[poster]");
+    if (posterEl) posterSrc = posterEl.getAttribute("poster") || "";
+    if (!posterSrc) {
+      const img = element.querySelector(".vjs-poster img, img");
+      if (img) posterSrc = img.getAttribute("src") || "";
+    }
+    const h3 = element.querySelector("h3");
+    const transcriptLink = element.querySelector('a[href*="transcript"]');
+    const imageFrag = document.createDocumentFragment();
+    imageFrag.appendChild(document.createComment(" field:image "));
+    if (posterSrc) {
+      const picture = document.createElement("picture");
+      const img = document.createElement("img");
+      img.src = posterSrc;
+      img.alt = videoId;
+      picture.appendChild(img);
+      imageFrag.appendChild(picture);
+    }
+    const textFrag = document.createDocumentFragment();
+    textFrag.appendChild(document.createComment(" field:text "));
+    if (h3) {
+      const title = document.createElement("h3");
+      title.textContent = h3.textContent.trim();
+      textFrag.appendChild(title);
+    }
+    if (transcriptLink) {
+      const link = document.createElement("a");
+      link.href = transcriptLink.getAttribute("href");
+      link.textContent = transcriptLink.textContent.trim();
+      textFrag.appendChild(link);
+    }
+    const cells = [
+      [imageFrag],
+      [textFrag]
+    ];
+    const block = WebImporter.Blocks.createBlock(document, { name: "video-single", cells });
+    element.replaceWith(block);
+  }
+
+  // tools/importer/parsers/columns-promo.js
+  function parse8(element, { document }) {
     const columns = element.querySelectorAll(":scope .abbv-col");
     const cells = [];
     if (columns.length >= 2) {
@@ -357,7 +402,7 @@ var CustomImportScript = (() => {
   }
 
   // tools/importer/parsers/columns-cta.js
-  function parse8(element, { document }) {
+  function parse9(element, { document }) {
     const columnItems = element.querySelectorAll(":scope > .flexboxitem-v2");
     const cells = [];
     const row = [];
@@ -477,8 +522,9 @@ var CustomImportScript = (() => {
     "cards-icon": parse4,
     "cards-video": parse5,
     "video-playlist": parse6,
-    "columns-promo": parse7,
-    "columns-cta": parse8
+    "video-single": parse7,
+    "columns-promo": parse8,
+    "columns-cta": parse9
   };
   var transformers = [
     transform,
@@ -524,6 +570,10 @@ var CustomImportScript = (() => {
       {
         name: "video-playlist",
         instances: [".abbv-video-player.abbv-video-playlist.abbv-playlist-type-carousel"]
+      },
+      {
+        name: "video-single",
+        instances: [".abbv-flex-container-v2.flexbox-video-cards.flexbox-video-cards--single"]
       },
       {
         name: "columns-promo",

@@ -53,8 +53,39 @@ export default async function decorate(block) {
 
   isiBar.appendChild(contentMin);
 
+  // Build the INLINE use/ISI region that sits in normal page flow at the bottom
+  // of the page (original: <div class="abbv-inline-use-isi"> with the
+  // <a id="abbv_use_statement"> anchor + full USES and Important Risk Information).
+  // This is separate from the sticky bar and is present on every page.
+  const inlineIsiRegion = document.createElement('div');
+  inlineIsiRegion.className = 'abbv-inline-use-isi';
+  inlineIsiRegion.setAttribute('role', 'region');
+  inlineIsiRegion.setAttribute('aria-label', 'Important Safety Information');
+
+  const useAnchor = document.createElement('a');
+  useAnchor.id = 'abbv_use_statement';
+  useAnchor.setAttribute('aria-hidden', 'true');
+  inlineIsiRegion.appendChild(useAnchor);
+
+  const inlineContent = document.createElement('div');
+  inlineContent.className = 'abbv-inline-use linzess-use-statement abbv-rich-text-common';
+  if (usesDiv) {
+    const usesBlock = document.createElement('div');
+    usesBlock.className = 'abbv-inline-use-uses';
+    usesBlock.innerHTML = usesDiv.innerHTML;
+    inlineContent.appendChild(usesBlock);
+  }
+  if (riskDiv) {
+    const riskBlock = document.createElement('div');
+    riskBlock.className = 'abbv-inline-use-risk';
+    riskBlock.innerHTML = riskDiv.innerHTML;
+    inlineContent.appendChild(riskBlock);
+  }
+  inlineIsiRegion.appendChild(inlineContent);
+
   // Render
   block.textContent = '';
+  block.appendChild(inlineIsiRegion);
   block.appendChild(isiBar);
 
   // Toggle expand/collapse

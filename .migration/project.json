@@ -4,5 +4,9 @@
   "type": "xwalk",
   "contentHostUrl": "author-p160552-e1944799.adobeaemcloud.com",
   "baseUrl": "https://www.linzess.com",
-  "libraryUrl": "https://main--sta-xwalk-boilerplate--aemysites.aem.page/tools/sidekick/library.json"
+  "libraryUrl": "https://main--sta-xwalk-boilerplate--aemysites.aem.page/tools/sidekick/library.json",
+  "aemSitePath": "/content/nishant-test",
+  "aemAssetsFolderPath": "/content/dam/nishant-test",
+  "aemSiteName": "nishant-test",
+  "aemSiteTitle": "Nishant Test"
 }

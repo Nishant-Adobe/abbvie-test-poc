@@ -80,35 +80,38 @@ export default function parse(element, { document }) {
     }
   }
 
-  // Build the cells array matching the UE model structure
-  // Row 1: Video link (uri field) + placeholder image
-  const cells = [];
+  // Build the cells array matching the UE model field groups.
+  // The model groups into TWO field rows: `uri`, then `placeholder`
+  // (placeholder_image + placeholder_imageAlt collapse into one row).
+  // Each field group MUST be its own row, or md2jcr fails to map content.
 
-  // Build content cell with video link and optional placeholder image
-  const contentCell = document.createDocumentFragment();
-
-  // Field hint for uri
-  contentCell.appendChild(document.createComment(' field:uri '));
-
+  // Row 1: uri
+  const uriCell = document.createDocumentFragment();
+  uriCell.appendChild(document.createComment(' field:uri '));
   if (videoUrl) {
     const link = document.createElement('a');
     link.href = videoUrl;
     link.textContent = videoUrl;
-    contentCell.appendChild(link);
+    uriCell.appendChild(link);
   }
 
-  // Add placeholder image if available
+  // Row 1 is always present. Row 2 (placeholder) is only emitted when there is
+  // an actual placeholder image — an EMPTY placeholder row makes md2jcr throw
+  // ("Cannot read properties of null") because there is no content to map.
+  const cells = [[uriCell]];
+
   if (placeholderSrc) {
-    contentCell.appendChild(document.createComment(' field:placeholder_image '));
+    // Row 2: placeholder_image + placeholder_imageAlt (collapsed group)
+    const placeholderCell = document.createDocumentFragment();
+    placeholderCell.appendChild(document.createComment(' field:placeholder_image '));
     const picture = document.createElement('picture');
     const img = document.createElement('img');
     img.src = placeholderSrc;
     img.alt = placeholderAlt;
     picture.appendChild(img);
-    contentCell.appendChild(picture);
+    placeholderCell.appendChild(picture);
+    cells.push([placeholderCell]);
   }
-
-  cells.push([contentCell]);
 
   const block = WebImporter.Blocks.createBlock(document, { name: 'video-playlist', cells });
   element.replaceWith(block);

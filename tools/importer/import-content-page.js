@@ -8,6 +8,7 @@ import cardsChecklistParser from './parsers/cards-checklist.js';
 import cardsIconParser from './parsers/cards-icon.js';
 import cardsVideoParser from './parsers/cards-video.js';
 import videoPlaylistParser from './parsers/video-playlist.js';
+import videoSingleParser from './parsers/video-single.js';
 import columnsPromoParser from './parsers/columns-promo.js';
 import columnsCtaParser from './parsers/columns-cta.js';
 
@@ -23,6 +24,7 @@ const parsers = {
   'cards-icon': cardsIconParser,
   'cards-video': cardsVideoParser,
   'video-playlist': videoPlaylistParser,
+  'video-single': videoSingleParser,
   'columns-promo': columnsPromoParser,
   'columns-cta': columnsCtaParser,
 };
@@ -74,6 +76,10 @@ const PAGE_TEMPLATE = {
     {
       name: 'video-playlist',
       instances: ['.abbv-video-player.abbv-video-playlist.abbv-playlist-type-carousel'],
+    },
+    {
+      name: 'video-single',
+      instances: ['.abbv-flex-container-v2.flexbox-video-cards.flexbox-video-cards--single'],
     },
     {
       name: 'columns-promo',

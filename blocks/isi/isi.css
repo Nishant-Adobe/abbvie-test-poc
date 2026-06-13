@@ -17,8 +17,7 @@
   right: 0;
   z-index: 9998;
   background: #fff;
-  border-top: 4px solid var(--linz-orange, #faa633);
-  box-shadow: 0 -2px 10px rgb(0 0 0 / 15%);
+  box-shadow: 0 0 10px rgb(0 0 0 / 25%);
   font-family: Lato, sans-serif;
   font-size: 13px;
   line-height: 1.4;
@@ -28,7 +27,7 @@
 
 /* Minimized state */
 .abbv-safety-bar.abbv-safety-bar-minimized {
-  max-height: 180px;
+  max-height: 144px;
   overflow: hidden;
 }
 
@@ -156,4 +155,66 @@
   .abbv-safety-bar.abbv-safety-bar-minimized {
     max-height: 140px;
   }
+}
+
+/* Inline USE/ISI region in normal page flow (original .abbv-inline-use-isi).
+   Holds the #abbv_use_statement anchor + full USES and Important Risk Information.
+   Present on every page above the footer. */
+.abbv-inline-use-isi {
+  background: #fff;
+  padding: 0 80px 80px;
+  margin: 10px 0 20px;
+  max-width: 1400px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: left;
+  font-family: Lato, sans-serif;
+
+  /* Sit above the preceding dark-purple section (z-index 2) so the white arch
+     dome (::before from linzess-global.css) paints over the purple, not behind
+     it. Raising the ISI's stacking context lifts its -5 dome along with it. */
+  position: relative;
+  z-index: 3;
+}
+
+.abbv-inline-use-isi #abbv_use_statement {
+  display: block;
+  position: relative;
+  top: -160px; /* scroll-anchor offset so it lands below the fixed header */
+  visibility: hidden;
+}
+
+.abbv-inline-use-isi h3 {
+  font-size: 16px;
+  font-weight: 800;
+  font-family: Lato, sans-serif;
+  color: var(--linz-dark-purple, #422e83);
+  text-transform: none;
+  margin: 10px 0 0;
+}
+
+/* Match the original's tight ISI text rhythm (line-height 16px, 10px gaps)
+   so the block height matches the source instead of running taller. */
+.abbv-inline-use-isi p,
+.abbv-inline-use-isi li {
+  font-size: 14px;
+  font-weight: 400;
+  font-family: Lato, sans-serif;
+  color: #555;
+  line-height: 16px;
+  margin: 10px 0;
+}
+
+.abbv-inline-use-isi ul {
+  margin: 0 0 12px;
+  padding-left: 20px;
+}
+
+.abbv-inline-use-isi a {
+  color: var(--linz-dark-purple, #422e83);
+  text-decoration: underline;
+}
+
+.abbv-inline-use-isi .abbv-inline-use-uses {
+  margin-bottom: 24px;
 }

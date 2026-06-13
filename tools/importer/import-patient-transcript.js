@@ -15,6 +15,7 @@ const PAGE_TEMPLATE = {
   description: 'Video transcript pages with text transcript content',
   urls: [
     'https://www.linzess.com/why-linzess/linzess-patient-experiences/dian-transcripts',
+    'https://www.linzess.com/why-linzess/linzess-patient-experiences/elaine-transcripts',
     'https://www.linzess.com/why-linzess/linzess-patient-experiences/nan-transcripts',
     'https://www.linzess.com/why-linzess/linzess-patient-experiences/julie-transcripts',
     'https://www.linzess.com/why-linzess/linzess-patient-experiences/getting-on-same-page-transcripts',
@@ -51,6 +52,17 @@ export default {
 
     // 3. Execute afterTransform transformers
     executeTransformers('afterTransform', main, payload);
+
+    // 3b. Append the inline ISI fragment block as its own section (matches sibling
+    // transcript pages, which embed the authorable /nishant-test/isi fragment in a
+    // separate section after the transcript body). The leading <hr> forces the
+    // section break so the transcript column stays constrained.
+    main.appendChild(document.createElement('hr'));
+    const isiBlock = WebImporter.Blocks.createBlock(document, {
+      name: 'isi',
+      cells: [['/nishant-test/isi']],
+    });
+    main.appendChild(isiBlock);
 
     // 4. Apply WebImporter built-in rules
     const hr = document.createElement('hr');

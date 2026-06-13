@@ -115,6 +115,13 @@ var CustomImportScript = (() => {
       const main = document.body;
       executeTransformers("beforeTransform", main, payload);
       executeTransformers("afterTransform", main, payload);
+      const isiHr = document.createElement("hr");
+      main.appendChild(isiHr);
+      const isiBlock = WebImporter.Blocks.createBlock(document, {
+        name: "isi",
+        cells: [["/nishant-test/isi"]]
+      });
+      main.appendChild(isiBlock);
       const hr = document.createElement("hr");
       main.appendChild(hr);
       WebImporter.rules.createMetadata(main, document);

@@ -23,12 +23,73 @@ Achieve TRUE 95%+ pixel-perfect match for each migrated page against the live si
 - Missing sections or blocks
 - Wrong font sizes, weights, or families on any element  
 - Wrong background colors on any section or card
+- Wrong card background color (e.g., off-white instead of white)
+- Missing or wrong border/shadow on cards
+- Wrong badge/circle colors (e.g., purple badge when it should be white)
 - Missing hover states on buttons/links
 - ISI bar not dismissing when user scrolls to inline ISI content
 - Wrong max-width, padding, or margin on any container
 - Missing images or wrong image aspect ratios
 - Links with wrong href values
 - Missing footnote/disclaimer text
+
+### How to ACTUALLY compare screenshots (not just glance):
+When you take a screenshot of the local page, check EACH of these for EVERY visible element:
+1. **Background color** — is it white, off-white, light-purple, dark-purple, or transparent? Match EXACTLY.
+2. **Border** — does the original have a border or shadow? Add it if missing.
+3. **Border-radius** — rounded corners on cards, buttons, badges? Match the radius.
+4. **Shadow** — does the original card have a subtle box-shadow? Add it.
+5. **Badge/icon colors** — circle badges may have DIFFERENT colors on odd vs even cards.
+6. **Text color** — dark purple vs gray vs white? Check on EVERY text element.
+7. **Font weight** — bold vs normal? Check headings AND body text.
+8. **Spacing** — gaps between cards, padding inside cards, margins between sections.
+9. **Icon style** — filled vs outlined? Color? Size?
+10. **Button style** — background, text color, border-radius, padding, chevron icon?
+11. **Element overflow/position** — does an icon/badge overflow OUTSIDE its card container? Is it half-in half-out? Negative margins? Absolute positioning that makes elements overlap?
+12. **Icon circular backgrounds** — does the icon have a colored circle BEHIND it that extends beyond the card edge? (e.g., light purple circle behind pill icon that's half outside the card)
+13. **Card overflow** — is the card set to overflow:visible so child elements can extend beyond it?
+14. **Layout consequences** — when you add negative margins or positioning changes, check ALL adjacent elements. Does the change cause overlapping? Does text need compensating margin to avoid being covered by a repositioned icon?
+
+DO NOT say "looks good" or "matches well" after taking a screenshot unless you have verified ALL 13 properties above on every visible element in that screenshot.
+
+15. **Card-variant coverage** — when a section repeats cards, inspect EVERY card, not just the first. Watch for ALTERNATING backgrounds (odd card dark / even card light, with text + button colors flipping to match) and for differing image positions across sections (image-top vs image-beside-text vs icon-top vs icon-left). Enumerate every card's real background-color and image-vs-text bounding-box position programmatically on the original, compare the FULL list, and screenshot each distinct variant. Reason this is listed: a flat-stacked Community Resources section with a missed dark/light alternating pattern shipped because only the first article row was screenshotted and that block was never captured.
+
+### MANDATORY: Take SMALL, ZOOMED screenshots — never large/full-page
+
+Large screenshots (full-page, or wide 1440px viewports) shrink every element so
+minute differences (border-radius, 2px spacing, off-white vs white, badge color,
+shadow, font-weight) become invisible. ALWAYS capture small/zoomed views so each
+element renders large and its details are legible:
+
+1. **Prefer element-scoped screenshots.** Use `browser_take_screenshot({ element, ref })`
+   on the specific block/card/button you are comparing, so the screenshot contains
+   only that element at full resolution — this is the zoom effect that surfaces
+   roundness, borders, color, and spacing.
+2. **Use a SMALL viewport height** so each scroll capture covers less of the page and
+   elements appear larger: `browser_resize({ width: 1440, height: 600 })` for desktop
+   layout, or narrower widths (e.g. 768, 600, 390) when inspecting a single column/card.
+3. **Crank up device scale factor for detail.** When the harness allows, render at
+   `deviceScaleFactor: 2` (retina) so edges, radii, and thin borders are crisp.
+4. **NEVER use `fullPage: true` for comparison.** A full-page screenshot is only ever
+   a quick sanity check of overall section order — it is NOT valid for detecting
+   styling differences. The user explicitly called this out.
+5. **One element/one card per screenshot when checking design details** (roundness,
+   color, shadow, badge, icon, button). Capture the SAME element on original and
+   migrated, both element-scoped, and compare side by side at full resolution.
+6. After identifying the region of interest, zoom in further: scroll so the element
+   fills the viewport, or screenshot the element by `ref`, rather than capturing a
+   wide overview.
+
+### MANDATORY: Fix ALL issues before moving to next screenshot
+
+- "Sections" for comparison means **small viewport-sized screenshots** scrolled through the full page (e.g., scroll 0, 600, 1200, 1800...), NOT EDS content sections — and prefer element-scoped captures for detail checks
+- For EACH screenshot viewport, check EVERY visible element — headings, body text, buttons, cards, icons, images, links, spacing
+- Check alignment: is it centered, left-aligned, right-aligned? Match the original EXACTLY
+- Check button position: centered below cards? Left-aligned? Match it.
+- Check EVERY minute detail — even a button that's left instead of centered IS a bug
+- Do NOT move to the next scroll position until ALL issues in the current viewport are fixed and verified
+- After fixing, re-take the screenshot to confirm — then move on
+- Nothing should be skipped. If you can see it, you must verify it matches.
 
 ## Hybrid Approach (CSS + JS)
 
@@ -161,7 +222,42 @@ node scripts/generate-fix-report.js <left> <right> mobile   # 390x844
 
 ## Workflow (Per Page)
 
-### Phase 1: Automated DOM Comparison (USE THIS FIRST)
+### CRITICAL: Section-by-Section Visual Comparison
+
+**DO NOT rely solely on the pixel comparison tool percentages.** After every change:
+
+1. Take a viewport screenshot of the MIGRATED page at a specific section
+2. Take a viewport screenshot of the ORIGINAL page at the same section
+3. **List EVERY visible difference** between the two screenshots:
+   - Wrong font size/weight/family
+   - Wrong background color
+   - Missing card layouts or wrong card structure
+   - Missing icons, images, or decorative elements
+   - Wrong spacing/padding/margin
+   - Missing interactive elements (buttons, links)
+   - Wrong text color
+   - Wrong border/border-radius
+4. Fix ALL identified differences before moving to the next section
+5. Do NOT dismiss issues as "structural ceiling" — attempt JS DOM restructuring first
+
+### What to NEVER do:
+- Report a percentage and stop ("72% similarity, remaining are structural")
+- Take a full-page screenshot and say "looks good" without detailed comparison
+- Skip sections because "the tool says they match"
+- Declare done when there are still visible differences you haven't attempted to fix
+
+### Phase 1: Section-by-Section Screenshot Comparison
+
+For each major section of the page (hero, content sections, cards, footer):
+
+1. Scroll to the section on BOTH pages (original + migrated)
+2. Take viewport screenshots of both at the same scroll position
+3. Compare visually and list SPECIFIC issues (not general descriptions)
+4. Fix each issue with exact CSS values or JS DOM restructuring
+5. Re-screenshot to verify the fix worked
+6. Move to next section only when current section matches
+
+### Phase 2: Automated DOM Comparison (supplementary)
 
 1. Run `generate-fix-report.js` for desktop viewport
 2. Analyze the `issues` array — group by root cause
@@ -169,17 +265,7 @@ node scripts/generate-fix-report.js <left> <right> mobile   # 390x844
 4. Re-run report to verify
 5. Repeat until `matchedWithDiffs` < 20
 
-### Phase 1b: Deep DOM Comparison (Manual fallback)
-
-1. Navigate to original page
-2. Extract FULL page DOM structure (all elements with classes)
-3. Count all content elements (paragraphs, headings, images, links)
-4. Extract computed styles for key layout elements
-5. Navigate to migrated page
-6. Perform same extraction
-7. DIFF the two — identify every missing/different element
-
-### Phase 2: Fix Content Gaps
+### Phase 3: Fix Content Gaps
 
 For each missing element:
 1. Determine if it's a content issue (missing from .plain.html)
@@ -187,15 +273,15 @@ For each missing element:
 3. Fix the source (.plain.html or block JS/CSS)
 4. Verify the element now renders correctly
 
-### Phase 3: Fix Visual Differences
+### Phase 4: Fix Visual Differences with JS Restructuring
 
-For each CSS property mismatch:
-1. Identify the selector that targets the element
-2. Add/modify CSS rule in appropriate file
-3. Verify computed style now matches
-4. Check for regressions on other elements
+For layout differences that CSS alone can't fix:
+1. Identify the structural difference (e.g., flat paragraphs vs. card layout)
+2. Write JS in `decorateContentCards()` or similar to restructure DOM
+3. Add CSS for the new container classes
+4. Verify the layout now matches the original
 
-### Phase 4: Fix JS Behaviors
+### Phase 5: Fix JS Behaviors
 
 For each missing interaction:
 1. Identify the trigger (hover, scroll, click)
@@ -203,12 +289,13 @@ For each missing interaction:
 3. Test the behavior works
 4. Verify it doesn't conflict with EDS framework
 
-### Phase 5: Re-verify
+### Phase 6: Final Re-verify (MANDATORY)
 
-1. Take full-page screenshot at both viewports
-2. Compare against original — identify remaining gaps
-3. If gaps exist, return to Phase 2
-4. Continue until no visible differences remain
+1. Take section-by-section viewport screenshots of BOTH pages
+2. For each section, list any remaining differences
+3. If ANY visible differences remain, go back and fix them
+4. Only declare done when NO visible differences remain that you haven't genuinely attempted to fix
+5. Be explicit about what you could NOT fix and why (e.g., "Brightcove video player requires third-party JS that can't be loaded in EDS")
 
 ## Content Structure Requirements
 

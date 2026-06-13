@@ -18,6 +18,16 @@
   display: contents;
 }
 
+/* Orange divider accent between the eyebrow and H1 (original: span.divider with divider.svg) */
+.hero-pharma-wrapper .hero-container span.divider {
+  display: inline-block;
+  width: 64px;
+  height: 5px;
+  background-image: url("/content/dam/linzess/images/divider.svg");
+  background-repeat: no-repeat;
+  background-position: left center;
+}
+
 /* Fix: Hero CTA button needs purple text on orange background.
    linzess.css sets `main a.abbv-button-primary:any-link { color: var(--linz-white) !important }`
    which makes ALL .abbv-button-primary links white. The hero variant needs dark purple text.

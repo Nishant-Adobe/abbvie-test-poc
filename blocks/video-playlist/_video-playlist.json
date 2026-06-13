@@ -28,24 +28,6 @@
           "label": "Video"
         },
         {
-          "component": "multiselect",
-          "name": "classes",
-          "value": "",
-          "label": "Options",
-          "valueType": "string",
-          "options": [
-            {
-              "name": "Auto Play",
-              "children": [
-                {
-                  "name": "AutoPlay",
-                  "value": "autoplay"
-                }
-              ]
-            }
-          ]
-        },
-        {
           "component": "reference",
           "valueType": "string",
           "name": "placeholder_image",

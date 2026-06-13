@@ -61,12 +61,23 @@ The fundamental rule for this migration:
 
 ## Visual Comparison Workflow
 
+**Take SMALL, ZOOMED screenshots — never large/full-page.** Large screenshots shrink
+elements so minute details (border-radius, 2px spacing, off-white vs white, badge color,
+shadow, font-weight) become invisible. Always:
+- Use a SHORT viewport height (e.g. `browser_resize({ width: 1440, height: 600 })`) so
+  each capture is a zoomed slice with larger, legible elements.
+- Prefer ELEMENT-SCOPED captures (`browser_take_screenshot({ element, ref })`) on the
+  specific block/card/button/badge when checking design details (roundness, color,
+  shadow, border, icon, button).
+- Render at `deviceScaleFactor: 2` (retina) when available for crisp edges/radii.
+- NEVER use `fullPage: true` for comparison — it only sanity-checks section order.
+
 When fixing visual issues:
-1. Take screenshot of original site at the target breakpoint
-2. Take screenshot of migrated page at same breakpoint
+1. Take a SMALL viewport (or element-scoped) screenshot of original at the target breakpoint
+2. Take a SMALL viewport (or element-scoped) screenshot of migrated at same scroll/element
 3. Identify SPECIFIC differences (not general descriptions)
 4. Fix each difference with exact CSS values
-5. Re-screenshot to verify the fix worked
+5. Re-screenshot (small/zoomed) to verify the fix worked
 6. Never declare done without visual proof
 
 ## Common Pitfalls
@@ -85,10 +96,12 @@ See `.claude/skills/iterative-page-migration.md` for iterative visual refinement
 See `.claude/skills/iterative-visual-refinement.md` for per-element comparison methodology.
 See `.claude/skills/validate-page-structure.md` for structural validation (header, footer, hero, ISI, blocks, abbv-containers).
 See `.claude/skills/full-site-migration.md` for complete site migration (URL discovery → page-by-page migration → cross-page verification).
+See `.claude/skills/abbvie-multisite-migration.md` for the FLEET workflow (118 AbbVie brand sites share one framework → shared `abbv-base` library + per-brand token swap + deterministic style-differ + batch orchestrator).
 
 ## Quick Commands
 
-- `migrate site <url> with proper planning` — Full site migration: discover URLs, create plan, migrate each page iteratively 15 times with Playwright comparison, save context between sessions, convert CSS images to base64
-- `migrate <page-name or url> iteratively <N>` — Run full migration + N visual refinement iterations using all skills (page-analysis, building-blocks, eds-developer, complete-design-expert, block-critique, page-critique)
+- `migrate abbvie fleet` / `onboard brand <url>` — Multi-site AbbVie migration (see abbvie-multisite-migration.md). All ~118 AbbVie brand sites (rinvoq, skyrizi, mavyret, botox, HCP variants…) share ONE design system (common-elements clientlib, abbv-framework, header v2, ISI use-statement + safety bar, same blocks). Build shared `abbv-base` ONCE, then each brand = `:root` token swap + content import; each page = minutes. Uses a deterministic computed-style differ (`tools/style-diff/compare.js`) — NOT the hallucination-prone visual comparator — to hit ≥70% first pass and 90–95% on iterate, with the AbbVie pitfall checklist (alternating card colors, CTA contrast, negative-margin overhang, framework !important, ISI, touts) auto-asserted.
+- `migrate site <url> with proper planning` — Full site migration orchestrator (see full-site-migration.md). Strict gated phases: (1) URL discovery + triage — drop 404s/redirects/cross-domain/duplicates, (2) block inventory + functionality audit (APIs, adaptive forms, video, carousels), (3) extract design tokens FIRST, (4) build global fragments + all blocks (new blocks + auto-blocking for complex DOM, same DOM + verbatim CSS classes), (5) import pages, (6) validate every page (structure + block + page critique), (7) hand off to per-page refinement. Saves context between sessions; converts CSS images to base64.
+- `migrate <page-name or url> iteratively <N>` — Per-page refinement loop (see iterative-page-migration.md). Each iteration: pixel tool first (page-critique) → fix to ≥90% → zoomed element-scoped Playwright diffs → full-page diff → repeat up to N times until 90–95% with no visible diffs.
 - `fix <page-name> <N> iterations` — Same as above but assumes page already migrated
 - `validate <page-name>` — Run structural validation (header, footer, hero, ISI, blocks, abbv-containers, sections, arcs, typography, buttons)

@@ -1,0 +1,41 @@
+{
+  "variantName": "cards-icon",
+  "baseBlock": "cards",
+  "version": "1.0.0",
+  "created": "2026-06-08T18:25:00.000Z",
+  "sourceContext": {
+    "originUrl": "https://www.linzess.com/why-linzess",
+    "originPage": "Why LINZESS - icon information cards (how it works, side effects)",
+    "blockPosition": "middle"
+  },
+  "visualCharacteristics": {
+    "colorScheme": "dark",
+    "density": "spacious",
+    "purpose": "info-cards",
+    "imagePattern": "icon"
+  },
+  "contentPattern": {
+    "structure": "icon-left + text-right (horizontal layout, stacked vertically)",
+    "buttonCount": 0,
+    "imageCount": 1
+  },
+  "reuseGuidance": {
+    "suitableFor": [
+      "informational cards with icons",
+      "mechanism of action explanations",
+      "side effect information cards",
+      "stacked vertical info cards with alternating backgrounds"
+    ],
+    "notSuitableFor": [
+      "grid layout cards",
+      "cards without icons/images",
+      "cards with CTAs",
+      "video or media cards"
+    ]
+  },
+  "usage": {
+    "pagesUsing": ["/why-linzess"],
+    "reuseCount": 1,
+    "lastUsed": "2026-06-08T18:25:00.000Z"
+  }
+}

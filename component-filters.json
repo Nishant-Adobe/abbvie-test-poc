@@ -18,7 +18,6 @@
       "form",
       "hero",
       "image",
-      "isi",
       "quote",
       "search",
       "tabs",
@@ -48,6 +47,18 @@
   },
   {
     "id": "cards-icon",
+    "components": [
+      "card"
+    ]
+  },
+  {
+    "id": "cards-info",
+    "components": [
+      "card"
+    ]
+  },
+  {
+    "id": "cards-signup",
     "components": [
       "card"
     ]
@@ -159,6 +170,10 @@
   },
   {
     "id": "video-playlist",
+    "components": []
+  },
+  {
+    "id": "video-single",
     "components": []
   },
   {

@@ -69,3 +69,216 @@
   left: calc(50% + 2px);
   transform: translate(-50%, -50%);
 }
+
+/* ============================================================
+   Custom AbbVie video carousel (Patient Experiences)
+   Player + purple metadata panel + thumbnail rail with arrows.
+   Matches linzess.com layout for a Brightcove playlist.
+   ============================================================ */
+.video-carousel {
+  max-width: 1000px;
+  margin: 24px auto;
+  text-align: left;
+}
+
+/* Top row: main player (left) + purple meta panel (right) */
+.video-carousel-main {
+  display: flex;
+  align-items: stretch;
+  gap: 0;
+}
+
+.video-carousel-player {
+  flex: 1 1 70%;
+  position: relative;
+  aspect-ratio: 16 / 9;
+  background: #000;
+}
+
+.video-carousel-embed,
+.video-carousel-embed iframe,
+.video-carousel-poster {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+.video-carousel-poster {
+  background-size: cover;
+  background-position: center;
+  cursor: pointer;
+  padding: 0;
+}
+
+/* Circular play button overlay (semi-transparent white, purple triangle) */
+.video-carousel-play {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 84px;
+  height: 84px;
+  border-radius: 50%;
+  background: rgb(255 255 255 / 65%);
+  transform: translate(-50%, -50%);
+}
+
+.video-carousel-play::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: calc(50% + 4px);
+  width: 0;
+  height: 0;
+  border-top: 18px solid transparent;
+  border-bottom: 18px solid transparent;
+  border-left: 30px solid var(--linz-dark-purple, #422e83);
+  transform: translate(-50%, -50%);
+}
+
+/* Purple metadata panel */
+.video-carousel-meta {
+  flex: 0 0 30%;
+  background: var(--linz-light-purple, #d9d7f9);
+  color: var(--linz-dark-purple, #422e83);
+  padding: 32px 28px;
+  display: flex;
+  flex-direction: column;
+}
+
+.video-carousel-quote {
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 1.2;
+  margin: 0 0 auto;
+}
+
+.video-carousel-person {
+  font-size: 16px;
+  font-weight: 700;
+  margin: 24px 0 4px;
+}
+
+.video-carousel-prescribed {
+  font-size: 16px;
+  font-style: italic;
+  margin: 0 0 16px;
+}
+
+.video-carousel-transcript {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--linz-dark-purple, #422e83);
+  text-decoration: underline;
+}
+
+/* Thumbnail rail */
+.video-carousel-rail {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 16px;
+}
+
+.video-carousel-thumbs {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 16px;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  flex: 1 1 auto;
+  scrollbar-width: none;
+}
+
+.video-carousel-thumbs::-webkit-scrollbar {
+  display: none;
+}
+
+.video-carousel-thumb {
+  flex: 0 0 271px;
+  max-width: 271px;
+}
+
+.video-carousel-thumb > button { /* stylelint-disable-line no-descending-specificity */
+  position: relative;
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  padding: 0;
+  border: 4px solid transparent;
+  border-radius: 4px;
+  background-size: cover;
+  background-position: center;
+  cursor: pointer;
+}
+
+.video-carousel-thumb.active > button {
+  border-color: var(--linz-orange, #faa633);
+}
+
+.video-carousel-thumb > button .video-carousel-play {
+  width: 56px;
+  height: 56px;
+}
+
+.video-carousel-thumb > button .video-carousel-play::before {
+  border-top-width: 11px;
+  border-bottom-width: 11px;
+  border-left-width: 18px;
+}
+
+.video-carousel-thumb-title {
+  display: block;
+  margin-top: 8px;
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--linz-dark-purple, #422e83);
+}
+
+/* Prev / next arrow buttons */
+.video-carousel-prev,
+.video-carousel-next {
+  flex: 0 0 auto;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 0;
+  background: var(--linz-dark-purple, #422e83);
+  color: #fff;
+  cursor: pointer;
+  position: relative;
+}
+
+.video-carousel-prev::before,
+.video-carousel-next::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 9px;
+  height: 9px;
+  border-top: 2px solid #fff;
+  border-right: 2px solid #fff;
+}
+
+.video-carousel-prev::before {
+  transform: translate(-30%, -50%) rotate(-135deg);
+}
+
+.video-carousel-next::before {
+  transform: translate(-70%, -50%) rotate(45deg);
+}
+
+@media (width <= 900px) {
+  .video-carousel-main {
+    flex-direction: column;
+  }
+
+  .video-carousel-player,
+  .video-carousel-meta {
+    flex-basis: auto;
+  }
+}

@@ -84,9 +84,18 @@ export default function decorate(block) {
   pSubheading.className = 'tl-m';
   pSubheading.innerHTML = paragraphs[0] ? paragraphs[0].innerHTML : '';
 
-  // H1 heading
+  // Orange divider accent between eyebrow and H1 (original: <p><span class="divider">)
+  const dividerP = document.createElement('p');
+  const dividerSpan = document.createElement('span');
+  dividerSpan.className = 'divider';
+  dividerSpan.innerHTML = '&nbsp;';
+  dividerP.appendChild(dividerSpan);
+
+  // H1 heading — only the homepage hero uses the larger .home-hero-title (56px);
+  // interior pages (e.g. why-linzess) use the default 40px h1 with no class.
+  const isHomepage = /(^|\/)(index)?$/.test(window.location.pathname.replace(/\.html$/, ''));
   const newH1 = document.createElement('h1');
-  newH1.className = 'home-hero-title mb20 mb6-m tl-m';
+  newH1.className = isHomepage ? 'home-hero-title mb20 mb6-m tl-m' : 'mb20 mb6-m tl-m';
   const authoredH1 = textCell?.querySelector('h1');
   newH1.innerHTML = authoredH1 ? authoredH1.innerHTML : '';
 
@@ -107,7 +116,7 @@ export default function decorate(block) {
   }
 
   // Assemble the DOM tree
-  cardBody.append(pSubheading, newH1, pDesc);
+  cardBody.append(pSubheading, dividerP, newH1, pDesc);
   if (ctaButton) cardBody.appendChild(ctaButton);
   textDisplay.appendChild(cardBody);
   textContent.appendChild(textDisplay);

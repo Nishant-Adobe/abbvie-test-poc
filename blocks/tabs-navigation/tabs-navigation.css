@@ -3,7 +3,8 @@
 /* Section Navigation — sticky horizontal anchor link bar */
 /* Original: .abbv-section-navigation.abbv-sticky */
 .tabs-navigation {
-  display: inline-block;
+  display: block;
+  width: 100%;
 }
 
 main > .section.hero-pharma-container {
@@ -13,16 +14,22 @@ main > .section.hero-pharma-container {
 
 main > .section.tabs-navigation-container {
   position: sticky;
-  top: var(--tabs-sticky-top, 160px);
+  top: var(--tabs-sticky-top, 168px);
   z-index: 100 !important;
   background-color: transparent;
   padding: 0;
   margin: 0;
-  margin-top: -80px;
+
+  /* Pull the tab bar up onto the hero photo (the hero image is offset up
+     ~140px, leaving a white band below it). Overlapping here lets the photo
+     show behind the tabs and the following white section's arch curve over
+     the image — matching the original. */
+  margin-top: -140px;
   margin-bottom: 0;
   display: flex;
   justify-content: center;
   transition: background-color 0.3s;
+  min-height: 56px;
 }
 
 main > .section.tabs-navigation-container.tabs-stuck {
@@ -57,12 +64,18 @@ main > .section.tabs-navigation-container.tabs-stuck .section-navigation-list {
   display: inline-block;
 }
 
+/* Lift the pill up over the hero while not in its fixed/stuck state. */
+.abbv-section-navigation:not(.abbv-fixed) {
+  margin-top: -75px;
+}
+
 .tabs-navigation .abbv-section-navigation-container {
   margin: 0;
   padding: 0 8px;
+  position: relative;
 }
 
-/* Navigation list — override framework accordion collapse */
+/* Navigation list — full inline bar on desktop */
 .tabs-navigation .section-navigation-list,
 .abbv-section-navigation .abbv-section-navigation-container .section-navigation-list {
   overflow: visible !important;
@@ -80,6 +93,30 @@ main > .section.tabs-navigation-container.tabs-stuck .section-navigation-list {
   text-align: center;
 }
 
+/* Mobile: hide list, show on toggle */
+@media (max-width: 985px) {
+  .tabs-navigation .section-navigation-list {
+    overflow: hidden !important;
+    height: 0 !important;
+    position: absolute !important;
+    top: 100%;
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    align-items: stretch;
+    background: var(--linz-dark-purple, #422e83) !important;
+    border-radius: 0 0 16px 16px;
+    z-index: 101;
+    transition: height 0.3s;
+  }
+
+  .tabs-navigation .section-navigation-list.abbv-active {
+    overflow: visible !important;
+    height: auto !important;
+    padding: 8px 0 16px !important;
+  }
+}
+
 /* Navigation items */
 .tabs-navigation .section-navigation-list li,
 .abbv-section-navigation .abbv-section-navigation-container .section-navigation-list li {
@@ -91,13 +128,57 @@ main > .section.tabs-navigation-container.tabs-stuck .section-navigation-list {
   padding: 0 !important;
 }
 
-/* Hide mobile menu controls */
-.tabs-navigation .current-pos,
-.tabs-navigation .abbv-button-plain {
+/* "JUMP TO:" dropdown bar — HIDDEN on desktop, shown on mobile */
+.tabs-navigation .current-pos {
   display: none !important;
 }
 
-/* Navigation links — override EDS button styles */
+@media (max-width: 985px) {
+  .tabs-navigation .current-pos {
+    display: flex !important;
+    align-items: center;
+    background: var(--linz-dark-purple, #422e83);
+    color: var(--linz-white, #fff);
+    padding: 18px 32px;
+    border-radius: 32px;
+    font-weight: 700;
+    font-size: 14px;
+    font-family: Lato, sans-serif;
+    cursor: pointer;
+    gap: 8px;
+    width: 100%;
+    box-sizing: border-box;
+  }
+}
+
+.tabs-navigation .current-pos .jump-label {
+  font-weight: 800;
+  text-transform: uppercase;
+  font-size: 11px;
+  letter-spacing: 0.5px;
+}
+
+.tabs-navigation .current-pos .jump-text {
+  font-size: 12px;
+}
+
+.tabs-navigation .current-pos .abbv-button-plain {
+  all: unset;
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-right: 2px solid var(--linz-white);
+  border-bottom: 2px solid var(--linz-white);
+  transform: rotate(45deg);
+  transition: transform 0.3s;
+  cursor: pointer;
+}
+
+.tabs-navigation .current-pos.abbv-active .abbv-button-plain {
+  transform: rotate(-135deg);
+}
+
+/* Navigation links — horizontal on desktop */
 .tabs-navigation .section-navigation-list a,
 .tabs-navigation .section-navigation-list a.button:any-link {
   all: unset;
@@ -115,6 +196,18 @@ main > .section.tabs-navigation-container.tabs-stuck .section-navigation-list {
   height: 56px;
   box-sizing: border-box;
   cursor: pointer;
+}
+
+@media (max-width: 985px) {
+  .tabs-navigation .section-navigation-list a,
+  .tabs-navigation .section-navigation-list a.button:any-link {
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 1.4;
+    padding: 12px 24px;
+    height: auto;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  }
 }
 
 .tabs-navigation .section-navigation-list a:hover {
