@@ -10,14 +10,9 @@ async function fetchFragment(path) {
 
 export default async function decorate(block) {
   const navMeta = getMetadata('nav');
-  let navPath;
-  if (navMeta) {
-    navPath = new URL(navMeta, window.location).pathname;
-  } else {
-    const pathParts = window.location.pathname.replace(/\/$/, '').split('/');
-    const siteRoot = pathParts.slice(0, 3).join('/');
-    navPath = `${siteRoot}/nav`;
-  }
+  // nav is a site-root fragment; default to /nav so it resolves on every page
+  // regardless of depth (the content root is mounted at the site root).
+  const navPath = navMeta ? new URL(navMeta, window.location).pathname : '/nav';
   const fragment = await fetchFragment(`${navPath}.plain.html`);
   if (!fragment) return;
 
