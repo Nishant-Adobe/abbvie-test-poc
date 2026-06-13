@@ -6,10 +6,11 @@
       "plugins": {
         "xwalk": {
           "page": {
-            "resourceType": "core/franklin/components/columns/v1/columns",
+            "resourceType": "core/franklin/components/block/v1/block",
             "template": {
-              "columns": "2",
-              "rows": "1"
+              "name": "Columns Promo",
+              "model": "columns-promo",
+              "filter": "columns-promo"
             }
           }
         }
@@ -21,18 +22,18 @@
       "id": "columns-promo",
       "fields": [
         {
-          "component": "text",
-          "valueType": "number",
-          "name": "columns",
-          "value": "",
-          "label": "Columns"
+          "component": "reference",
+          "valueType": "string",
+          "name": "image",
+          "label": "Image",
+          "multi": false
         },
         {
-          "component": "text",
-          "valueType": "number",
-          "name": "rows",
+          "component": "richtext",
+          "name": "text",
           "value": "",
-          "label": "Rows"
+          "label": "Text",
+          "valueType": "string"
         }
       ]
     }
@@ -40,18 +41,7 @@
   "filters": [
     {
       "id": "columns-promo",
-      "components": [
-        "column"
-      ]
-    },
-    {
-      "id": "column",
-      "components": [
-        "text",
-        "image",
-        "button",
-        "title"
-      ]
+      "components": []
     }
   ]
 }
