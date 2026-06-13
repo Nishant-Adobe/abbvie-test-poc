@@ -104,18 +104,7 @@
   },
   {
     "id": "columns-promo",
-    "components": [
-      "column"
-    ]
-  },
-  {
-    "id": "column",
-    "components": [
-      "text",
-      "image",
-      "button",
-      "title"
-    ]
+    "components": []
   },
   {
     "id": "columns",
