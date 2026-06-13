@@ -1,15 +1,15 @@
-/* Block: columns-promo
+/* Block: promo-tout
    Neutralizes EDS wrappers so the original framework CSS
    (abbv-framework.css, linzess-global.css, linzess.css) controls layout.
    Three variants: eligible-tout (light-purple, 802px), discussion-tout (off-white),
    savings-card-tout (off-white, overflow hidden). */
 
 /* === 1. Neutralize EDS block & wrapper elements === */
-.columns-promo {
+.promo-tout {
   display: contents;
 }
 
-.columns-promo-wrapper {
+.promo-tout-wrapper {
   max-width: none !important;
   margin: 0 !important;
   padding: 0 !important;
@@ -19,19 +19,19 @@
 
 /* EDS transforms <p><a> into a.button with purple pill styling.
    The block JS creates .abbv-button-primary links instead. */
-main .columns-promo a.button:any-link,
-main .columns-promo a.button:visited {
+main .promo-tout a.button:any-link,
+main .promo-tout a.button:visited {
   all: unset;
 }
 
-main .columns-promo .button-container {
+main .promo-tout .button-container {
   all: unset;
   display: block;
 }
 
 /* === 3. Ensure framework .abbv-button-primary overrides EDS a:any-link === */
-main .columns-promo a.abbv-button-primary:any-link,
-main .columns-promo a.abbv-button-primary:visited {
+main .promo-tout a.abbv-button-primary:any-link,
+main .promo-tout a.abbv-button-primary:visited {
   color: var(--linz-white) !important;
   background-color: var(--linz-dark-purple);
   padding: 16px 59px 16px 32px;
@@ -48,7 +48,7 @@ main .columns-promo a.abbv-button-primary:visited {
   cursor: pointer;
 }
 
-main .columns-promo a.abbv-button-primary:hover {
+main .promo-tout a.abbv-button-primary:hover {
   background-color: var(--link-hover-color);
   color: var(--linz-white) !important;
   text-decoration: none;
@@ -61,17 +61,17 @@ main .columns-promo a.abbv-button-primary:hover {
 
 /* The eligible-tout is a compact card: max-width 802px, auto-centered,
    with fixed height and overflow hidden on desktop */
-.columns-promo .abbv-row-container.eligible-tout {
+.promo-tout .abbv-row-container.eligible-tout {
   margin-left: auto;
   margin-right: auto;
 }
 
 /* === 5. Rich text spacing === */
-.columns-promo .abbv-rich-text.margin-bottom-24 {
+.promo-tout .abbv-rich-text.margin-bottom-24 {
   margin-bottom: 24px;
 }
 
-.columns-promo .abbv-rich-text p {
+.promo-tout .abbv-rich-text p {
   font-size: 16px !important;
   line-height: 1.5 !important;
   color: var(--linz-grey, #4d4d4f);
@@ -79,8 +79,8 @@ main .columns-promo a.abbv-button-primary:hover {
 }
 
 /* === 6. Heading styles (scoped to block) === */
-.columns-promo .abbv-rich-text p.heading-2,
-.columns-promo .heading-2 {
+.promo-tout .abbv-rich-text p.heading-2,
+.promo-tout .heading-2 {
   font-size: 24px !important;
   font-weight: 700 !important;
   line-height: normal !important;
@@ -90,12 +90,12 @@ main .columns-promo a.abbv-button-primary:hover {
 }
 
 /* Eligible-tout has smaller heading */
-.columns-promo .eligible-tout .heading-2 {
+.promo-tout .eligible-tout .heading-2 {
   font-size: 18px;
 }
 
 /* === 7. Image handling === */
-.columns-promo .abbv-image-content-container-v2 img {
+.promo-tout .abbv-image-content-container-v2 img {
   max-width: none;
   width: 100%;
   height: auto;
@@ -104,20 +104,20 @@ main .columns-promo a.abbv-button-primary:hover {
 
 /* === 8. Responsive: mobile stacking === */
 @media (width <= 985px) {
-  .columns-promo .image-text-wrapper .abbv-row {
+  .promo-tout .image-text-wrapper .abbv-row {
     flex-direction: column;
   }
 
-  .columns-promo .image-text-wrapper .abbv-col:first-child {
+  .promo-tout .image-text-wrapper .abbv-col:first-child {
     max-width: 100%;
   }
 
-  .columns-promo .image-text-wrapper .abbv-col:last-child {
+  .promo-tout .image-text-wrapper .abbv-col:last-child {
     text-align: center;
     padding: 16px;
   }
 
-  .columns-promo .abbv-row-container.eligible-tout {
+  .promo-tout .abbv-row-container.eligible-tout {
     height: auto;
     overflow: visible;
     max-width: 100%;
@@ -125,24 +125,24 @@ main .columns-promo a.abbv-button-primary:hover {
     margin-right: 0;
   }
 
-  .columns-promo .eligible-tout .abbv-col:first-child img {
+  .promo-tout .eligible-tout .abbv-col:first-child img {
     margin-top: 0;
   }
 }
 
 /* === 9. Tablet: keep tout rows side-by-side === */
 @media (width >= 600px) and (width <= 985px) {
-  .columns-promo .tablet-tout-row .abbv-row {
+  .promo-tout .tablet-tout-row .abbv-row {
     flex-direction: row;
   }
 
-  .columns-promo .tablet-tout-row .abbv-col:last-child {
+  .promo-tout .tablet-tout-row .abbv-col:last-child {
     padding: 0 16px;
   }
 }
 
 /* === 10. Savings card promo in off-white section — lavender tint background === */
-.section.off-white .columns-promo-wrapper {
+.section.off-white .promo-tout-wrapper {
   background-color: var(--linz-light-purple, #d9d7f9);
   border-radius: 16px;
   max-width: 998px !important;
@@ -151,13 +151,13 @@ main .columns-promo a.abbv-button-primary:hover {
   overflow: hidden;
 }
 
-.section.off-white .columns-promo-wrapper .columns-promo {
+.section.off-white .promo-tout-wrapper .promo-tout {
   display: flex !important;
   align-items: center;
   gap: 32px;
 }
 
-.section.off-white .columns-promo-wrapper .columns-promo img {
+.section.off-white .promo-tout-wrapper .promo-tout img {
   max-width: 280px;
   height: auto;
 }
