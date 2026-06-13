@@ -1,0 +1,247 @@
+{
+  "analysis-urls-all": {
+    "captured": "2026-06-09T16:14:55.624Z",
+    "totalUrls": 77,
+    "totalDocuments": 0,
+    "method": "sitemap",
+    "sitemapURL": "/sitemap.xml,/sitemap.pages.xml",
+    "robotsTxtFound": false,
+    "robotsTxtRulesApplied": false,
+    "limitations": "",
+    "confidence": "95%",
+    "urls": [
+      {
+        "url": "https://www.linzess.com"
+      },
+      {
+        "url": "https://www.linzess.com/why-linzess/how-linzess-can-help"
+      },
+      {
+        "url": "https://www.linzess.com/why-linzess/how-linzess-works"
+      },
+      {
+        "url": "https://www.linzess.com/why-linzess/side-effects-of-linzess"
+      },
+      {
+        "url": "https://www.linzess.com/why-linzess/linzess-patient-stories"
+      },
+      {
+        "url": "https://www.linzess.com/understanding-constipation/types-of-constipation"
+      },
+      {
+        "url": "https://www.linzess.com/understanding-constipation/what-is-ibs-c"
+      },
+      {
+        "url": "https://www.linzess.com/understanding-constipation/what-is-cic"
+      },
+      {
+        "url": "https://www.linzess.com/understanding-constipation/constipation-treatment-options"
+      },
+      {
+        "url": "https://www.linzess.com/understanding-constipation/tips-for-managing-constipation"
+      },
+      {
+        "url": "https://www.linzess.com/find-relief/talk-to-a-doctor"
+      },
+      {
+        "url": "https://www.linzess.com/find-relief/gutcheck"
+      },
+      {
+        "url": "https://www.linzess.com/find-relief/how-to-take-linzess"
+      },
+      {
+        "url": "https://www.linzess.com/savings-and-support/linzess-savings-program"
+      },
+      {
+        "url": "https://www.linzess.com/savings-and-support/healthy-routines"
+      },
+      {
+        "url": "https://www.linzess.com/savings-and-support/healthy-routines/otc-and-prescription-treatments"
+      },
+      {
+        "url": "https://www.linzess.com/savings-and-support/healthy-routines/tackling-ibs-c-triggers"
+      },
+      {
+        "url": "https://www.linzess.com/savings-and-support/healthy-routines/keeping-in-touch-with-your-doctor"
+      },
+      {
+        "url": "https://www.linzess.com/savings-and-support/wellness-tips"
+      },
+      {
+        "url": "https://www.linzess.com/savings-and-support/wellness-tips/your-map-to-a-low-fodmap-diet"
+      },
+      {
+        "url": "https://www.linzess.com/savings-and-support/wellness-tips/good-for-your-gut-flavorful-food-swaps"
+      },
+      {
+        "url": "https://www.linzess.com/savings-and-support/wellness-tips/make-a-game-plan-for-ibs-c"
+      },
+      {
+        "url": "https://www.linzess.com/savings-and-support/wellness-tips/5-holiday-low-fodmap-recipes"
+      },
+      {
+        "url": "https://www.linzess.com/savings-and-support/wellness-tips/is-your-pantry-fodmap-friendly"
+      },
+      {
+        "url": "https://www.linzess.com/savings-and-support/community-resources"
+      },
+      {
+        "url": "https://www.linzess.com/savings-and-support/from-the-gut"
+      },
+      {
+        "url": "https://www.linzess.com/savings-and-support/faqs"
+      },
+      {
+        "url": "https://www.linzess.com/legal-policy"
+      },
+      {
+        "url": "https://www.linzess.com/search-results"
+      },
+      {
+        "url": "https://www.linzess.com/why-linzess/linzess-patient-stories/nan-transcripts-1"
+      },
+      {
+        "url": "https://www.linzess.com/why-linzess/linzess-patient-stories/dian-transcripts"
+      },
+      {
+        "url": "https://www.linzess.com/why-linzess/linzess-patient-stories/julie-transcripts"
+      },
+      {
+        "url": "https://www.linzess.com/why-linzess/linzess-patient-stories/elaine-transcripts"
+      },
+      {
+        "url": "https://www.linzess.com/why-linzess/linzess-patient-stories/Nan-transcripts"
+      },
+      {
+        "url": "https://www.linzess.com/why-linzess/linzess-patient-stories/dr-lucak-transcripts"
+      },
+      {
+        "url": "https://www.linzess.com/why-linzess/linzess-patient-stories/setting-expectations-transcripts"
+      },
+      {
+        "url": "https://www.linzess.com/why-linzess/linzess-patient-stories/nan-transcripts"
+      },
+      {
+        "url": "https://www.linzess.com/why-linzess/linzess-patient-experiences/could-it-be-transcripts"
+      },
+      {
+        "url": "https://www.linzess.com/why-linzess/linzess-patient-experiences/dian-transcripts"
+      },
+      {
+        "url": "https://www.linzess.com/why-linzess/linzess-patient-experiences/dr-lucak-transcripts"
+      },
+      {
+        "url": "https://www.linzess.com/why-linzess/linzess-patient-experiences/elaine-transcripts"
+      },
+      {
+        "url": "https://www.linzess.com/why-linzess/linzess-patient-experiences/finding-relief-transcripts"
+      },
+      {
+        "url": "https://www.linzess.com/why-linzess/linzess-patient-experiences/getting-on-same-page-transcripts"
+      },
+      {
+        "url": "https://www.linzess.com/why-linzess/linzess-patient-experiences/julie-transcripts"
+      },
+      {
+        "url": "https://www.linzess.com/why-linzess/linzess-patient-experiences/seeking-the-right-treatment-transcripts"
+      },
+      {
+        "url": "https://www.linzess.com/why-linzess/linzess-patient-experiences/setting-expectations-transcripts"
+      },
+      {
+        "url": "https://www.linzess.com/why-linzess/linzess-patient-experiences/nan-transcripts"
+      },
+      {
+        "url": "https://www.linzess.com/why-linzess/linzess-patient-experiences"
+      },
+      {
+        "url": "https://www.linzess.com/why-linzess"
+      },
+      {
+        "url": "https://www.linzess.com/understanding-constipation"
+      },
+      {
+        "url": "https://www.linzess.com/find-relief"
+      },
+      {
+        "url": "https://www.linzess.com/savings-and-support/how-to-take-linzess"
+      },
+      {
+        "url": "https://www.linzess.com/savings-and-support/community-support"
+      },
+      {
+        "url": "https://www.linzess.com/savings-and-support/from-the-gut/reminder-terms-conditions"
+      },
+      {
+        "url": "https://www.linzess.com/savings-and-support/reminder-terms-conditions"
+      },
+      {
+        "url": "https://www.linzess.com/savings-and-support"
+      },
+      {
+        "url": "https://www.linzess.com/reminder-terms-conditions"
+      },
+      {
+        "url": "https://www.linzess.com/sitemap"
+      },
+      {
+        "url": "https://www.linzess.com/espanol"
+      },
+      {
+        "url": "https://www.linzess.com/starting-linzess/how-to-take-linzess"
+      },
+      {
+        "url": "https://www.linzess.com/starting-linzess/reminder-terms-conditions"
+      },
+      {
+        "url": "https://www.linzess.com/starting-linzess/healthy-routines/keeping-in-touch-with-your-doctor"
+      },
+      {
+        "url": "https://www.linzess.com/starting-linzess/healthy-routines/tackling-ibs-c-triggers"
+      },
+      {
+        "url": "https://www.linzess.com/starting-linzess/healthy-routines/otc-and-prescription-treatments"
+      },
+      {
+        "url": "https://www.linzess.com/starting-linzess/healthy-routines"
+      },
+      {
+        "url": "https://www.linzess.com/starting-linzess/wellness-tips/5-holiday-low-fodmap-recipes"
+      },
+      {
+        "url": "https://www.linzess.com/starting-linzess/wellness-tips/good-for-your-gut-flavorful-food-swaps"
+      },
+      {
+        "url": "https://www.linzess.com/starting-linzess/wellness-tips/your-map-to-a-low-fodmap-diet"
+      },
+      {
+        "url": "https://www.linzess.com/starting-linzess/wellness-tips/make-a-game-plan-for-ibs-c"
+      },
+      {
+        "url": "https://www.linzess.com/starting-linzess/wellness-tips/is-your-pantry-fodmap-friendly"
+      },
+      {
+        "url": "https://www.linzess.com/starting-linzess/wellness-tips"
+      },
+      {
+        "url": "https://www.linzess.com/starting-linzess"
+      },
+      {
+        "url": "https://www.linzess.com/savings-card/terms"
+      },
+      {
+        "url": "https://www.linzess.com/savings-card/activate"
+      },
+      {
+        "url": "https://www.linzess.com/savings-card/savings"
+      },
+      {
+        "url": "https://www.linzess.com/savings-card"
+      },
+      {
+        "url": "https://www.linzess.com/resources"
+      }
+    ],
+    "documents": []
+  }
+}

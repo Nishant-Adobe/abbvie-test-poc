@@ -1,20 +1,95 @@
+/* stylelint-disable */
+
+/* Neutralize EDS footer wrapper */
+footer .footer {
+  visibility: visible !important;
+  max-width: none;
+}
+
 footer {
-  background-color: var(--light-color);
-  font-size: var(--body-font-size-xs);
+  background-color: var(--linz-dark-purple, #422e83);
+  color: var(--linz-white, #fff);
+  padding: 40px 0 20px;
+  position: relative;
+  overflow: visible;
+
+  /* Sit above the preceding inline-ISI region (z-index 3) so the purple arch
+     dome (::before) curves up over it instead of being covered by its white bg. */
+  z-index: 4;
 }
 
-footer .footer > div {
-  margin: auto;
-  max-width: 1200px;
-  padding: 40px 24px 24px;
+footer::before {
+  content: "";
+  position: absolute;
+  top: -60px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 130%;
+  height: 255px;
+  background-color: var(--linz-dark-purple, #422e83);
+  border-radius: 100% 100% 0 0;
+  z-index: -1;
 }
 
-footer .footer p {
-  margin: 0;
+footer p,
+footer li {
+  color: var(--linz-white, #fff);
+  font-size: 12px;
 }
 
-@media (width >= 900px) {
-  footer .footer > div {
-    padding: 40px 32px 24px;
-  }
+/* Footer logo sizing — match original computed values */
+.abbv-footer .abbv-footer-logos {
+  list-style: none;
+  padding: 0;
+  margin: 20px 0;
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+
+.abbv-footer .abbv-footer-logos img {
+  width: 80px;
+  height: auto;
+  display: block;
+  filter: brightness(0) invert(1);
+}
+
+.abbv-footer .abbv-footer-logos li:nth-child(2) img {
+  width: 102px;
+}
+
+.abbv-footer .abbv-footer-logos .abbv-footer-copyright {
+  font-size: 12px;
+  color: var(--linz-white, #fff);
+}
+
+/* Fix link colors in footer — dark purple on dark purple bg = invisible */
+.abbv-footer a:any-link {
+  color: #fff !important;
+}
+
+.abbv-footer .abbv-footer-legal-links {
+  list-style: none;
+  padding: 0;
+  margin: 16px 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 16px;
+}
+
+.abbv-footer .abbv-footer-legal-links li {
+  display: inline;
+}
+
+.abbv-footer .abbv-footer-legal-links li + li::before {
+  content: "|";
+  margin-right: 16px;
+  color: var(--linz-white, #fff);
+  text-decoration: none;
+}
+
+.abbv-footer .abbv-footer-legal-links a {
+  font-size: 12px;
+  text-decoration: underline;
 }

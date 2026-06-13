@@ -1,0 +1,110 @@
+/* stylelint-disable */
+
+/* Cards Info — 2-column icon + text info cards with overflow icons */
+.cards-info {
+  display: contents;
+}
+
+.cards-info .abbv-flex-container-v2 {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  margin: 40px auto 0;
+  max-width: 998px;
+  padding: 0 20px;
+}
+
+.cards-info-wrapper {
+  margin-bottom: 80px !important;
+  padding-bottom: 20px !important;
+}
+
+@media (width >= 900px) {
+  .cards-info .abbv-flex-container-v2 {
+    flex-direction: row;
+    gap: 24px;
+  }
+}
+
+.cards-info .flexboxitem-v2 {
+  flex: 1 1 0%;
+  position: relative;
+  padding-top: 50px;
+}
+
+.cards-info .flexboxitem-v2:first-child .abbv-flex-item-v2 {
+  background-color: var(--linz-dark-purple, #422e83);
+  color: #fff;
+}
+
+.cards-info .flexboxitem-v2:first-child .card-content p:first-child {
+  color: #fff;
+}
+
+.cards-info .flexboxitem-v2:first-child .card-content p {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.cards-info .flexboxitem-v2:nth-child(2) .abbv-flex-item-v2 {
+  background-color: var(--linz-light-purple, #d9d7f9);
+}
+
+.cards-info .abbv-flex-item-v2 {
+  border-radius: 20px;
+  padding: 56px 32px 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  height: 100%;
+}
+
+.cards-info .card-icon {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  height: 100px;
+  background-color: var(--linz-light-purple, #d9d7f9);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+}
+
+.cards-info .flexboxitem-v2:first-child .card-icon {
+  background-color: var(--linz-light-purple, #d9d7f9);
+}
+
+.cards-info .flexboxitem-v2:nth-child(2) .card-icon {
+  background-color: var(--linz-dark-purple, #422e83);
+}
+
+.cards-info .flexboxitem-v2:nth-child(2) .card-icon img {
+  filter: none;
+  width: 70px;
+  height: 70px;
+}
+
+.cards-info .card-icon img {
+  width: 56px;
+  height: 56px;
+  object-fit: contain;
+}
+
+.cards-info .card-content p:first-child {
+  font-family: Lato, sans-serif;
+  font-size: 26px;
+  font-weight: 700;
+  color: var(--linz-dark-purple, #422e83);
+  margin: 20px 0 16px;
+}
+
+.cards-info .card-content p {
+  font-size: 16px;
+  color: var(--linz-grey, #4d4d4f);
+  line-height: 1.5;
+  margin: 0;
+}

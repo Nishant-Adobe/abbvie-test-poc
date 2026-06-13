@@ -1,0 +1,3231 @@
+/* stylelint-disable */
+/* ================================================================
+   LINZESS.COM - Original Site CSS (Verbatim)
+   Extracted from https://www.linzess.com/ production stylesheets
+   ================================================================ */
+
+/* CSS Custom Properties — verbatim from linzess.com :root */
+:root {
+  --linz-dark-purple: #422e83;
+  --linz-light-purple: #d9d7f9;
+  --linz-purple: #60579e;
+  --linz-orange: #faa633;
+  --linz-grey: #4d4d4f;
+  --linz-off-white: #f4f6fb;
+  --linz-white: #fff;
+  --linz-black: #000;
+  --linz-rounded-corner: 16px;
+  --linz-rounded-corner-sm: 8px;
+  --body-font-size: 0.875rem;
+  --footnote-font-size: 0.75rem;
+  --eyebrow-font-size: 0.75rem;
+  --heading1-font-size: 2rem;
+  --heading2-font-size: 1.125rem;
+  --heading1-line-height: 1.875rem;
+  --font-size-xl: 2.0625rem;
+  --font-size-md: 1.0625rem;
+}
+
+@media only screen and (min-width: 900px) {
+  :root {
+    --body-font-size: 1rem;
+    --heading1-font-size: 2.5rem;
+    --heading2-font-size: 1.5rem;
+    --heading1-line-height: 2.25rem;
+    --font-size-xl: 3rem;
+    --font-size-md: 1.5rem;
+  }
+}
+
+/* ===== FONT FACES ===== */
+/* Primary body font: Lato (loaded via Google Fonts in head.html)
+   Weights used: 300 (light), 400 (regular), 700 (bold), 900 (black/extra-bold)
+   The site uses font-weight: 800 on buttons which maps to Lato 900 */
+
+/* Primary heading font: Bebas Neue (loaded via Google Fonts in head.html)
+   Weight used: 400 only */
+
+/* Icon font - cross-origin from original AEM instance, CSS fallback chevron used */
+@font-face {
+  font-family: abbv-iconFont;
+  src: url("https://www.linzess.com/etc.clientlibs/common-elements/clientlibs/clientlib-fonts/resources/framework/ui/fonts/abbv_iconFont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* ===== BASE TYPOGRAPHY ===== */
+/* Exact computed values from linzess.com */
+body {
+  font-family: Lato, sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: normal;
+  color: rgb(77 77 79);
+}
+
+h1 {
+  font-family: "Bebas Neue", sans-serif;
+  font-size: var(--heading1-font-size);
+  font-weight: 400;
+  line-height: var(--heading1-line-height);
+  letter-spacing: normal;
+  color: inherit;
+}
+
+h2 {
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 32px;
+  font-weight: 400;
+  line-height: 30px;
+  letter-spacing: normal;
+}
+
+h3 {
+  font-family: Lato, sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: normal;
+  letter-spacing: normal;
+  color: rgb(66 46 131);
+}
+
+.heading-2 {
+  font-family: Lato, sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: normal;
+  letter-spacing: normal;
+  color: rgb(66 46 131);
+}
+
+.footnote {
+  font-family: Lato, sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: normal;
+  color: rgb(77 77 79);
+}
+
+/* ===== ICON FONT FALLBACK ===== */
+i::before,
+i::after,
+.i-b::before,
+.i-a::after {
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  -webkit-font-smoothing: antialiased;
+  display: inline-block;
+}
+
+.i-b::before {
+  margin-right: 10px;
+}
+
+.abbv-icon-keyboard_arrow_right.i-b::before,
+.abbv-icon-keyboard_arrow_right.i-a::after {
+  content: "";
+  width: 10px;
+  height: 10px;
+  border-right: 2.5px solid currentcolor;
+  border-top: 2.5px solid currentcolor;
+  transform: rotate(45deg);
+}
+
+/* ===== GRID SYSTEM ===== */
+.abbv-row-container {
+  position: relative;
+  max-width: 1220px;
+  margin: auto;
+  box-sizing: border-box;
+}
+
+.abbv-row {
+  margin: 0;
+  padding: 0 20px;
+}
+
+.abbv-row-flush {
+  margin: 0;
+  padding: 0;
+}
+
+.abbv-row-container::after,
+.abbv-row::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.abbv-col {
+  float: left;
+  box-sizing: border-box;
+  margin-left: 2%;
+}
+
+.abbv-col-6 {
+  width: 49%;
+}
+
+.abbv-col:first-child {
+  margin-left: 0;
+}
+
+/* ===== BUTTONS ===== */
+/* Computed: font-family Lato, font-size 14.4px, font-weight 800, line-height normal */
+.abbv-button-primary,
+.abbv-button-secondary,
+.abbv-button-tertiary,
+.abbv-button-plain {
+  font-family: Lato, sans-serif;
+  font-size: 0.9rem;
+  font-weight: 800;
+  line-height: normal;
+  letter-spacing: normal;
+  padding: 12px;
+}
+
+a.i-b {
+  padding-left: 26px;
+}
+
+a.i-b::before {
+  position: absolute;
+  left: 0;
+  top: -2px;
+  font-size: 1.3rem;
+}
+
+.abbv-button-primary,
+.abbv-button-primary:visited,
+.abbv-button-secondary,
+.abbv-button-secondary:visited,
+.abbv-button-tertiary,
+.abbv-button-tertiary:visited {
+  box-sizing: border-box;
+  position: relative;
+  color: rgb(7 29 73);
+  text-decoration: none;
+}
+
+.abbv-button-primary.i-a,
+.abbv-button-primary.i-a:visited,
+.abbv-button-secondary.i-a,
+.abbv-button-secondary.i-a:visited {
+  padding-right: 42px;
+}
+
+.abbv-button-primary.i-b,
+.abbv-button-primary.i-b:visited,
+.abbv-button-secondary.i-b,
+.abbv-button-secondary.i-b:visited {
+  padding-left: 42px;
+}
+
+.abbv-button-primary.i-a::after,
+.abbv-button-secondary.i-a::after,
+.abbv-button-tertiary.i-a::after,
+.abbv-button-plain.i-a::after {
+  position: absolute;
+  right: 10px;
+  top: 9px;
+  font-size: 1.3rem;
+  text-decoration: none;
+}
+
+.abbv-button-primary.i-b::before,
+.abbv-button-secondary.i-b::before,
+.abbv-button-tertiary.i-b::before,
+.abbv-button-plain.i-b::before {
+  position: absolute;
+  left: 10px;
+  top: 9px;
+  font-size: 1.3rem;
+  text-decoration: none;
+}
+
+.abbv-button-primary,
+.abbv-button-primary:visited {
+  position: relative;
+  transition: background 0.3s linear;
+  display: inline-block;
+  color: rgb(255 255 255);
+  background: rgb(7 29 73);
+  border: 1px solid rgb(85 85 85);
+  border-radius: 3px;
+}
+
+.abbv-button-primary:hover {
+  transition: background 0.3s linear;
+  color: rgb(255 255 255);
+  background: rgb(31 68 140);
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.abbv-button-secondary,
+.abbv-button-secondary:visited {
+  position: relative;
+  transition: background 0.3s linear;
+  display: inline-block;
+  color: rgb(85 85 85);
+  background: rgb(204 204 204);
+  border: 1px solid rgb(85 85 85);
+  border-radius: 3px;
+}
+
+.abbv-button-secondary:hover {
+  transition: background 0.3s linear;
+  background: rgb(243 243 243);
+  cursor: pointer;
+  text-decoration: none;
+}
+
+/* Linzess overrides */
+.abbv-button-primary,
+.abbv-button-secondary,
+.abbv-button-tertiary {
+  border: 0;
+  border-radius: var(--linz-rounded-corner);
+  font-weight: 800;
+  padding: 16px 56px 16px 32px;
+}
+
+.abbv-button-primary.i-b::before,
+.abbv-button-secondary.i-b::before,
+.abbv-button-tertiary.i-b::before {
+  top: 12px;
+}
+
+.abbv-button-primary.i-a,
+.abbv-button-secondary.i-a {
+  padding-right: 59px;
+}
+
+.abbv-button-primary.i-a::after,
+.abbv-button-secondary.i-a::after {
+  top: 50%;
+  margin-top: -5px;
+  margin-right: 15px;
+}
+
+.abbv-button-primary,
+.abbv-button-primary:visited {
+  color: var(--linz-white);
+  background: var(--linz-dark-purple);
+}
+
+.abbv-button-primary:hover {
+  color: var(--linz-dark-purple);
+  background: var(--linz-off-white);
+}
+
+.abbv-button-secondary,
+.abbv-button-secondary:visited {
+  color: var(--linz-dark-purple);
+  background: var(--linz-white);
+}
+
+.abbv-button-secondary:hover {
+  color: var(--linz-dark-purple);
+  background: var(--linz-light-purple);
+}
+
+/* ===== IMAGE TEXT V2 ===== */
+.abbv-image-text-v2 {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  overflow-wrap: break-word;
+}
+
+.abbv-image-text-v2 .abbv-image-text-content-container-v2 {
+  position: absolute;
+  display: flex;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  font-size: 0.9rem;
+}
+
+.abbv-image-text-v2 .abbv-image-text-content-v2 {
+  margin: 20px;
+  width: 25%;
+  background: rgb(204 204 204 / 80%);
+  position: unset !important;
+}
+
+.abbv-image-text-v2 .abbv-image-text-display-v2 {
+  padding: 20px;
+}
+
+.abbv-image-text-v2 .abbv-image-text-display-v2 p {
+  margin: 0 0 20px;
+}
+
+.abbv-image-text-content-container-v2.middle-middle {
+  flex-wrap: wrap;
+  place-content: center;
+}
+
+.abbv-image-text-v2 .abbv-image-content-container-v2 {
+  position: relative;
+}
+
+.abbv-image-content-container-v2 img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.abbv-image-text-v2 .abbv-stretched-card-body {
+  flex: 1 1 auto;
+  min-height: 1px;
+}
+
+.abbv-image-text-v2 .abbv-stretched-link {
+  position: unset !important;
+}
+
+.abbv-image-text-v2 .abbv-stretched-link::after {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none !important;
+  content: "";
+}
+
+.abbv-image-text-content-container-v2.abbv-image-text-out {
+  position: relative;
+}
+
+.abbv-image-text-v2 .abbv-image-text-content-container-v2.abbv-image-text-out .abbv-image-text-content-v2 {
+  margin: 0;
+  background: 0 center;
+  width: 100%;
+}
+
+.abbv-image-text-content-container-v2.abbv-image-text-out .abbv-image-text-content-v2 .abbv-image-text-display-v2 {
+  padding: 20px 0;
+}
+
+.abbv-image-text-v2 .abbv-image-text-display-v2 p:not(.heading-2):not(.eyebrow):not(.footnote):not(.tout-overlay) {
+  font-size: var(--body-font-size);
+}
+
+.abbv-image-text-v2 .abbv-button-primary {
+  padding-left: 12px;
+}
+
+.abbv-image-text-v2 .abbv-button-primary.i-b::before {
+  position: relative;
+  left: 2px;
+  top: 4px;
+}
+
+/* ===== FLEXBOX V2 ===== */
+.abbv-flex-container-v2 {
+  display: flex;
+}
+
+.flexboxitem-v2 {
+  flex: 1 1 0%;
+}
+
+.abbv-flex-item-v2 {
+  padding: 5px;
+  margin: 10px;
+}
+
+.flexbox-cards .flexboxitem-v2 {
+  display: flex;
+}
+
+.flexbox-cards .flexboxitem-v2 .abbv-flex-item-v2 {
+  width: 100%;
+  padding-left: 16px;
+  padding-right: 16px;
+}
+
+.flexbox-cards:has(.col-2-card) {
+  gap: 80px;
+}
+
+.col-2-card {
+  padding: 0 24px 40px;
+  margin: 0;
+}
+
+.flexbox-video-cards .flexboxitem-v2 .abbv-flex-item-v2 {
+  padding: 0;
+  overflow: hidden;
+}
+
+/* ===== COLOR UTILITIES ===== */
+.c-linz-white,
+.c-linz-white a,
+.c-linz-white a:visited,
+.c-linz-white a:active {
+  color: var(--linz-white);
+}
+
+.c-linz-dark-purple,
+.linzess-text-purple {
+  color: var(--linz-dark-purple) !important;
+}
+
+.background-dark-purple {
+  background-color: var(--linz-dark-purple);
+}
+
+.background-light-purple {
+  background-color: var(--linz-light-purple);
+}
+
+.background-off-white {
+  background-color: var(--linz-off-white);
+}
+
+/* ===== SECTION ARC (curved top border) ===== */
+.background-arc {
+  position: relative;
+  z-index: 1;
+  padding-bottom: 100px;
+}
+
+.background-arc::before {
+  content: "";
+  border-top-left-radius: 100%;
+  border-top-right-radius: 100%;
+  height: 75px;
+  width: 130%;
+  position: absolute;
+  top: -60px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: -5;
+}
+
+.background-white-arc::before {
+  background: var(--linz-white);
+}
+
+.background-dark-purple-arc::before {
+  background: var(--linz-dark-purple);
+}
+
+/* EDS section-level arc for section-metadata styled sections */
+main > .section.white {
+  position: relative;
+  z-index: 1;
+  padding-bottom: 100px;
+}
+
+main > .section.white::before {
+  content: "";
+  border-top-left-radius: 100%;
+  border-top-right-radius: 100%;
+  height: 255px;
+  width: 130%;
+  position: absolute;
+  top: -60px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
+  background: var(--linz-white);
+}
+
+main > .section.white::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: var(--linz-white);
+  z-index: 0;
+}
+
+main > .section.white.cards-feature-container {
+  padding-bottom: 120px;
+}
+
+main > .section.off-white {
+  position: relative;
+  z-index: 1;
+  background-color: var(--linz-off-white);
+  padding: 60px 0 100px;
+}
+
+main > .section.off-white::before {
+  content: "";
+  border-top-left-radius: 100%;
+  border-top-right-radius: 100%;
+  height: 75px;
+  width: 130%;
+  position: absolute;
+  top: -60px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1;
+  background: var(--linz-off-white);
+}
+
+main > .section.dark-purple {
+  position: relative;
+  z-index: 2;
+  background-color: var(--linz-dark-purple);
+  color: var(--linz-white);
+  padding: 60px 0 155px;
+}
+
+/* Keep the section's own content above the arc dome ::before (which is z-index -1) */
+main > .section.dark-purple > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* Dark-purple section makes loose body text white, but NOT the cards-checklist
+   cards — those have light backgrounds and the framework's .c-linz-dark-purple
+   keeps their text dark-purple (matches original). cards-checklist is therefore
+   excluded here and styled entirely by the framework CSS. */
+main > .section.dark-purple > .default-content-wrapper p,
+main > .section.dark-purple > .default-content-wrapper li,
+main > .section.dark-purple .cards-icon-card-body p,
+main > .section.dark-purple .cards-icon-card-body li,
+main > .section.dark-purple .cards-video p,
+main > .section.dark-purple .cards-video li {
+  color: var(--linz-white);
+  font-size: 16px;
+  line-height: normal;
+}
+
+main > .section.dark-purple::before {
+  content: "";
+  border-top-left-radius: 100%;
+  border-top-right-radius: 100%;
+  height: 255px;
+  width: 130%;
+  position: absolute;
+  top: -60px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: -1;
+  background: var(--linz-dark-purple);
+}
+
+/* No bottom ::after arch on dark-purple sections — the original draws the white
+   dome from the *following* element's ::before (e.g. the inline ISI's ::before).
+   A bottom ::after here would double-stack and overlap that dome. */
+
+/* ===== TYPOGRAPHY ===== */
+.heading-2 {
+  font-family: Lato, sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  font-size: var(--heading2-font-size);
+}
+
+main .section > .default-content-wrapper h2 {
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 40px;
+  font-weight: 400;
+  line-height: 36px;
+  text-align: center;
+  text-transform: none;
+  color: var(--linz-dark-purple, #422e83);
+  position: relative;
+  padding-top: 24px;
+  margin-top: 48px;
+}
+
+main .section > .default-content-wrapper h2::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 48px;
+  height: 6px;
+  border-bottom: 3px solid var(--linz-orange, #faa633);
+  border-radius: 0 0 50% 50%;
+}
+
+main .section > .default-content-wrapper h2 + p {
+  font-size: 16px;
+  font-family: Lato, sans-serif;
+  color: var(--linz-grey, #4d4d4f);
+  text-align: center;
+  max-width: 700px;
+  margin: 16px auto 32px;
+  line-height: normal;
+}
+
+main .section.dark-purple > .default-content-wrapper h2 {
+  color: var(--linz-white);
+}
+
+main .section.dark-purple > .default-content-wrapper {
+  text-align: center;
+  max-width: 998px;
+  margin: 0 auto;
+}
+
+/* Dark purple section main heading — Bebas Neue uppercase */
+main .section.dark-purple > .default-content-wrapper:first-child p:first-child {
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 40px;
+  font-weight: 400;
+  line-height: 1.1;
+  text-transform: uppercase;
+  color: var(--linz-white);
+  margin-bottom: 16px;
+}
+
+/* Dark purple section sub-text — bold white */
+main .section.dark-purple > .default-content-wrapper:first-child p:nth-child(2) {
+  font-weight: 700;
+  font-size: 14px;
+  color: var(--linz-white);
+  line-height: 1.5;
+}
+
+/* Decorative orange divider before headings in dark-purple section */
+main .section.dark-purple > .default-content-wrapper:first-child::before,
+main .section.dark-purple > .default-content-wrapper:nth-child(3) h2::before {
+  content: "";
+  display: block;
+  width: 64px;
+  height: 5px;
+  background-image: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjQiIGhlaWdodD0iNSIgdmlld0JveD0iMCAwIDY0IDUiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHBhdGggZD0iTTEuMjgwMDMgNC4yMzk5N1Y0LjIxMDMyQzEuMjgwMDMgNC4yMTAzMiAxNS45NSAxLjcxOTk3IDMyIDEuNzE5OTdDNDguMDggMS43MTk5NyA2Mi43MiA0LjIxMDMyIDYyLjcyIDQuMjEwMzJWNC4yMzk5NyIgc3Ryb2tlPSIjRkFBNjMzIiBzdHJva2Utd2lkdGg9IjEuNSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIi8+PC9zdmc+");
+  background-size: 64px 5px;
+  background-repeat: no-repeat;
+  background-position: center;
+  margin: 0 auto 20px;
+}
+
+/* Footnote text in dark-purple section — smaller */
+main .section.dark-purple > .default-content-wrapper:nth-child(3) p:first-child {
+  font-size: 12px;
+  line-height: 1.4;
+  margin-bottom: 40px;
+}
+
+/* Dark-purple section eyebrow override */
+main .section.dark-purple > .default-content-wrapper > p.section-eyebrow {
+  font-size: 12px !important;
+  font-weight: 800 !important;
+  text-transform: uppercase !important;
+  font-family: Lato, sans-serif !important;
+  color: var(--linz-white) !important;
+  letter-spacing: 1px;
+
+  /* Match original eyebrow rhythm (20px above, 24px below the eyebrow). */
+  margin: 20px 0 24px !important;
+}
+
+/* Dark-purple section body text — ensure readable size */
+main .section.dark-purple > .default-content-wrapper > p:not(:first-child):not(:nth-child(2)):not(.section-heading):not(.section-subheading):not(.quiz-tout-heading):not(.actor-portrayal):not(.section-eyebrow) {
+  font-size: 16px !important;
+  line-height: normal !important;
+  color: var(--linz-white) !important;
+}
+
+/* Quiz tout heading */
+main .section.dark-purple > .default-content-wrapper > p.quiz-tout-heading {
+  font-size: 24px !important;
+  font-weight: 700 !important;
+  font-family: Lato, sans-serif !important;
+  color: var(--linz-dark-purple, #422e83) !important;
+}
+
+/* Dark-purple section heading/subheading overrides (white text) */
+.section.dark-purple p.section-heading,
+.section.dark-purple p.section-subheading {
+  color: var(--linz-white) !important;
+}
+
+.section.dark-purple p.section-subheading::before {
+  border-bottom-color: var(--linz-orange, #faa633);
+}
+
+/* Video thumbnail card styling */
+.section.dark-purple .default-content-wrapper > p > picture > img[src*="boltdns"],
+.section.dark-purple .default-content-wrapper > p > picture > img[alt*="IBS-C"],
+.section.dark-purple .default-content-wrapper > p > picture > img[alt*="DIAGNOSING"] {
+  max-width: 640px;
+  width: 100%;
+  border-radius: 16px;
+  display: block;
+  margin: 0 auto;
+}
+
+/* Quiz tout image in dark-purple */
+.section.dark-purple .default-content-wrapper > p > picture > img[alt=""] {
+  max-width: 500px;
+  width: 100%;
+  display: block;
+  margin: 0 auto;
+}
+
+/* Actor Portrayal text (small italic) */
+p.actor-portrayal {
+  font-size: 11px !important;
+  color: rgba(255, 255, 255, 0.7) !important;
+  font-style: italic !important;
+  text-align: center !important;
+  margin: 8px auto !important;
+}
+
+.section.white p.actor-portrayal {
+  color: rgba(0, 0, 0, 0.5) !important;
+}
+
+/* ===== CONTENT SECTION TEXT HIERARCHY ===== */
+/* Pattern: eyebrow (12px uppercase) → orange arc → heading (40px Bebas) → body (16px) */
+/* Applies to .section.white and .section.off-white content pages */
+
+/* Eyebrow: first paragraph in content section (e.g., "How Linzess Can Help") */
+main > .section.white > .default-content-wrapper:first-child > p:first-child,
+main > .section.off-white > .default-content-wrapper:first-child > p:first-child {
+  font-size: 12px;
+  font-weight: 800;
+  font-family: Lato, sans-serif;
+  color: var(--linz-dark-purple);
+  text-transform: uppercase;
+  text-align: center;
+  margin-bottom: 24px;
+  position: relative;
+  padding-bottom: 20px;
+}
+
+/* Orange arc decoration below eyebrow text */
+main > .section.white > .default-content-wrapper:first-child > p:first-child::after,
+main > .section.off-white > .default-content-wrapper:first-child > p:first-child::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 48px;
+  height: 6px;
+  border-bottom: 3px solid var(--linz-orange, #faa633);
+  border-radius: 0 0 50% 50%;
+}
+
+/* Section heading: second visible paragraph (e.g., "LINZESS CAN HELP RELIEVE...") */
+main > .section.white > .default-content-wrapper:first-child > p:nth-child(2),
+main > .section.off-white > .default-content-wrapper:first-child > p:nth-child(2) {
+  font-size: 40px;
+  font-weight: 400;
+  font-family: "Bebas Neue", sans-serif;
+  color: var(--linz-dark-purple);
+  text-align: center;
+  line-height: 36px;
+  margin-bottom: 16px;
+}
+
+/* Body text in content sections */
+main > .section.white > .default-content-wrapper:first-child > p:nth-child(n+3),
+main > .section.off-white > .default-content-wrapper:first-child > p:nth-child(n+3) {
+  font-size: 16px;
+  font-weight: 400;
+  font-family: Lato, sans-serif;
+  color: var(--linz-grey, #4d4d4f);
+  text-align: center;
+  line-height: normal;
+  max-width: 700px;
+  margin: 0 auto 16px;
+}
+
+/* Stats circles — add white border */
+.cards-stats .circle {
+  border: 3px solid var(--linz-white, #fff);
+}
+
+.text-align-center {
+  text-align: center;
+}
+
+/* ===== HERO ===== */
+.hero-container {
+  top: -147px;
+}
+
+.hero-container p,
+.hero-container h1 {
+  filter: drop-shadow(rgb(0 0 0 / 50%) 0 0 10px);
+}
+
+.hero-container h1 + p {
+  margin-top: 16px;
+}
+
+.Linzess-home-hero-belly-bnr .abbv-image-text-content-v2 {
+  width: 100%;
+  max-width: 1000px;
+  text-align: left;
+  background: 0 center;
+  padding-top: 75px;
+}
+
+.hero-container.Linzess-home-hero-belly-bnr .abbv-button-primary {
+  background-color: var(--linz-orange);
+  color: var(--linz-dark-purple);
+  display: inline-flex;
+  flex-direction: row-reverse;
+  padding-left: 32px;
+  padding-right: 32px;
+  align-items: center;
+}
+
+.hero-container.Linzess-home-hero-belly-bnr .abbv-button-primary:hover {
+  background-color: var(--linz-light-purple);
+  color: var(--linz-dark-purple);
+}
+
+.hero-container.Linzess-home-hero-belly-bnr .abbv-button-primary.i-b::before {
+  top: 0;
+  left: 16px;
+}
+
+.home-hero-title {
+  font-family: "Bebas Neue", sans-serif;
+  font-weight: 400;
+  line-height: 90%;
+  font-size: 56px !important;
+}
+
+.mb20 {
+  margin-bottom: 20px;
+}
+
+/* ===== LAYOUT UTILITIES ===== */
+.rounded-corners {
+  border-radius: var(--linz-rounded-corner);
+}
+
+.overflow-hidden {
+  overflow: hidden;
+}
+
+.margin-top-80 {
+  margin-top: 80px;
+}
+
+.margin-top-110 {
+  margin-top: 110px;
+}
+
+.icon-image-card img {
+  width: 105px;
+  margin-top: -50px;
+}
+
+/* ===== IMAGE TEXT WRAPPER (COLUMNS) ===== */
+.image-text-wrapper .abbv-row {
+  padding: 0;
+  display: flex;
+}
+
+.image-text-wrapper .abbv-col:first-child {
+  max-width: 440px;
+}
+
+.image-text-wrapper .abbv-col:last-child {
+  align-content: center;
+  margin: 0;
+  padding-left: 80px;
+}
+
+/* ===== RESPONSIVE UTILITIES ===== */
+.desktop-only {
+  display: none;
+}
+
+.mobile-only {
+  display: block;
+}
+
+.mt0 {
+  margin-top: 0 !important;
+}
+
+.mb0 {
+  margin-bottom: 0 !important;
+}
+
+.mb24 {
+  margin-bottom: 24px;
+}
+
+/* ===== RESPONSIVE BREAKPOINTS ===== */
+
+@media (max-width: 600px) {
+  .abbv-col {
+    margin-top: 20px;
+    margin-left: 0;
+    width: 100%;
+  }
+
+  .abbv-col:first-child {
+    margin-top: 0;
+  }
+
+  .abbv-button-primary,
+  .abbv-button-secondary,
+  .abbv-button-tertiary {
+    margin-top: 10px;
+    width: 100%;
+  }
+
+  .abbv-image-text-content-container-v2 .abbv-image-text-content-v2 {
+    width: 100%;
+    margin: 0;
+  }
+
+  .hero-container.Linzess-home-hero-belly-bnr .abbv-button-primary {
+    z-index: 12;
+    padding-left: 24px;
+    padding-right: 24px;
+    margin-top: 0;
+    position: relative !important;
+  }
+
+  .Linzess-home-hero-belly-bnr .abbv-image-text-content-v2 {
+    width: 100%;
+    padding-top: 161px;
+    text-align: center;
+  }
+
+  .Linzess-home-hero-belly-bnr .abbv-image-text-content-v2 .abbv-stretched-card-body p {
+    margin: 0 0 16px;
+  }
+
+  .tl-m {
+    text-align: left;
+  }
+
+  .mb6-m {
+    margin-bottom: 6px !important;
+  }
+
+  .mb15-m {
+    margin-bottom: 15px !important;
+  }
+
+  .mb16-m {
+    margin-bottom: 16px !important;
+  }
+
+  .mb20-m {
+    margin-bottom: 20px;
+  }
+
+  .mb24-m {
+    margin-bottom: 24px !important;
+  }
+
+  .mb32-m {
+    margin-bottom: 32px;
+  }
+
+  .mt0-m {
+    margin-top: 0;
+  }
+
+  .mb0-m {
+    margin-bottom: 0 !important;
+  }
+
+  .mt3-m {
+    margin-top: 30px !important;
+  }
+
+  .home-hero-title {
+    font-size: 40px !important;
+    width: auto;
+  }
+
+  .image-text-wrapper .abbv-col:first-child {
+    max-width: 100%;
+  }
+
+  .image-text-wrapper .abbv-row {
+    flex-direction: column;
+  }
+
+  .image-text-wrapper .abbv-col:last-child {
+    text-align: center;
+    padding: 0 16px;
+  }
+
+  .icon-image-card img {
+    width: 96px;
+  }
+}
+
+@media (min-width: 600px) and (max-width: 985px) {
+  .hero-container {
+    top: -127px;
+  }
+
+  .abbv-button-primary,
+  .abbv-button-secondary,
+  .abbv-button-tertiary {
+    padding: 16px 40px 16px 24px;
+    width: auto;
+  }
+
+  .image-text-wrapper .abbv-col:first-child {
+    max-width: 100%;
+  }
+
+  .image-text-wrapper .abbv-row {
+    flex-direction: column;
+  }
+
+  .image-text-wrapper .abbv-col:last-child {
+    text-align: center;
+    padding: 0 16px;
+  }
+}
+
+@media (max-width: 985px) {
+  .flexbox-column-mobile {
+    flex-direction: column;
+    gap: 60px;
+  }
+
+  .icon-image-card img {
+    width: 96px;
+  }
+
+  .abbv-button-primary,
+  .abbv-button-secondary,
+  .abbv-button-tertiary {
+    padding: 16px 40px 16px 24px;
+    width: auto;
+  }
+}
+
+@media (min-width: 986px) {
+  .desktop-only {
+    display: block;
+  }
+
+  .mobile-only {
+    display: none;
+  }
+
+  .hero-container {
+    top: -138px;
+  }
+
+  .flexbox-cards:has(.col-2-card) {
+    gap: 16px;
+  }
+
+  .flexbox-cards .flexboxitem-v2 .abbv-flex-item-v2 {
+    width: 100%;
+    padding-left: 32px;
+    padding-right: 32px;
+  }
+
+  .flexbox-video-cards .flexboxitem-v2 {
+    max-width: 320px;
+  }
+
+  .eligible-tout {
+    max-width: 802px;
+    overflow: hidden;
+    height: 173px;
+  }
+
+  .image-text-wrapper.eligible-tout .abbv-row {
+    height: inherit;
+  }
+
+  .image-text-wrapper.eligible-tout .abbv-col:first-child {
+    max-width: 322px;
+  }
+
+  .image-text-wrapper.eligible-tout .abbv-col:first-child img {
+    margin-top: -30px;
+  }
+
+  .image-text-wrapper.savings-card-tout {
+    max-width: 802px;
+    overflow: hidden;
+    min-height: 173px;
+    height: auto;
+  }
+
+  .image-text-wrapper.savings-card-tout .abbv-row {
+    display: flex;
+    align-items: center;
+    min-height: 173px;
+  }
+
+  .image-text-wrapper.savings-card-tout .abbv-col:first-child {
+    max-width: 322px;
+    flex-shrink: 0;
+  }
+
+  .image-text-wrapper.savings-card-tout .abbv-col:first-child img {
+    margin-top: -30px;
+  }
+
+  .image-text-wrapper.savings-card-tout .abbv-col:last-child {
+    width: auto;
+    padding: 16px 24px 16px 40px;
+  }
+
+  .image-text-wrapper.savings-card-tout .abbv-col:last-child p {
+    font-size: 13px;
+    margin: 0 0 6px;
+    line-height: 1.4;
+  }
+
+  .image-text-wrapper.savings-card-tout .abbv-col:last-child > .rich-text:first-child p {
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--linz-dark-purple);
+    line-height: 1.2;
+    margin: 0 0 10px;
+  }
+
+  .image-text-wrapper.eligible-tout .abbv-col:last-child {
+    width: auto;
+    padding-left: 40px;
+  }
+}
+
+/* Hide indication footnote text (hidden on original via .linzess-first-container-desktop-hide) */
+main > .section.white.cards-feature-container > .default-content-wrapper:first-child {
+  display: none;
+}
+
+/* Savings section heading — "YOU COULD PAY AS LITTLE AS $30" */
+main > .section.white.columns-promo-container:not(.cards-feature-container) > .default-content-wrapper:first-child {
+  text-align: center;
+  padding: 60px 0 0;
+}
+
+main > .section.white.columns-promo-container:not(.cards-feature-container):not(.video-single-container) > .default-content-wrapper:first-child p:nth-child(2) {
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 40px;
+  font-weight: 400;
+  line-height: 1.2;
+  color: var(--linz-dark-purple);
+  text-transform: uppercase;
+}
+
+/* Footnote/disclaimer text below savings tout */
+main > .section.white:not(.cards-feature-container) > .columns-promo-wrapper ~ .default-content-wrapper:last-child {
+  max-width: 1220px;
+  margin: 24px auto 0;
+  padding: 0 20px;
+  position: relative;
+  z-index: 2;
+  clear: both;
+}
+
+/* Ensure savings-card-tout wrapper has bottom margin to push footnote down */
+main > .section.white:not(.cards-feature-container) > .columns-promo-wrapper {
+  margin-bottom: 16px;
+}
+
+main > .section.white:not(.cards-feature-container) > .columns-promo-wrapper ~ .default-content-wrapper:last-child p {
+  font-size: 12px;
+  line-height: 1.5;
+  color: var(--linz-grey, #4d4d4f);
+}
+
+/* ===== Inline ISI Section (abbv_use_statement) ===== */
+/* Section containing USES + IMPORTANT RISK INFORMATION inline content */
+main > .section:has(> .default-content-wrapper > h3:first-child) + .section.isi-container,
+main > .section:has(> .default-content-wrapper > h3:first-child) {
+  /* Only target the ISI inline section — has h3 USES as first child */
+}
+
+main > .section > .default-content-wrapper > h3:first-child {
+  font-size: 16px;
+  font-weight: 400;
+  color: var(--linz-dark-purple);
+  text-transform: uppercase;
+  margin: 0 0 8px;
+  font-family: Lato, sans-serif;
+}
+
+/* The section that contains inline ISI (between savings and footer) */
+main > .section:not(.white):not(.dark-purple):not(.off-white):not(.hero-pharma-container):not(.isi-container) > .default-content-wrapper:only-child {
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 10px 20px 80px;
+}
+
+main > .section:not(.white):not(.dark-purple):not(.off-white):not(.hero-pharma-container):not(.isi-container) > .default-content-wrapper:only-child h3 {
+  font-size: 16px;
+  font-weight: 800;
+  color: var(--linz-dark-purple);
+  text-transform: uppercase;
+  margin: 20px 0 8px;
+  font-family: Lato, sans-serif;
+}
+
+main > .section:not(.white):not(.dark-purple):not(.off-white):not(.hero-pharma-container):not(.isi-container) > .default-content-wrapper:only-child p {
+  font-size: 14px;
+  line-height: 16px;
+  color: rgb(85, 85, 85);
+  margin: 0 0 8px;
+}
+
+main > .section:not(.white):not(.dark-purple):not(.off-white):not(.hero-pharma-container):not(.isi-container) > .default-content-wrapper:only-child ul {
+  padding-left: 20px;
+  margin: 0 0 8px;
+}
+
+main > .section:not(.white):not(.dark-purple):not(.off-white):not(.hero-pharma-container):not(.isi-container) > .default-content-wrapper:only-child li {
+  font-size: 14px;
+  line-height: 16px;
+  color: rgb(85, 85, 85);
+  margin-bottom: 6px;
+}
+
+main > .section:not(.white):not(.dark-purple):not(.off-white):not(.hero-pharma-container):not(.isi-container) > .default-content-wrapper:only-child a {
+  color: var(--linz-dark-purple);
+  text-decoration: underline;
+}
+
+/* ===== CHECKMARK LIST (find-relief page "Talk to Doctor" section) ===== */
+/* Styles the 4-item checklist as a 2x2 grid with icon bullets */
+main .section.white > .default-content-wrapper > ul {
+  list-style: none;
+  margin: 32px auto;
+  max-width: 998px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px 48px;
+  background-color: var(--linz-dark-purple, #422e83);
+  border-radius: 24px;
+  padding: 48px 56px;
+  color: var(--linz-white);
+}
+
+main .section.white > .default-content-wrapper > ul > li {
+  position: relative;
+  padding-left: 40px;
+  text-align: left;
+}
+
+main .section.white > .default-content-wrapper > ul > li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 2px;
+  width: 28px;
+  height: 28px;
+  background-color: var(--linz-orange, #faa633);
+  border-radius: 50%;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='white'%3E%3Cpath d='M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z'/%3E%3C/svg%3E");
+  background-size: 18px;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+main .section.white > .default-content-wrapper > ul > li p:first-child {
+  font-family: Lato, sans-serif;
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--linz-white);
+  margin: 0 0 12px;
+  line-height: 1.2;
+}
+
+main .section.white > .default-content-wrapper > ul > li p:last-child {
+  font-family: Lato, sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  color: var(--linz-white);
+  line-height: 1.5;
+  margin: 0;
+}
+
+main .section.white > .default-content-wrapper > ul > li p strong {
+  font-weight: 700;
+  color: var(--linz-white);
+}
+
+main .section.white > .default-content-wrapper > ul > li a:any-link {
+  color: var(--linz-white) !important;
+  text-decoration: underline;
+  font-weight: 700;
+}
+
+@media (max-width: 768px) {
+  main .section.white > .default-content-wrapper > ul {
+    grid-template-columns: 1fr;
+    padding: 32px 24px;
+    gap: 32px;
+  }
+}
+
+/* Gut Check promo — now handled by columns-promo block (same as homepage) */
+/* Actor Portrayal text (kept for any remaining instances) */
+main .section.white > .default-content-wrapper > p.actor-portrayal {
+  font-size: 11px !important;
+  font-style: italic;
+  color: rgba(77, 77, 79, 0.7) !important;
+  text-align: center !important;
+}
+
+/* ===== FIX: .abbv-button-primary text color override ===== */
+/* EDS a:any-link sets color to --link-color which is dark purple.
+   .abbv-button-primary needs white text on dark purple background. */
+main a.abbv-button-primary:any-link,
+main a.abbv-button-primary:visited {
+  color: var(--linz-white) !important;
+}
+
+main a.abbv-button-primary:hover {
+  color: var(--linz-dark-purple) !important;
+}
+
+main a.abbv-button-secondary:any-link,
+main a.abbv-button-secondary:visited {
+  color: var(--linz-dark-purple) !important;
+}
+
+/* ===== EDS BUTTON RESET FOR DEFAULT CONTENT ===== */
+/* Reset EDS pill-button styles on default content links in sections */
+main .section.dark-purple a.button:any-link {
+  background-color: var(--linz-white);
+  color: var(--linz-dark-purple);
+  border: 0;
+  border-radius: var(--linz-rounded-corner);
+  font-weight: 800;
+  padding: 16px 56px 16px 32px;
+  font-size: 0.9rem;
+  font-family: Lato, sans-serif;
+  display: inline-block;
+  text-decoration: none;
+  white-space: normal;
+  max-width: none;
+  margin: 12px 0;
+}
+
+main .section.dark-purple a.button:hover {
+  background-color: var(--linz-light-purple);
+  color: var(--linz-dark-purple);
+}
+
+/* Arrow chevron icon on CTA buttons */
+main .section.dark-purple a.button::after,
+main .section.white a.button::after {
+  content: "";
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-right: 2.5px solid currentcolor;
+  border-top: 2.5px solid currentcolor;
+  transform: rotate(45deg);
+  margin-left: 12px;
+  vertical-align: middle;
+}
+
+main .section.white a.button:any-link {
+  background-color: var(--linz-dark-purple);
+  color: var(--linz-white);
+  border: 0;
+  border-radius: var(--linz-rounded-corner);
+  font-weight: 800;
+  padding: 16px 56px 16px 32px;
+  font-size: 0.9rem;
+  font-family: Lato, sans-serif;
+  display: inline-block;
+  text-decoration: none;
+  white-space: normal;
+  max-width: none;
+  margin: 12px 0;
+}
+
+main .section.white a.button:hover {
+  background-color: var(--linz-off-white);
+  color: var(--linz-dark-purple);
+}
+
+/* ===== "Check My Symptoms" CTA in white sections (light purple variant) ===== */
+main .section.white a.button[href*="gutcheck"]:any-link {
+  background-color: var(--linz-light-purple, #d9d7f9);
+  color: var(--linz-dark-purple);
+  border: 0;
+  border-radius: var(--linz-rounded-corner);
+  font-weight: 800;
+  padding: 16px 42px 16px 32px;
+  font-size: 0.9rem;
+  font-family: Lato, sans-serif;
+  display: inline-block;
+  text-decoration: none;
+}
+
+main .section.white a.button[href*="gutcheck"]:hover {
+  background-color: var(--linz-dark-purple);
+  color: var(--linz-white);
+}
+
+/* ===== CONTENT SECTION DEFAULT-CONTENT-WRAPPER CENTERING ===== */
+/* Patient Experiences and other content page wrappers */
+main > .section.white > .default-content-wrapper:first-child,
+main > .section.off-white > .default-content-wrapper:first-child {
+  max-width: 998px;
+  margin: 0 auto;
+  padding: 40px 20px 0;
+  text-align: center;
+}
+
+/* Instructions section — white card wrapping dosage content (not HOW TO STORE) */
+.instructions-card {
+  background-color: #fff;
+  border-radius: 24px;
+  padding: 48px 40px;
+  max-width: 998px;
+  margin: 0 auto 48px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.04);
+}
+
+/* Dosage instruction cards (JS-wrapped .dosage-card containers) */
+.dosage-card {
+  background-color: #ebeef5;
+  border-radius: 20px;
+  padding: 32px 32px 32px 160px;
+  margin: 24px auto;
+  max-width: 998px;
+  position: relative;
+  min-height: 140px;
+}
+
+.dosage-card > p:has(> picture > img[src*="-blue"]) {
+  position: absolute;
+  left: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 120px;
+  height: 120px;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--linz-light-purple, #d9d7f9);
+  border-radius: 50%;
+}
+
+.dosage-card p > picture > img[src*="icon-"][src*="-blue"] {
+  width: 64px;
+  height: 64px;
+  display: block;
+  object-fit: contain;
+  border: none;
+  padding: 0;
+  margin: 0;
+  border-radius: 0;
+}
+
+/* Dosage card heading (Every Day, Once a Day, etc.) */
+.dosage-card > p:nth-child(2) {
+  font-family: Lato, sans-serif;
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--linz-dark-purple, #422e83);
+  text-align: left;
+  margin: 0 0 8px;
+}
+
+/* Dosage card body text */
+.dosage-card > p:nth-child(n+3) {
+  font-size: 16px;
+  color: var(--linz-grey, #4d4d4f);
+  text-align: left;
+  margin: 0 0 8px;
+  line-height: normal;
+}
+
+@media (max-width: 768px) {
+  .dosage-card {
+    padding: 24px 20px 24px 20px;
+    text-align: center;
+  }
+
+  .dosage-card > p:has(> picture > img[src*="-blue"]) {
+    position: static;
+    transform: none;
+    margin: 0 auto 16px;
+  }
+
+  .dosage-card > p:nth-child(2),
+  .dosage-card > p:nth-child(n+3) {
+    text-align: center;
+  }
+}
+
+/* ===== OFF-WHITE SECTION SUB-HEADINGS ===== */
+/* Now handled by JS .section-subheading class (see p.section-subheading rule below) */
+
+/* Wrapper after cards-signup — needs spacing to clear absolute-positioned icons */
+main > .section.off-white > .cards-signup-wrapper ~ .default-content-wrapper {
+  margin-top: 60px !important;
+  padding: 20px 20px 0;
+  position: relative;
+  z-index: 1;
+}
+
+/* Disclaimer text after cards-signup (small gray) — only non-heading, non-subheading paragraphs */
+main > .section.off-white > .cards-signup-wrapper ~ .default-content-wrapper > p:not(.section-subheading):not(.section-subsubheading):not(.button-container):not(:first-child) {
+  font-size: 12px;
+  color: var(--linz-grey, #4d4d4f);
+  line-height: 1.5;
+  text-align: left;
+  max-width: 998px;
+  margin: 0 auto 12px;
+}
+
+/* Body text after section-subheading in dosage instructions area */
+main > .section.off-white > .cards-signup-wrapper ~ .default-content-wrapper > p.section-subheading ~ p:not(.section-subheading):not(.button-container):not(.section-subsubheading),
+.instructions-card p:not(.section-subheading):not(.section-subsubheading):not(.button-container) {
+  font-size: 18px !important;
+  color: var(--linz-grey, #4d4d4f) !important;
+  line-height: 1.6 !important;
+  text-align: center !important;
+  max-width: 928px;
+  margin: 0 auto 16px !important;
+}
+
+main > .section.off-white > .cards-signup-wrapper ~ .default-content-wrapper > p.section-subheading ~ p a {
+  color: var(--linz-dark-purple, #422e83) !important;
+  font-weight: 700;
+  text-decoration: underline;
+}
+
+main > .section.off-white > .cards-signup-wrapper ~ .default-content-wrapper > p:first-child {
+  font-size: 18px;
+  font-weight: 400;
+  font-family: Lato, sans-serif;
+  color: var(--linz-dark-purple, #422e83);
+  text-align: center;
+  margin: 32px auto 24px;
+}
+
+main > .section.off-white > .cards-signup-wrapper ~ .default-content-wrapper > p:first-child a {
+  color: var(--linz-dark-purple) !important;
+  font-weight: 700;
+  text-decoration: underline;
+}
+
+/* Sub-sub-headings now handled by JS .section-subsubheading class */
+
+/* Center all text in off-white section default-content-wrappers */
+main > .section.off-white > .default-content-wrapper {
+  max-width: 998px;
+  margin: 0 auto;
+  padding: 0 20px;
+  text-align: center;
+}
+
+/* Section headings (JS-applied .section-heading / .section-subheading class) */
+p.section-heading,
+p.section-subheading {
+  font-size: 40px !important;
+  font-weight: 400 !important;
+  font-family: "Bebas Neue", sans-serif !important;
+  color: var(--linz-dark-purple, #422e83) !important;
+  text-align: center !important;
+  line-height: 36px !important;
+  margin: 80px auto 16px !important;
+  max-width: 700px;
+  position: relative;
+}
+
+p.section-heading::before,
+p.section-subheading::before {
+  content: "";
+  position: absolute;
+  top: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 48px;
+  height: 6px;
+  border-bottom: 3px solid var(--linz-orange, #faa633);
+  border-radius: 0 0 50% 50%;
+}
+
+/* Section heading is larger (first heading in a section = anchor target) */
+p.section-heading {
+  margin: 40px auto 16px !important;
+}
+
+p.section-heading::before {
+  display: none;
+}
+
+/* Section sub-sub-headings (JS-applied .section-subsubheading class) */
+p.section-subsubheading {
+  font-size: 24px !important;
+  font-weight: 700 !important;
+  font-family: Lato, sans-serif !important;
+  color: var(--linz-dark-purple, #422e83) !important;
+  text-align: center !important;
+  margin: 24px auto 16px !important;
+}
+
+p.section-subheading + p.section-subsubheading {
+  margin-top: 4px !important;
+}
+
+/* Dosage instruction tabs (Adults / Pediatric) */
+p.section-subheading + p.button-container,
+p.section-subheading + p.button-container + p.button-container {
+  display: inline-block !important;
+  margin: 0 4px 32px !important;
+  vertical-align: top;
+}
+
+p.section-subheading + p.button-container a,
+p.section-subheading + p.button-container + p.button-container a {
+  all: unset !important;
+  display: inline-block !important;
+  font-family: Lato, sans-serif !important;
+  font-size: 16px !important;
+  font-weight: 700 !important;
+  padding: 16px 40px !important;
+  text-align: center !important;
+  cursor: pointer !important;
+  white-space: nowrap !important;
+  border-radius: 32px !important;
+}
+
+p.section-subheading + p.button-container a {
+  background-color: var(--linz-dark-purple, #422e83) !important;
+  color: #fff !important;
+}
+
+p.section-subheading + p.button-container + p.button-container a {
+  background-color: var(--linz-light-purple, #d9d7f9) !important;
+  color: var(--linz-dark-purple, #422e83) !important;
+}
+
+@media (max-width: 768px) {
+  p.section-subheading + p.button-container,
+  p.section-subheading + p.button-container + p.button-container {
+    display: block !important;
+    margin: 8px auto !important;
+    text-align: center !important;
+  }
+
+  p.section-subheading + p.button-container {
+    margin-left: auto !important;
+  }
+}
+
+/* ===== UNDERSTANDING CONSTIPATION PAGE ===== */
+
+/* Constipation types icon/text cards (white section) */
+.section.white .default-content-wrapper > p > picture > img[src*="icon-gut-clock"],
+.section.white .default-content-wrapper > p > picture > img[src*="icon-gut-repeat"] {
+  width: 80px;
+  height: 80px;
+  display: block;
+  margin: 32px auto 16px;
+}
+
+/* Constipation type names */
+.section.white .default-content-wrapper > p > picture > img[src*="icon-gut-clock"] ~ p,
+.section.white .default-content-wrapper > p > picture > img[src*="icon-gut-repeat"] ~ p {
+  text-align: center;
+}
+
+/* Bristol Stool chart image */
+.section.white .default-content-wrapper > p > picture > img[alt="Bowel movement chart"] {
+  max-width: 800px;
+  width: 100%;
+  display: block;
+  margin: 32px auto;
+}
+
+/* Statistics map images in dark-purple section */
+.section.dark-purple .default-content-wrapper > p > picture > img[alt*="million"] {
+  max-width: 300px;
+  width: 100%;
+  display: block;
+  margin: 24px auto 8px;
+}
+
+/* Video thumbnail images */
+.default-content-wrapper > p > picture > img[src*="boltdns"] {
+  max-width: 640px;
+  width: 100%;
+  border-radius: 16px;
+  display: block;
+  margin: 32px auto 16px;
+}
+
+/* Video heading (h3) styling */
+.section.dark-purple .default-content-wrapper > h3 {
+  font-family: Lato, sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--linz-white);
+  text-align: center;
+  margin: 8px auto 4px;
+}
+
+/* View Transcript link */
+.section.dark-purple .default-content-wrapper > p > a[href*="transcript"] {
+  color: var(--linz-white) !important;
+  text-decoration: underline;
+  font-size: 14px;
+}
+
+
+/* Treatment options section icon styling */
+.section.off-white .default-content-wrapper > p > picture > img[src*="icon-fiber-bottle"],
+.section.off-white .default-content-wrapper > p > picture > img[src*="icon-pill-bottle"]:not([src*="purple"]) {
+  width: 80px;
+  height: 80px;
+  display: block;
+  margin: 40px auto 16px;
+}
+
+
+/* Pediatric section icons */
+.section.off-white .default-content-wrapper > p > picture > img[src*="icon-calendar"],
+.section.off-white .default-content-wrapper > p > picture > img[src*="icon-pill-bottle-purple"] {
+  width: 60px;
+  height: 60px;
+  display: block;
+  margin: 32px auto 16px;
+}
+
+/* ===== WIDTH CONSTRAINTS FOR CONTENT PAGES ===== */
+/* White section: narrower content (700px like original) */
+.section.white > .default-content-wrapper > p.section-subheading {
+  max-width: 700px;
+}
+
+/* Dark-purple section: 998px content width (like original) */
+.section.dark-purple > .default-content-wrapper > p.section-subheading,
+.section.dark-purple > .default-content-wrapper > p.section-heading {
+  max-width: 998px;
+}
+
+/* Dark-purple subheadings sit tight to the footnote above them (original
+   margin: 0 0 24px), not the default 80px top gap used elsewhere. */
+.section.dark-purple > .default-content-wrapper > p.section-subheading {
+  margin-top: 0 !important;
+  margin-bottom: 24px !important;
+}
+
+/* Cards-checklist purple checkmark icons */
+.cards-checklist .cards-checklist-card-body ul li {
+  list-style: none !important;
+  position: relative;
+  padding-left: 40px !important;
+}
+
+.cards-checklist .cards-checklist-card-body ul li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 2px;
+  width: 28px;
+  height: 28px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 28 28'%3E%3Ccircle cx='14' cy='14' r='14' fill='%23422e83'/%3E%3Cpath d='M8 14.5l3.5 3.5 8.5-8.5' stroke='white' stroke-width='2.5' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  background-size: 28px 28px;
+  background-repeat: no-repeat;
+}
+
+/* Section navigation — mobile JUMP TO styles handled in block CSS */
+
+/* Check My Symptoms button — center in white section */
+.section.white.cards-checklist-container > .default-content-wrapper > p.button-container {
+  text-align: center !important;
+  margin: 32px auto !important;
+}
+
+.section.white.cards-checklist-container > .default-content-wrapper > p.button-container a {
+  background-color: var(--linz-dark-purple, #422e83) !important;
+  color: var(--linz-white, #fff) !important;
+  border-radius: 32px !important;
+  padding: 16px 32px !important;
+  font-weight: 700 !important;
+  font-size: 16px !important;
+}
+
+/* Savings card heading in columns-promo — only the first .rich-text block is the
+   headline (24px); subsequent .rich-text blocks are body copy (16px). */
+.columns-promo .columns-promo-text p:first-child,
+.columns-promo-wrapper .columns-promo > div > div:last-child > p:first-child,
+.columns-promo .rich-text:first-child .abbv-rich-text > p:first-child {
+  font-size: 24px !important;
+  font-weight: 700 !important;
+  line-height: normal !important;
+  color: var(--linz-dark-purple) !important;
+}
+
+.columns-promo .abbv-rich-text > p:not(:first-child),
+.columns-promo .rich-text:not(:first-child) .abbv-rich-text > p {
+  font-size: 16px !important;
+  font-weight: 400 !important;
+}
+
+/* ===== COMPARISON TABLE (IBS-C vs CIC) ===== */
+.comparison-table {
+  max-width: 900px;
+  margin: 40px auto;
+  border: 2px solid var(--linz-light-purple, #d9d7f9);
+  border-radius: 16px;
+  overflow: hidden;
+  background: var(--linz-white, #fff);
+}
+
+.comp-header-row {
+  display: flex;
+}
+
+.comp-header-row > p {
+  flex: 1;
+  background: var(--linz-light-purple, #d9d7f9) !important;
+  color: var(--linz-dark-purple, #422e83) !important;
+  font-size: 24px !important;
+  font-weight: 700 !important;
+  text-align: center !important;
+  padding: 16px !important;
+  margin: 0 !important;
+  border-right: 1px solid rgba(66, 46, 131, 0.2);
+}
+
+.comp-header-row > p:last-child {
+  border-right: none;
+}
+
+p.comp-row-label {
+  background: var(--linz-dark-purple, #422e83) !important;
+  color: var(--linz-white) !important;
+  font-size: 14px !important;
+  font-weight: 700 !important;
+  text-align: center !important;
+  text-transform: uppercase !important;
+  padding: 12px !important;
+  margin: 0 !important;
+  letter-spacing: 1px;
+}
+
+.comp-content-row {
+  display: flex;
+  border-top: 1px solid var(--linz-light-purple, #d9d7f9);
+}
+
+.comp-col {
+  flex: 1;
+  padding: 24px;
+  border-right: 1px solid var(--linz-light-purple, #d9d7f9);
+}
+
+.comp-col:last-child {
+  border-right: none;
+  background: var(--linz-light-purple, #d9d7f9);
+}
+
+.comp-col p {
+  font-size: 16px !important;
+  color: var(--linz-dark-purple, #422e83) !important;
+  line-height: normal !important;
+  margin: 0 0 12px !important;
+  text-align: left !important;
+}
+
+.comp-col p strong {
+  color: var(--linz-dark-purple, #422e83);
+}
+
+.comp-col p > picture > img {
+  width: 48px;
+  height: 48px;
+  vertical-align: middle;
+  margin-right: 12px;
+}
+
+.comp-col ul {
+  list-style: none !important;
+  padding: 0 !important;
+  margin: 0 0 16px !important;
+}
+
+.comp-col ul li {
+  font-size: 13px !important;
+  color: var(--linz-dark-purple, #422e83) !important;
+  padding: 8px 0;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.comp-col ul li picture img {
+  width: 48px;
+  height: 48px;
+  flex-shrink: 0;
+}
+
+/* ===== UNDERSTANDING CONSTIPATION CARD LAYOUTS ===== */
+
+/* Stats cards row — two side-by-side purple cards */
+.stats-cards-row {
+  display: flex;
+  gap: 24px;
+  max-width: 900px;
+  margin: 40px auto;
+  justify-content: center;
+}
+
+.stats-card {
+  flex: 1;
+  background: var(--linz-light-purple, #d9d7f9);
+  border-radius: 16px;
+  padding: 32px 24px;
+  text-align: center;
+}
+
+.stats-card img {
+  max-width: 100%;
+  height: auto;
+  margin: 0 auto;
+  display: block;
+}
+
+.stats-card p {
+  color: var(--linz-dark-purple, #422e83) !important;
+  font-size: 16px !important;
+  font-weight: 400 !important;
+  margin: 16px 0 0 !important;
+}
+
+/* Video card — thumbnail with overlay title */
+.video-card {
+  max-width: 640px;
+  margin: 40px auto;
+  position: relative;
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+.video-card > p:first-child {
+  margin: 0 !important;
+}
+
+.video-card img {
+  width: 100%;
+  display: block;
+  border-radius: 16px 16px 0 0;
+}
+
+.video-card h3 {
+  background: rgba(66, 46, 131, 0.85);
+  color: var(--linz-white) !important;
+  font-size: 14px !important;
+  font-weight: 700 !important;
+  padding: 12px 16px;
+  margin: 0 !important;
+  text-align: left;
+}
+
+.video-card > p:has(a[href*="transcript"]) {
+  background: var(--linz-off-white, #f4f6fb);
+  padding: 8px 16px;
+  text-align: right;
+  margin: 0 !important;
+  border-radius: 0 0 16px 16px;
+}
+
+.video-card > p:has(a[href*="transcript"]) a {
+  color: var(--linz-dark-purple) !important;
+  font-size: 12px !important;
+  text-decoration: underline;
+}
+
+.video-card > p:nth-child(2) {
+  display: none;
+}
+
+/* Quiz tout card — image left, text right */
+.quiz-tout-card {
+  display: flex;
+  background: var(--linz-off-white, #f4f6fb);
+  border-radius: 16px;
+  overflow: hidden;
+  max-width: 800px;
+  margin: 60px auto 0;
+}
+
+.quiz-tout-image {
+  flex: 0 0 40%;
+  position: relative;
+}
+
+.quiz-tout-image p {
+  margin: 0 !important;
+  font-size: 0 !important;
+  line-height: 0 !important;
+}
+
+.quiz-tout-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.quiz-tout-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 32px;
+}
+
+.quiz-tout-content p.actor-portrayal {
+  position: absolute !important;
+  bottom: 12px !important;
+  left: 16px !important;
+  font-size: 11px !important;
+  color: rgba(255, 255, 255, 0.8) !important;
+  margin: 0 !important;
+  text-shadow: 0 0 4px rgba(0, 0, 0, 0.5);
+}
+
+.quiz-tout-content p.quiz-tout-heading {
+  font-size: 24px !important;
+  font-weight: 700 !important;
+  font-family: Lato, sans-serif !important;
+  color: var(--linz-dark-purple) !important;
+  margin: 0 0 12px !important;
+  text-align: left !important;
+  line-height: 1.3 !important;
+}
+
+.quiz-tout-content p:not(.actor-portrayal):not(.quiz-tout-heading):not(.button-container) {
+  font-size: 14px !important;
+  color: var(--linz-grey, #4d4d4f) !important;
+  text-align: left !important;
+  margin: 0 0 8px !important;
+  line-height: 1.5 !important;
+}
+
+.quiz-tout-content p.button-container {
+  margin: 16px 0 0 !important;
+}
+
+.quiz-tout-content p.button-container a {
+  all: unset !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  background-color: var(--linz-dark-purple) !important;
+  color: var(--linz-white) !important;
+  border-radius: 32px !important;
+  padding: 14px 28px !important;
+  font-weight: 700 !important;
+  font-size: 14px !important;
+  font-family: Lato, sans-serif !important;
+  cursor: pointer !important;
+  gap: 8px !important;
+}
+
+.quiz-tout-content p.button-container a::after {
+  content: "" !important;
+  display: inline-block !important;
+  width: 8px !important;
+  height: 8px !important;
+  border-right: 2px solid var(--linz-white) !important;
+  border-top: 2px solid var(--linz-white) !important;
+  transform: rotate(45deg) !important;
+}
+
+/* Treatment cards row — two-column layout */
+.treatment-cards-row {
+  display: flex;
+  gap: 24px;
+  max-width: 900px;
+  margin: 40px auto;
+}
+
+.treatment-card {
+  flex: 1;
+  background: var(--linz-white, #fff);
+  border: 1px solid var(--linz-light-purple, #d9d7f9);
+  border-radius: 16px;
+  padding: 48px 32px 32px;
+  position: relative;
+  text-align: left;
+}
+
+.treatment-card:last-child {
+  background: var(--linz-dark-purple, #422e83);
+  border-color: var(--linz-dark-purple);
+}
+
+.treatment-card:last-child p,
+.treatment-card:last-child li {
+  color: var(--linz-white) !important;
+}
+
+.treatment-card > p:first-child {
+  position: absolute;
+  top: -30px;
+  left: 50%;
+  transform: translateX(-50%);
+  margin: 0 !important;
+}
+
+.treatment-card > p:first-child img {
+  width: 60px;
+  height: 60px;
+  background: var(--linz-dark-purple);
+  border-radius: 50%;
+  padding: 16px;
+}
+
+.treatment-card:last-child > p:first-child img {
+  background: var(--linz-light-purple, #d9d7f9);
+}
+
+.treatment-card p.section-subsubheading {
+  font-size: 20px !important;
+  text-align: center !important;
+  margin: 16px 0 !important;
+}
+
+.treatment-card p,
+.treatment-card li {
+  font-size: 16px !important;
+  color: var(--linz-grey, #4d4d4f) !important;
+  line-height: normal !important;
+}
+
+.treatment-card p.section-subsubheading {
+  color: var(--linz-dark-purple) !important;
+}
+
+.treatment-card ul {
+  padding-left: 20px;
+  list-style: disc;
+}
+
+.treatment-card ul li {
+  margin-bottom: 8px;
+}
+
+.treatment-card:last-child a.button:any-link {
+  all: unset !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  background: var(--linz-white) !important;
+  color: var(--linz-dark-purple) !important;
+  border-radius: 32px !important;
+  padding: 12px 24px !important;
+  font-weight: 700 !important;
+  font-size: 14px !important;
+  cursor: pointer !important;
+  margin-top: 16px !important;
+  gap: 8px !important;
+}
+
+.treatment-card:last-child a.button::after {
+  content: "" !important;
+  display: inline-block !important;
+  width: 7px !important;
+  height: 7px !important;
+  border-right: 2px solid var(--linz-dark-purple) !important;
+  border-top: 2px solid var(--linz-dark-purple) !important;
+  transform: rotate(45deg) !important;
+}
+
+/* Pediatric cards — first is dark purple, second is white */
+.pediatric-cards-row .treatment-card:first-child {
+  background: var(--linz-dark-purple, #422e83) !important;
+  border-color: var(--linz-dark-purple) !important;
+}
+
+.pediatric-cards-row .treatment-card:first-child p,
+.pediatric-cards-row .treatment-card:first-child li {
+  color: var(--linz-white) !important;
+}
+
+.pediatric-cards-row .treatment-card:first-child > p:first-child img {
+  background: var(--linz-light-purple, #d9d7f9) !important;
+}
+
+.pediatric-cards-row .treatment-card:last-child {
+  background: var(--linz-white, #fff) !important;
+  border: 1px solid var(--linz-light-purple, #d9d7f9) !important;
+}
+
+.pediatric-cards-row .treatment-card:last-child p,
+.pediatric-cards-row .treatment-card:last-child li {
+  color: var(--linz-dark-purple) !important;
+}
+
+/* ===================================================================
+   Patient video transcript pages (body.transcript-page)
+   Original: a single centered ~998px text column under a white arch
+   that curves up over the purple header, with an orange divider above
+   a centered dark-purple Bebas Neue title. The migrated page is plain
+   default content, so reproduce that layout here (scoped to the body
+   class set in scripts.js — no per-page content edits).
+   =================================================================== */
+
+/* Transcript pages have no hero, so the header butts directly against the
+   white content. The original instead shows a dark-purple band under the nav
+   with a white arch dome curving up over it (same transition the content
+   pages use below their hero). Recreate that: paint a purple band at the top
+   of main, then a white arch that curves up over it, and push the content
+   below so the title lands in the same vertical position as the original. */
+/* The shared header is a semi-transparent dark gradient overlay. On content
+   pages it sits over the purple hero so it reads dark purple; transcript pages
+   have no hero, so paint the page background purple behind the header to get
+   the same solid dark-purple header (otherwise the gradient reads grey on white). */
+body.transcript-page,
+body.sitemap-page,
+body.page-not-found-page {
+  background-color: var(--linz-dark-purple, #422e83);
+}
+
+body.transcript-page main,
+body.sitemap-page main,
+body.page-not-found-page main {
+  position: relative;
+  background-color: var(--linz-dark-purple, #422e83);
+}
+
+/* The shared header overlays a dark gradient (rgba(35,29,29,.9) -> transparent)
+   intended to darken a hero photo. Transcript pages have no hero, so that
+   gradient shows as an unwanted dark band at the top of the purple header.
+   Remove it so the header reads as uniform dark purple like the original.
+   Exclude the scrolled/sticky state (.abbv-fixed), which turns the header
+   white via linzess-global.css and must be left intact. */
+body.transcript-page header .linzess-header:not(.abbv-fixed),
+body.transcript-page header .abbv-header-v2:not(.abbv-fixed),
+body.sitemap-page header .linzess-header:not(.abbv-fixed),
+body.sitemap-page header .abbv-header-v2:not(.abbv-fixed),
+body.page-not-found-page header .linzess-header:not(.abbv-fixed),
+body.page-not-found-page header .abbv-header-v2:not(.abbv-fixed) {
+  background-image: none;
+  background-color: var(--linz-dark-purple, #422e83);
+}
+
+/* White arch dome: a thin purple band shows under the nav, then the white
+   dome curves up over it. The original's band is shallow (~40px) with the
+   arch cresting just below the nav, so keep the dome top high. */
+body.transcript-page main::before,
+body.sitemap-page main::before,
+body.page-not-found-page main::before {
+  content: "";
+  position: absolute;
+  top: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 130%;
+  height: calc(100% - 40px);
+  background-color: var(--linz-white, #fff);
+  border-radius: 50% 50% 0 0 / 60px 60px 0 0;
+  z-index: 0;
+}
+
+/* Center the transcript body in a constrained column (original = 998px).
+   The generic content-page rule (linzess.css ~line 1266) targets a
+   `.default-content-wrapper:only-child` inside an unstyled section and would
+   otherwise force a 1240px column, so match its specificity to win. */
+body.transcript-page main > .section:not(.white):not(.dark-purple):not(.off-white):not(.hero-pharma-container):not(.isi-container) > .default-content-wrapper:only-child {
+  position: relative;
+  z-index: 1;
+  max-width: 998px;
+  margin: 0 auto;
+  padding: 90px 48px 80px;
+  box-sizing: content-box;
+  font-size: 16px;
+}
+
+/* Centered dark-purple title with the orange divider above it. */
+body.transcript-page main .default-content-wrapper > h1 {
+  text-align: center;
+  color: var(--linz-dark-purple, #422e83);
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 40px;
+  font-weight: 400;
+  margin: 0;
+}
+
+body.transcript-page main .default-content-wrapper > h1::before {
+  content: "";
+  display: block;
+  width: 64px;
+  height: 5px;
+  margin: 0 auto 16px;
+  background-image: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjQiIGhlaWdodD0iNSIgdmlld0JveD0iMCAwIDY0IDUiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHBhdGggZD0iTTEuMjgwMDMgNC4yMzk5N1Y0LjIxMDMyQzEuMjgwMDMgNC4yMTAzMiAxNS45NSAxLjcxOTk3IDMyIDEuNzE5OTdDNDguMDggMS43MTk5NyA2Mi43MiA0LjIxMDMyIDYyLjcyIDQuMjEwMzJWNC4yMzk5NyIgc3Ryb2tlPSIjRkFBNjMzIiBzdHJva2Utd2lkdGg9IjEuNSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIi8+PC9zdmc+");
+  background-size: 64px 5px;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+/* Body copy: 16px Lato, grey, with the original's paragraph rhythm.
+   Specificity matched to the generic content-page rule it must override. */
+body.transcript-page main > .section:not(.white):not(.dark-purple):not(.off-white):not(.hero-pharma-container):not(.isi-container) > .default-content-wrapper:only-child > p {
+  font-size: 16px;
+  line-height: 1.5;
+  color: var(--text-color, #4d4d4f);
+  margin: 0 0 16px;
+  text-align: left;
+}
+
+/* The "PART 1 / PART 2" labels render bold purple in the original. */
+body.transcript-page main > .section > .default-content-wrapper > p > strong:only-child {
+  color: var(--linz-dark-purple, #422e83);
+}
+
+body.transcript-page main > .section:not(.white):not(.dark-purple):not(.off-white):not(.hero-pharma-container):not(.isi-container) > .default-content-wrapper:only-child ul {
+  margin: 0 0 16px;
+  padding-left: 24px;
+}
+
+body.transcript-page main > .section:not(.white):not(.dark-purple):not(.off-white):not(.hero-pharma-container):not(.isi-container) > .default-content-wrapper:only-child li {
+  font-size: 16px;
+  line-height: 1.5;
+  color: var(--text-color, #4d4d4f);
+  margin-bottom: 8px;
+}
+
+/* ===== Resources article cards (auto-blocked in scripts.js) =====
+   Original: image-top cards in a centered row with a light-purple body,
+   left-aligned dark-purple title, grey description, underlined link. */
+main .default-content-wrapper .article-cards-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 24px;
+  max-width: 1240px;
+  margin: 24px auto 0;
+  padding: 0 20px;
+}
+
+main .default-content-wrapper .article-card {
+  flex: 1 1 0;
+  min-width: 260px;
+  max-width: 360px;
+  display: flex;
+  flex-direction: column;
+  border-radius: var(--linz-rounded-corner, 16px);
+  overflow: hidden;
+  background: var(--linz-light-purple, #d9d7f9);
+  text-align: left;
+}
+
+main .default-content-wrapper .article-card > p:first-child {
+  margin: 0;
+}
+
+main .default-content-wrapper .article-card > p:first-child img {
+  display: block;
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 0;
+}
+
+/* Title (the <strong> paragraph) — dark purple, left aligned, 16px bold.
+   color !important so cards keep dark text inside the dark-purple section,
+   whose framework rule otherwise forces white text. */
+main .default-content-wrapper .article-card > p:has(strong) {
+  margin: 24px 24px 8px;
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--linz-dark-purple, #422e83) !important;
+  text-align: left;
+}
+
+main .default-content-wrapper .article-card > p:has(strong) strong {
+  font-weight: 700;
+  color: var(--linz-dark-purple, #422e83) !important;
+}
+
+/* Description paragraph. */
+main .default-content-wrapper .article-card > p:not(:has(strong)):not(:has(a)) {
+  margin: 0 24px 16px;
+  font-size: 14px;
+  line-height: 1.45;
+  color: var(--text-color, #4d4d4f) !important;
+  text-align: left;
+}
+
+/* "Read the article" link — underlined dark purple, pinned near the bottom. */
+main .default-content-wrapper .article-card > p:has(a) {
+  margin: auto 24px 24px;
+  text-align: left;
+}
+
+main .default-content-wrapper .article-card > p:has(a) a,
+main .default-content-wrapper .article-card > p.button-container a.button {
+  all: unset;
+  display: inline;
+  padding: 0 !important;
+  border-radius: 0 !important;
+  background: none !important;
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--linz-dark-purple, #422e83) !important;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+/* ===== Wellness Tips tip cards (auto-blocked in scripts.js) =====
+   Full-width lavender cards with a circular white icon badge overhanging the
+   left edge, a dark-purple title, and a bulleted list. */
+main .default-content-wrapper .wellness-tips-cards {
+  max-width: 998px;
+  margin: 24px auto 0;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  padding: 0 20px;
+}
+
+/* Alternating scheme (matches original): odd cards lavender + white badge,
+   even cards off-white + lavender badge. */
+main .default-content-wrapper .wellness-tip-card {
+  position: relative;
+  border-radius: var(--linz-rounded-corner, 16px);
+  padding: 28px 32px 28px 110px;
+  text-align: left;
+}
+
+main .default-content-wrapper .wellness-tip-card.tip-card-lavender {
+  background: var(--linz-light-purple, #d9d7f9);
+}
+
+main .default-content-wrapper .wellness-tip-card.tip-card-offwhite {
+  background: var(--linz-off-white, #f4f6fb);
+}
+
+/* Circular icon badge, overhanging the card's left edge — color alternates. */
+main .default-content-wrapper .wellness-tip-card > p:first-child {
+  position: absolute;
+  left: -42px;
+  top: 24px;
+  width: 100px;
+  height: 100px;
+  margin: 0;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+main .default-content-wrapper .wellness-tip-card.tip-card-lavender > p:first-child {
+  background: var(--linz-white, #fff);
+}
+
+main .default-content-wrapper .wellness-tip-card.tip-card-offwhite > p:first-child {
+  background: var(--linz-light-purple, #d9d7f9);
+}
+
+main .default-content-wrapper .wellness-tip-card > p:first-child img {
+  width: 56px;
+  height: 56px;
+  object-fit: contain;
+}
+
+/* Title: 16px Lato, regular weight (matches original — not bold), dark purple. */
+main .default-content-wrapper .wellness-tip-card > p:has(strong) {
+  margin: 0 0 12px;
+  font-size: 16px !important;
+  font-weight: 400 !important;
+  color: var(--linz-dark-purple, #422e83) !important;
+  text-align: left;
+}
+
+main .default-content-wrapper .wellness-tip-card > p:has(strong) strong {
+  font-size: 16px !important;
+  font-weight: 400 !important;
+  color: var(--linz-dark-purple, #422e83) !important;
+}
+
+main .default-content-wrapper .wellness-tip-card > ul {
+  margin: 0;
+  padding-left: 20px;
+  text-align: left;
+}
+
+main .default-content-wrapper .wellness-tip-card > ul li {
+  font-size: 14px !important;
+  line-height: 1.5;
+  color: var(--text-color, #4d4d4f) !important;
+  margin-bottom: 8px;
+}
+
+/* ===== Community Resources cards (auto-blocked in scripts.js) =====
+   Two side-by-side icon-top cards with alternating backgrounds: first dark
+   purple (white text), second light purple (dark-purple text). */
+main .default-content-wrapper .community-cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 24px;
+  max-width: 1006px;
+  margin: 24px auto 0;
+  padding: 0 20px;
+}
+
+main .default-content-wrapper .community-card {
+  flex: 1 1 0;
+  min-width: 280px;
+  max-width: 491px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  border-radius: var(--linz-rounded-corner, 16px);
+  padding: 36px 32px;
+}
+
+main .default-content-wrapper .community-card-dark {
+  background: var(--linz-dark-purple, #422e83);
+}
+
+main .default-content-wrapper .community-card-light {
+  background: var(--linz-light-purple, #d9d7f9);
+}
+
+main .default-content-wrapper .community-card > p:first-child {
+  margin: 0 0 16px;
+}
+
+main .default-content-wrapper .community-card > p:first-child img {
+  width: 72px;
+  height: 72px;
+  object-fit: contain;
+}
+
+/* Title + description colors per card variant (excludes the button link, which
+   sets its own contrasting color below). */
+main .default-content-wrapper .community-card-dark > p:not(:first-child):not(:has(a)) {
+  color: var(--linz-white, #fff) !important;
+}
+
+main .default-content-wrapper .community-card-light > p:not(:first-child):not(:has(a)) {
+  color: var(--linz-dark-purple, #422e83) !important;
+}
+
+main .default-content-wrapper .community-card > p:nth-child(2) {
+  margin: 0 0 8px;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+main .default-content-wrapper .community-card > p:nth-child(3) {
+  margin: 0 0 20px;
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+/* "Learn More" pill button — pinned to the card bottom. */
+main .default-content-wrapper .community-card > p.button-container,
+main .default-content-wrapper .community-card > p:has(a) {
+  margin: auto 0 0;
+}
+
+main .default-content-wrapper .community-card > p:has(a) a {
+  all: unset;
+  cursor: pointer;
+  display: inline-block;
+  padding: 10px 28px;
+  border-radius: 24px;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+main .default-content-wrapper .community-card-dark > p:has(a) a {
+  background: var(--linz-white, #fff);
+  color: var(--linz-dark-purple, #422e83) !important;
+}
+
+main .default-content-wrapper .community-card-light > p:has(a) a {
+  background: var(--linz-dark-purple, #422e83);
+  color: var(--linz-white, #fff) !important;
+}
+
+/* ===== "Ready to Talk to Your Doctor?" tout (auto-blocked in scripts.js) =====
+   Two-part card: full-bleed photo on the left (Actor Portrayal caption overlaid
+   bottom-left) and a white content panel on the right with heading, body, and a
+   PURPLE pill CTA with WHITE text. */
+main .default-content-wrapper .doctor-tout {
+  display: flex;
+  align-items: stretch;
+  max-width: 1240px;
+  margin: 40px auto 0;
+  border-radius: var(--linz-rounded-corner, 16px);
+  overflow: hidden;
+  background: var(--linz-white, #fff);
+  text-align: left;
+}
+
+main .default-content-wrapper .doctor-tout-image {
+  position: relative;
+  flex: 0 0 42%;
+  margin: 0;
+}
+
+main .default-content-wrapper .doctor-tout-image > p:first-child {
+  margin: 0;
+  height: 100%;
+}
+
+main .default-content-wrapper .doctor-tout-image img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* "Actor Portrayal" caption overlaid bottom-left on the photo. */
+main .default-content-wrapper .doctor-tout-image .actor-portrayal {
+  position: absolute;
+  left: 20px;
+  bottom: 16px;
+  margin: 0;
+  color: var(--linz-white, #fff) !important;
+  font-size: 13px;
+}
+
+main .default-content-wrapper .doctor-tout-content {
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 40px 56px;
+}
+
+main .default-content-wrapper .doctor-tout-content > p:first-child {
+  margin: 0 0 16px;
+  font-size: 30px;
+  font-weight: 700;
+  line-height: 1.15;
+  color: var(--linz-dark-purple, #422e83) !important;
+}
+
+main .default-content-wrapper .doctor-tout-content > p:not(:first-child):not(.button-container) {
+  margin: 0 0 24px;
+  font-size: 16px;
+  line-height: 1.5;
+  color: var(--text-color, #4d4d4f) !important;
+}
+
+main .default-content-wrapper .doctor-tout-content > p.button-container,
+main .default-content-wrapper .doctor-tout-content > p:has(a) {
+  margin: 0;
+}
+
+/* Purple pill CTA, white text (matches original — opposite of the bottom-nav). */
+main .default-content-wrapper .doctor-tout-content a {
+  all: unset;
+  cursor: pointer;
+  display: inline-block;
+  padding: 16px 32px;
+  border-radius: var(--linz-rounded-corner, 16px);
+  background: var(--linz-dark-purple, #422e83) !important;
+  color: var(--linz-white, #fff) !important;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+/* "View Transcript" under the patient-story video is a plain underlined
+   dark-purple text link in the original — not a pill. Override the default EDS
+   button styling for this one link. ("More Videos Like This" stays a pill.) */
+main .section.off-white .default-content-wrapper p:has(a[href*="-transcripts"]) a,
+main .section.off-white .default-content-wrapper p:has(a[href*="/transcripts"]) a {
+  all: unset;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--linz-dark-purple, #422e83) !important;
+  text-decoration: underline;
+}
+
+/* ===== Savings sign-up method cards (auto-blocked in scripts.js) =====
+   Three side-by-side lavender cards (Text / Call / Click): icon on top, label,
+   description, and a purple pill CTA pinned to the bottom. */
+main .default-content-wrapper .signup-cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 24px;
+  max-width: 1040px;
+  margin: 24px auto 0;
+  padding: 0 20px;
+}
+
+main .default-content-wrapper .signup-card {
+  flex: 1 1 0;
+  min-width: 260px;
+  max-width: 322px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  background: var(--linz-light-purple, #d9d7f9);
+  border-radius: var(--linz-rounded-corner, 16px);
+  padding: 28px 28px 40px;
+}
+
+main .default-content-wrapper .signup-card > p:first-child {
+  margin: 0 0 12px;
+}
+
+main .default-content-wrapper .signup-card > p:first-child img {
+  width: 64px;
+  height: 64px;
+  object-fit: contain;
+}
+
+main .default-content-wrapper .signup-card > p:nth-child(2) {
+  margin: 0 0 8px;
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--linz-dark-purple, #422e83) !important;
+}
+
+main .default-content-wrapper .signup-card > p:not(:first-child):not(:nth-child(2)):not(:has(a)) {
+  margin: 0 0 16px;
+  font-size: 15px;
+  line-height: 1.5;
+  color: var(--text-color, #4d4d4f) !important;
+}
+
+main .default-content-wrapper .signup-card > p:has(a) {
+  margin: auto 0 0;
+}
+
+main .default-content-wrapper .signup-card > p:has(a) a {
+  all: unset;
+  cursor: pointer;
+  display: inline-block;
+  padding: 12px 28px;
+  border-radius: var(--linz-rounded-corner, 16px);
+  background: var(--linz-dark-purple, #422e83) !important;
+  color: var(--linz-white, #fff) !important;
+  font-size: 15px;
+  font-weight: 700;
+}
+
+/* ===== Page Not Found (404) — links are plain underlined text, not pills =====
+   The EDS framework auto-styles bare <a> as .button (purple pill); reset the
+   error-page link list to the original's plain dark-purple underlined links. */
+body.page-not-found-page main .default-content-wrapper p.button-container a.button,
+body.page-not-found-page main .default-content-wrapper p a.button {
+  all: unset;
+  display: inline;
+  padding: 0 !important;
+  border-radius: 0 !important;
+  background: none !important;
+  font-size: 16px;
+  font-weight: 400;
+  color: var(--linz-dark-purple, #422e83) !important;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+/* Center the error copy + links to match the original, and lift the content
+   above the white arch dome (::before, z-index 0), pushed below the arch crest
+   like transcript/sitemap pages. */
+body.page-not-found-page main .default-content-wrapper {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  padding-top: 120px !important;
+  padding-bottom: 60px;
+}
+
+/* Orange divider above the centered title (same SVG as transcript pages). */
+body.page-not-found-page main .default-content-wrapper > h1::before {
+  content: "";
+  display: block;
+  width: 64px;
+  height: 5px;
+  margin: 0 auto 16px;
+  background-image: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjQiIGhlaWdodD0iNSIgdmlld0JveD0iMCAwIDY0IDUiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHBhdGggZD0iTTEuMjgwMDMgNC4yMzk5N1Y0LjIxMDMyQzEuMjgwMDMgNC4yMTAzMiAxNS45NSAxLjcxOTk3IDMyIDEuNzE5OTdDNDguMDggMS43MTk5NyA2Mi43MiA0LjIxMDMyIDYyLjcyIDQuMjEwMzJWNC4yMzk5NyIgc3Ryb2tlPSIjRkFBNjMzIiBzdHJva2Utd2lkdGg9IjEuNSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIi8+PC9zdmc+");
+  background-size: 64px 5px;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+body.page-not-found-page main .default-content-wrapper > h1 {
+  color: var(--linz-dark-purple, #422e83);
+  font-family: var(--heading-font-family, "Bebas Neue", sans-serif);
+  font-size: 40px;
+  font-weight: 400;
+}
+
+/* The framework constrains the first .button-container to ~700px, which shifts
+   its centered link left of the others; force full width so all links align. */
+body.page-not-found-page main .default-content-wrapper p.button-container {
+  width: auto !important;
+  max-width: none !important;
+  margin-left: 0;
+  margin-right: 0;
+}
+
+/* The "find these links" section sits in a rounded off-white card (auto-blocked
+   in scripts.js as .pnf-links-card), matching the original. */
+body.page-not-found-page main .default-content-wrapper .pnf-links-card {
+  max-width: 998px;
+  margin: 40px auto 0;
+  padding: 24px;
+  background: var(--linz-off-white, #f4f6fb);
+  border-radius: var(--linz-rounded-corner, 16px);
+  box-sizing: border-box;
+}
+
+body.page-not-found-page main .default-content-wrapper .pnf-links-card h2 {
+  color: var(--linz-dark-purple, #422e83);
+  font-family: var(--body-font-family, Lato, sans-serif);
+  font-size: 24px;
+  font-weight: 700;
+  text-align: center;
+  margin: 0 0 12px;
+  padding: 0;
+}
+
+/* No orange divider on the card heading — only the page title (h1) carries it. */
+body.page-not-found-page main .default-content-wrapper .pnf-links-card h2::before {
+  content: none;
+  display: none;
+}
+
+/* ===== FAQs hero — full-width photo with overlaid eyebrow + title =====
+   Original: a full-bleed doctor photo (~615px) with the "FAQs" eyebrow,
+   orange divider, and white Bebas title at middle-left (auto-blocked in
+   scripts.js as .faq-hero). */
+main .default-content-wrapper .faq-hero {
+  position: relative;
+  width: 100vw;
+  left: 50%;
+  transform: translateX(-50%);
+  min-height: 615px;
+  display: flex;
+  align-items: center;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+main .default-content-wrapper .faq-hero-content {
+  max-width: 1240px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 48px;
+  box-sizing: border-box;
+}
+
+main .default-content-wrapper .faq-hero .faq-hero-content p {
+  margin: 0 0 12px;
+  color: var(--linz-white, #fff) !important;
+  font-size: 12px !important;
+  font-weight: 800 !important;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+main .default-content-wrapper .faq-hero-content h1 {
+  margin: 0;
+  color: var(--linz-white, #fff);
+  font-family: var(--heading-font-family, "Bebas Neue", sans-serif);
+  font-size: 40px;
+  font-weight: 400;
+  line-height: 1.05;
+  text-align: left;
+}
+
+/* Orange divider between the eyebrow and the title (same SVG as transcript). */
+main .default-content-wrapper .faq-hero-content h1::before {
+  content: "";
+  display: block;
+  width: 64px;
+  height: 5px;
+  margin: 0 0 16px;
+  background-image: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjQiIGhlaWdodD0iNSIgdmlld0JveD0iMCAwIDY0IDUiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHBhdGggZD0iTTEuMjgwMDMgNC4yMzk5N1Y0LjIxMDMyQzEuMjgwMDMgNC4yMTAzMiAxNS45NSAxLjcxOTk3IDMyIDEuNzE5OTdDNDguMDggMS43MTk5NyA2Mi43MiA0LjIxMDMyIDYyLjcyIDQuMjEwMzJWNC4yMzk5NyIgc3Ryb2tlPSIjRkFBNjMzIiBzdHJva2Utd2lkdGg9IjEuNSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIi8+PC9zdmc+");
+  background-size: 64px 5px;
+  background-repeat: no-repeat;
+  background-position: left center;
+}
+
+/* ===== Sitemap — 3-column section grid with plain underlined links =====
+   The original lays the nav sections out in a 3-up grid (abbv-col-4) with a
+   centered purple h1, left-aligned bold h2 group titles, and plain underlined
+   dark-purple text links (NOT framework purple pills). */
+/* Lift the sitemap content above the white arch dome (::before, z-index 0) and
+   push it down so the title lands below the arch crest, matching the original. */
+body.sitemap-page main .default-content-wrapper {
+  position: relative;
+  z-index: 1;
+  padding-top: 120px !important;
+}
+
+body.sitemap-page main .default-content-wrapper h1 {
+  color: var(--linz-dark-purple, #422e83);
+  text-align: center;
+  font-family: var(--heading-font-family, "Bebas Neue", sans-serif);
+  font-size: 40px;
+  font-weight: 400;
+  margin-bottom: 32px;
+}
+
+/* Orange divider above the centered title (same SVG as transcript pages). */
+body.sitemap-page main .default-content-wrapper h1::before {
+  content: "";
+  display: block;
+  width: 64px;
+  height: 5px;
+  margin: 0 auto 16px;
+  background-image: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjQiIGhlaWdodD0iNSIgdmlld0JveD0iMCAwIDY0IDUiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHBhdGggZD0iTTEuMjgwMDMgNC4yMzk5N1Y0LjIxMDMyQzEuMjgwMDMgNC4yMTAzMiAxNS45NSAxLjcxOTk3IDMyIDEuNzE5OTdDNDguMDggMS43MTk5NyA2Mi43MiA0LjIxMDMyIDYyLjcyIDQuMjEwMzJWNC4yMzk5NyIgc3Ryb2tlPSIjRkFBNjMzIiBzdHJva2Utd2lkdGg9IjEuNSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIi8+PC9zdmc+");
+  background-size: 64px 5px;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+body.sitemap-page main .default-content-wrapper .sitemap-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px 24px;
+  max-width: 998px;
+  margin: 0 auto;
+}
+
+body.sitemap-page main .default-content-wrapper .sitemap-group h2 {
+  color: var(--linz-dark-purple, #422e83);
+  font-family: var(--body-font-family, Lato, sans-serif);
+  font-size: 24px;
+  font-weight: 700;
+  text-align: left;
+  margin: 0 0 12px;
+  padding: 0;
+}
+
+/* Suppress the global content-wrapper h2 orange divider on sitemap section
+   titles — only the page title (h1) carries the divider here. */
+body.sitemap-page main .default-content-wrapper .sitemap-group h2::before {
+  content: none;
+  display: none;
+}
+
+body.sitemap-page main .default-content-wrapper .sitemap-group p {
+  margin: 0 0 8px;
+  text-align: left;
+}
+
+body.sitemap-page main .default-content-wrapper .sitemap-group p a.button,
+body.sitemap-page main .default-content-wrapper .sitemap-group p a {
+  all: unset;
+  display: inline;
+  padding: 0 !important;
+  border-radius: 0 !important;
+  background: none !important;
+  font-size: 16px;
+  font-weight: 400;
+  color: var(--linz-dark-purple, #422e83) !important;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  body.sitemap-page main .default-content-wrapper .sitemap-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ===== Program Terms expandable accordion (auto-blocked in scripts.js) =====
+   Dark-purple clickable header with a chevron; collapsible legal-text panel,
+   collapsed by default. */
+main .default-content-wrapper .terms-accordion {
+  max-width: 1240px;
+  margin: 24px auto;
+  border-radius: var(--linz-rounded-corner, 16px);
+  overflow: hidden;
+}
+
+main .default-content-wrapper .terms-accordion-header {
+  all: unset;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 20px 32px;
+  background: var(--linz-dark-purple, #422e83);
+  color: var(--linz-white, #fff);
+  font-size: 20px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+main .default-content-wrapper .terms-accordion-icon {
+  width: 14px;
+  height: 14px;
+  border-right: 2px solid var(--linz-white, #fff);
+  border-bottom: 2px solid var(--linz-white, #fff);
+  transform: rotate(45deg);
+  transition: transform 0.2s ease;
+  flex: 0 0 auto;
+  margin-left: 16px;
+}
+
+main .default-content-wrapper .terms-accordion.open .terms-accordion-icon {
+  transform: rotate(-135deg);
+}
+
+main .default-content-wrapper .terms-accordion-panel {
+  display: none;
+  padding: 24px 32px;
+  background: var(--linz-off-white, #f4f6fb);
+}
+
+main .default-content-wrapper .terms-accordion.open .terms-accordion-panel {
+  display: block;
+}
+
+main .default-content-wrapper .terms-accordion-panel > p {
+  margin: 0;
+  font-size: 15px;
+  line-height: 1.6;
+  color: var(--text-color, #4d4d4f);
+}
+
+/* ===== Insurance cost table (auto-blocked in scripts.js) =====
+   Two-column table: dark-purple header row (white text), then rows with a
+   lavender label cell and a white description cell. */
+main .default-content-wrapper .cost-table {
+  max-width: 998px;
+  margin: 24px auto;
+  border-radius: var(--linz-rounded-corner, 16px);
+  overflow: hidden;
+}
+
+main .default-content-wrapper .cost-row {
+  display: flex;
+  align-items: stretch;
+  text-align: left;
+}
+
+main .default-content-wrapper .cost-header {
+  background: var(--linz-dark-purple, #422e83);
+}
+
+main .default-content-wrapper .cost-header > p {
+  flex: 1 1 0;
+  margin: 0;
+  padding: 16px 24px;
+  font-weight: 800;
+  text-align: left;
+  color: var(--linz-white, #fff) !important;
+}
+
+main .default-content-wrapper .cost-header > p:first-child {
+  flex: 0 0 34%;
+}
+
+main .default-content-wrapper .cost-label {
+  flex: 0 0 34%;
+  padding: 20px 24px;
+  background: var(--linz-light-purple, #d9d7f9);
+  display: flex;
+  align-items: center;
+  text-align: left;
+  border-bottom: 1px solid var(--linz-white, #fff);
+}
+
+main .default-content-wrapper .cost-label > p {
+  margin: 0;
+}
+
+main .default-content-wrapper .cost-label strong {
+  font-weight: 400;
+  color: var(--linz-dark-purple, #422e83) !important;
+}
+
+main .default-content-wrapper .cost-desc {
+  flex: 1 1 0;
+  padding: 20px 24px;
+  background: var(--linz-white, #fff);
+  text-align: left;
+  border-bottom: 1px solid var(--linz-light-purple, #d9d7f9);
+}
+
+main .default-content-wrapper .cost-desc > p {
+  margin: 0 0 8px;
+  font-size: 15px;
+  line-height: 1.5;
+  text-align: left;
+  color: var(--text-color, #4d4d4f) !important;
+}
+
+main .default-content-wrapper .cost-desc > p:last-child {
+  margin-bottom: 0;
+}
+
+main .default-content-wrapper .cost-row:last-child .cost-label,
+main .default-content-wrapper .cost-row:last-child .cost-desc {
+  border-bottom: 0;
+}
+
+/* ===== Patient-story video poster (auto-blocked in scripts.js) =====
+   Brightcove control chrome is stripped in JS; the remaining poster image is
+   shown as a centered thumbnail with a play-button overlay. */
+main .default-content-wrapper p.video-poster {
+  position: relative;
+  max-width: 760px;
+  margin: 24px auto 16px;
+}
+
+main .default-content-wrapper p.video-poster img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: var(--linz-rounded-corner, 16px);
+}
+
+main .default-content-wrapper p.video-poster::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 72px;
+  height: 72px;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  background: rgb(66 46 131 / 85%);
+  background-image:
+    linear-gradient(45deg, transparent 0, transparent 100%);
+  box-shadow: 0 2px 10px rgb(0 0 0 / 30%);
+}
+
+/* Play triangle. */
+main .default-content-wrapper p.video-poster::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-40%, -50%);
+  border-style: solid;
+  border-width: 12px 0 12px 20px;
+  border-color: transparent transparent transparent var(--linz-white, #fff);
+  z-index: 1;
+}

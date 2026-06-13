@@ -1,0 +1,358 @@
+{
+  "metadata": {
+    "projectType": "xwalk"
+  },
+  "templates": [
+    {
+      "name": "homepage",
+      "urls": [
+        "https://www.linzess.com/"
+      ],
+      "description": "Linzess homepage with hero banner, content cards, statistics, patient video testimonials, savings offer, and Important Safety Information",
+      "blocks": [
+        {
+          "name": "hero-pharma",
+          "instances": [
+            ".image-text-v2.parbase > .hero-container"
+          ]
+        },
+        {
+          "name": "columns-promo",
+          "instances": [
+            ".abbv-row-container.eligible-tout",
+            ".abbv-row-container.background-off-white.image-text-wrapper:not(.savings-card-tout)",
+            ".abbv-row-container.savings-card-tout"
+          ]
+        },
+        {
+          "name": "cards-feature",
+          "instances": [
+            ".abbv-flex-container-v2.flexbox-cards.margin-top-110"
+          ]
+        },
+        {
+          "name": "cards-stats",
+          "instances": [
+            ".abbv-flex-container-v2.flexbox-cards.c-dark-purple.margin-top-80"
+          ]
+        },
+        {
+          "name": "cards-video",
+          "instances": [
+            ".abbv-flex-container-v2.flexbox-video-cards"
+          ]
+        }
+      ],
+      "sections": [
+        {
+          "id": "section-hero",
+          "name": "Hero",
+          "selector": ".image-text-v2.parbase:first-of-type",
+          "style": null,
+          "blocks": [
+            "hero-pharma"
+          ],
+          "defaultContent": []
+        },
+        {
+          "id": "section-content-cards",
+          "name": "Content Cards",
+          "selector": ".abbv-container.background-white.home-background-white-arc",
+          "style": "white",
+          "blocks": [
+            "columns-promo",
+            "cards-feature",
+            "columns-promo"
+          ],
+          "defaultContent": [
+            ".abbv-rich-text.ibs-brief-section"
+          ]
+        },
+        {
+          "id": "section-stats-experiences",
+          "name": "Statistics and Patient Experiences",
+          "selector": ".abbv-container.background-dark-purple.background-dark-purple-arc",
+          "style": "dark-purple",
+          "blocks": [
+            "cards-stats",
+            "cards-video"
+          ],
+          "defaultContent": [
+            ".abbv-rich-text.max-690.c-linz-white.mb20-m",
+            ".abbv-rich-text.max-720.c-linz-white"
+          ]
+        },
+        {
+          "id": "section-savings",
+          "name": "Savings Offer",
+          "selector": ".abbv-container.background-white.background-white-arc.pb24-m",
+          "style": "white",
+          "blocks": [
+            "columns-promo"
+          ],
+          "defaultContent": [
+            ".abbv-rich-text.max-690.c-linz-dark-purple",
+            ".abbv-rich-text.footnote.max-auto"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "content-page",
+      "urls": [
+        "https://www.linzess.com/why-linzess",
+        "https://www.linzess.com/understanding-constipation",
+        "https://www.linzess.com/find-relief",
+        "https://www.linzess.com/resources",
+        "https://www.linzess.com/savings-and-support"
+      ],
+      "description": "Main section content pages with hero, multiple content sections, CTAs, and informational blocks",
+      "blocks": [
+        {
+          "name": "hero-pharma",
+          "instances": [
+            ".hero-container.abbv-image-text-v2"
+          ]
+        },
+        {
+          "name": "tabs-navigation",
+          "instances": [
+            ".abbv-section-navigation.abbv-sticky"
+          ]
+        },
+        {
+          "name": "cards-checklist",
+          "instances": [
+            ".abbv-flex-container-v2.flexbox-cards.c-dark-purple.margin-top-80.howlinz-flex",
+            ".abbv-flex-container-v2.flexbox-cards.c-dark-purple.margin-top-40"
+          ]
+        },
+        {
+          "name": "cards-icon",
+          "instances": [
+            ".abbv-flex-container-v2.flexbox-column.max-690.how-linz-works",
+            ".abbv-flex-container-v2.flexbox-column.why-linz-sideeffects.max-690"
+          ]
+        },
+        {
+          "name": "cards-video",
+          "instances": [
+            ".abbv-flex-container-v2.flexbox-video-cards.why-linz-video-cards"
+          ]
+        },
+        {
+          "name": "video-playlist",
+          "instances": [
+            ".abbv-video-player.abbv-video-playlist.abbv-playlist-type-carousel"
+          ]
+        },
+        {
+          "name": "video-single",
+          "instances": [
+            ".abbv-flex-container-v2.flexbox-video-cards.flexbox-video-cards--single"
+          ]
+        },
+        {
+          "name": "columns-promo",
+          "instances": [
+            ".abbv-row-container.savings-card-tout"
+          ]
+        },
+        {
+          "name": "columns-cta",
+          "instances": [
+            ".abbv-container.background-dark-purple.bottom-nav .abbv-flex-container-v2"
+          ]
+        },
+        {
+          "name": "fragment",
+          "instances": [
+            ".isi-bar"
+          ]
+        }
+      ],
+      "sections": [
+        {
+          "id": "section-hero",
+          "name": "Hero",
+          "selector": ".image-text-v2.parbase:first-of-type",
+          "style": null,
+          "blocks": [
+            "hero-pharma"
+          ],
+          "defaultContent": []
+        },
+        {
+          "id": "section-navigation",
+          "name": "Section Navigation",
+          "selector": ".section-navigation.parbase",
+          "style": null,
+          "blocks": [
+            "tabs-navigation"
+          ],
+          "defaultContent": []
+        },
+        {
+          "id": "section-how-can-help",
+          "name": "How LINZESS Can Help",
+          "selector": ".abbv-container.background-white.background-white-arc:first-of-type",
+          "style": "white",
+          "blocks": [
+            "cards-checklist"
+          ],
+          "defaultContent": [
+            ".abbv-rich-text:has(.eyebrow)",
+            ".button-container:has(a[href*='gutcheck'])"
+          ]
+        },
+        {
+          "id": "section-how-works",
+          "name": "How LINZESS Works",
+          "selector": ".abbv-container.background-dark-purple.background-dark-purple-arc:first-of-type",
+          "style": "dark-purple",
+          "blocks": [
+            "cards-icon",
+            "cards-checklist",
+            "cards-video"
+          ],
+          "defaultContent": [
+            ".abbv-rich-text.c-linz-white"
+          ]
+        },
+        {
+          "id": "section-side-effects",
+          "name": "Side Effects",
+          "selector": ".abbv-container.background-off-white.background-off-white-arc",
+          "style": "off-white",
+          "blocks": [
+            "cards-icon"
+          ],
+          "defaultContent": [
+            ".abbv-rich-text:has(.eyebrow)",
+            ".abbv-rich-text:has(a[href*='fda.gov'])"
+          ]
+        },
+        {
+          "id": "section-patient-experiences",
+          "name": "Patient Experiences",
+          "selector": ".abbv-container.background-white.background-white-arc.text-align-center",
+          "style": "white",
+          "blocks": [
+            "video-playlist",
+            "columns-promo"
+          ],
+          "defaultContent": [
+            ".abbv-rich-text:has(.eyebrow)",
+            ".abbv-rich-text.footnote"
+          ]
+        },
+        {
+          "id": "section-bottom-nav",
+          "name": "Bottom Navigation",
+          "selector": ".abbv-container.background-dark-purple.bottom-nav",
+          "style": "dark-purple",
+          "blocks": [
+            "columns-cta"
+          ],
+          "defaultContent": []
+        },
+        {
+          "id": "section-isi",
+          "name": "ISI",
+          "selector": ".isi-bar",
+          "style": null,
+          "blocks": [
+            "fragment"
+          ],
+          "defaultContent": []
+        }
+      ]
+    },
+    {
+      "name": "patient-transcript",
+      "urls": [
+        "https://www.linzess.com/why-linzess/linzess-patient-experiences/dian-transcripts",
+        "https://www.linzess.com/why-linzess/linzess-patient-experiences/nan-transcripts",
+        "https://www.linzess.com/why-linzess/linzess-patient-experiences/julie-transcripts",
+        "https://www.linzess.com/why-linzess/linzess-patient-experiences/getting-on-same-page-transcripts",
+        "https://www.linzess.com/why-linzess/linzess-patient-experiences/setting-expectations-transcripts",
+        "https://www.linzess.com/why-linzess/linzess-patient-experiences/could-it-be-transcripts",
+        "https://www.linzess.com/why-linzess/linzess-patient-experiences/dr-lucak-transcripts",
+        "https://www.linzess.com/why-linzess/linzess-patient-experiences/finding-relief-transcripts",
+        "https://www.linzess.com/why-linzess/linzess-patient-experiences/seeking-the-right-treatment-transcripts"
+      ],
+      "description": "Video transcript pages with embedded Brightcove video player and text transcript content",
+      "blocks": []
+    },
+    {
+      "name": "patient-experiences-hub",
+      "urls": [
+        "https://www.linzess.com/why-linzess/linzess-patient-experiences"
+      ],
+      "description": "Patient experiences listing page with video cards and links to individual transcript pages",
+      "blocks": []
+    },
+    {
+      "name": "wellness-article",
+      "urls": [
+        "https://www.linzess.com/starting-linzess/wellness-tips/your-map-to-a-low-fodmap-diet",
+        "https://www.linzess.com/starting-linzess/wellness-tips/good-for-your-gut-flavorful-food-swaps",
+        "https://www.linzess.com/starting-linzess/wellness-tips/make-a-game-plan-for-ibs-c",
+        "https://www.linzess.com/starting-linzess/wellness-tips/5-holiday-low-fodmap-recipes",
+        "https://www.linzess.com/starting-linzess/wellness-tips/is-your-pantry-fodmap-friendly"
+      ],
+      "description": "Wellness tips articles with recipe content, images, and nutritional information",
+      "blocks": []
+    },
+    {
+      "name": "healthy-routines-article",
+      "urls": [
+        "https://www.linzess.com/starting-linzess/healthy-routines/otc-and-prescription-treatments",
+        "https://www.linzess.com/starting-linzess/healthy-routines/tackling-ibs-c-triggers",
+        "https://www.linzess.com/starting-linzess/healthy-routines/keeping-in-touch-with-your-doctor"
+      ],
+      "description": "Healthy routines articles with informational content about managing IBS-C and CIC",
+      "blocks": []
+    },
+    {
+      "name": "hub-page",
+      "urls": [
+        "https://www.linzess.com/starting-linzess/wellness-tips",
+        "https://www.linzess.com/starting-linzess/healthy-routines"
+      ],
+      "description": "Category hub pages listing articles with card-based navigation to child articles",
+      "blocks": []
+    },
+    {
+      "name": "savings-card",
+      "urls": [
+        "https://www.linzess.com/savings-card",
+        "https://www.linzess.com/savings-card/terms",
+        "https://www.linzess.com/savings-card/savings"
+      ],
+      "description": "Savings card enrollment, terms, and activation pages with forms and eligibility information",
+      "blocks": []
+    },
+    {
+      "name": "interactive-page",
+      "urls": [
+        "https://www.linzess.com/find-relief/gutcheck",
+        "https://www.linzess.com/savings-and-support/faqs",
+        "https://www.linzess.com/savings-and-support/from-the-gut",
+        "https://www.linzess.com/find-relief/talk-to-a-doctor"
+      ],
+      "description": "Interactive pages with quizzes, FAQs, newsletter signup forms, and doctor discussion guides",
+      "blocks": []
+    },
+    {
+      "name": "utility-page",
+      "urls": [
+        "https://www.linzess.com/sitemap",
+        "https://www.linzess.com/page-not-found",
+        "https://www.linzess.com/search-results"
+      ],
+      "description": "Utility pages including sitemap, 404 error page, search results, and redirect/placeholder pages",
+      "blocks": []
+    }
+  ]
+}

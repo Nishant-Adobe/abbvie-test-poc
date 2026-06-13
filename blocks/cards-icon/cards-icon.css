@@ -1,0 +1,174 @@
+/* stylelint-disable */
+
+/* Cards Icon — stacked cards with icon on left and text on right */
+.cards-icon {
+  display: contents;
+}
+
+.cards-icon > ul {
+  list-style: none;
+  margin: 40px auto 0;
+  padding: 0 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  max-width: 900px;
+}
+
+/* Individual card — directly on dark purple bg */
+.cards-icon > ul > li {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  background-color: var(--linz-off-white, #f4f6fb);
+  border-radius: var(--linz-rounded-corner, 16px);
+  border-left: 4px solid var(--linz-light-purple, #d9d7f9);
+  padding: 40px 48px 40px 48px;
+  overflow: visible;
+  position: relative;
+}
+
+.cards-icon > ul > li:nth-child(even) {
+  background-color: var(--linz-light-purple, #d9d7f9);
+}
+
+/* Dark purple section variant */
+.section.dark-purple .cards-icon > ul > li:nth-child(odd) {
+  background-color: var(--linz-off-white, #f4f6fb);
+}
+
+.section.dark-purple .cards-icon > ul > li:nth-child(even) {
+  background-color: var(--linz-light-purple, #d9d7f9);
+}
+
+.section.dark-purple .cards-icon .cards-icon-card-body p,
+.section.dark-purple .cards-icon .cards-icon-card-body li,
+.section.dark-purple .cards-icon .cards-icon-card-body strong {
+  color: var(--linz-dark-purple, #422e83) !important;
+}
+
+/* Bullet list horizontal on desktop */
+.section.dark-purple .cards-icon .cards-icon-card-body ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px 40px;
+  padding-left: 0;
+  list-style: none;
+}
+
+.section.dark-purple .cards-icon .cards-icon-card-body ul li {
+  position: relative;
+  padding-left: 16px;
+}
+
+.section.dark-purple .cards-icon .cards-icon-card-body ul li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 6px;
+  width: 8px;
+  height: 8px;
+  background: var(--linz-dark-purple, #422e83);
+  border-radius: 50%;
+}
+
+/* Off-white section variant — alternating dark/light purple cards */
+.section.off-white .cards-icon > ul > li:nth-child(odd) {
+  background-color: var(--linz-dark-purple, #422e83);
+  color: var(--linz-white);
+}
+
+/* Bullet list horizontal on desktop (matches original "Other side effects" row) */
+.section.off-white .cards-icon .cards-icon-card-body ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px 40px;
+  padding-left: 0;
+  list-style: none;
+}
+
+.section.off-white .cards-icon .cards-icon-card-body ul li {
+  position: relative;
+  padding-left: 16px;
+  margin-bottom: 0;
+}
+
+.section.off-white .cards-icon .cards-icon-card-body ul li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 10px;
+  width: 8px;
+  height: 8px;
+  background: var(--linz-dark-purple, #422e83);
+  border-radius: 50%;
+}
+
+.section.off-white .cards-icon > ul > li:nth-child(odd) p,
+.section.off-white .cards-icon > ul > li:nth-child(odd) strong,
+.section.off-white .cards-icon > ul > li:nth-child(odd) li {
+  color: var(--linz-white);
+}
+
+.section.off-white .cards-icon > ul > li:nth-child(even) {
+  background-color: var(--linz-light-purple, #d9d7f9);
+}
+
+/* Icon image — overlaps outside card left edge */
+.cards-icon .cards-icon-card-image {
+  flex: 0 0 160px;
+  line-height: 0;
+  margin-left: -100px;
+  position: relative;
+  z-index: 2;
+}
+
+.cards-icon .cards-icon-card-image img {
+  width: 160px;
+  height: 160px;
+  object-fit: contain;
+  background: var(--linz-light-purple, #d9d7f9);
+  border-radius: 50%;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+/* Card body text */
+.cards-icon .cards-icon-card-body {
+  flex: 1;
+  margin: 0;
+}
+
+.cards-icon .cards-icon-card-body p {
+  font-size: 18px;
+  font-weight: 400;
+  color: var(--linz-dark-purple, #422e83);
+  line-height: 1.6;
+  margin: 0 0 12px;
+}
+
+.cards-icon .cards-icon-card-body ul {
+  padding-left: 20px;
+  margin: 12px 0 0;
+}
+
+.cards-icon .cards-icon-card-body li {
+  font-size: 18px;
+  font-weight: 400;
+  color: var(--linz-dark-purple, #422e83);
+  line-height: 1.6;
+  margin-bottom: 6px;
+}
+
+/* Mobile: stack icon above text */
+@media (max-width: 600px) {
+  .cards-icon > ul > li {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .cards-icon .cards-icon-card-body ul {
+    text-align: left;
+  }
+}

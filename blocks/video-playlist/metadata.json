@@ -1,0 +1,41 @@
+{
+  "variantName": "video-playlist",
+  "baseBlock": "video",
+  "version": "1.0.0",
+  "created": "2026-06-08T18:25:00.000Z",
+  "sourceContext": {
+    "originUrl": "https://www.linzess.com/why-linzess",
+    "originPage": "Why LINZESS - patient experience video playlist",
+    "blockPosition": "middle"
+  },
+  "visualCharacteristics": {
+    "colorScheme": "light",
+    "density": "spacious",
+    "purpose": "video-playlist",
+    "imagePattern": "large"
+  },
+  "contentPattern": {
+    "structure": "main-video + thumbnail-carousel + transcript-link",
+    "buttonCount": 0,
+    "imageCount": 1
+  },
+  "reuseGuidance": {
+    "suitableFor": [
+      "video playlist with multiple patient stories",
+      "Brightcove playlist embeds",
+      "video galleries with thumbnail navigation",
+      "multi-video content sections"
+    ],
+    "notSuitableFor": [
+      "single video embeds",
+      "YouTube/Vimeo simple embeds",
+      "background video sections",
+      "video cards in a grid"
+    ]
+  },
+  "usage": {
+    "pagesUsing": ["/why-linzess"],
+    "reuseCount": 1,
+    "lastUsed": "2026-06-08T18:25:00.000Z"
+  }
+}

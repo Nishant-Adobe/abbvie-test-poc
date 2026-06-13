@@ -1,0 +1,48 @@
+/* stylelint-disable selector-class-pattern, no-descending-specificity */
+
+/* ============================================================
+   Block: hero-pharma
+   CSS extracted from source: https://www.linzess.com/
+   Selector: .image-text-v2.parbase > .hero-container
+   ============================================================
+   The framework CSS (abbv-framework.css, linzess-global.css, linzess.css)
+   provides ALL visual styling for the inner DOM elements. This file only:
+   1. Neutralizes EDS wrapper constraints (display: contents)
+   2. Fixes the CTA button text color override caused by linzess.css line 897
+      which applies `color: var(--linz-white) !important` to all .abbv-button-primary
+   3. Ensures the section collapses properly around the negative-top hero
+   ============================================================ */
+
+/* Neutralize EDS block wrapper — inner .hero-container drives layout */
+.hero-pharma {
+  display: contents;
+}
+
+/* Orange divider accent between the eyebrow and H1 (original: span.divider with divider.svg) */
+.hero-pharma-wrapper .hero-container span.divider {
+  display: inline-block;
+  width: 64px;
+  height: 5px;
+  background-image: url("/content/dam/linzess/images/divider.svg");
+  background-repeat: no-repeat;
+  background-position: left center;
+}
+
+/* Fix: Hero CTA button needs purple text on orange background.
+   linzess.css sets `main a.abbv-button-primary:any-link { color: var(--linz-white) !important }`
+   which makes ALL .abbv-button-primary links white. The hero variant needs dark purple text.
+   Source computed: color: rgb(66, 46, 131) = var(--linz-dark-purple) */
+main .hero-pharma-wrapper .hero-container.Linzess-home-hero-belly-bnr a.abbv-button-primary:any-link {
+  color: var(--linz-dark-purple) !important;
+}
+
+main .hero-pharma-wrapper .hero-container.Linzess-home-hero-belly-bnr a.abbv-button-primary:hover {
+  color: var(--linz-dark-purple) !important;
+  background-color: var(--linz-light-purple);
+}
+
+/* Note: The section-to-section spacing/overlap is handled in styles.css via:
+   - main > .section.hero-pharma-container + .section { margin-top: -140px; }
+   The hero-container's position: relative + top: -138px (from linzess-global.css)
+   offsets it upward under the navigation as on the original site. */
+

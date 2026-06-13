@@ -1,0 +1,47 @@
+{
+  "domain": "https://www.linzess.com",
+  "phase": "migrated-pending-refinement",
+  "lastUpdated": "2026-06-12",
+  "workflow": "full-site-migration.md (gated phases)",
+  "phaseGates": {
+    "1_url_discovery_triage": "PASS — 48 URLs discovered; 20 MIGRATE, 28 SKIP (anchor/canonical redirects, /espanol cross-domain, /legal-policy 404)",
+    "2_block_inventory_functionality": "PASS — block-inventory.json + functionality-map.json generated",
+    "3_design_tokens": "PASS — 21 :root tokens + framework CSS (abbv-framework, linzess-global, linzess)",
+    "4_fragments_blocks": "PASS — header/footer/isi fragments + 14 blocks built (same DOM + verbatim classes)",
+    "5_page_migration": "PASS — all migrate-list pages imported and rendering",
+    "6_validation": "PASS — all pages return 200 locally; sample structural validation on /why-linzess clean"
+  },
+  "migrateList": {
+    "count": 20,
+    "pages": {
+      "/": { "status": "migrated", "baseline": "~90%", "note": "hero arch over photo fixed this session" },
+      "/why-linzess": { "status": "migrated", "baseline": "~88%", "note": "tabs, checklist badge, video carousel, arches" },
+      "/understanding-constipation": { "status": "migrated", "baseline": "~85%", "note": "duplicate ISI removed this session" },
+      "/find-relief": { "status": "migrated", "baseline": "~90%", "note": "duplicate ISI removed" },
+      "/resources": { "status": "migrated", "baseline": "~71%", "note": "refined: article-cards auto-block (3-up Healthy Routines + 5-up Wellness Tips lavender cards), Wellness Tips tip-cards (icon badge), stripped leaked Brightcove video chrome, Community Resources side-by-side alternating dark/light cards, View Transcript as plain text link (More Videos stays pill); comparator card-bg-white + IBSPatient-lavender diffs are HALLUCINATED (verified in-browser: article cards are lavender #d9d7f9, IBSPatient card is dark-purple #422e83)" },
+      "/savings-and-support": { "status": "migrated", "baseline": "~85%", "note": "refined: removed duplicate section-metadata block (was leaking 'style/dark-purple' text + 404); doctor-tout + signup-cards (Text/Call/Click 3-up) + insurance cost-table auto-blocks now fire via standalone decorateDoctorTout/decorateSignupCards/decorateCostTable (independent of dark-section early-return). cost-desc inline markers (®/||) merged inline; Program Terms now a collapsible accordion (decorateTermsAccordion); Insurance Coverage Support + MyAbbVie Assist now alternating dark/light two-up cards (decorateCommunityCards extracted to standalone so it fires without a dark-purple section)" },
+      "/savings-and-support/faqs": { "status": "migrated", "baseline": "~85%", "note": "FAQs uses a full-bleed hero PHOTO header (faq-hero-desktop.png ~615px), NOT the transcript purple-band/arch. decorateFaqHero auto-block wraps the image <p> + 'FAQs' eyebrow + h1 into .faq-hero (100vw bg-image) with .faq-hero-content overlaid middle-left: white 12px/800 uppercase eyebrow (!important to beat framework grey), orange-divider ::before, white Bebas 40px left-aligned title. Verified in-browser. NOTE: FAQ accordion bodies still render as flat stacked <p>s — accordion decoration is a separate future task" },
+      "/savings-and-support/from-the-gut": { "status": "migrated", "baseline": "forms-embed", "note": "adaptive form via forms-embed block (needs /abbviecloud proxy in prod)" },
+      "/find-relief/gutcheck": { "status": "migrated", "baseline": "forms-embed", "note": "adaptive form via forms-embed block" },
+      "/savings-card": { "status": "migrated", "baseline": "forms-embed" },
+      "/savings-card/activate": { "status": "migrated", "baseline": "forms-embed", "note": "created this session" },
+      "/savings-card/savings": { "status": "migrated", "baseline": "forms-embed", "note": "was CloudFront 403 snapshot; fixed to forms-embed" },
+      "/sitemap": { "status": "migrated", "baseline": "~95%", "note": "refined: decorateSitemap auto-block groups each h2 + its links into .sitemap-group cells inside a 3-column .sitemap-grid (matches original abbv-col-4 layout). body.sitemap-page CSS: centered Bebas 40px purple h1 with orange-divider ::before, left-aligned Lato 24px/700 h2 titles (global h2::before divider suppressed), plain underlined dark-purple 16px/400 links (reset from framework purple pills). SHARES transcript-page header treatment: dark-purple header band + white arch dome over it (transcript ::before arch + header bg rules extended to body.sitemap-page); content lifted z-index:1 padding-top 120px below arch crest. Verified header band + arch + divider + 3-col grid in-browser" },
+      "/page-not-found": { "status": "migrated", "baseline": "~95%", "note": "404 page SHARES transcript-page header treatment: dark-purple header band + white arch dome (transcript ::before arch + header bg rules extended to body.page-not-found-page); content lifted z-index:1 padding-top 120px below arch crest. Orange-divider ::before on h1 (Bebas 40px). decoratePageNotFound auto-block wraps the 'find these links' h2 + 3 links into .pnf-links-card (rounded off-white #f4f6fb 998px card, h2 24px/700 centered, global h2::before divider suppressed). Links are plain underlined dark-purple (reset from framework purple pills); homepage link inline. Verified header+arch+divider+card in-browser" },
+      "/why-linzess/linzess-patient-experiences/*": { "status": "migrated", "baseline": "~90%", "note": "10 transcripts incl. elaine (created this session); body.transcript-page styling" },
+      "/starting-linzess/healthy-routines/*": { "status": "migrated", "baseline": "~80%", "note": "3 articles" },
+      "/starting-linzess/wellness-tips/*": { "status": "migrated", "baseline": "~80%", "note": "5 articles" }
+    }
+  },
+  "skipped": {
+    "count": 28,
+    "reasons": {
+      "anchor-redirect": "why-linzess/* and understanding-constipation/* and find-relief/{talk-to-a-doctor,how-to-take-linzess} -> parent#anchor",
+      "canonical-redirect": "savings-and-support/{wellness-tips,healthy-routines,community-resources,linzess-savings-program}/* -> /resources or /starting-linzess/*",
+      "cross-domain": "/espanol -> es.linzess.com",
+      "hard-404": "/legal-policy -> Page Not Found",
+      "duplicate": "linzess-patient-stories/* -> linzess-patient-experiences/* canonicals"
+    }
+  },
+  "nextAction": "Per-page refinement is user-driven: 'migrate <page-url> iteratively 20' runs pixel-tool-first loop to 90-95%."
+}

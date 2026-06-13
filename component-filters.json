@@ -34,6 +34,48 @@
     ]
   },
   {
+    "id": "cards-checklist",
+    "components": [
+      "card"
+    ]
+  },
+  {
+    "id": "cards-feature",
+    "components": [
+      "card"
+    ]
+  },
+  {
+    "id": "cards-icon",
+    "components": [
+      "card"
+    ]
+  },
+  {
+    "id": "cards-info",
+    "components": [
+      "card"
+    ]
+  },
+  {
+    "id": "cards-signup",
+    "components": [
+      "card"
+    ]
+  },
+  {
+    "id": "cards-stats",
+    "components": [
+      "card"
+    ]
+  },
+  {
+    "id": "cards-video",
+    "components": [
+      "card"
+    ]
+  },
+  {
     "id": "cards",
     "components": [
       "card"
@@ -43,6 +85,36 @@
     "id": "carousel",
     "components": [
       "carousel-item"
+    ]
+  },
+  {
+    "id": "columns-cta",
+    "components": [
+      "column"
+    ]
+  },
+  {
+    "id": "column",
+    "components": [
+      "text",
+      "image",
+      "button",
+      "title"
+    ]
+  },
+  {
+    "id": "columns-promo",
+    "components": [
+      "column"
+    ]
+  },
+  {
+    "id": "column",
+    "components": [
+      "text",
+      "image",
+      "button",
+      "title"
     ]
   },
   {
@@ -85,10 +157,24 @@
     ]
   },
   {
+    "id": "tabs-navigation",
+    "components": [
+      "tabs-navigation-item"
+    ]
+  },
+  {
     "id": "tabs",
     "components": [
       "tabs-item"
     ]
+  },
+  {
+    "id": "video-playlist",
+    "components": []
+  },
+  {
+    "id": "video-single",
+    "components": []
   },
   {
     "id": "video",

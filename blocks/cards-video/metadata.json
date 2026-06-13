@@ -1,0 +1,41 @@
+{
+  "variantName": "cards-video",
+  "baseBlock": "cards",
+  "version": "1.0.0",
+  "created": "2026-06-05T18:07:00.000Z",
+  "sourceContext": {
+    "originUrl": "https://www.linzess.com/",
+    "originPage": "Linzess homepage - pharmaceutical brand landing page",
+    "blockPosition": "middle"
+  },
+  "visualCharacteristics": {
+    "colorScheme": "light",
+    "density": "spacious",
+    "purpose": "video-testimonials",
+    "imagePattern": "large"
+  },
+  "contentPattern": {
+    "structure": "video-poster + title + quote + patient-info + transcript-link",
+    "buttonCount": 0,
+    "imageCount": 1
+  },
+  "reuseGuidance": {
+    "suitableFor": [
+      "video testimonial cards",
+      "patient story cards with video",
+      "video gallery cards",
+      "media cards with poster images"
+    ],
+    "notSuitableFor": [
+      "static image cards",
+      "feature/benefit cards",
+      "statistics cards",
+      "cards without media content"
+    ]
+  },
+  "usage": {
+    "pagesUsing": ["/index", "/why-linzess"],
+    "reuseCount": 2,
+    "lastUsed": "2026-06-08T18:25:00.000Z"
+  }
+}

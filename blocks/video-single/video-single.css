@@ -1,0 +1,114 @@
+/* stylelint-disable */
+
+/* Video Single — single Brightcove video player card */
+.video-single {
+  display: contents;
+}
+
+.video-single .abbv-flex-container-v2 {
+  display: flex;
+  justify-content: center;
+  padding: 0 20px;
+  margin: 40px auto;
+}
+
+.video-single .flexboxitem-v2 {
+  max-width: 800px;
+  width: 100%;
+}
+
+.video-single .abbv-flex-item-v2 {
+  background-color: var(--linz-light-purple, #d9d7f9);
+  border-radius: var(--linz-rounded-corner, 16px);
+  overflow: hidden;
+}
+
+.video-single .abbv-video-player {
+  position: relative;
+  width: 100%;
+}
+
+.video-single .abbv-video-wrapper {
+  position: relative;
+  width: 100%;
+  padding-top: 56.25%;
+  overflow: hidden;
+}
+
+.video-single .vjs-poster {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.video-single .vjs-poster img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.video-single .vjs-big-play-button {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.85);
+  border: none;
+  cursor: pointer;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.video-single .vjs-big-play-button:hover {
+  background-color: rgba(255, 255, 255, 1);
+}
+
+.video-single .vjs-big-play-button .vjs-icon-placeholder {
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 10px 0 10px 18px;
+  border-color: transparent transparent transparent var(--linz-dark-purple, #422e83);
+  margin-left: 4px;
+}
+
+.video-single .vjs-big-play-button .vjs-control-text {
+  position: absolute;
+  clip: rect(0, 0, 0, 0);
+  overflow: hidden;
+  width: 1px;
+  height: 1px;
+}
+
+.video-single .abbv-video-card-content {
+  padding: 12px 16px;
+  display: flex;
+  align-items: baseline;
+  gap: 16px;
+  background-color: var(--linz-light-purple, #d9d7f9);
+}
+
+.video-single .abbv-video-card-content h3 {
+  font-family: var(--body-font-family);
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--linz-dark-purple, #422e83);
+  margin: 0;
+}
+
+.video-single .video-transcript-link {
+  color: var(--linz-dark-purple, #422e83) !important;
+  text-decoration: underline;
+  font-size: 14px;
+  font-weight: 700;
+  font-family: var(--body-font-family);
+}

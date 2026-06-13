@@ -1,0 +1,40 @@
+/* stylelint-disable */
+
+/* Cards Checklist — the decorator emits the original AbbVie flex DOM with the
+   original class names (.abbv-flex-container-v2, .abbv-flex-item-v2,
+   .background-off-white/.background-light-purple, .rounded-corners, .circle,
+   .checkmark-list, .footnote, etc.). All visual styling is provided by the
+   already-loaded framework CSS (abbv-framework.css, linzess-global.css), so this
+   file only needs to neutralize the EDS block wrapper. No per-property overrides. */
+
+.cards-checklist {
+  display: contents;
+}
+
+/* The badge circle overhangs the card top by -68px. The card sits directly
+   under body text, so that overhang collides with the text above. Add top room
+   on the wrapper equal to the overhang so the badge clears the preceding
+   paragraph (matches the original's gap). Applies in both the white "How Can
+   Help" section and the dark-purple "How Works" section. */
+main > .section.dark-purple > .cards-checklist-wrapper,
+main > .section.white > .cards-checklist-wrapper {
+  padding-top: 68px;
+}
+
+/* The original wraps the flex row in a .flexbox-v2 column constrained to 998px,
+   centered, with 48px side padding. EDS has no such wrapper, so reproduce that
+   constraint on the flex container the decorator emits (layout only — colors,
+   radii, badge overhang all come from the framework classes). */
+.cards-checklist .abbv-flex-container-v2 {
+  max-width: 998px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0 48px;
+  box-sizing: content-box;
+
+  /* The original framework relies on body { font-size: 1rem } (16px); the EDS
+     base sets body to 14px, so the flex container's text inherits the wrong
+     base. Restore the original 16px root so .abbv-rich-text / .mb0 / ul inherit
+     the same size as the source — no per-element font-size overrides needed. */
+  font-size: 16px;
+}

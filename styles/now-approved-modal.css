@@ -1,0 +1,26 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700;800&display=swap');.mob-only{display:none}
+.nowapproved.abbv-modal{width:auto}
+.nowapproved .abbv-modal-content-container{padding:0}
+.now-approved-modal{padding:30px;width:445px}
+.now-approved-modal img{width:141px;height:89px}
+.now-approved-modal .logo-modal .abbv-image-content-container-v2{margin:0 auto}
+.now-approved-modal h1.modal-title{color:#330072;text-align:center;font-family:'Open Sans',sans-serif;font-size:28px;font-style:normal;font-weight:800;line-height:normal;margin-top:20px}
+.now-approved-modal .body-text{color:#330072;text-align:center;font-family:'Open Sans',sans-serif;font-size:20px;font-style:normal;font-weight:600;line-height:24px;margin-top:15px;margin-bottom:40px}
+.now-approved-modal .bold-text{font-weight:800}
+.now-approved-modal .foot-note{color:#330072;font-family:'Open Sans',sans-serif;font-size:10px;font-style:normal;font-weight:600;line-height:136.052%}
+.now-approved-modal .foot-note a{color:#330072;font-family:'Open Sans',sans-serif;font-size:10px;font-style:normal;font-weight:600;line-height:normal;text-decoration-line:underline;text-decoration-style:solid}
+.now-approved-modal .project-number{color:#330072;text-align:right;font-family:'Open Sans',sans-serif;font-size:10px;font-style:normal;font-weight:600;line-height:normal;position:absolute;right:0;bottom:0}
+.desk-only{display:block}
+@media(max-width:600px){.now-approved-modal{padding:10px;width:300px}
+.mob-only{display:block}
+.desk-only{display:none}
+}
+@media(min-width:768px){.now-approved-modal{padding:30px;width:690px}
+.now-approved-modal img{width:219px;height:139px}
+.now-approved-modal h1.modal-title{font-size:42px;line-height:normal}
+.now-approved-modal .body-text{font-size:32px;font-style:normal;font-weight:600;line-height:38px}
+.now-approved-modal .foot-note{color:#330072;font-family:'Open Sans',sans-serif;font-size:16px;font-style:normal;font-weight:600;line-height:136.052%}
+.now-approved-modal .foot-note a{color:#330072;font-family:'Open Sans',sans-serif;font-size:16px;font-style:normal;font-weight:600;line-height:normal;text-decoration-line:underline;text-decoration-style:solid}
+.now-approved-modal .project-number{font-size:16px}
+.desk-only{display:block}
+}

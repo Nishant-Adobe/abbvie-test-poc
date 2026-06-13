@@ -1,0 +1,41 @@
+{
+  "variantName": "cards-stats",
+  "baseBlock": "cards",
+  "version": "1.0.0",
+  "created": "2026-06-05T18:07:00.000Z",
+  "sourceContext": {
+    "originUrl": "https://www.linzess.com/",
+    "originPage": "Linzess homepage - pharmaceutical brand landing page",
+    "blockPosition": "middle"
+  },
+  "visualCharacteristics": {
+    "colorScheme": "dark",
+    "density": "spacious",
+    "purpose": "statistics-display",
+    "imagePattern": "noimg"
+  },
+  "contentPattern": {
+    "structure": "number-in-circle + description",
+    "buttonCount": 0,
+    "imageCount": 0
+  },
+  "reuseGuidance": {
+    "suitableFor": [
+      "statistics display cards",
+      "numerical highlight cards",
+      "prevalence/impact data cards",
+      "key metric cards without images"
+    ],
+    "notSuitableFor": [
+      "feature cards with icons",
+      "image gallery cards",
+      "video testimonial cards",
+      "cards with CTAs"
+    ]
+  },
+  "usage": {
+    "pagesUsing": ["/index"],
+    "reuseCount": 1,
+    "lastUsed": "2026-06-05T18:07:00.000Z"
+  }
+}

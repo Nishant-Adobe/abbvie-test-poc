@@ -1,0 +1,4667 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+    
+        
+            <head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+	
+		
+		<script defer="defer" type="text/javascript" src="https://rum.hlx.page/.rum/@adobe/helix-rum-js@%5E2/dist/rum-standalone.js" data-routing="env=prod,tier=publish,ams=Abbvie Commercial"></script>
+<link rel='shortcut icon' sizes='196x196' href='/content/dam/linzess/images/favicon.png/_jcr_content/renditions/cq5dam.thumbnail.196.196.png'/>
+	
+		
+		<link rel='apple-touch-icon' sizes='180x180' href='/content/dam/linzess/images/favicon.png/_jcr_content/renditions/cq5dam.thumbnail.180.180.png'/>
+	
+		
+		<link rel='apple-touch-icon' sizes='120x120' href='/content/dam/linzess/images/favicon.png/_jcr_content/renditions/cq5dam.thumbnail.120.120.png'/>
+	
+		
+		<link rel='apple-touch-icon' sizes='167x167' href='/content/dam/linzess/images/favicon.png/_jcr_content/renditions/cq5dam.thumbnail.167.167.png'/>
+	
+		
+		<link rel='apple-touch-icon' sizes='57x57' href='/content/dam/linzess/images/favicon.png/_jcr_content/renditions/cq5dam.thumbnail.57.57.png'/>
+	
+		
+		<link rel='apple-touch-icon' sizes='152x152' href='/content/dam/linzess/images/favicon.png/_jcr_content/renditions/cq5dam.thumbnail.152.152.png'/>
+	
+		
+		<link rel='icon' sizes='32x32' href='/content/dam/linzess/images/favicon.png/_jcr_content/renditions/cq5dam.thumbnail.32.32.png'/>
+	
+
+<!-- Custom Meta tags added as authored -->
+<meta name="robots" content="noindex"/>
+
+	
+
+
+	
+
+<!-- **** MRP Meta Tags **** -->
+
+<!-- ****Removed redirect.html from body and added in head to fix server side redirection **** -->
+
+
+
+	
+    <link rel="dns-prefetch" href="https://use.typekit.net"/>
+    <link rel="dns-prefetch" href="https://p.typekit.net"/>
+    <link rel="dns-prefetch" href="https://dpm.demdex.net"/>
+    <link rel="dns-prefetch" href="https://fast.abbviecommercial.demdex.net"/>
+    <link rel="dns-prefetch" href="https://abbviecommercial.demdex.net"/>
+    <link rel="dns-prefetch" href="https://abbviecommercial.tt.omtrdc.net"/>
+    <link rel="dns-prefetch" href="https://smetrics.abbvie.com"/>
+    <link rel="dns-prefetch" href="https://assets.adobedtm.com"/>
+    
+    
+    
+        <meta name="keywords" content=""/>
+    
+    
+    
+        <meta name="description" content=""/>
+    
+    
+    
+        <meta name="language" content="en"/>
+    
+    
+    
+        <meta name="country" content="US"/>
+    
+    
+    <meta name="pagename" content="Page Not Found | LINZESS® (linaclotide)"/>
+    <meta name="templatename" content="full-width-content-page"/>
+    <meta name="pageurl" content="/page-not-found"/>
+
+    
+        <meta name="franchise" content="Gastroenterology (Gastro)"/>
+    
+    
+
+    
+        <meta name="content-journey" content="other"/>
+    
+    
+
+    
+        <meta name="patient-journey" content="other"/>
+    
+    
+
+    
+    
+        <meta name="forcedmodaloverlay" content="no"/>
+    
+    
+        <meta name="indication-id" content="generic-indication"/>
+    
+    
+    
+        <meta name="sitename" content="Linzess"/>
+    
+    
+    
+        <meta name="globalisi" content="US-LIN-220018"/>
+    
+    
+    
+        <meta name="epassnumber" content="US-LIN-250071"/>
+    
+    
+
+
+
+
+
+	
+		
+			
+    
+<script src="/etc/clientlibs/common-elements/clientlibs/plugins/clientlib.min.d2454d9f632f1f286ab2bca6de3f7e29.js"></script>
+
+
+
+		
+	
+
+
+	
+    
+    
+    
+    
+<link rel="stylesheet" href="/etc/clientlibs/common-elements/clientlibs/v1/css-clientlib-all.min.0fdf38e9b90a4de678d4bcfec5e77eb3.css" type="text/css">
+
+
+
+    
+    
+    
+    
+    <!-- Site Level CSS -->
+    
+        <link rel="preload" href="/content/dam/linzess/css/linzess-global.css" as="style"/>
+        <link rel="stylesheet" href="/content/dam/linzess/css/linzess-global.css" type="text/css"/>
+        <!-- Page Level CSS -->
+        
+    
+    
+    
+    
+        
+        
+            
+            
+
+            <script>
+        window.AbbViePageInfo = {
+            loginPage : '',
+            forcedLogin : '',
+            editState: 'false',
+            pagepath: '/content/linzess/en-us/page-not-found',
+            adminConfigPath: '/content/admin/linzess/en-us',
+            apiEndPoints: {getPatientFullfilment: '/api/BrandAPIGateway/api/V2/PatientFulfillment/GetPatientFulfillment',saveAssessment: '/api/BrandAPIGateway/api/Assessment/Save',physicianLookUp: '/api/BrandAPIGateway/api/Physician/LookUp',getAssessment: '/api/BrandAPIGateway/api/Assessment/Get',getAggregated: '/api/BrandAPIGateway/api/Assessment/GetAggregated',refreshToken: '/bin/abbvieforms/refreshlogin',getSearchSuggestions: '/suggest',getSearchResults: '/search',apigeePhysicianLookUp: '/bin/abbvie/apiproxy'},
+            share: {copy:{text:'',showSuccess:false,enable:false},email:{modalID:'',enable:false},facebook:{url:'https://www.facebook.com/sharer/sharer.php?u=',enable:false},twitter:{url:'https://www.twitter.com/share?url=',enable:false},linkedin:{url:'https://www.linkedin.com/shareArticle?mini=true&amp;url=',enable:false},tumblr:{url:'https://www.tumblr.com/widgets/share/tool?canonicalUrl=',enable:false},pinterest:{url:'https://pinterest.com/pin/create/button/?url=',enable:false},instagram:{url:'https://instagram.com/share?uri=',enable:false},exitModal:{modalID:''}},
+            brandConfig : 'fm-brandname-linzesscom',
+            headers:'',
+            targetTimeout: '1000',
+            timeOut :'',
+            originNames:'',
+            indicationName : 'generic-indication',
+            indicationReset : 'false',
+            epassNumber : 'US-LIN-250071',
+            indicationAware : '',
+            indicationEndPoints :{
+                header: '/{{indication}}/jcr:content/headerIpar.html',
+                footer: '/{{indication}}/jcr:content/footerIpar.html',
+                safetyBar: '/{{indication}}/jcr:content/safetybar.html',
+                inlineUse: '/content/global/en-us/linzess/consumer/{{indication}}/use/jcr:content/contentpar.html',
+                inlineISI: '/content/global/en-us/linzess/consumer/{{indication}}/isi/jcr:content/contentpar.html'
+            },
+            campaignConfig : {"sids":{},"emids":{},"qids":{},"videooptionids":{},"eids":{},"optionids":{}},
+            runModes: 'prod, s7connect, crx3, nosamplecontent, publish, crx3tar',
+            friendlyNames: '',
+            coveoSearchHub:'linzess-search',
+            coveoSearchUrl:'https://platform.cloud.coveo.com/rest/search',
+            coveoOrganizationId:'abbvieincproductionyd9g1cpe',
+            coveoHostedSearchPageAPIKey:'xx63ab8217-2b82-4c4a-967f-d6894f422ff3',
+            coveoQuerySuggestionsEnabled:'false',
+            admpInvisibleEntRecaptchaSitekey : '6Ld-4xkiAAAAAIqU4DUDupoGer6ss43KQeOGEtk0',
+            maxComponentCount: '100',
+            headerInheritance: '',
+            footerInheritance: '',
+            safetybarInheritance: '',
+            globalFooterLinks: '[{ 	&quot;findLinkText&quot;: &quot;PRIVACY POLICY&quot;, 	&quot;newLinkText&quot;: &quot;Consumer Health Data Privacy Notice&quot;, 	&quot;newLinkUrl&quot;: &quot;https://abbv.ie/PrivacyConsumerHealth&quot;, 	&quot;language&quot;: &quot;en&quot; }, { 	&quot;findLinkText&quot;: &quot;PRIVACY Notice&quot;, 	&quot;newLinkText&quot;: &quot;Consumer Health Data Privacy Notice&quot;, 	&quot;newLinkUrl&quot;: &quot;https://abbv.ie/PrivacyConsumerHealth&quot;, 	&quot;language&quot;: &quot;en&quot; }, { 	&quot;findLinkText&quot;: &quot;Aviso De privacidad&quot;, 	&quot;newLinkText&quot;: &quot;Aviso de Privacidad de los Datos de Salud de los Consumidores&quot;, 	&quot;newLinkUrl&quot;: &quot;https://abbv.ie/PrivacidadConsumidores&quot;, 	&quot;language&quot;: &quot;es&quot; }, { 	&quot;findLinkText&quot;: &quot;Aviso De privacidad&quot;, 	&quot;newLinkText&quot;: &quot;Aviso de Privacidad de los Datos de Salud de los Consumidores&quot;, 	&quot;newLinkUrl&quot;: &quot;https://abbv.ie/PrivacidadConsumidores&quot;, 	&quot;language&quot;: &quot;es-pr&quot; }]',
+            pageAudienceType: ''
+        };
+
+        </script>
+        
+    
+    
+<script>
+//Don't use let/const for global definitions here b/c this code is also in pre-load-utils.js
+
+var cookieObj = (function() {
+	//NOTE: Unlikely that we have cookie names/values with spaces or special characters, but encode/decode just in case
+	//NOTE: Chrome now sets a max cookie age of 400, even if a larger value is passed
+
+	return {
+		init: function() {
+			// no longer needed - left for back-compat (forms code)
+		},
+
+		/**
+		 * Retrieve a cookie value
+		 * @param {String} name cookie name
+		 * @returns {String} cookie value, or undefined if not found
+		 */
+		getCookie: function(name) {
+			if (!name) {
+				return undefined;
+			}
+
+			name = encodeURIComponent(name);
+			let value = document.cookie.split('; ').find((c) => c.startsWith(name + '='));
+
+			return value ? decodeURIComponent(value.split('=')[1]) : undefined; 
+		},
+
+		/**
+		 * Set a cookie value on root path
+		 * @param {String} name cookie name 
+		 * @param {String} value cookie value
+		 * @param {Number} [days=0] number of days for cookie to persist. 0 (falsy value) sets session cookie. Negative value deletes cookie.
+		 * @param {Boolean} [notSecure=false] true to set unsecure cookie (not advised)
+		 */
+		createCookie: function(name, value, days, notSecure) {
+			let expires;
+			if (days) {
+				let date = new Date();
+				date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+				expires = '; expires=' + date.toGMTString();
+			} else {
+				expires = '';  //session cookie
+			}
+
+			document.cookie = encodeURIComponent(name) + "=" + encodeURIComponent(value) + expires + "; path=/;" + (notSecure===true ? "" : "secure");
+
+			//Should evaluate any cookies explicity set to unsecure
+			if (notSecure === true) {
+				console.log('cookieObj: wrote unsecure cookie - name=' + name);
+			}
+		},
+
+		/**
+		 * Delete a cookie
+		 * @param {String} name cookie name
+		 */
+		deleteCookie: function(name) {
+			this.createCookie(name, '', -1);
+		}
+	};
+})();
+
+var urlObj = (function() {
+	var queryVars = {};
+	var queryVarsU = {};
+	return {
+		init : function(){
+			urlObj.analzeQuery();
+		},
+		analzeQuery : function(){
+			var qString = window.location.search.split('?')[1];
+			if(qString != undefined){
+				var temp = qString.split('&');
+				for(let i = 0; i < temp.length; i++){
+					let tempSplit = temp[i].split('=');
+					queryVars[tempSplit[0]] = tempSplit[1];
+					queryVarsU[tempSplit[0].toUpperCase()] = tempSplit[1];
+				}
+			}
+		},
+		getParam : function(key, caseSensative){
+			caseSensative = caseSensative == undefined ? true : caseSensative;
+			let val;
+			if(caseSensative){ val = decodeURIComponent(queryVars[encodeURIComponent(key)]);}
+			else { val = decodeURIComponent(queryVarsU[encodeURIComponent(key.toUpperCase())]);}
+			return val;
+		},
+		getParamsObj : function (){
+			return queryVars;
+		},
+		getParamsObjU : function (){
+			return queryVarsU;
+		},
+		printObj : function(){
+			console.log(queryVars);
+			console.log(queryVarsU);
+		}
+	};
+})();
+
+var campaignTracking = (function() {
+	var idTables;
+	var gpf_payload = {};
+	var sa_payload = {
+		"CampaignMasterId":"",
+		"CompleteDate":null,
+		"ConsumerId":"",
+		"IndividualId":"",
+		"AssessmentQuestion": [{
+			"QuestionId":"",
+			"QuestionOptions":[{
+				"OptionId":"",
+				"ResponseText":""
+			}]
+		}],
+		"OtherInformation":{}
+	};
+	var questionLookupReq = false;
+	var saveReady = false;
+	return {
+		init : function(){
+			idTables = AbbViePageInfo.campaignConfig;
+      		AbbViePageInfo.campaignTracking = {};
+			if(campaignTracking.getIndividualID()){
+				// console.log('-- Individual ID Found --');
+				AbbViePageInfo.campaignTracking.individualID = sa_payload.IndividualId;
+				if(campaignTracking.getCampaignMasterID()){
+					// console.log('-- Campaign Master ID Found --');
+					AbbViePageInfo.campaignTracking.campaignMasterId = sa_payload.CampaignMasterId;
+					if(campaignTracking.getOptionID()){
+						// console.log('-- Option ID Found --');
+						if(campaignTracking.getQuestionID()){
+							// console.log('-- Question ID Found --');
+							saveReady = true;
+						}
+						campaignTracking.getAdditionalInfo();
+					}
+				}
+			}
+			if(saveReady){
+				campaignTracking.saveAssessment();
+			}
+		},
+		getIndividualID : function (){
+			let haveInfo = false;
+			if(urlObj.getParam('s_fid',false) != 'undefined'){
+				gpf_payload.Source = "Intouch";
+				gpf_payload.FulfillmentID = urlObj.getParam('s_fid',false);
+				haveInfo = true;
+				// return true;
+			} else if (urlObj.getParam('h_fid',false) != 'undefined'){
+				gpf_payload.Source = "Epsilon";
+				gpf_payload.FulfillmentID = urlObj.getParam('h_fid',false);
+				haveInfo = true;
+				// return true;
+			} else if (urlObj.getParam('fid') != 'undefined'){
+				gpf_payload.Source = "Epsilon";
+				gpf_payload.FulfillmentID = urlObj.getParam('fid',false);
+				haveInfo = true;
+				// return true;
+			} else {
+				console.log('missing fid variant');
+				// return false;
+			}
+			if(haveInfo){
+				//Ajax call to get individual ID
+				let url = AbbViePageInfo.apiEndPoints.getPatientFullfilment;
+				let successState = false;
+				ajaxCall(url, "POST", JSON.stringify(gpf_payload), gpfSuccess, gpfFail);
+				//Success
+				function gpfSuccess(data){
+					//Set to sa_payload
+					if(data.ContentResult && data.ContentResult.IndividualId){
+						var id = data.ContentResult.IndividualId;
+						sa_payload.IndividualId = id;
+						sessionStorage.setItem('IndividualId',id);
+						//Write cookie
+						successState = true;
+					}
+				}
+				//Fail
+				function gpfFail(jqXHR, textStatus, errorThrown){
+					//return false
+					console.log('Get Patient Fullfillment Fail');
+					successState = false;
+				}
+				return successState;
+			} else {
+				return false;
+			}
+		},
+		getCampaignMasterID : function(){
+			if(urlObj.getParam('mcid',false) != 'undefined'){
+				sa_payload.CampaignMasterId = urlObj.getParam('mcid',false);
+				return true;
+			} else if (urlObj.getParam('em_id') != 'undefined'){
+				sa_payload.CampaignMasterId = idTables.emids[urlObj.getParam('em_id')];
+				questionLookupReq = true;
+				return true;
+			} else if (urlObj.getParam('sid') != 'undefined'){
+				sa_payload.CampaignMasterId = idTables.sids[urlObj.getParam('sid')];
+				questionLookupReq = true;
+				return true;
+			} else if (urlObj.getParam('qID') != 'undefined'){
+				sa_payload.CampaignMasterId = idTables.qids[urlObj.getParam('qID')];
+				questionLookupReq = true;
+				return true;
+			} else if (urlObj.getParam('eid') != 'undefined'){
+				sa_payload.CampaignMasterId = idTables.eids[urlObj.getParam('eid')];
+				questionLookupReq = true;
+				return true;
+			} else {
+				console.log('missing master campaign id in query or corresponding id');
+				return false;
+			}
+		},
+		getQuestionID : function(){
+			if(questionLookupReq){
+				// console.log('Question Id lookup Required');
+				let successState = false;
+				let cmi_query = "?CampaignMasterId="+sa_payload.CampaignMasterId;
+				let url = AbbViePageInfo.apiEndPoints.getAssessment+cmi_query;
+				ajaxCall(url, 'GET', '', getAssessmentSuccess, getAssessmentFail);
+				function getAssessmentSuccess(data){
+					// console.log('getAssessmentSuccess');
+					if(data.IsStatusSuccessful){
+						var matchOption = sa_payload.AssessmentQuestion[0].QuestionOptions[0].OptionId;
+						var questionList = data.ContentResult.AssessmentQuestion;
+						var matchedQuestionID = campaignTracking.reverseLookup(questionList, matchOption);
+						if(matchedQuestionID != undefined){
+							sa_payload.AssessmentQuestion[0].QuestionId = matchedQuestionID;
+							successState = true;
+							// console.log('reverse lookup found question id');
+						} else { console.log('no option id matching in campaign');}
+					} else {
+						console.warn('getAssessment status successful = false');
+					}
+				}
+				function getAssessmentFail(jqXHR, textStatus, errorThrown){console.log('getAssessmentFail');}
+				return successState;
+			} else {
+				if(urlObj.getParam('qid') != 'undefined'){
+					sa_payload.AssessmentQuestion[0].QuestionId = urlObj.getParam('qid');
+					return true;
+				}
+				else {
+					console.log('missing question id in query or corresponding id');
+					return false;
+				}
+			}
+		},
+		getOptionID : function(){
+			if(urlObj.getParam('oid',false) != 'undefined'){
+				sa_payload.AssessmentQuestion[0].QuestionOptions[0].OptionId = urlObj.getParam('oid',false);
+				return true;
+			} else if (urlObj.getParam('eid') != 'undefined'){
+				if(urlObj.getParam('qid') != 'undefined'){
+					let lookup = urlObj.getParam('eid') + urlObj.getParam('qid');
+					if(idTables.optionids[lookup] != undefined){
+						sa_payload.AssessmentQuestion[0].QuestionOptions[0].OptionId = idTables.optionids[lookup];
+						return true;
+					} else {
+						console.warn('eid + qid no option id to match');
+						return false;
+					}
+				}
+				console.log('missing qid for looking up eid + qid');
+			} else if (urlObj.getParam('q1',false) != 'undefined'){
+				sa_payload.AssessmentQuestion[0].QuestionOptions[0].OptionId = urlObj.getParam('q1',false);
+				return true;
+			} else {
+				console.log('missing option id in query or corresponding id');
+				return false;
+			}
+		},
+		getAdditionalInfo : function(){
+			if (urlObj.getParam('cid',false) != 'undefined'){
+				sa_payload.OtherInformation.cid = urlObj.getParam('cid',false);
+				return true;
+			} else if (urlObj.getParam('s_mcid',false) != 'undefined'){
+				sa_payload.OtherInformation.cid = urlObj.getParam('s_mcid',false);
+				return true;
+			}
+			if(urlObj.getParam('ep_ind',false) != 'undefined'){
+				sa_payload.OtherInformation.cid = urlObj.getParam('cid',false);
+				return true;
+			}
+		},
+		reverseLookup : function(data, optionID){
+			for(let i = 0; i < data.length; i++){
+				let optionList = data[i].QuestionOption;
+				let tempQuestion = data[i].QuestionId;
+				for (let k = 0; k < optionList.length; k++){
+					if(optionList[k].OptionId.toUpperCase() == optionID.toUpperCase()){
+						return tempQuestion;
+					}
+				}
+			}
+		},
+		saveAssessment : function(){
+			let url = AbbViePageInfo.apiEndPoints.saveAssessment;
+			ajaxCall(url, "POST", JSON.stringify(sa_payload), saveAssessmentSuccess, saveAssessmentFail);
+			function saveAssessmentSuccess(){
+				console.log("Save Asessement Success");
+			}
+			function saveAssessmentFail(jqXHR, textStatus, errorThrown){
+				console.error("Save Assessment Fail");
+			}
+		},
+		printPayloads : function(){
+			console.log(gpf_payload);
+			console.log(sa_payload);
+		}
+	};
+})();
+
+function setHeaders(url, xhr){
+	xhr.setRequestHeader("content-type","application/json");
+	// If call is a save assessment call
+	if(AbbViePageInfo.apiEndPoints.saveAssessment === url){
+		let acMcIdCookie = cookieObj.getCookie('ac_mcid');
+		if(acMcIdCookie != undefined){
+			xhr.setRequestHeader("MId",acMcIdCookie);
+		}
+	}
+}
+function ajaxCall(url, type, payload, successCallback, failedCallback, async, dataType){
+	var xhr = new XMLHttpRequest();
+	xhr.open(type, url, async === true);
+	setHeaders(url, xhr);
+	xhr.addEventListener("error", failedCallback);
+
+	xhr.onreadystatechange = function(){
+		if(xhr.readyState == 4){
+			var data;
+			// console.log('XHR: Request Done');
+			if(xhr.status != 200){
+				if(Array.isArray(failedCallback)){
+					for(var f = 0; f < failedCallback.length; f++){
+						failedCallback[f](data, xhr.statusText, xhr);
+					}
+				} else {
+					failedCallback(data, xhr.statusText, xhr);
+				}
+			} else {
+				//HACK: for some reason an API is returning a 200/OK, but content-type is null
+				if (xhr.getResponseHeader('content-type') && xhr.getResponseHeader('content-type').includes("application/json")) {
+					data = JSON.parse(xhr.responseText);
+				} else {
+					data = xhr.responseText;
+				}
+				if(Array.isArray(successCallback)){
+					for(var s = 0; s < successCallback.length; s++){
+						successCallback[s](data, xhr.statusText, xhr);
+					}
+				} else {
+					successCallback(data, xhr.statusText, xhr);
+				}
+			}
+		}
+	};
+	if(payload != ""){
+		xhr.send(payload);
+	} else {
+		xhr.send();
+	}
+}
+function addWindowLoad(func) {
+	var oldonload = window.onload;
+	 if (typeof window.onload != 'function') {
+		  window.onload = func;
+	}
+	  // window load event is not getting triggered for the IOS having video inside XF pages */
+	else if (browserAgent.checkIfBrowser('safari') ||  browserAgent.checkIfBrowser('mSafari')) {
+		  if($("video-js").length) {
+			  window.addEventListener('load',  func());
+		  }
+	  }
+	else {
+	  window.onload = function() {
+		if (oldonload) {
+		  oldonload();
+		}
+		func();
+	  };
+	}
+  }
+
+var postLoadActions = (function() {
+	var pageLoadQueue = [];
+	var waitFlags = 0;
+	var pageLoadImportance = [
+		"isi",
+		"modal-once",
+		"modal-always",
+		"modal-indication",
+		"modal-hash",
+		"ftvid",
+		"pageScroll"
+	];
+
+	return {
+		addPageLoadStack: function(func,type) {
+			let priority = pageLoadImportance.indexOf(type);
+			let newFunc = {
+				"priority" : priority,
+				"func" : func
+			};
+			if (!pageLoadQueue.length) {
+				pageLoadQueue.push(newFunc);
+			} else {
+				if (!postLoadActions.checkExistence(type)) {
+					let insertIndex = pageLoadQueue.length;
+					for (let i = 0; i < pageLoadQueue.length; i++) {
+						if(priority > pageLoadQueue[i].priority){
+							insertIndex = i;
+							break;
+						}
+					}
+					pageLoadQueue.splice(insertIndex, 0, newFunc);
+				}
+			}
+		},
+		addWaitFlag: function(){waitFlags++; },
+		removeWaitFlag: function(){waitFlags--;},
+		isWaiting: function(){return waitFlags != 0;},
+		isReady: function(){return waitFlags == 0;},
+		pop: function(){
+			if (pageLoadQueue.length) {
+				let popped = pageLoadQueue.pop();
+				popped.func();
+			} else {
+				return;
+			}
+		},
+		checkExistence: function(type){
+			let priority = pageLoadImportance.indexOf(type);
+			let isAvailable = false;
+			if (pageLoadQueue.length) {
+				for (let i = 0; i < pageLoadQueue.length; i++) {
+					if(priority == pageLoadQueue[i].priority){
+						isAvailable = true;
+						break;
+					}
+				}
+			}
+			return isAvailable;
+		},
+		printObj: function(){
+			console.log(pageLoadQueue);
+		}
+	};
+})();
+
+//Initialize urlObj, campaignTracking
+urlObj.init();
+campaignTracking.init();
+
+if (urlObj.getParam('cid') !== 'undefined') {
+	cookieObj.createCookie('admp_cid', urlObj.getParam('cid'));
+}
+if (urlObj.getParam('segid') !== 'undefined') {
+	cookieObj.createCookie('admp_segid', urlObj.getParam('segid'));
+}
+
+//Create indicationName cookie or delete if this page is indication-reset
+if (AbbViePageInfo.indicationName && AbbViePageInfo.indicationName !== 'generic-indication') {
+	cookieObj.createCookie('indicationName', AbbViePageInfo.indicationName);
+} else if (AbbViePageInfo.indicationReset === 'true') {
+	cookieObj.deleteCookie('indicationName');
+}
+
+//Indication on url overrides page property
+if (urlObj.getParam('indicationName') !== 'undefined') {
+	cookieObj.createCookie('indicationName', urlObj.getParam('indicationName'));
+}
+
+let forceScroll = function () {
+	let sectionId = urlObj.getParam('section', false);
+	if (sectionId !== 'undefined') {
+		scrollToObject($('html,body'), $('#' + sectionId), 0, 'slow');
+	}
+};
+
+postLoadActions.addPageLoadStack(forceScroll, 'pageScroll');
+	
+// Check and set load states for reference with XFs
+var abbvPageLoaded = false;
+var loadUpdateFunction = function() {
+	abbvPageLoaded = true;
+};
+addWindowLoad(loadUpdateFunction);
+</script>
+
+    
+    
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- **** ABBVIE Configs LIBRARY **** -->
+<!-- <sly data-sly-include="configs.html" /> -->
+
+<!-- **** ABBVIE ANALYTICS LIBRARY **** -->
+
+	
+
+    <script>
+
+    var digitalData = {
+            page: {
+                pageInfo: {
+                    domain: 'linzess',
+                    subDomain: '',
+                    url: 'https://www.linzess.com/content/linzess/en-us/page-not-found',
+                    path: '/page-not-found',
+                    pageName: 'page-not-found',
+                    title: 'Page Not Found | LINZESS  (linaclotide)',
+                    prefix: 'Linzess'
+                },
+                category: {
+                    primaryCategory: 'page not found',
+                    subCategory1: '',
+                    subCategory2: ''
+                },
+                attributes: {
+                    country: 'us',
+                    language: 'en',
+                    template: 'full width content page',
+                    promoMatsNumber: 'US-LIN-250071',
+                    globalISI: 'US-LIN-220018',
+                    type: 'error'
+                },
+                journey: {
+                    content: 'other',
+                    patient: 'other',
+                    messageBucket: ''
+
+                },
+                product: {
+                    name: 'Linaclotide',
+                    franchise: 'Gastroenterology (Gastro)',
+                    indication: 'Cross Indication (Cross)',
+                    division: 'Gastrointestinal Care',
+                    brand: 'Linzess'
+                },
+                site: {
+                    type: 'branded',
+                    experience: 'responsive',
+                    audience: ''
+                },
+                modal: {
+                    type: ' ',
+                    name: '',
+                    position: ' ',
+                    enabled: '',
+                    displayed: ''
+                },
+                search: {
+                    autoPosition: '',
+                    term: '',
+                    count: '',
+                    indication:'',
+                    type: '',
+                    filterType: '',
+                    filterValue: '',
+                    filterCategory: '',
+                    sortByInit: '',
+                    origin: '',
+                    originURL: ''
+                }
+            },
+            user: [{
+                profile: [{
+                    id: {
+                        crmID: '',
+                        transID: '',
+                        abbvieCustomerID: '',
+                        hcpAccountID: '',
+                        npiID: '',
+                        dmpID: '',
+                        adobeID: ''
+                    },
+                    attributes: {
+                        status: '',
+                        type: ''
+                    }
+                }]
+            }]
+
+        };
+    </script>
+
+
+
+
+    
+        <script src="https://assets.adobedtm.com/acb96670c057/48663f28f53f/launch-450e00021d4f.min.js" async></script>
+    
+    
+
+
+<!-- **** END OF ABBVIE ANALYTICS LIBRARY **** -->
+<title>Page Not Found | LINZESS® (linaclotide)</title>
+</head>
+        
+        
+            <body class="background-dark-purple header-no-gradient ind-generic-indication">
+    
+	<div class="abbv-content">
+		
+		
+
+    
+    
+        
+
+
+
+
+    
+        
+        
+        <div class="newpar new section">
+
+</div>
+
+    
+        
+        
+        <div class="par iparys_inherited">
+
+    
+    
+    
+    
+
+</div>
+
+    
+
+
+    
+		<div class="abbv-content-container" data-anim-top="0" data-anim-btm="0">
+			
+
+
+
+	<div>
+
+
+
+
+    
+        
+        
+        <div class="newpar new section">
+
+</div>
+
+    
+        
+        
+        <div class="par iparys_inherited">
+
+    
+    
+    
+    
+        
+        
+        <div class="rich-text">
+
+    
+    <div class="abbv-rich-text linzess-top-banner abbv-rich-text-common">
+        <p role="region" aria-label="Save on Linzess"><a href="/savings-and-support" data-digitaldata="{&quot;digitalData&quot;:{&quot;page&quot;:{&quot;component&quot;:{&quot;l10title&quot;:&quot;&quot;,&quot;name&quot;:&quot;rte&quot;,&quot;position&quot;:&quot;header&quot;,&quot;type&quot;:&quot;navigation&quot;,&quot;title&quot;:&quot;slim eyebrow&quot;},&quot;link&quot;:{&quot;displayTitle&quot;:&quot;LEARN MORE&quot;,&quot;name&quot;:&quot;click to LEARN MORE&quot;,&quot;type&quot;:&quot;internal&quot;},&quot;interaction&quot;:{&quot;id&quot;:&quot;rte-1527813136-0&quot;,&quot;type&quot;:&quot;link&quot;},&quot;mva&quot;:{&quot;name&quot;:&quot;&quot;,&quot;tier&quot;:&quot;&quot;,&quot;type&quot;:&quot;&quot;,&quot;category&quot;:&quot;&quot;},&quot;menu&quot;:{&quot;level&quot;:&quot;&quot;,&quot;location&quot;:&quot;&quot;},&quot;content&quot;:{&quot;type&quot;:&quot;&quot;}}}}">Learn how</a> AbbVie and Ironwood can help you save. <a href="tel:1-855-226-3937" data-digitaldata="{&quot;digitalData&quot;:{&quot;page&quot;:{&quot;component&quot;:{&quot;l10title&quot;:&quot;&quot;,&quot;name&quot;:&quot;rte&quot;,&quot;position&quot;:&quot;header&quot;,&quot;type&quot;:&quot;navigation&quot;,&quot;title&quot;:&quot;slim eyebrow&quot;},&quot;link&quot;:{&quot;displayTitle&quot;:&quot;1-855-226-3937&quot;,&quot;name&quot;:&quot;Call 1-855-226-3937&quot;,&quot;type&quot;:&quot;internal&quot;},&quot;interaction&quot;:{&quot;id&quot;:&quot;rte-1527813136-1&quot;,&quot;type&quot;:&quot;link&quot;},&quot;mva&quot;:{&quot;name&quot;:&quot;call to learn more about savings (Enterprise)&quot;,&quot;tier&quot;:&quot;secondary&quot;,&quot;type&quot;:&quot;Call&quot;,&quot;category&quot;:&quot;Cost Info&quot;},&quot;menu&quot;:{&quot;level&quot;:&quot;&quot;,&quot;location&quot;:&quot;&quot;},&quot;content&quot;:{&quot;type&quot;:&quot;&quot;}}}}">1-855-226-3937</a></p>
+    </div>
+
+</div>
+
+    
+        
+        
+        <div class="header-v2 parbase">
+
+
+
+
+
+
+<header class="abbv-header-v2 linzess-header linzess-header-classic abbv-sticky  search-box-classic" data-stick-anchor-pos="bottom" data-stick-tracked="top" data-stick-offset="0" data-stick-behavior="scroll-display">
+ <!-- Skip Navigation -->
+ <a href="#main-content" class="abbv-skip-to-main-content sr-only">Skip to Main content</a>
+	
+
+
+    <div class="abbv-eyebrow " data-enabled="true" data-visible="true">
+        <span class="abbv-eyebrow-large"> AbbVie and Ironwood can help you save. 1-855-226-3937</span>
+        <span class="abbv-eyebrow-medium">AbbVie and Ironwood can help you save. 1-855-226-3937</span>
+        <span class="abbv-eyebrow-small">AbbVie and Ironwood can help you save. 1-855-226-3937</span>
+        <a role="link" aria-label="Learn how" href="/" target="_self" data-digitaldata='{"digitalData":{"page":{"component":{"l10title":"","name":"Eyebrow","position":"header","type":"link","title":""},"link":{"displayTitle":"Learn how","name":"","type":"internal","url":"/content/linzess/en-us"},"interaction":{"name":"","id":"abbv-header-eyebrow-728460312-0","type":"link","tags":""},"mva":{},"menu":{},"content":{"name":"","type":"","title":""}}}}'>Learn how</a>
+        
+    </div>
+
+
+	<div class="abbv-header-v2-utility-navigation abbv-navigation">
+		<nav aria-label="Utility Navigation">
+			<ul role="menubar">
+				<li role="none">
+   
+   
+   
+   
+      
+         
+            
+               
+               
+                     
+	
+	
+		<a data-digitaldata='{"digitalData":{"page":{"component":{"l10title":"","name":"Utility Navigation","position":"header","type":"menu","title":"Prescribing Information"},"link":{"displayTitle":"Prescribing Information","name":"Download: Prescribing Information","type":"download","url":"https://www.rxabbvie.com/pdf/linzess_pi.pdf"},"interaction":{"name":"Prescribing Information","id":"abbv-utilitynavigation-2123915561-0","type":"menu","tags":""},"mva":{"tier":"secondary","name":"Linzess PI","type":"Download","category":"Prescribing Information"},"menu":{"level":"1"},"content":{"name":"","type":"","title":""}}}}' role="menuitem" aria-label="Prescribing Information - Opens in a new window" class="    i-b nav-tier1 sm-display  " href="https://www.rxabbvie.com/pdf/linzess_pi.pdf" target="_blank" data-linktype="download">Prescribing Information</a>
+	
+
+               
+            
+         
+      
+      
+   
+
+</li>
+			
+				<li role="none">
+   
+   
+   
+   
+      
+         
+            
+               
+               
+                     
+	
+	
+		<a data-digitaldata='{"digitalData":{"page":{"component":{"l10title":"","name":"Utility Navigation","position":"header","type":"menu","title":"Medication Guide"},"link":{"displayTitle":"Medication Guide","name":"Download: Medication Guide","type":"download","url":"https://www.rxabbvie.com/pdf/linzess_pi.pdf#page=26"},"interaction":{"name":"Medication Guide","id":"abbv-utilitynavigation-2123915560-0","type":"menu","tags":""},"mva":{"tier":"secondary","name":"Linzess Medical Guide","type":"Download","category":"Medical Guide"},"menu":{"level":"1"},"content":{"name":"","type":"","title":""}}}}' role="menuitem" aria-label="Medication Guide - Opens in a new window" class="    i-b nav-tier1 sm-display  " href="https://www.rxabbvie.com/pdf/linzess_pi.pdf#page=26" target="_blank" data-linktype="download">Medication Guide</a>
+	
+
+               
+            
+         
+      
+      
+   
+
+</li>
+			
+				<li role="none">
+   
+   
+   
+   
+      
+         
+            
+               
+               
+                     
+	
+	
+		<a data-digitaldata='{"digitalData":{"page":{"component":{"l10title":"","name":"Utility Navigation","position":"header","type":"menu","title":"En Espanol"},"link":{"displayTitle":"En Español","name":"En Espanol","type":"external","url":"https://www.linzess.com/espanol"},"interaction":{"name":"En Español","id":"abbv-utilitynavigation-2123915559-0","type":"menu","tags":""},"mva":{},"menu":{"level":"1"},"content":{"name":"","type":"","title":""}}}}' role="menuitem" class="    i-b nav-tier1   " href="https://www.linzess.com/espanol" target="_self" data-linktype="external">En Español</a>
+	
+
+               
+            
+         
+      
+      
+   
+
+</li>
+			
+				<li role="none">
+   
+   
+   
+   
+      
+         
+            
+               
+               
+                     
+	
+	
+		<a data-digitaldata='{"digitalData":{"page":{"component":{"l10title":"FAQs","name":"Utility Navigation","position":"header","type":"menu","title":"FAQs"},"link":{"displayTitle":"FAQs","name":"FAQs","type":"internal","url":"/content/linzess/en-us/savings-and-support/faqs"},"interaction":{"name":"FAQs","id":"abbv-utilitynavigation-2123915558-0","type":"menu","tags":""},"mva":{},"menu":{"level":"1"},"content":{"name":"","type":"","title":""}}}}' role="menuitem" class="    i-b nav-tier1   " href="/savings-and-support/faqs" target="_self" data-linktype="internal">FAQs</a>
+	
+
+               
+            
+         
+      
+      
+   
+
+</li>
+			
+				<li role="none">
+   
+   
+   
+   
+      
+         
+            
+               
+               
+                     
+	
+	
+		<a data-digitaldata='{"digitalData":{"page":{"component":{"l10title":"Sign Up for Support","name":"Utility Navigation","position":"header","type":"menu","title":"Sign Up for Support"},"link":{"displayTitle":"Sign Up for Support","name":"Sign Up for Support","type":"internal","url":"/content/linzess/en-us/savings-and-support/from-the-gut"},"interaction":{"name":"Sign Up for Support","id":"abbv-utilitynavigation-2123915557-0","type":"menu","tags":""},"mva":{},"menu":{"level":"1"},"content":{"name":"","type":"","title":""}}}}' role="menuitem" class="    i-b nav-tier1   " href="/savings-and-support/from-the-gut" target="_self" data-linktype="internal">Sign Up for Support</a>
+	
+
+               
+            
+         
+      
+      
+   
+
+</li>
+			
+				<li role="none">
+   
+   
+   
+   
+      
+         
+            
+               
+               
+                     
+	
+	
+		<a data-digitaldata='{"digitalData":{"page":{"component":{"l10title":"","name":"Utility Navigation","position":"header","type":"menu","title":"Healthcare Professionals"},"link":{"displayTitle":"Healthcare Professionals","name":"Healthcare Professionals","type":"internal","url":"hcpwol"},"interaction":{"name":"Healthcare Professionals","id":"abbv-utilitynavigation-2123915556-0","type":"menu","tags":""},"mva":{},"menu":{"level":"1"},"content":{"name":"","type":"","title":""}}}}' role="menuitem" class="abbv-modal-open    i-b nav-tier1   Healthcare Professionals" data-id="hcpwol" href="#" target="new-modal">Healthcare Professionals</a>
+	
+
+               
+            
+         
+      
+      
+   
+
+</li>
+			</ul>
+		</nav>
+	</div>
+	<div class="abbv-header-content-container">
+		<div class="abbv-header-v2-content ">
+			<div class="abbv-header-v2-left">                
+				
+
+
+    
+								
+		
+	
+	
+	
+	
+		<a data-digitaldata='{"digitalData":{"page":{"component":{"l10title":"","name":"Logo","position":"header","type":"link","title":"header-logo"},"link":{"displayTitle":"Linzess logo","name":"header-logo","type":"internal","url":"/"},"interaction":{"name":"header-logo","id":"abbv-logo-360151965-1","type":"link","tags":""},"mva":{},"menu":{},"content":{"name":"","type":"","title":""}}}}' href="/" target="_self" data-linktype="internal">
+			
+				<img title="Linzess logo" alt="LINZESS logo" src="/content/dam/linzess/images/linzess-logo-nav.png" height="126" width="253"/></img>
+			
+			
+		</a>
+	
+						
+	
+
+
+                
+			</div>
+			<div class="abbv-header-v2-right">
+				
+
+
+
+   
+   
+      <div class=" abbv-link-list horizontal" data-highlight-current="true">
+         
+         <ul>
+            
+               <li>
+                  
+                 
+                     
+                        
+                        
+                           
+	
+	
+		<a data-digitaldata='{"digitalData":{"page":{"link":{"name":"Check My Symptoms","displayTitle":"Check My Symptoms","type":"internal","url":"/content/linzess/en-us/find-relief/gutcheck"},"component":{"type":"navigation","l10title":"Check My Symptoms","title":"Check My Symptoms","name":"link list","position":"header"},"content":{},"interaction":{"type":"link","name":"Check My Symptoms","id":"inner-abbv-linklist-344061693-00"},"mva":{"name":"","tier":"","type":"","category":""},"menu":{"location":"","level":"","label":"","path":""}}}}' class="  abbv-icon-keyboard_arrow_right  i-a abbv-button-tertiary " href="/find-relief/gutcheck" target="_self" data-linktype="internal">Check My Symptoms</a>
+	
+
+                        
+                     
+                  
+               </li>
+            
+         </ul>
+      </div>
+   
+
+				
+					<div class="util-icons-container">
+						
+							<div class="abbv-header-util" id="abbv-guest-user">
+								
+
+								
+							</div> 
+							<div class="abbv-header-util" id="abbv-logged-user">
+								 
+								
+							</div>
+						                  							
+                          <div class="abbv-header-util" id="abbv-search-util">
+								
+
+
+	<span class="abbv-search-toggle" role="button" tabindex="0" aria-expanded="false" aria-label="Search"><i class="abbv-icon-search i-a"></i></span>
+	<div class="abbv-search-navigation abbv-hide-mobile abbv-hide-tablet">
+		
+		<a aria-hidden="true" style="display:none" href="/search-results"></a>
+		<input aria-expanded="true" id="header-search" tabindex="0" type="text" maxlength="100" value="" placeholder="Search" role="searchbox" aria-label="Search" class="abbv-search mi-new_search" data-suggest-toggle="no" data-results-page="" data-max-suggestions="0" data-char-trigger="0"/>
+		<em aria-label="Search" tabindex="0" role="button" class="abbv-icon-search i-a"></em>
+		<div class="abbv-search-suggestions">
+			<ul>
+			</ul>
+		</div>
+	</div>
+
+							</div>
+							<div class="abbv-header-util" id="abbv-menu-toggle">
+								<div class="abbv-header-v2-mobile-primary-navigation" tabindex="0" aria-label="navigation menu" role="button" aria-expanded="false">
+									<span class="line"></span>
+									<span class="line"></span>
+									<span class="line"></span>
+								</div>
+							</div>
+						</div>
+					</div>
+			</div>
+		</div>
+	<div class="abbv-header-v2-primary-navigation abbv-navigation">   		
+		<nav aria-label="Main Navigation">
+			<ul role="menu">
+			 
+				<li role="none">
+
+
+   
+
+   
+   
+      
+         
+         
+         
+            
+	
+	
+		<a data-digitaldata='{"digitalData":{"page":{"component":{"l10title":"","name":"Primary Navigation","position":"header","type":"menu","title":"WHY LINZESS"},"link":{"displayTitle":"Why <br class=\"desktop-only\"/>LINZESS","name":"WHY LINZESS","type":"internal","url":"/content/linzess/en-us/why-linzess"},"interaction":{"name":"Why <br class=\"desktop-only\"/>LINZESS","id":"abbv-primarynavigation-1252040607","type":"menu","tags":""},"mva":{},"menu":{"level":"1"},"content":{"name":"","type":"","title":""}}}}' role="menuitem" rel="nofollow" aria-label="collapsed Why &lt;br class=&#34;desktop-only&#34;/>LINZESS" aria-expanded="false" class=" abbv-has-submenu       " href="/why-linzess" target="_self">Why <br class="desktop-only" />LINZESS</a>
+	
+
+         
+         <span aria-hidden="true"><i></i></span>
+      
+
+      <div class="abbv-header-primary-navigation-submenu abbv-submenu">
+         
+            <ul role="menu">
+               
+               
+                  
+                     
+                     <li role="none">
+                        
+                           
+                           
+                              
+	
+	
+	
+		<a data-digitaldata='{"digitalData":{"page":{"component":{"l10title":"","name":"Primary Navigation","position":"header","type":"menu","title":"WHY LINZESS"},"link":{"displayTitle":"How LINZESS Can Help","name":"How LINZESS Can Help","type":"internal","url":"/why-linzess#howlinzesscanhelp"},"interaction":{"name":"How LINZESS Can Help","id":"abbv-primarynavigation-1252040607-00","type":"menu","tags":""},"mva":{},"menu":{"level":"2"},"content":{"name":"","type":"","title":""}}}}' role="menuitem" href="/why-linzess#howlinzesscanhelp" target="_self">How LINZESS Can Help</a>
+	
+
+                           
+                        
+                     </li>
+                  
+               
+                  
+                     
+                     <li role="none">
+                        
+                           
+                           
+                              
+	
+	
+	
+		<a data-digitaldata='{"digitalData":{"page":{"component":{"l10title":"","name":"Primary Navigation","position":"header","type":"menu","title":"WHY LINZESS"},"link":{"displayTitle":"How LINZESS Works","name":"How LINZESS Works","type":"internal","url":"/why-linzess#howlinzessworks"},"interaction":{"name":"How LINZESS Works","id":"abbv-primarynavigation-1252040607-01","type":"menu","tags":""},"mva":{},"menu":{"level":"2"},"content":{"name":"","type":"","title":""}}}}' role="menuitem" href="/why-linzess#howlinzessworks" target="_self">How LINZESS Works</a>
+	
+
+                           
+                        
+                     </li>
+                  
+               
+                  
+                     
+                     <li role="none">
+                        
+                           
+                           
+                              
+	
+	
+	
+		<a data-digitaldata='{"digitalData":{"page":{"component":{"l10title":"","name":"Primary Navigation","position":"header","type":"menu","title":"WHY LINZESS"},"link":{"displayTitle":"Side Effects of LINZESS","name":"Side Effects of LINZESS","type":"internal","url":"/why-linzess#sideeffects"},"interaction":{"name":"Side Effects of LINZESS","id":"abbv-primarynavigation-1252040607-02","type":"menu","tags":""},"mva":{},"menu":{"level":"2"},"content":{"name":"","type":"","title":""}}}}' role="menuitem" href="/why-linzess#sideeffects" target="_self">Side Effects of LINZESS</a>
+	
+
+                           
+                        
+                     </li>
+                  
+               
+                  
+                     
+                     <li role="none">
+                        
+                           
+                           
+                              
+	
+	
+	
+		<a data-digitaldata='{"digitalData":{"page":{"component":{"l10title":"","name":"Primary Navigation","position":"header","type":"menu","title":"WHY LINZESS"},"link":{"displayTitle":"LINZESS Patient Experiences","name":"LINZESS Patient Experiences","type":"internal","url":"/why-linzess#patientexperiences"},"interaction":{"name":"LINZESS Patient Experiences","id":"abbv-primarynavigation-1252040607-03","type":"menu","tags":""},"mva":{},"menu":{"level":"2"},"content":{"name":"","type":"","title":""}}}}' role="menuitem" href="/why-linzess#patientexperiences" target="_self">LINZESS Patient Experiences</a>
+	
+
+                           
+                        
+                     </li>
+                  
+               
+            </ul>
+         
+      </div>
+   
+</li>
+			 
+				<li role="none">
+
+
+   
+
+   
+   
+      
+         
+         
+         
+            
+	
+	
+		<a data-digitaldata='{"digitalData":{"page":{"component":{"l10title":"UNDERSTANDING CONSTIPATION","name":"Primary Navigation","position":"header","type":"menu","title":"UNDERSTANDING CONSTIPATION"},"link":{"displayTitle":"Understanding <br class=\"desktop-only\"/>Constipation","name":"UNDERSTANDING CONSTIPATION","type":"internal","url":"/content/linzess/en-us/understanding-constipation"},"interaction":{"name":"Understanding <br class=\"desktop-only\"/>Constipation","id":"abbv-primarynavigation-1252040608","type":"menu","tags":""},"mva":{},"menu":{"level":"1"},"content":{"name":"","type":"","title":""}}}}' role="menuitem" rel="nofollow" aria-label="collapsed Understanding &lt;br class=&#34;desktop-only&#34;/>Constipation" aria-expanded="false" class=" abbv-has-submenu       " href="/understanding-constipation" target="_self">Understanding <br class="desktop-only" />Constipation</a>
+	
+
+         
+         <span aria-hidden="true"><i></i></span>
+      
+
+      <div class="abbv-header-primary-navigation-submenu abbv-submenu">
+         
+            <ul role="menu">
+               
+               
+                  
+                     
+                     <li role="none">
+                        
+                           
+                           
+                              
+	
+	
+	
+		<a data-digitaldata='{"digitalData":{"page":{"component":{"l10title":"UNDERSTANDING CONSTIPATION","name":"Primary Navigation","position":"header","type":"menu","title":"UNDERSTANDING CONSTIPATION"},"link":{"displayTitle":"Types of Constipation","name":"Types of Constipation","type":"internal","url":"/understanding-constipation#typesofconstipation"},"interaction":{"name":"Types of Constipation","id":"abbv-primarynavigation-1252040608-00","type":"menu","tags":""},"mva":{},"menu":{"level":"2"},"content":{"name":"","type":"","title":""}}}}' role="menuitem" href="/understanding-constipation#typesofconstipation" target="_self">Types of Constipation</a>
+	
+
+                           
+                        
+                     </li>
+                  
+               
+                  
+                     
+                     <li role="none">
+                        
+                           
+                           
+                              
+	
+	
+	
+		<a data-digitaldata='{"digitalData":{"page":{"component":{"l10title":"UNDERSTANDING CONSTIPATION","name":"Primary Navigation","position":"header","type":"menu","title":"UNDERSTANDING CONSTIPATION"},"link":{"displayTitle":"IBS-C & CIC","name":"IBS-C & CIC","type":"internal","url":"/understanding-constipation#ibsccic"},"interaction":{"name":"IBS-C & CIC","id":"abbv-primarynavigation-1252040608-01","type":"menu","tags":""},"mva":{},"menu":{"level":"2"},"content":{"name":"","type":"","title":""}}}}' role="menuitem" href="/understanding-constipation#ibsccic" target="_self">IBS-C &amp; CIC</a>
+	
+
+                           
+                        
+                     </li>
+                  
+               
+                  
+                     
+                     <li role="none">
+                        
+                           
+                           
+                              
+	
+	
+	
+		<a data-digitaldata='{"digitalData":{"page":{"component":{"l10title":"UNDERSTANDING CONSTIPATION","name":"Primary Navigation","position":"header","type":"menu","title":"UNDERSTANDING CONSTIPATION"},"link":{"displayTitle":"Constipation Treatment Options","name":"Constipation Treatment Options","type":"internal","url":"/understanding-constipation#treatmentoptions"},"interaction":{"name":"Constipation Treatment Options","id":"abbv-primarynavigation-1252040608-02","type":"menu","tags":""},"mva":{},"menu":{"level":"2"},"content":{"name":"","type":"","title":""}}}}' role="menuitem" href="/understanding-constipation#treatmentoptions" target="_self">Constipation Treatment Options</a>
+	
+
+                           
+                        
+                     </li>
+                  
+               
+                  
+                     
+                     <li role="none" class="linzess-nav-link-en">
+                        
+                           
+                           
+                              
+	
+	
+	
+		<a data-digitaldata='{"digitalData":{"page":{"component":{"l10title":"UNDERSTANDING CONSTIPATION","name":"Primary Navigation","position":"header","type":"menu","title":"UNDERSTANDING CONSTIPATION"},"link":{"displayTitle":"Pediatric Functional Constipation","name":"Pediatric Functional Constipation","type":"internal","url":"/understanding-constipation#pediatric"},"interaction":{"name":"Pediatric Functional Constipation","id":"abbv-primarynavigation-1252040608-03","type":"menu","tags":""},"mva":{},"menu":{"level":"2"},"content":{"name":"","type":"","title":""}}}}' role="menuitem" href="/understanding-constipation#pediatric" target="_self">Pediatric Functional Constipation</a>
+	
+
+                           
+                        
+                     </li>
+                  
+               
+            </ul>
+         
+      </div>
+   
+</li>
+			 
+				<li role="none">
+
+
+   
+
+   
+   
+      
+         
+         
+         
+            
+	
+	
+		<a data-digitaldata='{"digitalData":{"page":{"component":{"l10title":"FIND RELIEF","name":"Primary Navigation","position":"header","type":"menu","title":"FIND RELIEF"},"link":{"displayTitle":"Find <br class=\"desktop-only\"/>Relief","name":"FIND RELIEF","type":"internal","url":"/content/linzess/en-us/find-relief"},"interaction":{"name":"Find <br class=\"desktop-only\"/>Relief","id":"abbv-primarynavigation-1252040609","type":"menu","tags":""},"mva":{},"menu":{"level":"1"},"content":{"name":"","type":"","title":""}}}}' role="menuitem" rel="nofollow" aria-label="collapsed Find &lt;br class=&#34;desktop-only&#34;/>Relief" aria-expanded="false" class=" abbv-has-submenu       " href="/find-relief" target="_self">Find <br class="desktop-only" />Relief</a>
+	
+
+         
+         <span aria-hidden="true"><i></i></span>
+      
+
+      <div class="abbv-header-primary-navigation-submenu abbv-submenu">
+         
+            <ul role="menu">
+               
+               
+                  
+                     
+                     <li role="none">
+                        
+                           
+                           
+                              
+	
+	
+	
+		<a data-digitaldata='{"digitalData":{"page":{"component":{"l10title":"FIND RELIEF","name":"Primary Navigation","position":"header","type":"menu","title":"FIND RELIEF"},"link":{"displayTitle":"Talk to a Doctor","name":"Talk to a Doctor","type":"internal","url":"/find-relief#talktoadoctor"},"interaction":{"name":"Talk to a Doctor","id":"abbv-primarynavigation-1252040609-00","type":"menu","tags":""},"mva":{},"menu":{"level":"2"},"content":{"name":"","type":"","title":""}}}}' role="menuitem" href="/find-relief#talktoadoctor" target="_self">Talk to a Doctor</a>
+	
+
+                           
+                        
+                     </li>
+                  
+               
+                  
+                     
+                     <li role="none">
+                        
+                           
+                           
+                              
+	
+	
+	
+		<a data-digitaldata='{"digitalData":{"page":{"component":{"l10title":"FIND RELIEF","name":"Primary Navigation","position":"header","type":"menu","title":"FIND RELIEF"},"link":{"displayTitle":"How to Take LINZESS","name":"How to Take LINZESS","type":"internal","url":"/find-relief#howtotake"},"interaction":{"name":"How to Take LINZESS","id":"abbv-primarynavigation-1252040609-01","type":"menu","tags":""},"mva":{},"menu":{"level":"2"},"content":{"name":"","type":"","title":""}}}}' role="menuitem" href="/find-relief#howtotake" target="_self">How to Take LINZESS</a>
+	
+
+                           
+                        
+                     </li>
+                  
+               
+            </ul>
+         
+      </div>
+   
+</li>
+			 
+				<li role="none">
+
+
+   
+
+   
+   
+      
+         
+         
+         
+            
+	
+	
+		<a data-digitaldata='{"digitalData":{"page":{"component":{"l10title":"Resources","name":"Primary Navigation","position":"header","type":"menu","title":"Resources"},"link":{"displayTitle":"Resources","name":"Resources","type":"internal","url":"/content/linzess/en-us/resources"},"interaction":{"name":"Resources","id":"abbv-primarynavigation-1252040610","type":"menu","tags":""},"mva":{},"menu":{"level":"1"},"content":{"name":"","type":"","title":""}}}}' role="menuitem" rel="nofollow" aria-label="collapsed Resources" aria-expanded="false" class=" abbv-has-submenu       " href="/resources" target="_self">Resources</a>
+	
+
+         
+         <span aria-hidden="true"><i></i></span>
+      
+
+      <div class="abbv-header-primary-navigation-submenu abbv-submenu">
+         
+            <ul role="menu">
+               
+               
+                  
+                     
+                     <li role="none">
+                        
+                           
+                           
+                              
+	
+	
+	
+		<a data-digitaldata='{"digitalData":{"page":{"component":{"l10title":"Resources","name":"Primary Navigation","position":"header","type":"menu","title":"Resources"},"link":{"displayTitle":"Healthy Routines","name":"Healthy Routines","type":"internal","url":"/resources#healthyroutines"},"interaction":{"name":"Healthy Routines","id":"abbv-primarynavigation-1252040610-00","type":"menu","tags":""},"mva":{},"menu":{"level":"2"},"content":{"name":"","type":"","title":""}}}}' role="menuitem" href="/resources#healthyroutines" target="_self">Healthy Routines</a>
+	
+
+                           
+                        
+                     </li>
+                  
+               
+                  
+                     
+                     <li role="none">
+                        
+                           
+                           
+                              
+	
+	
+	
+		<a data-digitaldata='{"digitalData":{"page":{"component":{"l10title":"Resources","name":"Primary Navigation","position":"header","type":"menu","title":"Resources"},"link":{"displayTitle":"Wellness Tips","name":"Wellness Tips","type":"internal","url":"/resources#wellnesstips"},"interaction":{"name":"Wellness Tips","id":"abbv-primarynavigation-1252040610-01","type":"menu","tags":""},"mva":{},"menu":{"level":"2"},"content":{"name":"","type":"","title":""}}}}' role="menuitem" href="/resources#wellnesstips" target="_self">Wellness Tips</a>
+	
+
+                           
+                        
+                     </li>
+                  
+               
+                  
+                     
+                     <li role="none">
+                        
+                           
+                           
+                              
+	
+	
+	
+		<a data-digitaldata='{"digitalData":{"page":{"component":{"l10title":"Resources","name":"Primary Navigation","position":"header","type":"menu","title":"Resources"},"link":{"displayTitle":"Community Resources","name":"Community Resources","type":"internal","url":"/resources#communityresources"},"interaction":{"name":"Community Resources","id":"abbv-primarynavigation-1252040610-02","type":"menu","tags":""},"mva":{},"menu":{"level":"2"},"content":{"name":"","type":"","title":""}}}}' role="menuitem" href="/resources#communityresources" target="_self">Community Resources</a>
+	
+
+                           
+                        
+                     </li>
+                  
+               
+            </ul>
+         
+      </div>
+   
+</li>
+			 
+				<li role="none">
+
+
+   
+
+   
+   
+      
+         
+         
+         
+            
+	
+	
+		<a data-digitaldata='{"digitalData":{"page":{"component":{"l10title":"Savings & Support","name":"Primary Navigation","position":"header","type":"menu","title":"Savings & Support"},"link":{"displayTitle":"Savings <br class=\"desktop-only\"/>& Support","name":"Savings & Support","type":"internal","url":"/content/linzess/en-us/savings-and-support"},"interaction":{"name":"Savings <br class=\"desktop-only\"/>& Support","id":"abbv-primarynavigation-1252040611","type":"menu","tags":""},"mva":{},"menu":{"level":"1"},"content":{"name":"","type":"","title":""}}}}' role="menuitem" rel="nofollow" aria-label="collapsed Savings &lt;br class=&#34;desktop-only&#34;/>&amp; Support" aria-expanded="false" class=" abbv-has-submenu       " href="/savings-and-support" target="_self">Savings <br class="desktop-only" />&amp; Support</a>
+	
+
+         
+         <span aria-hidden="true"><i></i></span>
+      
+
+      <div class="abbv-header-primary-navigation-submenu abbv-submenu">
+         
+            <ul role="menu">
+               
+               
+                  
+                     
+                     <li role="none">
+                        
+                           
+                           
+                              
+	
+	
+	
+		<a data-digitaldata='{"digitalData":{"page":{"component":{"l10title":"Savings & Support","name":"Primary Navigation","position":"header","type":"menu","title":"Savings & Support"},"link":{"displayTitle":"Savings","name":"Savings","type":"internal","url":"/savings-and-support#savings"},"interaction":{"name":"Savings","id":"abbv-primarynavigation-1252040611-00","type":"menu","tags":""},"mva":{},"menu":{"level":"2"},"content":{"name":"","type":"","title":""}}}}' role="menuitem" href="/savings-and-support#savings" target="_self">Savings</a>
+	
+
+                           
+                        
+                     </li>
+                  
+               
+                  
+                     
+                     <li role="none">
+                        
+                           
+                           
+                              
+	
+	
+	
+		<a data-digitaldata='{"digitalData":{"page":{"component":{"l10title":"Savings & Support","name":"Primary Navigation","position":"header","type":"menu","title":"Savings & Support"},"link":{"displayTitle":"Financial Support","name":"Financial Support","type":"internal","url":"/savings-and-support#financialsupport"},"interaction":{"name":"Financial Support","id":"abbv-primarynavigation-1252040611-01","type":"menu","tags":""},"mva":{},"menu":{"level":"2"},"content":{"name":"","type":"","title":""}}}}' role="menuitem" href="/savings-and-support#financialsupport" target="_self">Financial Support</a>
+	
+
+                           
+                        
+                     </li>
+                  
+               
+            </ul>
+         
+      </div>
+   
+</li>
+			 
+				<li role="none">
+
+
+   
+
+   
+      
+         
+         
+         
+            
+	
+	
+		<a data-digitaldata='{"digitalData":{"page":{"component":{"l10title":"","name":"Primary Navigation","position":"header","type":"menu","title":"Home"},"link":{"displayTitle":"home","name":"Home","type":"internal","url":"/"},"interaction":{"name":"home","id":"abbv-primarynavigation-1252040612","type":"menu","tags":""},"mva":{},"menu":{"level":"1"},"content":{"name":"","type":"","title":""}}}}' role="menuitem" rel="nofollow" class="   home-icon    " href="/" target="_self">home</a>
+	
+
+         
+      
+   
+   
+</li>
+			 
+				<li role="none">
+
+
+   
+
+   
+      
+         
+         
+         
+            
+	
+	
+		<a data-digitaldata='{"digitalData":{"page":{"component":{"l10title":"","name":"Primary Navigation","position":"header","type":"menu","title":"En Espanol"},"link":{"displayTitle":"En Español","name":"En Espanol","type":"external","url":"https://www.linzess.com/espanol"},"interaction":{"name":"En Español","id":"abbv-primarynavigation-1252040613","type":"menu","tags":""},"mva":{},"menu":{"level":"1"},"content":{"name":"","type":"","title":""}}}}' role="menuitem" rel="nofollow" href="https://www.linzess.com/espanol" target="_self">En Español</a>
+	
+
+         
+      
+   
+   
+</li>
+			 
+				<li role="none">
+
+
+   
+
+   
+      
+         
+         
+         
+            
+	
+	
+		<a data-digitaldata='{"digitalData":{"page":{"component":{"l10title":"","name":"Primary Navigation","position":"header","type":"menu","title":"FAQs"},"link":{"displayTitle":"FAQs","name":"FAQs","type":"internal","url":"/savings-and-support/faqs"},"interaction":{"name":"FAQs","id":"abbv-primarynavigation-1252040614","type":"menu","tags":""},"mva":{},"menu":{"level":"1"},"content":{"name":"","type":"","title":""}}}}' role="menuitem" rel="nofollow" href="/savings-and-support/faqs" target="_self">FAQs</a>
+	
+
+         
+      
+   
+   
+</li>
+			 
+				<li role="none">
+
+
+   
+
+   
+      
+         
+         
+         
+            
+	
+	
+		<a data-digitaldata='{"digitalData":{"page":{"component":{"l10title":"","name":"Primary Navigation","position":"header","type":"menu","title":"Sign Up for Support"},"link":{"displayTitle":"Sign Up for Support","name":"Sign Up for Support","type":"internal","url":"/content/linzess/en-us/savings-and-support/from-the-gut"},"interaction":{"name":"Sign Up for Support","id":"abbv-primarynavigation-1252040615","type":"menu","tags":""},"mva":{},"menu":{"level":"1"},"content":{"name":"","type":"","title":""}}}}' role="menuitem" rel="nofollow" href="/savings-and-support/from-the-gut" target="_self">Sign Up for Support</a>
+	
+
+         
+      
+   
+   
+</li>
+			 
+				<li role="none">
+
+
+   
+
+   
+      
+         
+         
+         
+            
+	
+	
+		<a data-digitaldata='{"digitalData":{"page":{"component":{"l10title":"","name":"Primary Navigation","position":"header","type":"menu","title":"Healthcare Professionals"},"link":{"displayTitle":"Healthcare Professionals","name":"Healthcare Professionals","type":"internal","url":""},"interaction":{"name":"Healthcare Professionals","id":"abbv-primarynavigation-1252040616","type":"menu","tags":""},"mva":{},"menu":{"level":"1"},"content":{"name":"","type":"","title":""}}}}' role="menuitem" rel="nofollow" class="abbv-modal-open       " href="#" target="new-modal" data-id="hcpwol">Healthcare Professionals</a>
+	
+
+         
+      
+   
+   
+</li>
+			 
+				<li role="none">
+
+
+   
+
+   
+      
+         
+         
+         
+            
+	
+	
+		<a data-digitaldata='{"digitalData":{"page":{"component":{"l10title":"Check My Symptoms","name":"Primary Navigation","position":"header","type":"menu","title":"Check My Symptoms"},"link":{"displayTitle":"Check My Symptoms","name":"Check My Symptoms","type":"internal","url":"/content/linzess/en-us/find-relief/gutcheck"},"interaction":{"name":"Check My Symptoms","id":"abbv-primarynavigation-158553262","type":"menu","tags":""},"mva":{},"menu":{"level":"1"},"content":{"name":"","type":"","title":""}}}}' role="menuitem" rel="nofollow" class=" abbv-icon-keyboard_arrow_right i-b check-my-symptoms abbv-button-tertiary    " href="/find-relief/gutcheck" target="_self">Check My Symptoms</a>
+	
+
+         
+      
+   
+   
+</li>
+			
+			</ul>    
+		</nav>        
+	</div>
+</header></div>
+
+    
+
+</div>
+
+    
+
+</div>
+
+			
+
+	<section role="main">
+
+
+
+
+    
+    
+    <div class="container parbase">
+
+
+
+    <div class="abbv-container linzess-not-found-page background-white background-white-arc background-arc">
+        
+
+
+
+
+    
+    
+    <div class="rich-text">
+
+    
+    <div class="abbv-rich-text max-auto text-align-center abbv-rich-text-common">
+        <p class="divider"> </p> 
+<h1 class="c-linz-dark-purple">THIS PAGE MAY HAVE MOVED</h1> 
+<p>Go back to the <a href="/" data-digitaldata="{&quot;digitalData&quot;:{&quot;page&quot;:{&quot;link&quot;:{&quot;name&quot;:&quot;homepage&quot;,&quot;displayTitle&quot;:&quot;homepage&quot;,&quot;type&quot;:&quot;internal&quot;,&quot;url&quot;:&quot;/&quot;},&quot;component&quot;:{&quot;type&quot;:&quot;content&quot;,&quot;l10title&quot;:&quot;&quot;,&quot;title&quot;:&quot;system error&quot;,&quot;name&quot;:&quot;RTE&quot;,&quot;position&quot;:&quot;content&quot;},&quot;interaction&quot;:{&quot;id&quot;:&quot;rte-528439524-0&quot;,&quot;name&quot;:&quot;homepage&quot;,&quot;type&quot;:&quot;content&quot;},&quot;mva&quot;:{&quot;name&quot;:&quot;&quot;,&quot;tier&quot;:&quot;&quot;,&quot;type&quot;:&quot;&quot;,&quot;category&quot;:&quot;&quot;}}}}">homepage</a>.</p>
+    </div>
+
+</div>
+
+
+    
+    
+    <div class="container parbase">
+
+
+
+    <div class="abbv-container max-auto">
+        
+
+
+
+
+    
+    
+    <div class="rich-text">
+
+    
+    <div class="abbv-rich-text rounded-corners background-off-white text-align-center c-linz-purple padding-all abbv-rich-text-common">
+        <h2 class="c-linz-dark-purple">You might be able to find what you're looking for through one of these links:</h2> 
+<p class="linzess-not-found-links c-linz-dark-purple"><a href="/understanding-constipation#typesofconstipation" data-digitaldata="{&quot;digitalData&quot;:{&quot;page&quot;:{&quot;link&quot;:{&quot;name&quot;:&quot;Learn more about the types of constipation&quot;,&quot;displayTitle&quot;:&quot;Learn more about the types of constipation&quot;,&quot;type&quot;:&quot;internal&quot;,&quot;url&quot;:&quot;/understanding-constipation/types-of-constipation&quot;},&quot;component&quot;:{&quot;type&quot;:&quot;content&quot;,&quot;l10title&quot;:&quot;&quot;,&quot;title&quot;:&quot;system error&quot;,&quot;name&quot;:&quot;RTE&quot;,&quot;position&quot;:&quot;content&quot;},&quot;interaction&quot;:{&quot;id&quot;:&quot;rte-1522840544-0&quot;,&quot;name&quot;:&quot;Learn more about the types of constipation&quot;,&quot;type&quot;:&quot;content&quot;},&quot;mva&quot;:{&quot;name&quot;:&quot;&quot;,&quot;tier&quot;:&quot;&quot;,&quot;type&quot;:&quot;&quot;,&quot;category&quot;:&quot;&quot;}}}}">Learn more about the types of constipation</a></p> 
+<p class="linzess-not-found-links"><a href="/why-linzess#howlinzessworks" data-digitaldata="{&quot;digitalData&quot;:{&quot;page&quot;:{&quot;link&quot;:{&quot;name&quot;:&quot;Find out how LINZESS works&quot;,&quot;displayTitle&quot;:&quot;Find out how LINZESS works&quot;,&quot;type&quot;:&quot;internal&quot;,&quot;url&quot;:&quot;/why-linzess/how-linzess-works&quot;},&quot;component&quot;:{&quot;type&quot;:&quot;content&quot;,&quot;l10title&quot;:&quot;&quot;,&quot;title&quot;:&quot;system error&quot;,&quot;name&quot;:&quot;RTE&quot;,&quot;position&quot;:&quot;content&quot;},&quot;interaction&quot;:{&quot;id&quot;:&quot;rte-1522840544-1&quot;,&quot;name&quot;:&quot;Find out how LINZESS works&quot;,&quot;type&quot;:&quot;content&quot;},&quot;mva&quot;:{&quot;name&quot;:&quot;&quot;,&quot;tier&quot;:&quot;&quot;,&quot;type&quot;:&quot;&quot;,&quot;category&quot;:&quot;&quot;}}}}">Find out how LINZESS works</a></p> 
+<p class="linzess-not-found-links"><a href="/find-relief/gutcheck" data-digitaldata="{&quot;digitalData&quot;:{&quot;page&quot;:{&quot;link&quot;:{&quot;name&quot;:&quot;Take the 5-question Gut Check&quot;,&quot;displayTitle&quot;:&quot;Take the 5-question Gut Check&quot;,&quot;type&quot;:&quot;internal&quot;,&quot;url&quot;:&quot;/find-relief/gutcheck&quot;},&quot;component&quot;:{&quot;type&quot;:&quot;content&quot;,&quot;l10title&quot;:&quot;&quot;,&quot;title&quot;:&quot;system error&quot;,&quot;name&quot;:&quot;RTE&quot;,&quot;position&quot;:&quot;content&quot;},&quot;interaction&quot;:{&quot;id&quot;:&quot;rte-1522840544-2&quot;,&quot;name&quot;:&quot;Take the 5-question Gut Check&quot;,&quot;type&quot;:&quot;content&quot;},&quot;mva&quot;:{&quot;name&quot;:&quot;&quot;,&quot;tier&quot;:&quot;&quot;,&quot;type&quot;:&quot;&quot;,&quot;category&quot;:&quot;&quot;}}}}">Take the 5-question Gut Check</a></p>
+    </div>
+
+</div>
+
+
+
+    </div>
+
+
+
+
+    
+    
+<script type="text/javascript" src="/etc.clientlibs/common-elements/v1/components/content/container/clientlib-component.min.3dc16ed923c3d5068b5e6ea752932943.js" defer></script>
+
+
+
+</div>
+
+
+
+    </div>
+
+
+
+
+    
+    
+
+
+
+
+</div>
+
+
+</section>
+
+
+			
+				
+    
+        <div role="region" aria-label="Important Safety Information" class="abbv-inline-use-isi">
+            <a id="abbv_use_statement" aria-hidden="true"></a>
+            <div class="abbv-inline-use ">
+                
+                    
+
+
+
+
+    
+    
+    <div class="rich-text">
+
+    
+    <div class="abbv-rich-text linzess-use-statement abbv-rich-text-common">
+        <h3>USES</h3>
+<p><span style="background-color: transparent;">LINZESS<sup>®</sup> (linaclotide) is a prescription medication used to treat irritable bowel syndrome with constipation (IBS-C) in adults and in children and adolescents 7 years of age and older, chronic idiopathic constipation (CIC) in adults, and functional constipation (FC) in children and adolescents 6 years of age and older. “Idiopathic” means the cause of the constipation is unknown. <b>It is not known if LINZESS is safe and effective in children with functional constipation less than 6 years of age or in children with IBS-C less than 7 years of age.</b></span></p>
+
+    </div>
+
+</div>
+
+
+
+                
+            </div>
+            <a id="abbv_safety_information" aria-hidden="true"></a>
+            <div class="abbv-inline-safety ">
+                
+                    
+
+
+
+
+    
+    
+    <div class="rich-text">
+
+    
+    <div class="abbv-rich-text linzess-isi-iri abbv-rich-text-common">
+        <h3><p class="linzess-isi-subtitle"><b>IMPORTANT RISK INFORMATION</b><br /> </p> </h3> 
+<ul> 
+ <li><span style="background-color: transparent;"><b>Do not give LINZESS to children who are less than 2 years of age. It may harm them.</b> LINZESS can cause severe diarrhea and your child could get severe dehydration (loss of a large amount of body water and salt). </span></li> 
+ <li><span style="background-color: transparent;">Do not take LINZESS if a doctor has told you that you have a bowel blockage (intestinal obstruction).</span></li> 
+</ul> 
+<p class="linzess-isi-subtitle"><b>Before you take LINZESS, tell your doctor about your medical conditions, including if you are:</b></p> 
+<ul> 
+ <li><span style="background-color: transparent;">Pregnant or plan to become pregnant. It is not known if LINZESS will harm your unborn baby.</span></li> 
+ <li><span style="background-color: transparent;">Breastfeeding or plan to breastfeed. You and your doctor should decide if you will take LINZESS and breastfeed.</span><br /> </li> 
+</ul> 
+<p><br /> <b>Tell your doctor about all the medicines you take,</b> including prescription and over-the-counter medicines, vitamins, and herbal supplements.</p> 
+<p><b class="linzess-text-purple"><br /> Side Effects</b></p> 
+<p><b>LINZESS can cause serious side effects, including diarrhea, which is the most common side effect and can sometimes be severe.</b> Diarrhea often begins within the first 2 weeks of LINZESS treatment. <b>Stop taking LINZESS and call your doctor right away if you get severe diarrhea during treatment with LINZESS.</b></p> 
+<p>Other common side effects of LINZESS in people with IBS-C and CIC include gas, stomach-area (abdomen) pain, and swelling, or a feeling of fullness or pressure in your abdomen (distention).</p> 
+<p><b>Call your doctor or go to the nearest hospital emergency room right away if you develop unusual or severe stomach-area (abdomen) pain, especially if you also have bright red, bloody stools or black stools that look like tar.</b></p> 
+<p>These are not all the possible side effects of LINZESS. For more information, ask your doctor or pharmacist. </p> 
+<p><b>You are encouraged to report negative side effects of prescription drugs to the FDA. Visit <a target="_blank" href="https://www.fda.gov/medwatch" data-digitaldata="{&quot;digitalData&quot;:{&quot;page&quot;:{&quot;component&quot;:{&quot;l10title&quot;:&quot;&quot;,&quot;name&quot;:&quot;rte&quot;,&quot;position&quot;:&quot;footer&quot;,&quot;type&quot;:&quot;navigation&quot;,&quot;title&quot;:&quot;ISI&quot;},&quot;link&quot;:{&quot;displayTitle&quot;:&quot;www.fda.gov/medwatch&quot;,&quot;name&quot;:&quot;www.fda.gov/medwatch&quot;,&quot;type&quot;:&quot;internal&quot;},&quot;interaction&quot;:{&quot;id&quot;:&quot;rte-1390444555-0&quot;,&quot;type&quot;:&quot;link&quot;},&quot;mva&quot;:{&quot;name&quot;:&quot;&quot;,&quot;tier&quot;:&quot;&quot;,&quot;type&quot;:&quot;&quot;},&quot;menu&quot;:{&quot;level&quot;:&quot;&quot;,&quot;location&quot;:&quot;&quot;},&quot;content&quot;:{&quot;type&quot;:&quot;&quot;}}}}">www.fda.gov/medwatch</a> or call <a style="white-space: nowrap;" href="tel:18003321088" data-digitaldata="{&quot;digitalData&quot;:{&quot;page&quot;:{&quot;component&quot;:{&quot;l10title&quot;:&quot;&quot;,&quot;name&quot;:&quot;rte&quot;,&quot;position&quot;:&quot;footer&quot;,&quot;type&quot;:&quot;navigation&quot;,&quot;title&quot;:&quot;ISI&quot;},&quot;link&quot;:{&quot;displayTitle&quot;:&quot;1-800-FDA-1088&quot;,&quot;name&quot;:&quot;1-800-FDA-1088&quot;,&quot;type&quot;:&quot;internal&quot;},&quot;interaction&quot;:{&quot;id&quot;:&quot;rte-1390444555-1&quot;,&quot;type&quot;:&quot;link&quot;},&quot;mva&quot;:{&quot;name&quot;:&quot;&quot;,&quot;tier&quot;:&quot;&quot;,&quot;type&quot;:&quot;&quot;},&quot;menu&quot;:{&quot;level&quot;:&quot;&quot;,&quot;location&quot;:&quot;&quot;},&quot;content&quot;:{&quot;type&quot;:&quot;&quot;}}}}">1-800-FDA-1088</a>.</b></p> 
+<p><b>If you are having difficulty paying for your medicine, AbbVie and Ironwood may be able to help. Visit <a data-digitaldata="{&quot;digitalData&quot;:{&quot;page&quot;:{&quot;link&quot;:{&quot;name&quot;:&quot;AbbVie.com/PatientAccessSupport&quot;,&quot;displayTitle&quot;:&quot;new link&quot;,&quot;type&quot;:&quot;external&quot;,&quot;url&quot;:&quot;https://www.abbvie.com/patients/patient-support.html&quot;},&quot;component&quot;:{&quot;type&quot;:&quot;content&quot;,&quot;l10title&quot;:&quot;&quot;,&quot;title&quot;:&quot;ISI&quot;,&quot;name&quot;:&quot;RTE&quot;,&quot;position&quot;:&quot;content&quot;},&quot;interaction&quot;:{&quot;id&quot;:&quot;rte-1390444555-2&quot;,&quot;name&quot;:&quot;&quot;,&quot;type&quot;:&quot;content&quot;},&quot;mva&quot;:{&quot;name&quot;:&quot;&quot;,&quot;tier&quot;:&quot;&quot;,&quot;type&quot;:&quot;&quot;,&quot;category&quot;:&quot;&quot;}}}}" href="https://www.abbvie.com/patients/patient-support.html" target="_blank">AbbVie.com/PatientAccessSupport</a> to learn more.</b></p> 
+<p><b>Please see full </b><a href="https://www.rxabbvie.com/pdf/linzess_pi.pdf" target="_blank" data-digitaldata="{&quot;digitalData&quot;:{&quot;page&quot;:{&quot;link&quot;:{&quot;name&quot;:&quot;Prescribing Information&quot;,&quot;displayTitle&quot;:&quot;Prescribing Information&quot;,&quot;type&quot;:&quot;external&quot;,&quot;url&quot;:&quot;https://www.rxabbvie.com/pdf/linzess_pi.pdf&quot;},&quot;component&quot;:{&quot;type&quot;:&quot;content&quot;,&quot;l10title&quot;:&quot;&quot;,&quot;title&quot;:&quot;ISI&quot;,&quot;name&quot;:&quot;RTE&quot;,&quot;position&quot;:&quot;content&quot;},&quot;interaction&quot;:{&quot;id&quot;:&quot;rte-1390444555-3&quot;,&quot;name&quot;:&quot;&quot;,&quot;type&quot;:&quot;content&quot;},&quot;mva&quot;:{&quot;name&quot;:&quot;&quot;,&quot;tier&quot;:&quot;&quot;,&quot;type&quot;:&quot;&quot;,&quot;category&quot;:&quot;&quot;}}}}">Prescribing Information</a><b>, including Boxed Warning, and </b><a href="https://www.rxabbvie.com/pdf/linzess_pi.pdf#page=26" target="_blank" data-digitaldata="{&quot;digitalData&quot;:{&quot;page&quot;:{&quot;link&quot;:{&quot;name&quot;:&quot;Medication Guide&quot;,&quot;displayTitle&quot;:&quot;Medication Guide&quot;,&quot;type&quot;:&quot;external&quot;,&quot;url&quot;:&quot;https://www.rxabbvie.com/pdf/linzess_pi.pdf#page=26&quot;},&quot;component&quot;:{&quot;type&quot;:&quot;content&quot;,&quot;l10title&quot;:&quot;&quot;,&quot;title&quot;:&quot;ISI&quot;,&quot;name&quot;:&quot;RTE&quot;,&quot;position&quot;:&quot;content&quot;},&quot;interaction&quot;:{&quot;id&quot;:&quot;rte-1390444555-4&quot;,&quot;name&quot;:&quot;&quot;,&quot;type&quot;:&quot;content&quot;},&quot;mva&quot;:{&quot;name&quot;:&quot;&quot;,&quot;tier&quot;:&quot;&quot;,&quot;type&quot;:&quot;&quot;,&quot;category&quot;:&quot;&quot;}}}}">Medication Guide</a><b>.</b></p> 
+<p>US-LIN-250121</p>
+    </div>
+
+</div>
+
+
+
+                
+            </div>
+            <a id="abbv_miscisi" aria-hidden="true"></a>
+            <div class="abbv-inline-miscisi">
+                
+            </div>
+        </div>
+    
+
+    
+    
+    
+
+    
+        
+
+
+
+
+
+    
+    
+
+    
+    
+        <div>
+
+
+
+
+    
+        
+        
+        <div class="newpar new section">
+
+</div>
+
+    
+        
+        
+        <div class="par iparys_inherited">
+
+    
+    
+    
+    
+        
+        
+        <div class="footer parbase">
+
+    <!-- Begin: AbbVie Footer Component -->
+    
+    <footer class="abbv-footer linzess-footer">
+        <div class="abbv-footer-content">
+            
+            
+                <div class="abbv-row abbv-row-flush">
+                    
+                        <div class="abbv-col abbv-col-3 ">
+                            <h5 role="heading" aria-level="4"></h5>
+                            <ul class="abbv-footer-vertical">
+                                
+                                    <li>
+                                        
+                                            
+											
+                                            
+                                                
+	
+	
+		<a data-digitaldata='{"digitalData":{"page":{"component":{"l10title":"","name":"footer","position":"footer","type":"footer","title":"WHY LINZESS"},"link":{"displayTitle":"WHY LINZESS","name":"Why Linzess","type":"internal","url":"/content/linzess/en-us/why-linzess"},"interaction":{"name":"WHY LINZESS","location":"footer","id":"abbv-footer-1168413584-00","type":"link","tags":""},"content":{"name":"","type":"","title":""}}}}' class="     lato-extrabold " href="/why-linzess" target="_self">WHY<br /> LINZESS</a>
+	
+
+                                            
+											
+																						
+                                        
+                                    </li>
+                                
+                                    <li>
+                                        
+                                            
+											
+                                            
+                                                
+	
+	
+		<a data-digitaldata='{"digitalData":{"page":{"component":{"l10title":"","name":"footer","position":"footer","type":"footer","title":"WHY LINZESS"},"link":{"displayTitle":"How LINZESS Can Help","name":"How LINZESS Can Help","type":"internal","url":"/why-linzess#howlinzesscanhelp"},"interaction":{"name":"How LINZESS Can Help","location":"footer","id":"abbv-footer-1168413584-01","type":"link","tags":""},"content":{"name":"","type":"","title":""}}}}' href="/why-linzess#howlinzesscanhelp" target="_self">How LINZESS Can Help</a>
+	
+
+                                            
+											
+																						
+                                        
+                                    </li>
+                                
+                                    <li>
+                                        
+                                            
+											
+                                            
+                                                
+	
+	
+		<a data-digitaldata='{"digitalData":{"page":{"component":{"l10title":"","name":"footer","position":"footer","type":"footer","title":"WHY LINZESS"},"link":{"displayTitle":"How LINZESS Works","name":"How LINZESS Works","type":"internal","url":"/why-linzess#howlinzessworks"},"interaction":{"name":"How LINZESS Works","location":"footer","id":"abbv-footer-1168413584-02","type":"link","tags":""},"content":{"name":"","type":"","title":""}}}}' href="/why-linzess#howlinzessworks" target="_self">How LINZESS Works</a>
+	
+
+                                            
+											
+																						
+                                        
+                                    </li>
+                                
+                                    <li>
+                                        
+                                            
+											
+                                            
+                                                
+	
+	
+		<a data-digitaldata='{"digitalData":{"page":{"component":{"l10title":"","name":"footer","position":"footer","type":"footer","title":"WHY LINZESS"},"link":{"displayTitle":"Side Effects of LINZESS","name":"Side Effects of LINZESS","type":"internal","url":"/why-linzess#sideeffects"},"interaction":{"name":"Side Effects of LINZESS","location":"footer","id":"abbv-footer-1168413584-03","type":"link","tags":""},"content":{"name":"","type":"","title":""}}}}' href="/why-linzess#sideeffects" target="_self">Side Effects of LINZESS</a>
+	
+
+                                            
+											
+																						
+                                        
+                                    </li>
+                                
+                                    <li>
+                                        
+                                            
+											
+                                            
+                                                
+	
+	
+		<a data-digitaldata='{"digitalData":{"page":{"component":{"l10title":"","name":"footer","position":"footer","type":"footer","title":"WHY LINZESS"},"link":{"displayTitle":"LINZESS Patient Experiences","name":"LINZESS Patient Experiences","type":"internal","url":"/why-linzess#patientexperiences"},"interaction":{"name":"LINZESS Patient Experiences","location":"footer","id":"abbv-footer-1168413584-04","type":"link","tags":""},"content":{"name":"","type":"","title":""}}}}' href="/why-linzess#patientexperiences" target="_self">LINZESS Patient Experiences</a>
+	
+
+                                            
+											
+																						
+                                        
+                                    </li>
+                                
+                            </ul>
+                        </div>
+                    
+                        <div class="abbv-col abbv-col-3 ">
+                            <h5 role="heading" aria-level="4"></h5>
+                            <ul class="abbv-footer-vertical">
+                                
+                                    <li>
+                                        
+                                            
+											
+                                            
+                                                
+	
+	
+		<a data-digitaldata='{"digitalData":{"page":{"component":{"l10title":"UNDERSTANDING CONSTIPATION","name":"footer","position":"footer","type":"footer","title":"UNDERSTANDING CONSTIPATION"},"link":{"displayTitle":"UNDERSTANDING CONSTIPATION","name":"Understanding Constipation","type":"internal","url":"/content/linzess/en-us/understanding-constipation"},"interaction":{"name":"UNDERSTANDING CONSTIPATION","location":"footer","id":"abbv-footer-1168413584-10","type":"link","tags":""},"content":{"name":"","type":"","title":""}}}}' class="     lato-extrabold " href="/understanding-constipation" target="_self">UNDERSTANDING CONSTIPATION</a>
+	
+
+                                            
+											
+																						
+                                        
+                                    </li>
+                                
+                                    <li>
+                                        
+                                            
+											
+                                            
+                                                
+	
+	
+		<a data-digitaldata='{"digitalData":{"page":{"component":{"l10title":"UNDERSTANDING CONSTIPATION","name":"footer","position":"footer","type":"footer","title":"UNDERSTANDING CONSTIPATION"},"link":{"displayTitle":"Types of Constipation","name":"Types of Constipation","type":"internal","url":"/understanding-constipation#typesofconstipation"},"interaction":{"name":"Types of Constipation","location":"footer","id":"abbv-footer-1168413584-11","type":"link","tags":""},"content":{"name":"","type":"","title":""}}}}' href="/understanding-constipation#typesofconstipation" target="_self">Types of Constipation</a>
+	
+
+                                            
+											
+																						
+                                        
+                                    </li>
+                                
+                                    <li>
+                                        
+                                            
+											
+                                            
+                                                
+	
+	
+		<a data-digitaldata='{"digitalData":{"page":{"component":{"l10title":"UNDERSTANDING CONSTIPATION","name":"footer","position":"footer","type":"footer","title":"UNDERSTANDING CONSTIPATION"},"link":{"displayTitle":"IBS-C & CIC","name":"IBS-C & CIC","type":"internal","url":"/understanding-constipation#ibsccic"},"interaction":{"name":"IBS-C & CIC","location":"footer","id":"abbv-footer-1168413584-12","type":"link","tags":""},"content":{"name":"","type":"","title":""}}}}' href="/understanding-constipation#ibsccic" target="_self">IBS-C &amp; CIC</a>
+	
+
+                                            
+											
+																						
+                                        
+                                    </li>
+                                
+                                    <li>
+                                        
+                                            
+											
+                                            
+                                                
+	
+	
+		<a data-digitaldata='{"digitalData":{"page":{"component":{"l10title":"UNDERSTANDING CONSTIPATION","name":"footer","position":"footer","type":"footer","title":"UNDERSTANDING CONSTIPATION"},"link":{"displayTitle":"Constipation Treatment Options","name":"Constipation Treatment Options","type":"internal","url":"/understanding-constipation#treatmentoptions"},"interaction":{"name":"Constipation Treatment Options","location":"footer","id":"abbv-footer-1168413584-13","type":"link","tags":""},"content":{"name":"","type":"","title":""}}}}' href="/understanding-constipation#treatmentoptions" target="_self">Constipation<br /> Treatment Options</a>
+	
+
+                                            
+											
+																						
+                                        
+                                    </li>
+                                
+                                    <li>
+                                        
+                                            
+											
+                                            
+                                                
+	
+	
+		<a data-digitaldata='{"digitalData":{"page":{"component":{"l10title":"UNDERSTANDING CONSTIPATION","name":"footer","position":"footer","type":"footer","title":"UNDERSTANDING CONSTIPATION"},"link":{"displayTitle":"Pediatric Functional Constipation","name":"Pediatric Functional Constipation","type":"internal","url":"/understanding-constipation#pediatric"},"interaction":{"name":"Pediatric Functional Constipation","location":"footer","id":"abbv-footer-1168413584-14","type":"link","tags":""},"content":{"name":"","type":"","title":""}}}}' href="/understanding-constipation#pediatric" target="_self">Pediatric Functional Constipation</a>
+	
+
+                                            
+											
+																						
+                                        
+                                    </li>
+                                
+                            </ul>
+                        </div>
+                    
+                        <div class="abbv-col abbv-col-3 ">
+                            <h5 role="heading" aria-level="4"></h5>
+                            <ul class="abbv-footer-vertical">
+                                
+                                    <li>
+                                        
+                                            
+											
+                                            
+                                                
+	
+	
+		<a data-digitaldata='{"digitalData":{"page":{"component":{"l10title":"FIND<br class=\"desktop-only\"> RELIEF","name":"footer","position":"footer","type":"footer","title":"FIND RELIEF"},"link":{"displayTitle":"FIND RELIEF","name":"Find Relief","type":"internal","url":"/content/linzess/en-us/find-relief"},"interaction":{"name":"FIND RELIEF","location":"footer","id":"abbv-footer-1168413584-20","type":"link","tags":""},"content":{"name":"","type":"","title":""}}}}' class="     lato-extrabold " href="/find-relief" target="_self">FIND<br class="desktop-only" /> RELIEF</a>
+	
+
+                                            
+											
+																						
+                                        
+                                    </li>
+                                
+                                    <li>
+                                        
+                                            
+											
+                                            
+                                                
+	
+	
+		<a data-digitaldata='{"digitalData":{"page":{"component":{"l10title":"FIND<br class=\"desktop-only\"> RELIEF","name":"footer","position":"footer","type":"footer","title":"FIND RELIEF"},"link":{"displayTitle":"Talk to a Doctor","name":"Talk to a Doctor","type":"internal","url":"/find-relief#talktoadoctor"},"interaction":{"name":"Talk to a Doctor","location":"footer","id":"abbv-footer-1168413584-21","type":"link","tags":""},"content":{"name":"","type":"","title":""}}}}' href="/find-relief#talktoadoctor" target="_self">Talk to a Doctor</a>
+	
+
+                                            
+											
+																						
+                                        
+                                    </li>
+                                
+                                    <li>
+                                        
+                                            
+											
+                                            
+                                                
+	
+	
+		<a data-digitaldata='{"digitalData":{"page":{"component":{"l10title":"FIND<br class=\"desktop-only\"> RELIEF","name":"footer","position":"footer","type":"footer","title":"FIND RELIEF"},"link":{"displayTitle":"How to Take LINZESS","name":"How to Take LINZESS","type":"internal","url":"/find-relief#howtotake"},"interaction":{"name":"How to Take LINZESS","location":"footer","id":"abbv-footer-1168413584-22","type":"link","tags":""},"content":{"name":"","type":"","title":""}}}}' href="/find-relief#howtotake" target="_self">How to Take LINZESS</a>
+	
+
+                                            
+											
+																						
+                                        
+                                    </li>
+                                
+                            </ul>
+                        </div>
+                    
+                        <div class="abbv-col abbv-col-3 ">
+                            <h5 role="heading" aria-level="4"></h5>
+                            <ul class="abbv-footer-vertical">
+                                
+                                    <li>
+                                        
+                                            
+											
+                                            
+                                                
+	
+	
+		<a data-digitaldata='{"digitalData":{"page":{"component":{"l10title":"RESOURCES","name":"footer","position":"footer","type":"footer","title":"RESOURCES"},"link":{"displayTitle":"RESOURCES","name":"Resources","type":"internal","url":"/content/linzess/en-us/resources"},"interaction":{"name":"RESOURCES","location":"footer","id":"abbv-footer-1168413584-30","type":"link","tags":""},"content":{"name":"","type":"","title":""}}}}' class="     lato-extrabold " href="/resources" target="_self">RESOURCES</a>
+	
+
+                                            
+											
+																						
+                                        
+                                    </li>
+                                
+                                    <li>
+                                        
+                                            
+											
+                                            
+                                                
+	
+	
+		<a data-digitaldata='{"digitalData":{"page":{"component":{"l10title":"RESOURCES","name":"footer","position":"footer","type":"footer","title":"RESOURCES"},"link":{"displayTitle":"Healthy Routines","name":"Healthy Routines","type":"internal","url":"/resources#healthyroutines"},"interaction":{"name":"Healthy Routines","location":"footer","id":"abbv-footer-1168413584-31","type":"link","tags":""},"content":{"name":"","type":"","title":""}}}}' href="/resources#healthyroutines" target="_self">Healthy Routines</a>
+	
+
+                                            
+											
+																						
+                                        
+                                    </li>
+                                
+                                    <li>
+                                        
+                                            
+											
+                                            
+                                                
+	
+	
+		<a data-digitaldata='{"digitalData":{"page":{"component":{"l10title":"RESOURCES","name":"footer","position":"footer","type":"footer","title":"RESOURCES"},"link":{"displayTitle":"Wellness Tips","name":"Wellness Tips","type":"internal","url":"/resources#wellnesstips"},"interaction":{"name":"Wellness Tips","location":"footer","id":"abbv-footer-1168413584-32","type":"link","tags":""},"content":{"name":"","type":"","title":""}}}}' href="/resources#wellnesstips" target="_self">Wellness Tips</a>
+	
+
+                                            
+											
+																						
+                                        
+                                    </li>
+                                
+                                    <li>
+                                        
+                                            
+											
+                                            
+                                                
+	
+	
+		<a data-digitaldata='{"digitalData":{"page":{"component":{"l10title":"RESOURCES","name":"footer","position":"footer","type":"footer","title":"RESOURCES"},"link":{"displayTitle":"Community Resources","name":"Community Resources","type":"internal","url":"/resources#communityresources"},"interaction":{"name":"Community Resources","location":"footer","id":"abbv-footer-1168413584-33","type":"link","tags":""},"content":{"name":"","type":"","title":""}}}}' href="/resources#communityresources" target="_self">Community <br class="desktop-only" />Resources</a>
+	
+
+                                            
+											
+																						
+                                        
+                                    </li>
+                                
+                            </ul>
+                        </div>
+                    
+                        <div class="abbv-col abbv-col-3 ">
+                            <h5 role="heading" aria-level="4"></h5>
+                            <ul class="abbv-footer-vertical">
+                                
+                                    <li>
+                                        
+                                            
+											
+                                            
+                                                
+	
+	
+		<a data-digitaldata='{"digitalData":{"page":{"component":{"l10title":"SAVINGS & SUPPORT","name":"footer","position":"footer","type":"footer","title":"SAVINGS & SUPPORT"},"link":{"displayTitle":"SAVINGS & SUPPORT","name":"Savings & Support","type":"internal","url":"/content/linzess/en-us/savings-and-support"},"interaction":{"name":"SAVINGS & SUPPORT","location":"footer","id":"abbv-footer-1168413584-40","type":"link","tags":""},"content":{"name":"","type":"","title":""}}}}' class="     lato-extrabold " href="/savings-and-support" target="_self">SAVINGS<br class="desktop-only" /> &amp; SUPPORT</a>
+	
+
+                                            
+											
+																						
+                                        
+                                    </li>
+                                
+                                    <li>
+                                        
+                                            
+											
+                                            
+                                                
+	
+	
+		<a data-digitaldata='{"digitalData":{"page":{"component":{"l10title":"SAVINGS & SUPPORT","name":"footer","position":"footer","type":"footer","title":"SAVINGS & SUPPORT"},"link":{"displayTitle":"Savings","name":"Savings","type":"internal","url":"/savings-and-support#savings"},"interaction":{"name":"Savings","location":"footer","id":"abbv-footer-1168413584-41","type":"link","tags":""},"content":{"name":"","type":"","title":""}}}}' href="/savings-and-support#savings" target="_self">Savings</a>
+	
+
+                                            
+											
+																						
+                                        
+                                    </li>
+                                
+                                    <li>
+                                        
+                                            
+											
+                                            
+                                                
+	
+	
+		<a data-digitaldata='{"digitalData":{"page":{"component":{"l10title":"SAVINGS & SUPPORT","name":"footer","position":"footer","type":"footer","title":"SAVINGS & SUPPORT"},"link":{"displayTitle":"Financial Support","name":"Financial Support","type":"internal","url":"/savings-and-support#financialsupport"},"interaction":{"name":"Financial Support","location":"footer","id":"abbv-footer-1168413584-42","type":"link","tags":""},"content":{"name":"","type":"","title":""}}}}' href="/savings-and-support#financialsupport" target="_self">Financial Support</a>
+	
+
+                                            
+											
+																						
+                                        
+                                    </li>
+                                
+                            </ul>
+                        </div>
+                    
+                        <div class="abbv-col abbv-col-3 ">
+                            <h5 role="heading" aria-level="4"></h5>
+                            <ul class="abbv-footer-vertical">
+                                
+                                    <li>
+                                        
+                                            
+											
+                                            
+                                                
+	
+	
+		<a data-digitaldata='{"digitalData":{"page":{"component":{"l10title":"","name":"footer","position":"footer","type":"footer","title":"check my symptoms"},"link":{"displayTitle":"CHECK MY SYMPTOMS","name":"Check My Symptoms","type":"internal","url":"/content/linzess/en-us/find-relief/gutcheck"},"interaction":{"name":"CHECK MY SYMPTOMS","location":"footer","id":"abbv-footer-1168413584-50","type":"link","tags":""},"content":{"name":"","type":"","title":""}}}}' class="     lato-extrabold " href="/find-relief/gutcheck" target="_self">CHECK MY<br class="desktop-only" /> SYMPTOMS</a>
+	
+
+                                            
+											
+																						
+                                        
+                                    </li>
+                                
+                                    <li>
+                                        
+                                            
+											
+                                            
+                                                
+	
+	
+		<a data-digitaldata='{"digitalData":{"page":{"component":{"l10title":"","name":"footer","position":"footer","type":"footer","title":"check my symptoms"},"link":{"displayTitle":"FAQs","name":"FAQs","type":"internal","url":"/content/linzess/en-us/savings-and-support/faqs"},"interaction":{"name":"FAQs","location":"footer","id":"abbv-footer-1168413584-51","type":"link","tags":""},"content":{"name":"","type":"","title":""}}}}' class="     lato-extrabold " href="/savings-and-support/faqs" target="_self">FAQs</a>
+	
+
+                                            
+											
+																						
+                                        
+                                    </li>
+                                
+                                    <li>
+                                        
+                                            
+											
+                                            
+                                                
+	
+	
+		<a data-digitaldata='{"digitalData":{"page":{"component":{"l10title":"","name":"footer","position":"footer","type":"footer","title":"check my symptoms"},"link":{"displayTitle":"SIGN UP FOR UPDATES","name":"Sign Up For Updates","type":"internal","url":"/content/linzess/en-us/savings-and-support/from-the-gut"},"interaction":{"name":"SIGN UP FOR UPDATES","location":"footer","id":"abbv-footer-1168413584-52","type":"link","tags":""},"content":{"name":"","type":"","title":""}}}}' class="     lato-extrabold " href="/savings-and-support/from-the-gut" target="_self">SIGN UP<br class="desktop-only" /> FOR UPDATES</a>
+	
+
+                                            
+											
+																						
+                                        
+                                    </li>
+                                
+                            </ul>
+                        </div>
+                    
+                </div>
+            
+            <div class="abbv-legal-text abbv-rich-text-common"><hr>
+
+<div class="link-list"><div class="abbv-link-list horizontal"><ul>
+<li class="abbv-hide"><a href="https://www.ironwoodpharma.com/california-privacy-policy" target="_blank">Ironwood California Privacy Policy</a></li>
+<li><a href="https://www.abbvie.com/accessibility-statement.html" target="_blank" data-digitaldata="{&quot;digitalData&quot;:{&quot;page&quot;:{&quot;component&quot;:{&quot;l10title&quot;:&quot;&quot;,&quot;name&quot;:&quot;rte&quot;,&quot;position&quot;:&quot;footer&quot;,&quot;type&quot;:&quot;navigation&quot;,&quot;title&quot;:&quot;Accessibility Statement&quot;},&quot;link&quot;:{&quot;displayTitle&quot;:&quot;Accessibility Statement&quot;,&quot;name&quot;:&quot;Accessibility Statement&quot;,&quot;type&quot;:&quot;external&quot;},&quot;interaction&quot;:{&quot;id&quot;:&quot;abv-rte-20220511194832&quot;,&quot;type&quot;:&quot;link&quot;},&quot;mva&quot;:{&quot;name&quot;:&quot;&quot;,&quot;tier&quot;:&quot;&quot;,&quot;type&quot;:&quot;&quot;},&quot;menu&quot;:{&quot;level&quot;:&quot;&quot;,&quot;location&quot;:&quot;&quot;},&quot;content&quot;:{&quot;type&quot;:&quot;&quot;}}}}">Accessibility Statement</a></li>
+<li><a href="https://www.abbvie.com/contactus.html" target="_blank" data-digitaldata="{&quot;digitalData&quot;:{&quot;page&quot;:{&quot;component&quot;:{&quot;l10title&quot;:&quot;&quot;,&quot;name&quot;:&quot;rte&quot;,&quot;position&quot;:&quot;footer&quot;,&quot;type&quot;:&quot;navigation&quot;,&quot;title&quot;:&quot;Contact Us&quot;},&quot;link&quot;:{&quot;displayTitle&quot;:&quot;Contact Us&quot;,&quot;name&quot;:&quot;Contact Us&quot;,&quot;type&quot;:&quot;external&quot;},&quot;interaction&quot;:{&quot;id&quot;:&quot;abv-rte-20220511194924&quot;,&quot;type&quot;:&quot;link&quot;},&quot;mva&quot;:{&quot;name&quot;:&quot;&quot;,&quot;tier&quot;:&quot;&quot;,&quot;type&quot;:&quot;&quot;},&quot;menu&quot;:{&quot;level&quot;:&quot;&quot;,&quot;location&quot;:&quot;&quot;},&quot;content&quot;:{&quot;type&quot;:&quot;&quot;}}}}">Contact Us</a></li>
+<li><a href="https://www.abbvie.com/termsofuse.html" target="_blank" data-digitaldata="{&quot;digitalData&quot;:{&quot;page&quot;:{&quot;component&quot;:{&quot;l10title&quot;:&quot;&quot;,&quot;name&quot;:&quot;rte&quot;,&quot;position&quot;:&quot;footer&quot;,&quot;type&quot;:&quot;navigation&quot;,&quot;title&quot;:&quot;Terms of Use&quot;},&quot;link&quot;:{&quot;displayTitle&quot;:&quot;Terms of Use&quot;,&quot;name&quot;:&quot;Terms of Use&quot;,&quot;type&quot;:&quot;external&quot;},&quot;interaction&quot;:{&quot;id&quot;:&quot;abv-rte-20220511194714&quot;,&quot;type&quot;:&quot;link&quot;},&quot;mva&quot;:{&quot;name&quot;:&quot;&quot;,&quot;tier&quot;:&quot;&quot;,&quot;type&quot;:&quot;&quot;},&quot;menu&quot;:{&quot;level&quot;:&quot;&quot;,&quot;location&quot;:&quot;&quot;},&quot;content&quot;:{&quot;type&quot;:&quot;&quot;}}}}">Terms of Use</a></li>
+<li><a data-digitaldata="{&quot;digitalData&quot;:{&quot;page&quot;:{&quot;link&quot;:{&quot;name&quot;:&quot;Terms &amp; Conditions&quot;,&quot;displayTitle&quot;:&quot;Terms and Conditions&quot;,&quot;type&quot;:&quot;internal&quot;,&quot;url&quot;:&quot;&quot;},&quot;component&quot;:{&quot;type&quot;:&quot;content&quot;,&quot;l10title&quot;:&quot;&quot;,&quot;title&quot;:&quot;Footer&quot;,&quot;name&quot;:&quot;RTE&quot;,&quot;position&quot;:&quot;content&quot;},&quot;interaction&quot;:{&quot;id&quot;:&quot;rte-1760547173921&quot;,&quot;name&quot;:&quot;Terms &amp; Conditions&quot;,&quot;type&quot;:&quot;content&quot;},&quot;mva&quot;:{&quot;name&quot;:&quot;&quot;,&quot;tier&quot;:&quot;&quot;,&quot;type&quot;:&quot;&quot;}}}}" class="abbv-modal-open" data-id="termsandconditions" target="new-modal">Terms and Conditions</a></li>
+<li><a href="https://privacy.abbvie/privacy-policies/us-privacy-policy.html" target="_blank" data-digitaldata="{&quot;digitalData&quot;:{&quot;page&quot;:{&quot;component&quot;:{&quot;l10title&quot;:&quot;&quot;,&quot;name&quot;:&quot;rte&quot;,&quot;position&quot;:&quot;footer&quot;,&quot;type&quot;:&quot;navigation&quot;,&quot;title&quot;:&quot;Privacy Notice&quot;},&quot;link&quot;:{&quot;displayTitle&quot;:&quot;Privacy Notice&quot;,&quot;name&quot;:&quot;Privacy Notice&quot;,&quot;type&quot;:&quot;external&quot;},&quot;interaction&quot;:{&quot;id&quot;:&quot;abv-rte-20220511194552&quot;,&quot;type&quot;:&quot;link&quot;},&quot;mva&quot;:{&quot;name&quot;:&quot;&quot;,&quot;tier&quot;:&quot;&quot;,&quot;type&quot;:&quot;&quot;},&quot;menu&quot;:{&quot;level&quot;:&quot;&quot;,&quot;location&quot;:&quot;&quot;},&quot;content&quot;:{&quot;type&quot;:&quot;&quot;}}}}">Privacy Notice </a></li>
+<li><a href="https://abbv.ie/PrivacyConsumerHealth" target="_blank" data-digitaldata="{&quot;digitalData&quot;:{&quot;page&quot;:{&quot;link&quot;:{&quot;name&quot;:&quot;Consumer Health Data Privacy Notice&quot;,&quot;displayTitle&quot;:&quot;Consumer Health Data Privacy Notice&quot;,&quot;type&quot;:&quot;external&quot;,&quot;url&quot;:&quot;https://abbv.ie/PrivacyConsumerHealth&quot;},&quot;component&quot;:{&quot;type&quot;:&quot;navigation&quot;,&quot;l10title&quot;:&quot;&quot;,&quot;title&quot;:&quot;Consumer Health Data Privacy Notice&quot;,&quot;name&quot;:&quot;link list&quot;,&quot;position&quot;:&quot;header&quot;},&quot;content&quot;:{},&quot;interaction&quot;:{&quot;type&quot;:&quot;link&quot;,&quot;name&quot;:&quot;Consumer Health Data Privacy Notice&quot;,&quot;id&quot;:&quot;rte-1168413584-5&quot;},&quot;mva&quot;:{&quot;name&quot;:&quot;&quot;,&quot;tier&quot;:&quot;primary&quot;,&quot;type&quot;:&quot;&quot;,&quot;category&quot;:&quot;&quot;},&quot;menu&quot;:{&quot;location&quot;:&quot;&quot;,&quot;level&quot;:&quot;&quot;,&quot;label&quot;:&quot;&quot;,&quot;path&quot;:&quot;&quot;}}}}" aria-label="Consumer Health Data Privacy Notice - Opens in a new window">Consumer Health Data Privacy Notice</a></li>
+<li><a href="#" id="ot-sdk-btn1" class="ot-sdk-show-settings" title="Cookies Settings" data-digitaldata="{&quot;digitalData&quot;:{&quot;page&quot;:{&quot;component&quot;:{&quot;l10title&quot;:&quot;&quot;,&quot;name&quot;:&quot;rte&quot;,&quot;position&quot;:&quot;footer&quot;,&quot;type&quot;:&quot;navigation&quot;,&quot;title&quot;:&quot;Cookies Settings&quot;},&quot;link&quot;:{&quot;displayTitle&quot;:&quot;Cookies Settings&quot;,&quot;name&quot;:&quot;Cookies Settings&quot;,&quot;type&quot;:&quot;internal&quot;},&quot;interaction&quot;:{&quot;id&quot;:&quot;abv-rte-20220511194956&quot;,&quot;type&quot;:&quot;link&quot;},&quot;mva&quot;:{&quot;name&quot;:&quot;&quot;,&quot;tier&quot;:&quot;&quot;,&quot;type&quot;:&quot;&quot;},&quot;menu&quot;:{&quot;level&quot;:&quot;&quot;,&quot;location&quot;:&quot;&quot;},&quot;content&quot;:{&quot;type&quot;:&quot;&quot;}}}}">Cookies Settings</a></li>
+<li><a href="/sitemap" data-digitaldata="{&quot;digitalData&quot;:{&quot;page&quot;:{&quot;component&quot;:{&quot;l10title&quot;:&quot;&quot;,&quot;name&quot;:&quot;rte&quot;,&quot;position&quot;:&quot;footer&quot;,&quot;type&quot;:&quot;navigation&quot;,&quot;title&quot;:&quot;Sitemap&quot;},&quot;link&quot;:{&quot;displayTitle&quot;:&quot;Sitemap&quot;,&quot;name&quot;:&quot;Sitemap&quot;,&quot;type&quot;:&quot;external&quot;},&quot;interaction&quot;:{&quot;id&quot;:&quot;abv-rte-20220511194924&quot;,&quot;type&quot;:&quot;link&quot;},&quot;mva&quot;:{&quot;name&quot;:&quot;&quot;,&quot;tier&quot;:&quot;&quot;,&quot;type&quot;:&quot;&quot;},&quot;menu&quot;:{&quot;level&quot;:&quot;&quot;,&quot;location&quot;:&quot;&quot;},&quot;content&quot;:{&quot;type&quot;:&quot;&quot;}}}}">Sitemap</a></li>
+<li><a href="https://abbviemetadata.my.site.com/AbbvieDSRM" target="_blank" data-digitaldata="{&quot;digitalData&quot;:{&quot;page&quot;:{&quot;component&quot;:{&quot;l10title&quot;:&quot;&quot;,&quot;name&quot;:&quot;rte&quot;,&quot;position&quot;:&quot;footer&quot;,&quot;type&quot;:&quot;navigation&quot;,&quot;title&quot;:&quot;Your Privacy Choices&quot;},&quot;link&quot;:{&quot;displayTitle&quot;:&quot;Your Privacy Choices&quot;,&quot;name&quot;:&quot;Your Privacy Choices&quot;,&quot;type&quot;:&quot;external&quot;},&quot;interaction&quot;:{&quot;id&quot;:&quot;abv-rte-20220511194924&quot;,&quot;type&quot;:&quot;link&quot;},&quot;mva&quot;:{&quot;name&quot;:&quot;&quot;,&quot;tier&quot;:&quot;&quot;,&quot;type&quot;:&quot;&quot;},&quot;menu&quot;:{&quot;level&quot;:&quot;&quot;,&quot;location&quot;:&quot;&quot;},&quot;content&quot;:{&quot;type&quot;:&quot;&quot;}}}}">Your Privacy Choices</a></li>
+</ul>
+</div>
+</div>
+<p class="text-top">AbbVie<sup>®</sup> and its design are trademarks of AbbVie Inc.<br>
+Ironwood<sup>®</sup> and its three-leaf design are registered trademarks of Ironwood Pharmaceuticals, Inc. LINZESS<sup>®</sup> and its design are registered trademarks of Ironwood Pharmaceuticals, Inc. From the Gut<sup>℠</sup> is a service mark of Allergan Sales, LLC, an AbbVie company.</p>
+<p class="text-bottom">The product information provided in this site is intended only for residents of the United States. The products discussed on this site may have different product labeling outside of the United States. The health information described in this site is provided for educational purposes only and is not intended to substitute for discussions with a healthcare provider.</p>
+<hr>
+
+<ul class="footer-discalimer">
+<li class="abbvie-logo"><a href="https://www.abbvie.com/" target="_blank"><img src="/content/dam/linzess/images/abbvie-logo.png" alt="Abbvie logo"></a></li>
+<li class="ironwood-logo"><a class="abbv-modal-open" data-id="ironwoodWOL" href="#" target="_self" title="Ironwood" data-digitaldata="{&quot;digitalData&quot;:{&quot;page&quot;:{&quot;link&quot;:{&quot;name&quot;:&quot;Ironwood&quot;,&quot;displayTitle&quot;:&quot;&quot;,&quot;type&quot;:&quot;external&quot;,&quot;url&quot;:&quot;#&quot;},&quot;component&quot;:{&quot;type&quot;:&quot;content&quot;,&quot;l10title&quot;:&quot;&quot;,&quot;title&quot;:&quot;Ironwood&quot;,&quot;name&quot;:&quot;RTE&quot;,&quot;position&quot;:&quot;content&quot;},&quot;interaction&quot;:{&quot;id&quot;:&quot;rte-1168413584-9&quot;,&quot;name&quot;:&quot;Ironwood&quot;,&quot;type&quot;:&quot;content&quot;},&quot;mva&quot;:{&quot;name&quot;:&quot;&quot;,&quot;tier&quot;:&quot;&quot;,&quot;type&quot;:&quot;&quot;,&quot;category&quot;:&quot;&quot;}}}}"><img src="/content/dam/linzess/images/ironwood-logo.png" alt="Ironwood logo"></a></li>
+<li>© 2026 AbbVie and Ironwood Pharmaceuticals, Inc. All rights reserved.&nbsp;</li>
+</ul>
+<p><a href="#" class="footer-backtoTop">↑ Back to top</a></p>
+</div>
+            <p class="abbv-legal-number">US-LIN-250071</p>
+            <div class="logo" style="text-align:right;">
+                
+                    
+                    
+                    <a data-digitaldata='{"digitalData":{"page":{"component":{"l10title":"Linzess logo","name":"footer","position":"footer","type":"footer","title":"Linzess logo"},"link":{"displayTitle":"Linzess logo","name":"Linzess logo","type":"internal","url":"/"},"interaction":{"name":"Linzess logo","location":"footer","id":"abbv-footer-1168413584","type":"link","tags":""},"content":{"name":"","type":"","title":""}}}}' href="/" target="_self">
+                        
+                            <img src="/content/dam/linzess/images/linzess-logo-footer.png" alt="Linzess logo" loading="lazy" aria-label="AbbVie Logo"/>
+                        
+                        
+                    </a>
+                
+            </div>
+            <div class="abbv-clear"></div>
+        </div>
+    </footer>
+    <!-- End: AbbVie Footer Component -->
+</div>
+
+    
+
+</div>
+
+    
+
+</div>
+    
+
+			
+			<div class="abbv-dimmer"></div>
+			<!-- Section for Back To Top Component Start-->
+			
+				
+				<button class="abbv-back-to-top abbv-button-plain abbv-icon-arrow_upward i-a" aria-label="back to top" data-digitaldata='{"digitalData":{"page":{"component":{"l10title":"","name":"Back to top","position":"Footer","type":"Navigation","title":""},"link":{"displayTitle":"Top","name":"Back to top","type":"internal","url":""},"interaction":{"name":"","id":"abbv-backtotop-1240370042","type":"link","tags":""},"mva":{"tier":"","name":"","type":"","category":""},"menu":{},"content":{}}}}'></button>
+			
+			<!-- Section for Back to Top Component End-->
+		</div>
+		<div>
+
+
+
+
+</div>
+		<div>
+
+
+
+
+    
+        
+        
+        <div class="newpar new section">
+
+</div>
+
+    
+        
+        
+        <div class="par iparys_inherited">
+
+    
+    
+    
+    
+        
+        
+        <div class="modal parbase">
+
+
+	<!-- Begin: AbbVie Modal Component -->
+	
+		
+			
+				<div class="abbv-modal hcpwol  " data-id="hcpwol" aria-modal="true" role="dialog" tabindex="-1" aria-hidden="false" aria-label="Healthcare professional wol modal">
+				  	<div class="abbv-modal-content-container">
+						<span class="abbv-modal-close abbv-icon-close i-a" role="button" aria-label="close" tabindex="0" data-digitaldata='{"digitalData":{"page":{"component":{"l10title":"","name":"modal","position":"Content","type":"Navigation","title":""},"link":{"displayTitle":"modal","name":"Close","type":"internal","url":""},"interaction":{"name":"","id":"abbv-modal-156263350","type":"link","tags":""},"mva":{"tier":"","name":"","type":"","category":""},"menu":{},"content":{}}}}'>
+						</span>
+						<div class="abbv-modal-content">
+							<div class="abbv-animation-loading"></div>
+							
+								
+
+
+
+
+    
+    
+    <div class="container parbase">
+
+
+
+    <div class="abbv-container linzess-wol-modal">
+        
+
+
+
+
+    
+    
+    <div class="titles parbase">
+
+<div class="abbv-title linzess-modal-title">
+    <h1>For Healthcare Professionals</h1>
+</div></div>
+
+
+    
+    
+    <div class="rich-text">
+
+    
+    <div class="abbv-rich-text linzess-modal-body abbv-rich-text-common">
+        <p>This information provided on this website is intended for U.S. healthcare professionals only.</p>
+<p><b>I certify that I am a U.S. Healthcare Professional.</b></p>
+
+    </div>
+
+</div>
+
+
+    
+    
+    <div class="columns parbase">
+<!-- Begin: AbbVie Columns Component -->
+
+
+<div class="abbv-row-container exit-modal-ctas">
+    <div class="abbv-row abbv-row-flush">
+		
+			
+				
+					<div class="abbv-col abbv-col-6">
+						
+
+
+
+
+    
+    
+    <div class="cta parbase">
+
+
+
+    
+        
+            
+            
+                
+                    
+	<a data-digitaldata='{"digitalData":{"page":{"link":{"name":"No","displayTitle":"No","type":"internal","url":""},"component":{"type":"content","l10title":"","title":"FOR HEALTHCARE PROFESSIONALS","name":"CTA","position":"content"},"content":{},"interaction":{"type":"","name":"No","id":"abbv-cta-166539405","tags":""},"menu":{}}}}' class="   abbv-icon-keyboard_arrow_right abbv-button-primary i-a abbv-modal-close-inline float-right " role="link" aria-label="No" tabindex="0" target="_self" data-linktype="internal" aria-hidden="false">No</a>
+
+                
+            
+            
+        
+    
+
+
+
+</div>
+
+
+
+					</div>
+				
+					<div class="abbv-col abbv-col-6">
+						
+
+
+
+
+    
+    
+    <div class="cta parbase">
+
+
+
+    
+        
+            
+            
+                
+                    
+	<a data-digitaldata='{"digitalData":{"page":{"link":{"name":"Yes","displayTitle":"YES","type":"external","url":"https://www.linzesshcp.com/"},"component":{"type":"content","l10title":"","title":"FOR HEALTHCARE PROFESSIONALS","name":"CTA","position":"content"},"content":{},"interaction":{"type":"","name":"YES","id":"abbv-cta-1471978159","tags":""},"menu":{}}}}' class="   abbv-icon-keyboard_arrow_right abbv-button-primary i-a linzess-new-window linzess-hcp-yes abbv-modal-close-inline " role="link" aria-label="YES, Opens in a new window" href="https://www.linzesshcp.com/" target="_blank" data-linktype="external" aria-hidden="false">YES</a>
+
+                
+            
+            
+        
+    
+
+
+
+</div>
+
+
+
+					</div>
+				
+			
+		
+        
+	</div>
+</div>
+
+
+<!-- End: AbbVie Columns Component --></div>
+
+
+
+    </div>
+
+
+
+
+    
+    
+
+
+
+
+</div>
+
+
+
+							
+							
+						</div>
+					</div>
+				</div>
+			
+
+			
+			
+			
+			
+			
+			
+			
+			
+		
+	<!-- End: AbbVie Modal Component -->
+</div>
+
+    
+        
+        
+        <div class="modal parbase">
+
+
+	<!-- Begin: AbbVie Modal Component -->
+	
+		
+			
+				<div class="abbv-modal telemed linzess-telemed-modal-container " data-id="telemed" aria-modal="true" role="dialog" tabindex="-1" aria-hidden="false" aria-label="Telemed modal">
+				  	<div class="abbv-modal-content-container">
+						<span class="abbv-modal-close abbv-icon-close i-a" role="button" aria-label="close" tabindex="0" data-digitaldata='{"digitalData":{"page":{"component":{"l10title":"","name":"modal","position":"Content","type":"Navigation","title":""},"link":{"displayTitle":"modal","name":"Close","type":"internal","url":""},"interaction":{"name":"","id":"abbv-modal-2031845514","type":"link","tags":""},"mva":{"tier":"","name":"","type":"","category":""},"menu":{},"content":{}}}}'>
+						</span>
+						<div class="abbv-modal-content">
+							<div class="abbv-animation-loading"></div>
+							
+								
+
+
+
+
+    
+    
+    <div class="container parbase">
+
+
+
+    <div class="abbv-container linzess-telemed-modal">
+        
+
+
+
+
+    
+    
+    <div class="columns parbase">
+<!-- Begin: AbbVie Columns Component -->
+
+
+<div class="abbv-row-container linzess-telemed-header">
+    <div class="abbv-row abbv-row-flush">
+		
+			
+				
+					<div class="abbv-col abbv-col-6">
+						
+
+
+
+
+    
+    
+    <div class="image-text parbase">
+
+
+
+
+
+
+    <style>
+                .abbv-image-text-v1-1365362749-large {
+                        display: inline-block;
+                    }
+    </style>
+
+
+<!-- Begin: AbbVie Image + Text Component -->
+
+<div class="abbv-image-text linzess-telemed-header-logo">
+    
+
+        <div class="abbv-image-content-container   i-b">
+            <img src="/content/dam/linzess/images/linzess-logo-nav.png" class="abbv-image-text-img abbv-image-text-v1-1365362749-large" alt/>
+        </div>
+        
+        
+
+    
+
+    
+
+</div>
+
+<!-- End: AbbVie Image + Text Component -->
+</div>
+
+
+
+					</div>
+				
+					<div class="abbv-col abbv-col-6">
+						
+
+
+
+
+    
+    
+    <div class="rich-text">
+
+    
+    <div class="abbv-rich-text linzess-telemed-header-body abbv-rich-text-common">
+        <p>For adults with Irritable Bowel Syndrome with Constipation (IBS-C) or Chronic Idiopathic Constipation (CIC)</p>
+
+    </div>
+
+</div>
+
+
+
+					</div>
+				
+			
+		
+        
+	</div>
+</div>
+
+
+<!-- End: AbbVie Columns Component --></div>
+
+
+    
+    
+    <div class="titles parbase">
+
+<div class="abbv-title linzess-telemed-title">
+    <h1>TALK TO A DOCTOR ONLINE TODAY* </h1>
+</div></div>
+
+
+    
+    
+    <div class="columns parbase">
+<!-- Begin: AbbVie Columns Component -->
+
+
+<div class="abbv-row-container linzess-telemed-body">
+    <div class="abbv-row abbv-row-flush">
+		
+			
+				
+					<div class="abbv-col abbv-col-4">
+						
+
+
+
+
+    
+    
+    <div class="image-text parbase">
+
+
+
+
+
+
+
+
+
+
+
+
+    <style>
+                .abbv-image-text-v1-305911841-large {
+                        display: inline-block;
+                    }
+    </style>
+
+<!-- Begin: AbbVie Image + Text Component -->
+<div class="abbv-image-text linzess-telemed-body-image ">
+    
+        
+        <div class="abbv-image-content-container   i-b">
+            <img src="/content/dam/linzess/images/0.0-homepage-d-1-telemed-questions@2x.png" class="abbv-image-text-img abbv-image-text-v1-305911841-large" alt/>
+        </div>
+        
+        
+        
+
+    
+
+    
+        <div class="abbv-image-text-content-container abbv-image-text-below abbv-image-text-desktop-out-mobile-out">
+            <div class="abbv-image-text-content  
+" style="background: rgba(0,0,0, 0.0);">
+                <div class="abbv-image-text-display abbv-rich-text-common">
+                    <p>Answer a few quick questions about your symptoms.</p>
+
+                    
+                </div>
+            </div>
+        </div>
+    
+</div>
+<!-- End: AbbVie Image + Text Component -->
+</div>
+
+
+
+					</div>
+				
+					<div class="abbv-col abbv-col-4">
+						
+
+
+
+
+    
+    
+    <div class="image-text parbase">
+
+
+
+
+
+
+
+
+
+
+
+
+    <style>
+                .abbv-image-text-v1-1047397856-large {
+                        display: inline-block;
+                    }
+    </style>
+
+<!-- Begin: AbbVie Image + Text Component -->
+<div class="abbv-image-text linzess-telemed-body-image ">
+    
+        
+        <div class="abbv-image-content-container   i-b">
+            <img src="/content/dam/linzess/images/0.0-homepage-d-2-connect-doctor@2x.png" class="abbv-image-text-img abbv-image-text-v1-1047397856-large" alt/>
+        </div>
+        
+        
+        
+
+    
+
+    
+        <div class="abbv-image-text-content-container abbv-image-text-below abbv-image-text-desktop-out-mobile-out">
+            <div class="abbv-image-text-content  
+" style="background: rgba(0,0,0, 0.0);">
+                <div class="abbv-image-text-display abbv-rich-text-common">
+                    <p>Connect with a doctor online to find out if it could be IBS-C or CIC.</p>
+
+                    
+                </div>
+            </div>
+        </div>
+    
+</div>
+<!-- End: AbbVie Image + Text Component -->
+</div>
+
+
+
+					</div>
+				
+					<div class="abbv-col abbv-col-4">
+						
+
+
+
+
+    
+    
+    <div class="image-text parbase">
+
+
+
+
+
+
+
+
+
+
+
+
+    <style>
+                .abbv-image-text-v1-1894259743-large {
+                        display: inline-block;
+                    }
+    </style>
+
+<!-- Begin: AbbVie Image + Text Component -->
+<div class="abbv-image-text linzess-telemed-body-image ">
+    
+        
+        <div class="abbv-image-content-container   i-b">
+            <img src="/content/dam/linzess/images/0.0-homepage-d-3-prescription@2x.png" class="abbv-image-text-img abbv-image-text-v1-1894259743-large" alt/>
+        </div>
+        
+        
+        
+
+    
+
+    
+        <div class="abbv-image-text-content-container abbv-image-text-below abbv-image-text-desktop-out-mobile-out">
+            <div class="abbv-image-text-content  
+" style="background: rgba(0,0,0, 0.0);">
+                <div class="abbv-image-text-display abbv-rich-text-common">
+                    <p>If approved, pick up your prescription from your local pharmacy.</p>
+
+                    
+                </div>
+            </div>
+        </div>
+    
+</div>
+<!-- End: AbbVie Image + Text Component -->
+</div>
+
+
+
+					</div>
+				
+			
+		
+        
+	</div>
+</div>
+
+
+<!-- End: AbbVie Columns Component --></div>
+
+
+    
+    
+    <div class="rich-text">
+
+    
+    <div class="abbv-rich-text linzess-footnotes-txt linzess-telemed-disclaimer abbv-rich-text-common">
+        <p>*Third-party website; does not constitute an endorsement or recommendation by AbbVie. A fee will be charged by the telemedicine provider.</p>
+
+    </div>
+
+</div>
+
+
+    
+    
+    <div class="cta parbase">
+
+
+
+    
+        
+            
+            
+                
+                    
+	<a data-digitaldata='{"digitalData":{"page":{"link":{"name":"ACKNOWLEDGE AND CONTINUE","displayTitle":"Acknowledge and Continue","type":"external","url":"https://www.linzess.com/page-not-found"},"component":{"type":"content","l10title":"","title":"Linzess","name":"CTA","position":"content"},"content":{},"interaction":{"type":"","name":"Acknowledge and Continue","id":"abbv-cta-1867754281","tags":""},"mva":{"name":"Talk to a Doctor Online","tier":"primary","type":"Link","category":"Doctor Search"},"menu":{}}}}' class="    abbv-button-primary  linzess-new-window " role="link" aria-label="Acknowledge and Continue" href="https://www.linzess.com/page-not-found" target="_self" data-linktype="external" aria-hidden="false">Acknowledge and Continue</a>
+
+                
+            
+            
+        
+    
+
+
+
+</div>
+
+
+    
+    
+    <div class="cta parbase">
+
+
+
+    
+        
+            
+            
+                
+                    
+	<a data-digitaldata='{"digitalData":{"page":{"link":{"name":"Cancel","displayTitle":"Cancel","type":"internal","url":"#"},"component":{"type":"content","l10title":"TALK TO A DOCTOR ONLINE","title":"TALK TO A DOCTOR ONLINE","name":"CTA","position":"content"},"content":{},"interaction":{"type":"","name":"Cancel","id":"abbv-cta-635383959","tags":""},"menu":{}}}}' class="    abbv-button-plain  abbv-modal-close-inline " role="link" aria-label="Cancel" href="#" data-linktype="internal" aria-hidden="false">Cancel</a>
+
+                
+            
+            
+        
+    
+
+
+
+</div>
+
+
+    
+    
+    <div class="rich-text">
+
+    
+    <div class="abbv-rich-text linzess-footnotes-txt linzess-telemed-disclaimer abbv-rich-text-common">
+        <p><b>You are now leaving LINZESS.com</b></p>
+<p>By clicking “Acknowledge and Continue” above, you acknowledge and agree that neither AbbVie nor Ironwood does, in any way, endorse or recommend UpScript, a telemedicine provider, the qualifications of any physician associated with UpScript, or the quality of medical care any of those physicians can provide. You also acknowledge and agree that neither AbbVie nor Ironwood makes any guarantees that using UpScript will result in your desired outcome. It is wholly and solely your responsibility to assess the qualifications of a potential physician. AbbVie and Ironwood recommend that you meet and discuss the benefits and risks of all potential treatments with the potential physician. ABBVIE, IRONWOOD, AND THEIR RESPECTIVE AFFILIATES HEREBY DISCLAIM ANY LIABILITY ARISING FROM YOUR USE AND/OR RELIANCE ON THE INFORMATION CONTAINED ON THE UPSCRIPT WEBSITE. If you agree to the above, click “Acknowledge and Continue” to proceed to the UpScript website. If you do not agree to the above, click “Cancel” to remain on LINZESS.com.</p>
+
+    </div>
+
+</div>
+
+
+
+    </div>
+
+
+
+
+    
+    
+
+
+
+
+</div>
+
+
+
+							
+							
+						</div>
+					</div>
+				</div>
+			
+
+			
+			
+			
+			
+			
+			
+			
+			
+		
+	<!-- End: AbbVie Modal Component -->
+</div>
+
+    
+        
+        
+        <div class="modal parbase">
+
+
+	<!-- Begin: AbbVie Modal Component -->
+	
+		
+			
+				<div class="abbv-modal linzesstalktoadoctor linzess-talk-to-doctor-modal " data-id="linzesstalktoadoctor" aria-modal="true" role="dialog" tabindex="-1" aria-hidden="false" aria-label="Talk to a doctor modal">
+				  	<div class="abbv-modal-content-container">
+						<span class="abbv-modal-close abbv-icon-close i-a" role="button" aria-label="close" tabindex="0" data-digitaldata='{"digitalData":{"page":{"component":{"l10title":"","name":"modal","position":"Content","type":"Navigation","title":""},"link":{"displayTitle":"modal","name":"Close","type":"internal","url":""},"interaction":{"name":"","id":"abbv-modal-1243886462","type":"link","tags":""},"mva":{"tier":"","name":"","type":"","category":""},"menu":{},"content":{}}}}'>
+						</span>
+						<div class="abbv-modal-content">
+							<div class="abbv-animation-loading"></div>
+							
+								
+
+
+
+
+    
+    
+    <div class="container parbase">
+
+
+
+    <div class="abbv-container linzess-wol-modal linzess-ttad-modal">
+        
+
+
+
+
+    
+    
+    <div class="columns parbase">
+<!-- Begin: AbbVie Columns Component -->
+
+
+<div class="abbv-row-container ">
+    <div class="abbv-row abbv-row-flush">
+		
+			
+				
+					<div class="abbv-col abbv-col-6">
+						
+
+
+
+
+    
+    
+    <div class="background-container parbase">
+
+
+
+
+
+
+
+	
+
+	
+	
+
+    
+	
+
+    
+	
+
+    
+	
+
+    
+	
+		<style type='text/css'>
+			@media (min-width: 985px) 
+			{ #background-container-783970685 .abbv-background-container-display { 
+				background-image : url("/content/dam/linzess/images/homepage-d-doctor-home.png");
+				} 
+			} 
+			@media (min-width: 601px) and (max-width: 984px) 
+			{ #background-container-783970685  .abbv-background-container-display{
+				 background-image : url("/content/dam/linzess/images/homepage-d-doctor-home.png");
+				 }
+			} 
+			@media (max-width: 600px)
+			 {  #background-container-783970685 .abbv-background-container-display {
+			 	 background-image : url("/content/dam/linzess/images/0.0-homepage-m-doctor-home.png");
+			 	 } 
+			 }
+			 
+			
+			 
+			</style>
+		<div>
+	 			
+    <div class="abbv-background-container  linzess-modal-bkg" id="background-container-783970685">
+        <div class="abbv-background-container-display abbv-background-container-image-swap-bg  "></div>
+        <div class="abbv-background-container-content">
+            <div>
+
+
+
+
+</div>
+            <div class="abbv-clear"></div>
+            
+
+        </div>
+    </div>
+
+		</div>
+	
+
+    
+	
+
+    
+	
+</div>
+
+
+
+					</div>
+				
+					<div class="abbv-col abbv-col-6">
+						
+
+
+
+
+    
+    
+    <div class="titles parbase">
+
+<div class="abbv-title linzess-modal-title">
+    <h1>TALK TO A DOCTOR ONLINE</h1>
+</div></div>
+
+
+    
+    
+    <div class="rich-text">
+
+    
+    <div class="abbv-rich-text linzess-modal-body abbv-rich-text-common">
+        <p>Did you know you can talk to a doctor today from the comfort of your home? Connect with a healthcare professional online about your symptoms.</p>
+
+    </div>
+
+</div>
+
+
+    
+    
+    <div class="columns parbase">
+<!-- Begin: AbbVie Columns Component -->
+
+
+<div class="abbv-row-container linzess-modal-buttons">
+    <div class="abbv-row abbv-row-flush">
+		
+			
+				
+					<div class="abbv-col abbv-col-12">
+						
+
+
+
+
+    
+    
+    <div class="cta parbase">
+
+
+
+    
+        
+            
+            
+                
+                    
+	<a data-digitaldata='{"digitalData":{"page":{"link":{"name":"","displayTitle":"NO THANKS","type":"internal","url":"#"},"component":{"type":"content","l10title":"","title":"","name":"CTA","position":"content"},"content":{},"interaction":{"type":"","name":"NO THANKS","id":"abbv-cta-283153599","tags":""},"menu":{}}}}' class="    abbv-button-primary  abbv-modal-close-inline " role="link" aria-label="NO THANKS" href="#" data-linktype="internal" aria-hidden="false">NO THANKS</a>
+
+                
+            
+            
+        
+    
+
+
+
+</div>
+
+
+    
+    
+    <div class="cta parbase">
+
+
+
+    
+        
+            
+            
+                
+                    
+	<a data-digitaldata='{"digitalData":{"page":{"link":{"name":"","displayTitle":"GET STARTED","type":"internal","url":"/content/linzess/en-us/find-relief/talk-to-a-doctor"},"component":{"type":"content","l10title":"","title":"","name":"CTA","position":"content"},"content":{},"interaction":{"type":"","name":"GET STARTED","id":"abbv-cta-1613750972","tags":""},"menu":{}}}}' class="    abbv-button-primary i-a  " role="link" aria-label="GET STARTED" href="/find-relief/talk-to-a-doctor" data-linktype="internal" aria-hidden="false">GET STARTED</a>
+
+                
+            
+            
+        
+    
+
+
+
+</div>
+
+
+
+					</div>
+				
+			
+		
+        
+	</div>
+</div>
+
+
+<!-- End: AbbVie Columns Component --></div>
+
+
+    
+    
+    <div class="columns parbase">
+<!-- Begin: AbbVie Columns Component -->
+
+
+<div class="abbv-row-container ">
+    <div class="abbv-row ">
+		
+        
+	</div>
+</div>
+
+
+<!-- End: AbbVie Columns Component --></div>
+
+
+
+					</div>
+				
+			
+		
+        
+	</div>
+</div>
+
+
+<!-- End: AbbVie Columns Component --></div>
+
+
+
+    </div>
+
+
+
+
+    
+    
+
+
+
+
+</div>
+
+
+
+							
+							
+						</div>
+					</div>
+				</div>
+			
+
+			
+			
+			
+			
+			
+			
+			
+			
+		
+	<!-- End: AbbVie Modal Component -->
+</div>
+
+    
+        
+        
+        <div class="modal parbase">
+
+
+	<!-- Begin: AbbVie Modal Component -->
+	
+		
+			
+				<div class="abbv-modal wolmedicalguide  " data-id="wolmedicalguide" aria-modal="true" role="dialog" tabindex="-1" aria-hidden="false" aria-label="Warn on leave - Medical Guide">
+				  	<div class="abbv-modal-content-container">
+						<span class="abbv-modal-close abbv-icon-close i-a" role="button" aria-label="close" tabindex="0" data-digitaldata='{"digitalData":{"page":{"component":{"l10title":"","name":"modal","position":"Content","type":"Navigation","title":""},"link":{"displayTitle":"modal","name":"Close","type":"internal","url":""},"interaction":{"name":"","id":"abbv-modal-1953247932","type":"link","tags":""},"mva":{"tier":"","name":"","type":"","category":""},"menu":{},"content":{}}}}'>
+						</span>
+						<div class="abbv-modal-content">
+							<div class="abbv-animation-loading"></div>
+							
+								
+
+
+
+
+    
+    
+    <div class="container parbase">
+
+
+
+    <div class="abbv-container linzess-wol-modal">
+        
+
+
+
+
+    
+    
+    <div class="titles parbase">
+
+<div class="abbv-title linzess-modal-title">
+    <h1>YOU ARE NOW LEAVING LINZESS.COM </h1>
+</div></div>
+
+
+    
+    
+    <div class="rich-text">
+
+    
+    <div class="abbv-rich-text linzess-modal-body abbv-rich-text-common">
+        <p>Links to other websites are provided as a service to you. AbbVie and Ironwood Pharmaceuticals accept no responsibility for the content of other websites.</p>
+<p>Would you like to continue?</p>
+
+    </div>
+
+</div>
+
+
+    
+    
+    <div class="columns parbase">
+<!-- Begin: AbbVie Columns Component -->
+
+
+<div class="abbv-row-container linzess-modal-buttons">
+    <div class="abbv-row abbv-row-flush">
+		
+			
+				
+					<div class="abbv-col abbv-col-12">
+						
+
+
+
+
+    
+    
+    <div class="cta parbase">
+
+
+
+    
+        
+            
+            
+                
+                    
+	<a data-digitaldata='{"digitalData":{"page":{"link":{"name":"","displayTitle":"No","type":"internal","url":"#"},"component":{"type":"content","l10title":"","title":"","name":"CTA","position":"content"},"content":{},"interaction":{"type":"","name":"No","id":"abbv-cta-583979286","tags":""},"menu":{}}}}' class="    abbv-button-primary  abbv-modal-close-inline " role="link" aria-label="No" href="#" data-linktype="internal" aria-hidden="false">No</a>
+
+                
+            
+            
+        
+    
+
+
+
+</div>
+
+
+    
+    
+    <div class="cta parbase">
+
+
+
+    
+        
+            
+            
+                
+                    
+	<a data-digitaldata='{"digitalData":{"page":{"link":{"name":"","displayTitle":"Yes","type":"download","url":"https://www.rxabbvie.com/pdf/linzess_pi.pdf#page\u003d21"},"component":{"type":"content","l10title":"","title":"","name":"CTA","position":"content"},"content":{"type":"","title":"Yes","name":"linzess_pi.pdf#page\u003d21"},"interaction":{"type":"","name":"Yes","id":"abbv-cta-740550437","tags":""},"menu":{}}}}' class="    abbv-button-primary  linzess-new-window " role="link" aria-label="Yes, Opens in a new window" href="https://www.rxabbvie.com/pdf/linzess_pi.pdf#page=21" target="_blank" data-linktype="download" aria-hidden="false">Yes</a>
+
+                
+            
+            
+        
+    
+
+
+
+</div>
+
+
+
+					</div>
+				
+			
+		
+        
+	</div>
+</div>
+
+
+<!-- End: AbbVie Columns Component --></div>
+
+
+
+    </div>
+
+
+
+
+    
+    
+
+
+
+
+</div>
+
+
+
+							
+							
+						</div>
+					</div>
+				</div>
+			
+
+			
+			
+			
+			
+			
+			
+			
+			
+		
+	<!-- End: AbbVie Modal Component -->
+</div>
+
+    
+        
+        
+        <div class="modal parbase">
+
+
+	<!-- Begin: AbbVie Modal Component -->
+	
+		
+			
+				<div class="abbv-modal acwol  " data-id="acwol" aria-modal="true" role="dialog" tabindex="-1" aria-hidden="false" aria-label="Advertising Choices wol modal">
+				  	<div class="abbv-modal-content-container">
+						<span class="abbv-modal-close abbv-icon-close i-a" role="button" aria-label="close" tabindex="0" data-digitaldata='{"digitalData":{"page":{"component":{"l10title":"","name":"modal","position":"Content","type":"Navigation","title":""},"link":{"displayTitle":"modal","name":"Close","type":"internal","url":""},"interaction":{"name":"","id":"abbv-modal-1982185212","type":"link","tags":""},"mva":{"tier":"","name":"","type":"","category":""},"menu":{},"content":{}}}}'>
+						</span>
+						<div class="abbv-modal-content">
+							<div class="abbv-animation-loading"></div>
+							
+								
+
+
+
+
+    
+    
+    <div class="container parbase">
+
+
+
+    <div class="abbv-container linzess-wol-modal">
+        
+
+
+
+
+    
+    
+    <div class="titles parbase">
+
+<div class="abbv-title linzess-modal-title">
+    <h1>YOU ARE NOW LEAVING LINZESS.COM </h1>
+</div></div>
+
+
+    
+    
+    <div class="rich-text">
+
+    
+    <div class="abbv-rich-text linzess-modal-body abbv-rich-text-common">
+        <p>Links to third-party content are provided as a convenience for informational purposes only. They are not meant to replace your healthcare provider’s medical advice or treatment. The organizations listed have not endorsed AbbVie and Ironwood or any of their respective products or services. AbbVie and Ironwood have listed these sites only as a convenience and according to the permissions granted by their respective terms of use. Each organization has its own terms and conditions and privacy policy that you should read if you choose to contact any of them.</p>
+<p>Would you like to continue?</p>
+
+    </div>
+
+</div>
+
+
+    
+    
+    <div class="columns parbase">
+<!-- Begin: AbbVie Columns Component -->
+
+
+<div class="abbv-row-container linzess-modal-buttons">
+    <div class="abbv-row abbv-row-flush">
+		
+			
+				
+					<div class="abbv-col abbv-col-12">
+						
+
+
+
+
+    
+    
+    <div class="cta parbase">
+
+
+
+    
+        
+            
+            
+                
+                    
+	<a data-digitaldata='{"digitalData":{"page":{"link":{"name":"","displayTitle":"No","type":"internal","url":"#"},"component":{"type":"content","l10title":"","title":"","name":"CTA","position":"content"},"content":{},"interaction":{"type":"","name":"No","id":"abbv-cta-1043530383","tags":""},"menu":{}}}}' class="    abbv-button-primary  abbv-modal-close-inline " role="link" aria-label="No" href="#" data-linktype="internal" aria-hidden="false">No</a>
+
+                
+            
+            
+        
+    
+
+
+
+</div>
+
+
+    
+    
+    <div class="cta parbase">
+
+
+
+    
+        
+            
+            
+                
+                    
+	<a data-digitaldata='{"digitalData":{"page":{"link":{"name":"","displayTitle":"Yes","type":"external","url":"http://info.evidon.com/pub_info/6678?v\u003d1\u0026nt\u003d0\u0026nw\u003dfalse"},"component":{"type":"content","l10title":"","title":"","name":"CTA","position":"content"},"content":{},"interaction":{"type":"","name":"Yes","id":"abbv-cta-680494868","tags":""},"menu":{}}}}' class="    abbv-button-primary  linzess-new-window " role="link" aria-label="Yes, Opens in a new window" href="http://info.evidon.com/pub_info/6678?v=1&nt=0&nw=false" target="_blank" data-linktype="external" aria-hidden="false">Yes</a>
+
+                
+            
+            
+        
+    
+
+
+
+</div>
+
+
+
+					</div>
+				
+			
+		
+        
+	</div>
+</div>
+
+
+<!-- End: AbbVie Columns Component --></div>
+
+
+
+    </div>
+
+
+
+
+    
+    
+
+
+
+
+</div>
+
+
+
+							
+							
+						</div>
+					</div>
+				</div>
+			
+
+			
+			
+			
+			
+			
+			
+			
+			
+		
+	<!-- End: AbbVie Modal Component -->
+</div>
+
+    
+        
+        
+        <div class="modal parbase">
+
+
+	<!-- Begin: AbbVie Modal Component -->
+	
+		
+			
+				<div class="abbv-modal linzesspatientstories  " data-id="linzesspatientstories" aria-modal="true" role="dialog" tabindex="-1" aria-hidden="false" aria-label="Advertising Choices wol modal">
+				  	<div class="abbv-modal-content-container">
+						<span class="abbv-modal-close abbv-icon-close i-a" role="button" aria-label="close" tabindex="0" data-digitaldata='{"digitalData":{"page":{"component":{"l10title":"","name":"modal","position":"Content","type":"Navigation","title":""},"link":{"displayTitle":"modal","name":"Close","type":"internal","url":""},"interaction":{"name":"","id":"abbv-modal-434375897","type":"link","tags":""},"mva":{"tier":"","name":"","type":"","category":""},"menu":{},"content":{}}}}'>
+						</span>
+						<div class="abbv-modal-content">
+							<div class="abbv-animation-loading"></div>
+							
+								
+
+
+
+
+    
+    
+    <div class="container parbase">
+
+
+
+    <div class="abbv-container linzess-wol-modal">
+        
+
+
+
+
+    
+    
+    <div class="video-player parbase">
+
+
+
+    
+    	
+			
+		
+		
+		
+            <div></div>
+            
+		
+			<div class="abbv-video-player " data-autoplay="false" data-socialshare="false" data-externalchaptersmenu="false" data-recommendedvideo="false" data-digitaldata='{"digitalData":{"page":{"component":{"l10title":"","name":"Brightcove Video Player","position":"content","type":"Video Player","title":""},"link":{},"interaction":{"name":"","id":"abbv-video-1658859518","type":"video interaction","tags":""},"mva":{},"menu":{},"content":{}}}}'>
+				<div class="abbv-row-container">
+					<div class="abbv-row-flush">
+						<div class="abbv-col abbv-video-content-container content-none">
+							<div class="abbv-video-container aspect-ratio-16-9">
+								
+								
+									<video-js id="abbv-video-2003586792" class="video-js" data-video-id="5982261847001" data-account="1029485116001" data-player="Mcp9TXMkPT" data-embed="default" data-application-id controls>
+									</video-js>
+								
+							</div>
+							<div></div>
+							
+    <div class="abbv-video-content">
+        <h3></h3>
+        <p></p>
+        
+        
+        
+            <a href="/" target="_blank" class="transcript-link   ">Transcript</a>
+        
+        
+        
+        
+    </div>
+
+						</div>
+					</div>
+				</div>
+			</div>
+			
+
+    	
+		
+		
+		
+		
+	
+	
+		
+    
+<script type="text/javascript" src="/etc.clientlibs/common-elements/v1/components/content/video-player/clientlibs-component.min.02d5f0a8f169e935fbbea301c07dd2bc.js" defer></script>
+
+
+	</div>
+
+
+
+    </div>
+
+
+
+
+    
+    
+
+
+
+
+</div>
+
+
+
+							
+							
+						</div>
+					</div>
+				</div>
+			
+
+			
+			
+			
+			
+			
+			
+			
+			
+		
+	<!-- End: AbbVie Modal Component -->
+</div>
+
+    
+        
+        
+        <div class="modal parbase">
+
+
+	<!-- Begin: AbbVie Modal Component -->
+	
+		
+			
+				<div class="abbv-modal linzessmodalshare orilissa-modal " data-id="linzessmodalshare" aria-modal="true" role="dialog" tabindex="-1" aria-hidden="false" aria-label="Linzess Modal Share">
+				  	<div class="abbv-modal-content-container">
+						<span class="abbv-modal-close abbv-icon-close i-a" role="button" aria-label="close" tabindex="0" data-digitaldata='{"digitalData":{"page":{"component":{"l10title":"","name":"modal","position":"Content","type":"Navigation","title":""},"link":{"displayTitle":"modal","name":"Close","type":"internal","url":""},"interaction":{"name":"","id":"abbv-modal-221610502","type":"link","tags":""},"mva":{"tier":"","name":"","type":"","category":""},"menu":{},"content":{}}}}'>
+						</span>
+						<div class="abbv-modal-content">
+							<div class="abbv-animation-loading"></div>
+							
+								
+
+
+
+
+    
+    
+    <div class="container parbase">
+
+
+
+    <div class="abbv-container linzess-wol-modal">
+        
+
+
+
+
+    
+    
+    <div class="titles parbase">
+
+<div class="abbv-title linzess-modal-title">
+    <h1>Share</h1>
+</div></div>
+
+
+    
+    
+    <div class="send-email parbase">
+
+
+	
+	<div class="abbv-send-email ori-send-email ">
+		<div class="send-email-form">
+			<div class="send-email-instruction-text">
+				<p></p>
+			</div>
+			
+			<form action="#" class="abbv-send-email-form" method="post" name="abbv-send-email" data-share-api="/content/linzess/en-us/modals/share-modal/jcr:content/contentpar/container/containerparsys/send_email_copy">
+			    <a aria-hidden="true" style="display:none" id="abbv-email-share-url"></a>
+				<div class="abbv-form-wrapper sender-name">
+					<div class="label-wrapper">
+						<label class="abbv-label-text" for="Text"></label>
+						<button class="abbv-button-plain more-info abbv-icon-info i-a"></button>
+					</div>
+					<input type="text" class="senderName" placeholder="Endo Info" name="senderName"/>
+					<p class="abbv-additional-info"></p>
+					<span class="abbv-error-msg" data-err-msg="Invalid Input"></span>
+				</div>
+				<div class="abbv-form-wrapper sender-email">
+					<div class="label-wrapper">
+						<label class="abbv-label-text" for="Text">Email address</label>
+						<button class="abbv-button-plain more-info abbv-icon-info i-a"></button>
+					</div>
+					<input type="text" class="senderEmail" name="senderEmail"/>
+					<p class="abbv-additional-info"></p>
+					<span class="abbv-error-msg" data-err-msg="Invalid Input"></span>
+				</div>
+				<p></p>
+				<div class="abbv-form-wrapper recipient-name">
+					<div class="label-wrapper">
+						<label class="abbv-label-text" for="Text"></label>
+						<button class="abbv-button-plain more-info abbv-icon-info i-a"></button>
+					</div>
+					<input type="text" class="recipientName" name="recipientName"/>
+					<p class="abbv-additional-info"></p>
+					<span class="abbv-error-msg" data-err-msg="Invalid Input"></span>
+				</div>
+				<div class="abbv-form-wrapper recipient-email">
+					<div class="label-wrapper">
+						<label class="abbv-label-text" for="Text"></label>
+						<button class="abbv-button-plain more-info abbv-icon-info i-a"></button>
+					</div>
+					<input type="text" class="recipientEmail" name="recipientEmail"/>
+					<p class="abbv-additional-info"></p>
+					<span class="abbv-error-msg" data-err-msg="Invalid Input"></span>
+				</div>
+				<div class="send-email-buttons">
+					<button class="abbv-button-primary more-info    btn-cancel-email">Cancel</button>
+					<button class="abbv-button-primary more-info    btn-submit-email">Send</button>
+				</div>
+				<div class="abbv-badgeless-captcha">
+					This site is protected by reCAPTCHA and the Google
+					<a href="https://policies.google.com/privacy" target="_blank" aria-label="Privacy Policy opens in new window">Privacy Policy</a> and
+					<a href="https://policies.google.com/terms" target="_blank" aria-label="Terms of Service opens in new window">Terms of Service</a> apply.
+				</div>
+				<div class="g-recaptcha js-v2" data-sitekey="6Ld-4xkiAAAAAIqU4DUDupoGer6ss43KQeOGEtk0" data-badge="inline" data-size="invisible"></div>
+
+			</form>
+		</div>
+		<div class="loading">
+			<div class="abbv-animation-loading"></div>
+			<div class="main-success">
+				<span class="success-msg" data-success-msg="Thank you, the email has been sent."></span>
+				
+			</div>
+			<div class="main-error">
+				<span data-err-no-api="Sorry, there was an error. Please try again."></span>
+				<button class="abbv-button-plain abbv-icon-close i-a"></button>
+			</div>
+		</div>
+	</div>
+
+
+
+	
+    
+<script type="text/javascript" src="/etc.clientlibs/common-elements/v1/components/content/send-email/clientlibs-component.min.490f56b68f7a8ed465cf4c2536306c0d.js" defer></script>
+
+
+</div>
+
+
+
+    </div>
+
+
+
+
+    
+    
+
+
+
+
+</div>
+
+
+
+							
+							
+						</div>
+					</div>
+				</div>
+			
+
+			
+			
+			
+			
+			
+			
+			
+			
+		
+	<!-- End: AbbVie Modal Component -->
+</div>
+
+    
+        
+        
+        <div class="modal parbase">
+
+
+	<!-- Begin: AbbVie Modal Component -->
+	
+		
+			
+				<div class="abbv-modal ironwoodWOL wol-modal-ironwood " data-id="ironwoodWOL" aria-modal="true" role="dialog" tabindex="-1" aria-hidden="false" aria-label="Warn on leave popup alerting user they are leaving the site to go to an unaffiliated third-party site.">
+				  	<div class="abbv-modal-content-container">
+						<span class="abbv-modal-close abbv-icon-close i-a" role="button" aria-label="close" tabindex="0" data-digitaldata='{"digitalData":{"page":{"component":{"l10title":"","name":"modal","position":"Content","type":"Navigation","title":""},"link":{"displayTitle":"modal","name":"Close","type":"internal","url":""},"interaction":{"name":"","id":"abbv-modal-535776699","type":"link","tags":""},"mva":{"tier":"","name":"","type":"","category":""},"menu":{},"content":{}}}}'>
+						</span>
+						<div class="abbv-modal-content">
+							<div class="abbv-animation-loading"></div>
+							
+								
+
+
+
+
+    
+    
+    <div class="container parbase">
+
+
+
+    <div class="abbv-container ">
+        
+
+
+
+
+    
+    
+    <div class="titles parbase">
+
+<div class="abbv-title ">
+    <h2 class="wol-modal-ironwood">You are leaving an AbbVie hosted website.</h2>
+</div></div>
+
+
+    
+    
+    <div class="rich-text">
+
+    
+    <div class="abbv-rich-text wol-modal-ironwood abbv-rich-text-common">
+        <p>You are leaving the AbbVie website and connecting to a site that is not under the control of AbbVie. AbbVie is not responsible for the content of any such site or any further links from such site. AbbVie is providing these links to you only as a convenience and the inclusion of any link does not imply the endorsement of the linked site by AbbVie. You should also be aware that the linked site may be governed by its own set of terms and conditions and privacy policy for which AbbVie has no responsibility.​</p>
+<p>Conversely, the presence of this link does not imply the linked site’s endorsement of AbbVie.</p>
+<p>​Do you wish to leave this site?​</p>
+
+    </div>
+
+</div>
+
+
+    
+    
+    <div class="columns parbase">
+<!-- Begin: AbbVie Columns Component -->
+
+
+<div class="abbv-row-container exit-modal-ctas">
+    <div class="abbv-row abbv-row-flush">
+		
+			
+				
+					<div class="abbv-col abbv-col-6">
+						
+
+
+
+
+    
+    
+    <div class="cta parbase">
+
+
+
+    
+        
+            
+            
+                
+                    
+	<a data-digitaldata='{"digitalData":{"page":{"link":{"name":"No","displayTitle":"No","type":"internal","url":""},"component":{"type":"content","l10title":"","title":"You are leaving an AbbVie hosted website","name":"CTA","position":"content"},"content":{},"interaction":{"type":"","name":"No","id":"abbv-cta-1230893767","tags":""},"menu":{}}}}' class="   abbv-icon-keyboard_arrow_right abbv-button-primary i-a abbv-modal-close-inline float-right " role="link" aria-label="No" tabindex="0" target="_self" data-linktype="internal" aria-hidden="false">No</a>
+
+                
+            
+            
+        
+    
+
+
+
+</div>
+
+
+
+					</div>
+				
+					<div class="abbv-col abbv-col-6">
+						
+
+
+
+
+    
+    
+    <div class="cta parbase">
+
+
+
+    
+        
+            
+            
+                
+                    
+	<a data-digitaldata='{"digitalData":{"page":{"link":{"name":"Yes","displayTitle":"Yes","type":"external","url":"https://ironwoodpharma.com"},"component":{"type":"content","l10title":"","title":"You are leaving an AbbVie hosted website","name":"CTA","position":"content"},"content":{},"interaction":{"type":"","name":"Yes","id":"abbv-cta-1727670027","tags":""},"menu":{}}}}' class="   abbv-icon-keyboard_arrow_right abbv-button-primary i-a linzess-new-window abbv-modal-close-inline " role="link" aria-label="Yes, Opens in a new window" href="https://ironwoodpharma.com" target="_blank" data-linktype="external" aria-hidden="false">Yes</a>
+
+                
+            
+            
+        
+    
+
+
+
+</div>
+
+
+
+					</div>
+				
+			
+		
+        
+	</div>
+</div>
+
+
+<!-- End: AbbVie Columns Component --></div>
+
+
+    
+    
+    <div class="rich-text">
+
+    
+    <div class="abbv-rich-text  abbv-rich-text-common">
+        <p style="text-align: left;margin-top: 30.0px;">US-LIN-250071</p>
+
+    </div>
+
+</div>
+
+
+
+    </div>
+
+
+
+
+    
+    
+
+
+
+
+</div>
+
+
+
+							
+							
+						</div>
+					</div>
+				</div>
+			
+
+			
+			
+			
+			
+			
+			
+			
+			
+		
+	<!-- End: AbbVie Modal Component -->
+</div>
+
+    
+        
+        
+        <div class="modal parbase">
+
+
+	<!-- Begin: AbbVie Modal Component -->
+	
+		
+			
+				<div class="abbv-modal termsandconditions  " data-id="termsandconditions" data-cookie-expire="0" aria-modal="true" role="dialog" tabindex="-1" aria-hidden="false" aria-label="T&amp;C Modal opened via link in the footer">
+				  	<div class="abbv-modal-content-container">
+						<span class="abbv-modal-close abbv-icon-close i-a" role="button" aria-label="close" tabindex="0" data-digitaldata='{"digitalData":{"page":{"component":{"l10title":"","name":"modal","position":"Content","type":"Navigation","title":""},"link":{"displayTitle":"modal","name":"Close","type":"internal","url":""},"interaction":{"name":"","id":"abbv-modal-45785790","type":"link","tags":""},"mva":{"tier":"","name":"","type":"","category":""},"menu":{},"content":{}}}}'>
+						</span>
+						<div class="abbv-modal-content">
+							<div class="abbv-animation-loading"></div>
+							
+								
+
+
+
+
+    
+    
+    <div class="container parbase">
+
+
+
+    <div class="abbv-container linzess-wol-modal">
+        
+
+
+
+
+    
+    
+    <div class="titles parbase">
+
+<div class="abbv-title linzess-modal-title">
+    <h1>Terms and Conditions</h1>
+</div></div>
+
+
+    
+    
+    <div class="rich-text">
+
+    
+    <div class="abbv-rich-text linzess-modal-body abbv-rich-text-common">
+        <p>These Online Terms of Use govern your access to the site, which links to these Online Terms of Use. These Online Terms of Use do not apply to AbbVie or Ironwood websites that do not link to these Online Terms of Use, or to third-party websites to which AbbVie or Ironwood websites may link. Your use of the site is subject to these Online Terms of Use and the <a href="https://www.abbvie.com/privacy.html" target="_blank"><u>Privacy Policy</u>.</a></p>
+<p>Without prejudice to your rights under applicable law, AbbVie and Ironwood reserve the right to amend these Online Terms of Use to reflect technological advancements, legal and regulatory changes and good business practices. If AbbVie and Ironwood change these Online Terms of Use, an updated version of these Online Terms of Use will reflect those changes and we will notify you of such changes by updating the effective date at the top of these Online Terms of Use. By accessing the site, you agree that you have read, understand, and agree to be bound to the current version of these Online Terms of Use which you may view when accessing the site. If you disagree with these Online Terms of Use, or are dissatisfied with the site, your sole and exclusive remedy is to discontinue using the site.</p>
+<hr />
+
+<p><b>Disclaimers</b></p>
+<p>You acknowledge and agree that:</p>
+<p>Although we strive to provide the latest developments relating to our products and services, and other information about AbbVie or Ironwood, we do not warrant the accuracy, effectiveness, and suitability of any information contained in the site. Each person assumes full responsibility and all risks arising from use of the site. The information is presented “AS IS” and may include technical inaccuracies or typographical errors. AbbVie and Ironwood reserve the right to make additions, deletions, or modifications to the information contained on the site at any time without any prior notification.</p>
+<p>ABBVIE AND IRONWOOD MAKE NO REPRESENTATIONS OR WARRANTIES OF ANY KIND OR NATURE WITH RESPECT TO THE INFORMATION OR CONTENT POSTED ON THE SITE. ABBVIE AND IRONWOOD HEREBY DISCLAIM ALL REPRESENTATIONS AND WARRANTIES, WHETHER EXPRESS OR IMPLIED, CREATED BY LAW, CONTRACT OR OTHERWISE, INCLUDING, WITHOUT LIMITATION, ANY WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, TITLE OR NON-INFRINGEMENT. IN NO EVENT SHALL ABBVIE OR IRONWOOD BE LIABLE FOR ANY DAMAGES OF ANY KIND OR NATURE, INCLUDING, WITHOUT LIMITATION, DIRECT, INDIRECT, SPECIAL (INCLUDING LOSS OF PROFIT) CONSEQUENTIAL OR INCIDENTAL DAMAGES ARISING FROM OR IN CONNECTION WITH THE EXISTENCE OR USE OF THE SITE, AND/OR THE INFORMATION OR CONTENT POSTED ON THE SITE, REGARDLESS OF WHETHER ABBVIE OR IRONWOOD HAVE BEEN ADVISED AS TO THE POSSIBILITY OF SUCH DAMAGES.</p>
+<p>AbbVie and Ironwood are not responsible, and provide no warranty whatsoever, for the accuracy, effectiveness, timeliness and suitability of any information or content obtained from third parties, including any hyperlinks to or from third-party sites. Except as otherwise provided on the site, AbbVie and Ironwood will not edit, censor, or otherwise control any content provided by third parties on any bulletin board, chat room or other similar forums posted on the site. Such information should, therefore, be considered as suspect and is not endorsed by AbbVie or Ironwood.</p>
+<p>The site may contain forward-looking statements that reflect AbbVie and/or Ironwood’s current expectation regarding future events and business development. The forward-looking statements involve risks and uncertainties. Actual developments or results could differ materially from those projected and depend on a number of factors including, but not limited to, the success of current research programs, results of pending or future clinical trials, ongoing commercialization of its products, regulatory approvals of pharmaceuticals, validity and enforcement of its patents, the stability of its commercial relationships, and the general economic conditions. AbbVie and Ironwood intend to update the site on a regular basis but assume no obligation to update any of the content.</p>
+<hr />
+
+<p><b>Your Use</b></p>
+<p>You understand, acknowledge, and agree to the following:</p>
+<p>By using the site, you agree not to disrupt or intercept our electronic information posted on the site or on any of AbbVie or Ironwood’s servers. You also agree not to attempt to circumvent any security features of the site, and to abide by all applicable, local, state, federal and international laws, rules, and regulations.</p>
+<p>You grant to AbbVie the right to use all content you upload or otherwise transmit to the site, subject to these Online Terms of Use and AbbVie’s <a href="https://www.abbvie.com/privacy.html" target="_blank"><u>Privacy Policy</u></a> in any manner AbbVie chooses, including, but not limited, to copying, displaying, performing or publishing it in any format whatsoever, modifying it, incorporating it into other material, or making a derivative work based on it. To the extent allowed by applicable law you waive any moral rights you may have to content you upload or otherwise transmit to the site (if any).</p>
+<p>Except as expressly stated and agreed upon in advance by AbbVie and Ironwood, no confidential relationship shall be established in the event that any user of the site should make any oral, written or electronic communication to AbbVie and/or Ironwood (such as feedback, questions, comments, suggestions, ideas, etc.). If the site requires or requests that such information be provided, and that such information contains personal identifying information (e.g., name, address, phone number, email address), AbbVie shall obtain, use, and maintain it in a manner consistent with AbbVie’s <a href="https://www.abbvie.com/privacy.html" target="_blank"><u>Privacy Policy</u></a>. Otherwise, such communication and any information submitted therewith shall be considered non-confidential, and AbbVie shall be free to reproduce, publish, or otherwise use such information for any purposes whatsoever including, without limitation, the research, development, manufacture, use, or sale of products incorporating such information. The sender of any information to AbbVie and/or Ironwood is fully responsible for its content, including its truthfulness and accuracy, and its non-infringement of any other person’s proprietary or privacy rights.</p>
+<hr />
+
+<p><b>Product Labeling</b></p>
+<p>Product names, descriptions, and labeling may be of U.S. origin or of a third country’s origin which is not your country of residence. Products may not be available in all countries or may be available under a different brand name, in different strengths, or for different indications. Many of the products listed are available only by prescription through your local health care professional. Except as expressly stated and agreed upon in advance by AbbVie and Ironwood, no director, employee, agent, or representative of AbbVie or Ironwood, its subsidiaries and affiliates are engaged in rendering medical advice, diagnosis, treatment, or other medical services that in any way create a physician-patient relationship through the site.</p>
+<hr />
+
+<p><b>Intellectual Property</b></p>
+<p>The information, documents, and related graphics published in the site (the “Information”) are the sole property of AbbVie and/or Ironwood, except for information provided by third-party providers under contract to AbbVie and/or Ironwood. Permission to use the Information is granted, provided that (1) the above copyright notice appears on all copies; (2) use of the Information is for informational and non-commercial or personal use only; (3) the Information is not modified in any way; and (4) no graphics available from this website are used separate from accompanying text. AbbVie and Ironwood are not responsible for content provided by third-party providers, and you are prohibited from distribution of such material without permission of the owner of the copyright therein. Except as permitted above, no license or right, express or implied, is granted to any person under any patent, trademark or other proprietary right of AbbVie or Ironwood. No use of any AbbVie or Ironwood trademark, trade names, trade dress, and products in the site may be made without the prior written authorization of AbbVie and/or Ironwood, except to identify the product or services of the company.</p>
+<hr />
+
+<p><b>Privacy and Security</b></p>
+<p>AbbVie is committed to safeguarding your privacy online. We understand the importance of privacy to our customers and visitors to the site. AbbVie’s use of personally identifiable information is governed by AbbVie’s <a href="https://www.abbvie.com/privacy.html" target="_blank"><u>Privacy Policy</u></a> and by accessing and using the site, you agree to be bound by that <a href="https://www.abbvie.com/privacy.html" target="_blank"><u>Privacy Policy</u></a>.</p>
+<p>You recognize and agree that when submitting your personally identifiable information to the site, while AbbVie has safeguards in place to prevent unauthorized access or interception, there is no absolute guarantee of security. IN THE UNLIKELY EVENT OF AN INTERCEPTION OR UNAUTHORIZED ACCESS DESPITE OUR EFFORTS, NEITHER ABBVIE NOR IRONWOOD SHALL BE RESPONSIBLE FOR SUCH INTERCEPTIONS OR UNAUTHORIZED ACCESS, OR ANY DIRECT, INDIRECT, SPECIAL, INCIDENTAL, OR CONSEQUENTIAL DAMAGES (INCLUDING LOST PROFITS) SUFFERED BY A CUSTOMER OR USER, EVEN IF ABBVIE OR IRONWOOD HAS PREVIOUSLY BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES, ABBVIE AND IRONWOOD DO NOT WARRANT, EITHER EXPRESSLY OR IMPLIED, THAT THE INFORMATION PROVIDED BY ANY CUSTOMER SHALL BE FREE FROM INTERCEPTION OR UNAUTHORIZED ACCESS, AND DOES NOT PROVIDE ANY IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE. EACH CUSTOMER IS RESPONSIBLE FOR MAINTAINING THE CONFIDENTIALITY OF HIS OR HER OWN PASSWORD.</p>
+<hr />
+
+<p><b>Limitation of Liability</b></p>
+<p>AbbVie and Ironwood do not assume any liability for the materials, information and opinions provided on, posted to, or otherwise available through, the site. Reliance on these materials, information, and opinions is solely at your own risk. AbbVie and Ironwood disclaim any liability for injury or damages resulting from the use of the site, or the content contained thereon.</p>
+<p>THE SITE, THE SITE CONTENT, AND THE PRODUCTS AND SERVICES PROVIDED ON OR AVAILABLE THROUGH THE SITE ARE PROVIDED ON AN “AS IS” AND “AS AVAILABLE” BASIS, WITH ALL FAULTS. IN NO EVENT SHALL ABBVIE, IRONWOOD, OR THEIR VENDORS, OR THEIR RESPECTIVE DIRECTORS, EMPLOYEES OR AGENTS (HEREINAFTER “ABBVIE/IRONWOOD PARTIES”) BE LIABLE FOR ANY DAMAGES OF ANY KIND, UNDER ANY LEGAL THEORY, ARISING OUT OF, OR IN CONNECTION WITH YOUR USE OF, OR INABILITY TO USE, THE SITE, THE SITE CONTENT, ANY SERVICES PROVIDED ON OR THROUGH THE SITE, OR ANY LINKED SITE, INCLUDING ANY SPECIAL, INDIRECT, PUNITIVE, INCIDENTAL, EXEMPLARY OR CONSEQUENTIAL DAMAGES, INCLUDING, BUT NOT LIMITED TO, PERSONAL INJURY, LOST PROFITS OR DAMAGES RESULTING FROM DELAY, INTERRUPTION IN SERVICE, VIRUSES, DELETION OF FILES OR ELECTRONIC COMMUNICATIONS, OR ERRORS, OMISSIONS OR OTHER INACCURACIES IN THE SITE OR THE SITE CONTENT, WHETHER OR NOT THERE IS NEGLIGENCE BY ABBVIE OR IRONWOOD AND WHETHER OR NOT ABBVIE OR IRONWOOD HAVE BEEN ADVISED OF THE POSSIBILITY OF ANY SUCH DAMAGES. You agree that regardless of any applicable law to the contrary, you cannot file a claim or cause of action arising out of or related to the site or these Online Terms of Use more than one (1) year after such claim or cause of action arose. <b>PLEASE BE AWARE THAT ADDITIONAL LEGAL NOTICES, DISCLAIMERS, AND OTHER TERMS AND CONDITIONS MAY APPLY TO THE SITE.</b></p>
+<hr />
+
+<p><b>General</b></p>
+<p>You agree that these Online Terms of Use and the <a href="https://www.abbvie.com/privacy.html" target="_blank"><u>Privacy Policy</u></a> describe the entire agreement between us with respect to its subject matter. The site was created and are operated under the laws of the State of Illinois. The laws of the State of Illinois will control the terms provided in these Online Terms and Conditions, to the extent that the laws of the State of Illinois are not overridden by applicably mandatory law, e.g. consumer protection laws applying to you. If a court of competent jurisdiction finds that any provision of these Online Terms of Use is invalid or unenforceable, you agree that the other provisions of these Online Terms of Use will remain in full force and effect.</p>
+
+    </div>
+
+</div>
+
+
+    
+    
+    <div class="rich-text">
+
+    
+    <div class="abbv-rich-text  abbv-rich-text-common">
+        <p style="text-align: left;margin-top: 30.0px;">US-LIN-250071</p>
+
+    </div>
+
+</div>
+
+
+
+    </div>
+
+
+
+
+    
+    
+
+
+
+
+</div>
+
+
+
+							
+							
+						</div>
+					</div>
+				</div>
+			
+
+			
+			
+			
+			
+			
+			
+			
+			
+		
+	<!-- End: AbbVie Modal Component -->
+</div>
+
+    
+
+</div>
+
+    
+
+</div>
+		
+
+
+
+
+    
+        
+        
+        <div class="newpar new section">
+
+</div>
+
+    
+        
+        
+        <div class="par iparys_inherited">
+
+    
+    
+    
+    
+        
+        
+        <div class="safety-bar parbase">
+
+	
+		<!-- Begin: AbbVie Safety Bar Component -->
+		
+		<div class="abbv-safety-bar  linzess-safety-bar">
+			<div class="abbv-safety-bar-button-plus abbv-icon-add_circle i-a" role="button" aria-label="Expand Safety Information" data-digitaldata='{"digitalData":{"page":{"component":{"l10title":"","name":"Safety Bar","position":"Footer","type":"Content","title":""},"link":{"displayTitle":"Safety Bar","name":"Expand","type":"internal","url":""},"interaction":{"name":"Expand","id":"abbv-safetybar-544202375","type":"link","tags":""},"mva":{"tier":"","name":"","type":"","category":""},"menu":{},"content":{}}}}'></div>
+			<div class="abbv-safety-bar-button-minus abbv-icon-remove_circle i-a" aria-label="Minimize Safety Information" data-digitaldata='{"digitalData":{"page":{"component":{"l10title":"","name":"Safety Bar","position":"Footer","type":"Content","title":""},"link":{"displayTitle":"Safety Bar","name":"Collapse","type":"internal","url":""},"interaction":{"name":"Collapse","id":"abbv-safetybar-544202375","type":"link","tags":""},"mva":{"tier":"","name":"","type":"","category":""},"menu":{},"content":{}}}}'></div>
+			<div class="abbv-safety-bar-fade"></div>
+			<div class="abbv-safety-bar-content abbv-safety-bar-less abbv-safety-bar-content-minimized-desktop">
+				<div class="abbv-row-container">
+					<div class="abbv-row abbv-row-flush">
+						<div class="abbv-col abbv-col-6">
+							<div role="region" aria-label="USES"><h3>USES</h3>
+<p><span style="background-color: transparent;">LINZESS<sup>®</sup> (linaclotide) is a prescription medication used to treat irritable bowel syndrome with constipation (IBS-C) in adults and in children and adolescents 7 years of age and older, chronic idiopathic constipation (CIC) in adults, and functional constipation (FC) in children and adolescents 6 years of age and older. “Idiopathic” means the cause of the constipation is unknown.<b> It is not known if LINZESS is safe and effective in children with functional constipation less than 6 years of age or in children with IBS-C less than 7 years of age.</b></span></p>
+</div>
+
+						</div>
+						<div class="abbv-col abbv-col-6">
+							<div role="region" aria-label="IMPORTANT RISK INFORMATION"><h2 class="safetybar-iri-text">IMPORTANT RISK INFORMATION</h2>
+<ul>
+<li><span style="background-color: transparent;"><b>Do not give LINZESS to children who are less than 2 years of age. It may harm them.</b> LINZESS can cause severe diarrhea and your child could get severe dehydration (loss of a large amount of body water and salt).</span></li>
+<li><span style="background-color: transparent;">Do not take LINZESS if a doctor has told you that you have a bowel blockage (intestinal obstruction).</span></li>
+</ul>
+<p class="linzess-isi-subtitle"><b>Before you take LINZESS, tell your doctor about your medical conditions, including if you are:</b></p>
+</div>
+
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="abbv-safety-bar-content abbv-safety-bar-less abbv-safety-bar-content-minimized-mobile">
+				<div class="abbv-row-container">
+					<div class="abbv-row abbv-row-flush">
+						
+						<div class="abbv-col abbv-col-6">
+							<div role="region" aria-label="IMPORTANT RISK INFORMATION"><h2 class="safetybar-iri-text">IMPORTANT RISK INFORMATION</h2>
+<ul>
+<li><span style="background-color: transparent;"><b>Do not give LINZESS to children who are less than 2 years of age. It may harm them.</b> LINZESS can cause severe diarrhea and your child could get severe dehydration (loss of a large amount of body water and salt).</span></li>
+</ul>
+</div>
+
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="abbv-safety-bar-content abbv-safety-bar-more abbv-safety-bar-content-minimized-desktop-more">
+				<div class="abbv-row-container">
+					<div class="abbv-row abbv-row-flush">
+						<div class="abbv-col abbv-col-6">
+							<div role="region" aria-label="USES"><h3>USES</h3>
+<p><span style="background-color: transparent;">LINZESS<sup>®</sup> (linaclotide) is a prescription medication used to treat irritable bowel syndrome with constipation (IBS-C) in adults and in children and adolescents 7 years of age and older, chronic idiopathic constipation (CIC) in adults, and functional constipation (FC) in children and adolescents 6 years of age and older. “Idiopathic” means the cause of the constipation is unknown.<b> It is not known if LINZESS is safe and effective in children with functional constipation less than 6 years of age or in children with IBS-C less than 7 years of age.<br />
+</b> </span></p>
+</div>
+
+						</div>
+						<div class="abbv-col abbv-col-6">
+							<div role="region" aria-label="IMPORTANT RISK INFORMATION"><h2 class="safetybar-iri-text">IMPORTANT RISK INFORMATION</h2>
+<ul>
+<li><span style="background-color: transparent;"><b>Do not give LINZESS to children who are less than 2 years of age. It may harm them.</b> LINZESS can cause severe diarrhea and your child could get severe dehydration (loss of a large amount of body water and salt).</span></li>
+<li><span style="background-color: transparent;">Do not take LINZESS if a doctor has told you that you have a bowel blockage (intestinal obstruction).</span></li>
+</ul>
+<p class="linzess-isi-subtitle"><b>Before you take LINZESS, tell your doctor about your medical conditions, including if you are:</b></p>
+</div>
+
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="abbv-safety-bar-content abbv-safety-bar-more abbv-safety-bar-content-minimized-mobile-more">
+				<div class="abbv-row-container">
+					<div class="abbv-row abbv-row-flush">
+						
+						<div class="abbv-col abbv-col-6">
+							<div role="region" aria-label="IMPORTANT RISK INFORMATION"><h2 class="safetybar-iri-text">IMPORTANT RISK INFORMATION</h2>
+<ul>
+<li><span style="background-color: transparent;"><b>Do not give LINZESS to children who are less than 2 years of age. It may harm them.</b> LINZESS can cause severe diarrhea and your child could get severe dehydration (loss of a large amount of body water and salt).</span></li>
+</ul>
+</div>
+
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="abbv-safety-bar-content abbv-safety-bar-content-maximized">
+				<div class="abbv-row-container">
+					<div class="abbv-row abbv-row-flush">
+						<div class="abbv-col abbv-col-12">
+							
+
+
+
+
+    
+    
+    <div class="rich-text">
+
+    
+    <div class="abbv-rich-text linzess-use-statement abbv-rich-text-common">
+        <h3>USES</h3>
+<p><span style="background-color: transparent;">LINZESS<sup>®</sup> (linaclotide) is a prescription medication used to treat irritable bowel syndrome with constipation (IBS-C) in adults and in children and adolescents 7 years of age and older, chronic idiopathic constipation (CIC) in adults, and functional constipation (FC) in children and adolescents 6 years of age and older. “Idiopathic” means the cause of the constipation is unknown. <b>It is not known if LINZESS is safe and effective in children with functional constipation less than 6 years of age or in children with IBS-C less than 7 years of age.</b></span></p>
+
+    </div>
+
+</div>
+
+
+
+						</div>
+						<div class="abbv-col abbv-col-12">
+							
+
+
+
+
+    
+    
+    <div class="rich-text">
+
+    
+    <div class="abbv-rich-text linzess-isi-iri abbv-rich-text-common">
+        <h3><p class="linzess-isi-subtitle"><b>IMPORTANT RISK INFORMATION</b><br /> </p> </h3> 
+<ul> 
+ <li><span style="background-color: transparent;"><b>Do not give LINZESS to children who are less than 2 years of age. It may harm them.</b> LINZESS can cause severe diarrhea and your child could get severe dehydration (loss of a large amount of body water and salt). </span></li> 
+ <li><span style="background-color: transparent;">Do not take LINZESS if a doctor has told you that you have a bowel blockage (intestinal obstruction).</span></li> 
+</ul> 
+<p class="linzess-isi-subtitle"><b>Before you take LINZESS, tell your doctor about your medical conditions, including if you are:</b></p> 
+<ul> 
+ <li><span style="background-color: transparent;">Pregnant or plan to become pregnant. It is not known if LINZESS will harm your unborn baby.</span></li> 
+ <li><span style="background-color: transparent;">Breastfeeding or plan to breastfeed. You and your doctor should decide if you will take LINZESS and breastfeed.</span><br /> </li> 
+</ul> 
+<p><br /> <b>Tell your doctor about all the medicines you take,</b> including prescription and over-the-counter medicines, vitamins, and herbal supplements.</p> 
+<p><b class="linzess-text-purple"><br /> Side Effects</b></p> 
+<p><b>LINZESS can cause serious side effects, including diarrhea, which is the most common side effect and can sometimes be severe.</b> Diarrhea often begins within the first 2 weeks of LINZESS treatment. <b>Stop taking LINZESS and call your doctor right away if you get severe diarrhea during treatment with LINZESS.</b></p> 
+<p>Other common side effects of LINZESS in people with IBS-C and CIC include gas, stomach-area (abdomen) pain, and swelling, or a feeling of fullness or pressure in your abdomen (distention).</p> 
+<p><b>Call your doctor or go to the nearest hospital emergency room right away if you develop unusual or severe stomach-area (abdomen) pain, especially if you also have bright red, bloody stools or black stools that look like tar.</b></p> 
+<p>These are not all the possible side effects of LINZESS. For more information, ask your doctor or pharmacist. </p> 
+<p><b>You are encouraged to report negative side effects of prescription drugs to the FDA. Visit <a target="_blank" href="https://www.fda.gov/medwatch" data-digitaldata="{&quot;digitalData&quot;:{&quot;page&quot;:{&quot;component&quot;:{&quot;l10title&quot;:&quot;&quot;,&quot;name&quot;:&quot;rte&quot;,&quot;position&quot;:&quot;footer&quot;,&quot;type&quot;:&quot;navigation&quot;,&quot;title&quot;:&quot;ISI&quot;},&quot;link&quot;:{&quot;displayTitle&quot;:&quot;www.fda.gov/medwatch&quot;,&quot;name&quot;:&quot;www.fda.gov/medwatch&quot;,&quot;type&quot;:&quot;internal&quot;},&quot;interaction&quot;:{&quot;id&quot;:&quot;rte-1390444555-0&quot;,&quot;type&quot;:&quot;link&quot;},&quot;mva&quot;:{&quot;name&quot;:&quot;&quot;,&quot;tier&quot;:&quot;&quot;,&quot;type&quot;:&quot;&quot;},&quot;menu&quot;:{&quot;level&quot;:&quot;&quot;,&quot;location&quot;:&quot;&quot;},&quot;content&quot;:{&quot;type&quot;:&quot;&quot;}}}}">www.fda.gov/medwatch</a> or call <a style="white-space: nowrap;" href="tel:18003321088" data-digitaldata="{&quot;digitalData&quot;:{&quot;page&quot;:{&quot;component&quot;:{&quot;l10title&quot;:&quot;&quot;,&quot;name&quot;:&quot;rte&quot;,&quot;position&quot;:&quot;footer&quot;,&quot;type&quot;:&quot;navigation&quot;,&quot;title&quot;:&quot;ISI&quot;},&quot;link&quot;:{&quot;displayTitle&quot;:&quot;1-800-FDA-1088&quot;,&quot;name&quot;:&quot;1-800-FDA-1088&quot;,&quot;type&quot;:&quot;internal&quot;},&quot;interaction&quot;:{&quot;id&quot;:&quot;rte-1390444555-1&quot;,&quot;type&quot;:&quot;link&quot;},&quot;mva&quot;:{&quot;name&quot;:&quot;&quot;,&quot;tier&quot;:&quot;&quot;,&quot;type&quot;:&quot;&quot;},&quot;menu&quot;:{&quot;level&quot;:&quot;&quot;,&quot;location&quot;:&quot;&quot;},&quot;content&quot;:{&quot;type&quot;:&quot;&quot;}}}}">1-800-FDA-1088</a>.</b></p> 
+<p><b>If you are having difficulty paying for your medicine, AbbVie and Ironwood may be able to help. Visit <a data-digitaldata="{&quot;digitalData&quot;:{&quot;page&quot;:{&quot;link&quot;:{&quot;name&quot;:&quot;AbbVie.com/PatientAccessSupport&quot;,&quot;displayTitle&quot;:&quot;new link&quot;,&quot;type&quot;:&quot;external&quot;,&quot;url&quot;:&quot;https://www.abbvie.com/patients/patient-support.html&quot;},&quot;component&quot;:{&quot;type&quot;:&quot;content&quot;,&quot;l10title&quot;:&quot;&quot;,&quot;title&quot;:&quot;ISI&quot;,&quot;name&quot;:&quot;RTE&quot;,&quot;position&quot;:&quot;content&quot;},&quot;interaction&quot;:{&quot;id&quot;:&quot;rte-1390444555-2&quot;,&quot;name&quot;:&quot;&quot;,&quot;type&quot;:&quot;content&quot;},&quot;mva&quot;:{&quot;name&quot;:&quot;&quot;,&quot;tier&quot;:&quot;&quot;,&quot;type&quot;:&quot;&quot;,&quot;category&quot;:&quot;&quot;}}}}" href="https://www.abbvie.com/patients/patient-support.html" target="_blank">AbbVie.com/PatientAccessSupport</a> to learn more.</b></p> 
+<p><b>Please see full </b><a href="https://www.rxabbvie.com/pdf/linzess_pi.pdf" target="_blank" data-digitaldata="{&quot;digitalData&quot;:{&quot;page&quot;:{&quot;link&quot;:{&quot;name&quot;:&quot;Prescribing Information&quot;,&quot;displayTitle&quot;:&quot;Prescribing Information&quot;,&quot;type&quot;:&quot;external&quot;,&quot;url&quot;:&quot;https://www.rxabbvie.com/pdf/linzess_pi.pdf&quot;},&quot;component&quot;:{&quot;type&quot;:&quot;content&quot;,&quot;l10title&quot;:&quot;&quot;,&quot;title&quot;:&quot;ISI&quot;,&quot;name&quot;:&quot;RTE&quot;,&quot;position&quot;:&quot;content&quot;},&quot;interaction&quot;:{&quot;id&quot;:&quot;rte-1390444555-3&quot;,&quot;name&quot;:&quot;&quot;,&quot;type&quot;:&quot;content&quot;},&quot;mva&quot;:{&quot;name&quot;:&quot;&quot;,&quot;tier&quot;:&quot;&quot;,&quot;type&quot;:&quot;&quot;,&quot;category&quot;:&quot;&quot;}}}}">Prescribing Information</a><b>, including Boxed Warning, and </b><a href="https://www.rxabbvie.com/pdf/linzess_pi.pdf#page=26" target="_blank" data-digitaldata="{&quot;digitalData&quot;:{&quot;page&quot;:{&quot;link&quot;:{&quot;name&quot;:&quot;Medication Guide&quot;,&quot;displayTitle&quot;:&quot;Medication Guide&quot;,&quot;type&quot;:&quot;external&quot;,&quot;url&quot;:&quot;https://www.rxabbvie.com/pdf/linzess_pi.pdf#page=26&quot;},&quot;component&quot;:{&quot;type&quot;:&quot;content&quot;,&quot;l10title&quot;:&quot;&quot;,&quot;title&quot;:&quot;ISI&quot;,&quot;name&quot;:&quot;RTE&quot;,&quot;position&quot;:&quot;content&quot;},&quot;interaction&quot;:{&quot;id&quot;:&quot;rte-1390444555-4&quot;,&quot;name&quot;:&quot;&quot;,&quot;type&quot;:&quot;content&quot;},&quot;mva&quot;:{&quot;name&quot;:&quot;&quot;,&quot;tier&quot;:&quot;&quot;,&quot;type&quot;:&quot;&quot;,&quot;category&quot;:&quot;&quot;}}}}">Medication Guide</a><b>.</b></p> 
+<p>US-LIN-250121</p>
+    </div>
+
+</div>
+
+
+
+						</div>
+						
+						
+		 			</div>
+				</div>
+			</div>
+ 		</div>
+	<!-- End: AbbVie Safety Bar Component -->
+	
+</div>
+
+    
+
+</div>
+
+    
+
+
+
+		<svg class="abbv-svg-defs" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve">
+		<defs>
+		  <linearGradient id="abbv-h-gradient-1" x1="0" y1="0" x2="1" y2="0">
+			<stop offset="0%" stop-color="#23417b"/>
+			<stop offset="100%" stop-color="#071d49"/>
+		  </linearGradient>
+		  <linearGradient id="abbv-h-gradient-2" x1="0" y1="0" x2="1" y2="0">
+			<stop offset="0%" stop-color="#c0bdc2"/>
+			<stop offset="100%" stop-color="#96999e"/>
+		  </linearGradient>
+		  <linearGradient id="abbv-v-gradient-1" x1="0" y1="0" x2="0" y2="1">
+			<stop offset="0%" stop-color="#23417b"/>
+			<stop offset="100%" stop-color="#071d49"/>
+		  </linearGradient>
+		  <linearGradient id="abbv-v-gradient-2" x1="0" y1="0" x2="0" y2="1">
+			<stop offset="0%" stop-color="#c0bdc2"/>
+			<stop offset="100%" stop-color="#96999e"/>
+		  </linearGradient>
+		  <radialGradient id="abbv-r-gradient-1">
+			<stop offset="0%" stop-color="#23417b"/>
+			<stop offset="100%" stop-color="#071d49"/>
+		  </radialGradient>
+		  <radialGradient id="abbv-r-gradient-2">
+			<stop offset="0%" stop-color="#c0bdc2"/>
+			<stop offset="100%" stop-color="#96999e"/>
+		  </radialGradient>
+		   <clipPath id="abbv-square-point" clipPathUnits="objectBoundingBox">
+			<rect x=".15" y=".15" width=".7" height=".7"/>
+		  </clipPath>
+		  <clipPath id="abbv-diamond-point" clipPathUnits="objectBoundingBox">
+			<path d="M0,.5 L.5,0 L1,.5 L.5,1 z"/>
+		  </clipPath>
+		  
+		</defs>
+	</svg>
+	</div>
+
+	
+		
+
+	
+		
+	
+	
+		
+    
+<script src="/etc/clientlibs/common-elements/clientlibs/v1/components.min.d86f246ab301e538b3827932c679e386.js"></script>
+
+
+
+	
+	
+	
+
+	
+
+	
+
+	
+</body>
+        
+    
+</html>

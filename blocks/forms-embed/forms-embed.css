@@ -1,0 +1,54 @@
+/* stylelint-disable */
+
+/* Forms Embed block — host container for an embedded AbbVie Cloud adaptive form.
+   The injected form ships its own runtime CSS via the abbviecloudforms
+   clientlibs; this file only sizes the host, centers it in the content column,
+   and provides the loading spinner shown until the form markup is injected. */
+
+.forms-embed {
+  display: block;
+  width: 100%;
+}
+
+.forms-embed .cmp-formsembed-widget {
+  max-width: 998px;
+  margin: 0 auto;
+  padding: 40px 20px 80px;
+  box-sizing: border-box;
+  position: relative;
+  z-index: 2;
+}
+
+/* Loading spinner shown while the adaptive form is fetched + injected. */
+.forms-embed .cmp-adaptiveform-container-form-loading {
+  min-height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.forms-embed .cmp-adaptiveform-container-form-loading.abbv-animation-loading::after {
+  content: "";
+  width: 48px;
+  height: 48px;
+  border: 4px solid var(--linz-light-purple, #d9d7f9);
+  border-top-color: var(--linz-dark-purple, #422e83);
+  border-radius: 50%;
+  animation: forms-embed-spin 0.8s linear infinite;
+}
+
+@keyframes forms-embed-spin {
+  to { transform: rotate(360deg); }
+}
+
+.forms-embed .afsection {
+  width: 100%;
+}
+
+/* Graceful failure message matches the original's fallback copy. */
+.forms-embed .afsection > p {
+  text-align: center;
+  color: var(--text-color, #4d4d4f);
+  font-size: 16px;
+  padding: 40px 0;
+}
