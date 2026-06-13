@@ -11,7 +11,9 @@ export default async function decorate(block) {
   const fragmentPath = linkEl?.textContent?.trim() || '';
   let isiUrl;
   if (fragmentPath.startsWith('/')) {
-    isiUrl = `/content${fragmentPath}.plain.html`;
+    // Authored as an absolute fragment path (e.g. /isi). The content root is
+    // mounted at the site root, so reference it directly — no /content prefix.
+    isiUrl = `${fragmentPath}.plain.html`;
   } else {
     const dir = window.location.pathname.replace(/\/$/, '');
     isiUrl = `${dir}/isi.plain.html`;

@@ -10,14 +10,9 @@ async function fetchFragment(path) {
 
 export default async function decorate(block) {
   const footerMeta = getMetadata('footer');
-  let footerPath;
-  if (footerMeta) {
-    footerPath = new URL(footerMeta, window.location).pathname;
-  } else {
-    const pathParts = window.location.pathname.replace(/\/$/, '').split('/');
-    const siteRoot = pathParts.slice(0, 3).join('/');
-    footerPath = `${siteRoot}/footer`;
-  }
+  // footer is a site-root fragment; default to /footer so it resolves on every
+  // page regardless of depth (the content root is mounted at the site root).
+  const footerPath = footerMeta ? new URL(footerMeta, window.location).pathname : '/footer';
   const fragment = await fetchFragment(`${footerPath}.plain.html`);
   if (!fragment) return;
 
