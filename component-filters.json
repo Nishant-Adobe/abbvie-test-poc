@@ -103,10 +103,6 @@
     ]
   },
   {
-    "id": "columns-promo",
-    "components": []
-  },
-  {
     "id": "columns",
     "components": [
       "column"
@@ -120,6 +116,10 @@
       "button",
       "title"
     ]
+  },
+  {
+    "id": "promo-tout",
+    "components": []
   },
   {
     "id": "table",

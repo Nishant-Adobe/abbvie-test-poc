@@ -17,7 +17,7 @@
           ]
         },
         {
-          "name": "columns-promo",
+          "name": "promo-tout",
           "instances": [
             ".abbv-row-container.eligible-tout",
             ".abbv-row-container.background-off-white.image-text-wrapper:not(.savings-card-tout)",
@@ -60,9 +60,9 @@
           "selector": ".abbv-container.background-white.home-background-white-arc",
           "style": "white",
           "blocks": [
-            "columns-promo",
+            "promo-tout",
             "cards-feature",
-            "columns-promo"
+            "promo-tout"
           ],
           "defaultContent": [
             ".abbv-rich-text.ibs-brief-section"
@@ -88,7 +88,7 @@
           "selector": ".abbv-container.background-white.background-white-arc.pb24-m",
           "style": "white",
           "blocks": [
-            "columns-promo"
+            "promo-tout"
           ],
           "defaultContent": [
             ".abbv-rich-text.max-690.c-linz-dark-purple",
@@ -153,7 +153,7 @@
           ]
         },
         {
-          "name": "columns-promo",
+          "name": "promo-tout",
           "instances": [
             ".abbv-row-container.savings-card-tout"
           ]
@@ -239,7 +239,7 @@
           "style": "white",
           "blocks": [
             "video-playlist",
-            "columns-promo"
+            "promo-tout"
           ],
           "defaultContent": [
             ".abbv-rich-text:has(.eyebrow)",

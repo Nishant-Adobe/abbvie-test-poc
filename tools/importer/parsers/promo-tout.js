@@ -2,7 +2,7 @@
 /* global WebImporter */
 
 /**
- * Parser: columns-promo
+ * Parser: promo-tout
  * Base block: columns
  * Source: https://www.linzess.com/
  * Selectors: .abbv-row-container.eligible-tout,
@@ -55,7 +55,12 @@ export default function parse(element, { document }) {
       cell2.push(cta);
     });
 
-    cells.push([cell1, cell2]);
+    // Emit as TWO rows (one per model field group): image, then text.
+    // A single 2-column row would make md2jcr misalign fields.
+    cell1.unshift(document.createComment(' field:image '));
+    cell2.unshift(document.createComment(' field:text '));
+    cells.push([cell1]);
+    cells.push([cell2]);
   } else {
     // Fallback: single column or unexpected structure
     // Try to find image and text content anywhere in element
@@ -76,9 +81,14 @@ export default function parse(element, { document }) {
       cell2.push(cta);
     });
 
-    cells.push([cell1, cell2]);
+    // Emit as TWO rows (one per model field group): image, then text.
+    // A single 2-column row would make md2jcr misalign fields.
+    cell1.unshift(document.createComment(' field:image '));
+    cell2.unshift(document.createComment(' field:text '));
+    cells.push([cell1]);
+    cells.push([cell2]);
   }
 
-  const block = WebImporter.Blocks.createBlock(document, { name: 'columns-promo', cells });
+  const block = WebImporter.Blocks.createBlock(document, { name: 'promo-tout', cells });
   element.replaceWith(block);
 }

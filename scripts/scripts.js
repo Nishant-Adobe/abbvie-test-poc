@@ -834,7 +834,7 @@ function decorateContentCards(main) {
   }
 
   // Pediatric cards: two icon+title+list groups side-by-side
-  const whiteSection = main.querySelector('.section.white.columns-promo-container > .default-content-wrapper');
+  const whiteSection = main.querySelector('.section.white.promo-tout-container > .default-content-wrapper');
   if (!whiteSection) return;
   const pedIcons = whiteSection.querySelectorAll(':scope > p > picture > img[src*="icon-calendar"], :scope > p > picture > img[src*="icon-pill-bottle-purple"]');
   if (pedIcons.length >= 2) {

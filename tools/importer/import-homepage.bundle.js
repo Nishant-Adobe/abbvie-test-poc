@@ -66,7 +66,7 @@ var CustomImportScript = (() => {
     element.replaceWith(block);
   }
 
-  // tools/importer/parsers/columns-promo.js
+  // tools/importer/parsers/promo-tout.js
   function parse2(element, { document }) {
     const columns = element.querySelectorAll(":scope .abbv-col");
     const cells = [];
@@ -93,7 +93,10 @@ var CustomImportScript = (() => {
       ctas.forEach((cta) => {
         cell2.push(cta);
       });
-      cells.push([cell1, cell2]);
+      cell1.unshift(document.createComment(" field:image "));
+      cell2.unshift(document.createComment(" field:text "));
+      cells.push([cell1]);
+      cells.push([cell2]);
     } else {
       const image = element.querySelector("picture") || element.querySelector("img");
       const heading = element.querySelector('.heading-2, .heading-3, h2, h3, [class*="heading"]');
@@ -109,9 +112,12 @@ var CustomImportScript = (() => {
       ctas.forEach((cta) => {
         cell2.push(cta);
       });
-      cells.push([cell1, cell2]);
+      cell1.unshift(document.createComment(" field:image "));
+      cell2.unshift(document.createComment(" field:text "));
+      cells.push([cell1]);
+      cells.push([cell2]);
     }
-    const block = WebImporter.Blocks.createBlock(document, { name: "columns-promo", cells });
+    const block = WebImporter.Blocks.createBlock(document, { name: "promo-tout", cells });
     element.replaceWith(block);
   }
 
@@ -269,20 +275,24 @@ var CustomImportScript = (() => {
         "#onetrust-consent-sdk"
       ]);
       WebImporter.DOMUtils.remove(element, [
-        ".abbv-modal"
+        ".modal.parbase"
       ]);
       WebImporter.DOMUtils.remove(element, [
         ".grecaptcha-badge"
       ]);
     }
     if (hookName === H.after) {
-      WebImporter.DOMUtils.remove(element, ["header.abbv-header-v2"]);
+      WebImporter.DOMUtils.remove(element, [".header-v2.parbase"]);
       WebImporter.DOMUtils.remove(element, [".linzess-top-banner"]);
       WebImporter.DOMUtils.remove(element, [".abbv-sticky-anchor"]);
       WebImporter.DOMUtils.remove(element, ["footer.abbv-footer"]);
+      WebImporter.DOMUtils.remove(element, [".footer.parbase"]);
       WebImporter.DOMUtils.remove(element, [".abbv-inline-use-isi"]);
+      WebImporter.DOMUtils.remove(element, [".abbv-inline-safety"]);
       WebImporter.DOMUtils.remove(element, [".abbv-inline-miscisi"]);
       WebImporter.DOMUtils.remove(element, [".safety-bar.parbase"]);
+      WebImporter.DOMUtils.remove(element, [".abbv-dimmer"]);
+      WebImporter.DOMUtils.remove(element, [".abbv-back-to-top"]);
       WebImporter.DOMUtils.remove(element, [".newpar.new.section"]);
       WebImporter.DOMUtils.remove(element, [".par.iparys_inherited"]);
       WebImporter.DOMUtils.remove(element, ["iframe"]);
@@ -291,7 +301,17 @@ var CustomImportScript = (() => {
       svgImgs.forEach((img) => img.remove());
       WebImporter.DOMUtils.remove(element, [".abbv-social-copy"]);
       WebImporter.DOMUtils.remove(element, ["textarea"]);
-      WebImporter.DOMUtils.remove(element, [".footer.parbase"]);
+      const videoPlayers = element.querySelectorAll(".vjs-control-bar, .vjs-loading-spinner, .vjs-text-track-display, .vjs-modal-dialog, .vjs-error-display, .vjs-dock-text, .vjs-poster[tabindex]");
+      videoPlayers.forEach((el) => el.remove());
+      const vjsElements = element.querySelectorAll('[class*="vjs-"]:not(video-js):not(.vjs-poster):not(.vjs-tech)');
+      vjsElements.forEach((el) => {
+        if (el.closest("video-js") || el.closest(".abbv-video-player")) {
+          if (!el.classList.contains("vjs-poster") && el.tagName !== "VIDEO") {
+            el.remove();
+          }
+        }
+      });
+      WebImporter.DOMUtils.remove(element, ['script[src*="vjs"], script[src*="brightcove"], script[src*="videojs"]']);
     }
   }
 
@@ -299,8 +319,7 @@ var CustomImportScript = (() => {
   var H2 = { before: "beforeTransform", after: "afterTransform" };
   function transform2(hookName, element, payload) {
     if (hookName === H2.after) {
-      const { document } = element.ownerDocument ? { document: element.ownerDocument } : { document: element.getRootNode() };
-      const doc = document || element.ownerDocument || element.getRootNode();
+      const doc = element.ownerDocument || element.getRootNode();
       const sections = payload && payload.template && payload.template.sections;
       if (!sections || sections.length < 2) return;
       const reversedSections = [...sections].reverse();
@@ -325,7 +344,7 @@ var CustomImportScript = (() => {
   // tools/importer/import-homepage.js
   var parsers = {
     "hero-pharma": parse,
-    "columns-promo": parse2,
+    "promo-tout": parse2,
     "cards-feature": parse3,
     "cards-stats": parse4,
     "cards-video": parse5
@@ -346,7 +365,7 @@ var CustomImportScript = (() => {
         instances: [".image-text-v2.parbase > .hero-container"]
       },
       {
-        name: "columns-promo",
+        name: "promo-tout",
         instances: [".abbv-row-container.eligible-tout", ".abbv-row-container.background-off-white.image-text-wrapper:not(.savings-card-tout)", ".abbv-row-container.savings-card-tout"]
       },
       {
@@ -376,7 +395,7 @@ var CustomImportScript = (() => {
         name: "Content Cards",
         selector: ".abbv-container.background-white.home-background-white-arc",
         style: "white",
-        blocks: ["columns-promo", "cards-feature", "columns-promo"],
+        blocks: ["promo-tout", "cards-feature", "promo-tout"],
         defaultContent: [".abbv-rich-text.ibs-brief-section"]
       },
       {
@@ -392,7 +411,7 @@ var CustomImportScript = (() => {
         name: "Savings Offer",
         selector: ".abbv-container.background-white.background-white-arc.pb24-m",
         style: "white",
-        blocks: ["columns-promo"],
+        blocks: ["promo-tout"],
         defaultContent: [".abbv-rich-text.max-690.c-linz-dark-purple", ".abbv-rich-text.footnote.max-auto"]
       }
     ]

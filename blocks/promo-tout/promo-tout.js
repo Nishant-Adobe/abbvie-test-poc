@@ -1,12 +1,21 @@
 export default function decorate(block) {
-  // Get the single row with 2 cells
-  const row = block.querySelector(':scope > div');
-  if (!row) return;
-  const cells = [...row.children];
-  if (cells.length < 2) return;
-
-  const imgCell = cells[0];
-  const textCell = cells[1];
+  // EDS renders this block as TWO rows (one per model field group): the first
+  // row holds the image, the second holds the text/CTA. Each row is a
+  // <div><div>…</div></div>, so read the inner cell of each row. Fall back to
+  // the legacy single-row-two-cell layout if present.
+  const rows = [...block.querySelectorAll(':scope > div')];
+  let imgCell;
+  let textCell;
+  if (rows.length >= 2) {
+    [imgCell, textCell] = rows.map((r) => r.querySelector(':scope > div') || r);
+  } else if (rows.length === 1) {
+    const cells = [...rows[0].children];
+    if (cells.length < 2) return;
+    [imgCell, textCell] = cells;
+  } else {
+    return;
+  }
+  if (!imgCell || !textCell) return;
 
   // Determine variant based on content heuristics
   // savings-card-tout: typically in a "white" section with more text content

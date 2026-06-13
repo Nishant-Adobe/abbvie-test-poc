@@ -9,7 +9,7 @@ import cardsIconParser from './parsers/cards-icon.js';
 import cardsVideoParser from './parsers/cards-video.js';
 import videoPlaylistParser from './parsers/video-playlist.js';
 import videoSingleParser from './parsers/video-single.js';
-import columnsPromoParser from './parsers/columns-promo.js';
+import promoToutParser from './parsers/promo-tout.js';
 import columnsCtaParser from './parsers/columns-cta.js';
 
 // TRANSFORMER IMPORTS
@@ -25,7 +25,7 @@ const parsers = {
   'cards-video': cardsVideoParser,
   'video-playlist': videoPlaylistParser,
   'video-single': videoSingleParser,
-  'columns-promo': columnsPromoParser,
+  'promo-tout': promoToutParser,
   'columns-cta': columnsCtaParser,
 };
 
@@ -82,7 +82,7 @@ const PAGE_TEMPLATE = {
       instances: ['.abbv-flex-container-v2.flexbox-video-cards.flexbox-video-cards--single'],
     },
     {
-      name: 'columns-promo',
+      name: 'promo-tout',
       instances: ['.abbv-row-container.savings-card-tout'],
     },
     {
@@ -140,7 +140,7 @@ const PAGE_TEMPLATE = {
       name: 'Patient Experiences',
       selector: '.abbv-container.background-white.background-white-arc.text-align-center',
       style: 'white',
-      blocks: ['video-playlist', 'columns-promo'],
+      blocks: ['video-playlist', 'promo-tout'],
       defaultContent: ['.abbv-rich-text:has(.eyebrow)', '.abbv-rich-text.footnote'],
     },
     {

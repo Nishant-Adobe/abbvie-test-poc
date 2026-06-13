@@ -1211,12 +1211,12 @@ main > .section.white.cards-feature-container > .default-content-wrapper:first-c
 }
 
 /* Savings section heading — "YOU COULD PAY AS LITTLE AS $30" */
-main > .section.white.columns-promo-container:not(.cards-feature-container) > .default-content-wrapper:first-child {
+main > .section.white.promo-tout-container:not(.cards-feature-container) > .default-content-wrapper:first-child {
   text-align: center;
   padding: 60px 0 0;
 }
 
-main > .section.white.columns-promo-container:not(.cards-feature-container):not(.video-single-container) > .default-content-wrapper:first-child p:nth-child(2) {
+main > .section.white.promo-tout-container:not(.cards-feature-container):not(.video-single-container) > .default-content-wrapper:first-child p:nth-child(2) {
   font-family: "Bebas Neue", sans-serif;
   font-size: 40px;
   font-weight: 400;
@@ -1226,7 +1226,7 @@ main > .section.white.columns-promo-container:not(.cards-feature-container):not(
 }
 
 /* Footnote/disclaimer text below savings tout */
-main > .section.white:not(.cards-feature-container) > .columns-promo-wrapper ~ .default-content-wrapper:last-child {
+main > .section.white:not(.cards-feature-container) > .promo-tout-wrapper ~ .default-content-wrapper:last-child {
   max-width: 1220px;
   margin: 24px auto 0;
   padding: 0 20px;
@@ -1236,11 +1236,11 @@ main > .section.white:not(.cards-feature-container) > .columns-promo-wrapper ~ .
 }
 
 /* Ensure savings-card-tout wrapper has bottom margin to push footnote down */
-main > .section.white:not(.cards-feature-container) > .columns-promo-wrapper {
+main > .section.white:not(.cards-feature-container) > .promo-tout-wrapper {
   margin-bottom: 16px;
 }
 
-main > .section.white:not(.cards-feature-container) > .columns-promo-wrapper ~ .default-content-wrapper:last-child p {
+main > .section.white:not(.cards-feature-container) > .promo-tout-wrapper ~ .default-content-wrapper:last-child p {
   font-size: 12px;
   line-height: 1.5;
   color: var(--linz-grey, #4d4d4f);
@@ -1375,7 +1375,7 @@ main .section.white > .default-content-wrapper > ul > li a:any-link {
   }
 }
 
-/* Gut Check promo — now handled by columns-promo block (same as homepage) */
+/* Gut Check promo — now handled by promo-tout block (same as homepage) */
 /* Actor Portrayal text (kept for any remaining instances) */
 main .section.white > .default-content-wrapper > p.actor-portrayal {
   font-size: 11px !important;
@@ -1865,19 +1865,19 @@ p.section-subheading + p.button-container + p.button-container a {
   font-size: 16px !important;
 }
 
-/* Savings card heading in columns-promo — only the first .rich-text block is the
+/* Savings card heading in promo-tout — only the first .rich-text block is the
    headline (24px); subsequent .rich-text blocks are body copy (16px). */
-.columns-promo .columns-promo-text p:first-child,
-.columns-promo-wrapper .columns-promo > div > div:last-child > p:first-child,
-.columns-promo .rich-text:first-child .abbv-rich-text > p:first-child {
+.promo-tout .promo-tout-text p:first-child,
+.promo-tout-wrapper .promo-tout > div > div:last-child > p:first-child,
+.promo-tout .rich-text:first-child .abbv-rich-text > p:first-child {
   font-size: 24px !important;
   font-weight: 700 !important;
   line-height: normal !important;
   color: var(--linz-dark-purple) !important;
 }
 
-.columns-promo .abbv-rich-text > p:not(:first-child),
-.columns-promo .rich-text:not(:first-child) .abbv-rich-text > p {
+.promo-tout .abbv-rich-text > p:not(:first-child),
+.promo-tout .rich-text:not(:first-child) .abbv-rich-text > p {
   font-size: 16px !important;
   font-weight: 400 !important;
 }

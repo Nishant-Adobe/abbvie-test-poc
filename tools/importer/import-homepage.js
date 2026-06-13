@@ -3,7 +3,7 @@
 
 // PARSER IMPORTS
 import heroPharmaParser from './parsers/hero-pharma.js';
-import columnsPromoParser from './parsers/columns-promo.js';
+import promoToutParser from './parsers/promo-tout.js';
 import cardsFeatureParser from './parsers/cards-feature.js';
 import cardsStatsParser from './parsers/cards-stats.js';
 import cardsVideoParser from './parsers/cards-video.js';
@@ -15,7 +15,7 @@ import sectionsTransformer from './transformers/linzess-sections.js';
 // PARSER REGISTRY
 const parsers = {
   'hero-pharma': heroPharmaParser,
-  'columns-promo': columnsPromoParser,
+  'promo-tout': promoToutParser,
   'cards-feature': cardsFeatureParser,
   'cards-stats': cardsStatsParser,
   'cards-video': cardsVideoParser,
@@ -40,7 +40,7 @@ const PAGE_TEMPLATE = {
       instances: ['.image-text-v2.parbase > .hero-container'],
     },
     {
-      name: 'columns-promo',
+      name: 'promo-tout',
       instances: ['.abbv-row-container.eligible-tout', '.abbv-row-container.background-off-white.image-text-wrapper:not(.savings-card-tout)', '.abbv-row-container.savings-card-tout'],
     },
     {
@@ -70,7 +70,7 @@ const PAGE_TEMPLATE = {
       name: 'Content Cards',
       selector: '.abbv-container.background-white.home-background-white-arc',
       style: 'white',
-      blocks: ['columns-promo', 'cards-feature', 'columns-promo'],
+      blocks: ['promo-tout', 'cards-feature', 'promo-tout'],
       defaultContent: ['.abbv-rich-text.ibs-brief-section'],
     },
     {
@@ -86,7 +86,7 @@ const PAGE_TEMPLATE = {
       name: 'Savings Offer',
       selector: '.abbv-container.background-white.background-white-arc.pb24-m',
       style: 'white',
-      blocks: ['columns-promo'],
+      blocks: ['promo-tout'],
       defaultContent: ['.abbv-rich-text.max-690.c-linz-dark-purple', '.abbv-rich-text.footnote.max-auto'],
     },
   ],
