@@ -240,16 +240,43 @@ export default async function decorate(block) {
   if (formOrigin) {
     const PATH_ATTRS = ['data-cmp-path', 'data-cmp-adaptiveformcontainer-path', 'src', 'href', 'action', 'data-action'];
     const rewriteEl = (el) => {
+      if (!el || !el.getAttribute) return;
       PATH_ATTRS.forEach((attr) => {
-        const v = el.getAttribute && el.getAttribute(attr);
+        const v = el.getAttribute(attr);
         // Site-absolute path (starts with a single slash, not "//") → prefix host.
         if (v && /^\/(?!\/)/.test(v)) {
           el.setAttribute(attr, formOrigin + v);
         }
       });
     };
-    rewriteEl(formEl);
-    formEl.querySelectorAll('*').forEach(rewriteEl);
+    const rewriteTree = (root) => {
+      rewriteEl(root);
+      if (root.querySelectorAll) root.querySelectorAll('*').forEach(rewriteEl);
+    };
+
+    rewriteTree(formEl);
+
+    // The form runtime injects/swaps elements AFTER init (e.g. images whose src
+    // is set to /abbviecloud/… , recaptcha logo, dynamically added fields).
+    // Watch the form subtree and rewrite any new/changed site-absolute src/href
+    // so those assets are also served from the Forms Domain.
+    const observer = new MutationObserver((mutations) => {
+      mutations.forEach((m) => {
+        if (m.type === 'attributes') {
+          rewriteEl(m.target);
+        } else {
+          m.addedNodes.forEach((n) => {
+            if (n.nodeType === 1) rewriteTree(n);
+          });
+        }
+      });
+    });
+    observer.observe(formEl, {
+      subtree: true,
+      childList: true,
+      attributes: true,
+      attributeFilter: PATH_ATTRS,
+    });
   }
 
   // Load the form's own stylesheets BEFORE injecting so it isn't briefly
