@@ -18,18 +18,6 @@
  *   /abbviecloud/content/forms/af/admp/linzess/.../<form>.html
  */
 
-// The form's own runtime clientlibs, as DOMAIN-RELATIVE paths. The live form
-// runtime page loads matching .css and .js for each clientlib; without the CSS
-// the injected form renders unstyled, so load both. These paths are resolved
-// against the authored "Forms Domain" so the clientlibs come from the same host
-// as the form markup (default: current site origin).
-const FORM_RUNTIME_CLIENTLIB_PATHS = [
-  '/abbviecloud/etc.clientlibs/abbviecloudforms/clientlibs/clientlib-dependencies.min',
-  '/abbviecloud/etc.clientlibs/abbviecloudforms/clientlibs/clientlib-base.min',
-  '/abbviecloud/etc.clientlibs/abbviecloudforms/clientlibs/clientlib-site.min',
-  '/abbviecloud/etc.clientlibs/abbviecloudforms/clientlibs/custom-forms-components-runtime-all.min',
-];
-
 function loadStyleOnce(href) {
   if (document.querySelector(`link[href="${href}"]`)) return;
   const l = document.createElement('link');
@@ -72,7 +60,7 @@ function resolveAgainstDomain(value, domain) {
   }
 }
 
-async function fetchFormMarkup(formsUrl) {
+async function fetchFormDoc(formsUrl) {
   // Same-origin paths keep first-party cookies/CSRF. Cross-origin absolute URLs
   // (e.g. fetched directly from www.linzess.com) are fetched without credentials
   // — handled by a browser CORS plugin in this setup.
@@ -83,9 +71,25 @@ async function fetchFormMarkup(formsUrl) {
   });
   if (!resp.ok) return null;
   const html = await resp.text();
-  const doc = new DOMParser().parseFromString(html, 'text/html');
-  // The adaptive form lives in the guideContainer of the rendered runtime page.
-  return doc.querySelector('[data-cmp-is="adaptiveFormContainer"], .cmp-adaptiveform-container, #guideContainer, .guideContainer');
+  return new DOMParser().parseFromString(html, 'text/html');
+}
+
+// Collect every stylesheet href and script src the form runtime page declares,
+// in document order, resolved as absolute URLs against the form's own base.
+// This avoids a brittle hardcoded clientlib list (the form pulls jQuery,
+// dompurify, CSRF, container/accordion/wizard commons, theme.js, etc.).
+function collectFormAssets(doc, formsUrl) {
+  const base = formsUrl;
+  const toAbs = (v) => {
+    try { return new URL(v, base).href; } catch (e) { return null; }
+  };
+  const styles = [...doc.querySelectorAll('link[rel="stylesheet"][href]')]
+    .map((l) => toAbs(l.getAttribute('href')))
+    .filter(Boolean);
+  const scripts = [...doc.querySelectorAll('script[src]')]
+    .map((s) => toAbs(s.getAttribute('src')))
+    .filter(Boolean);
+  return { styles, scripts };
 }
 
 export default async function decorate(block) {
@@ -105,12 +109,9 @@ export default async function decorate(block) {
     return;
   }
 
-  // Resolve the form markup URL and the runtime clientlib URLs against the
-  // authored Forms Domain so EVERYTHING is fetched from that single host.
+  // Resolve the form markup URL against the authored Forms Domain so the form
+  // AND every asset it declares are fetched from that single host.
   const formsUrl = resolveAgainstDomain(rawUrl, formsDomain);
-  const clientlibUrls = FORM_RUNTIME_CLIENTLIB_PATHS.map(
-    (p) => resolveAgainstDomain(p, formsDomain),
-  );
 
   // Rebuild the original embed widget DOM exactly.
   block.textContent = '';
@@ -127,13 +128,18 @@ export default async function decorate(block) {
   widget.appendChild(afsection);
   block.appendChild(widget);
 
-  // Fetch the adaptive form markup (same-origin) and inject it.
-  let formEl = null;
+  // Fetch the rendered form runtime page, then pull out both the form markup and
+  // the exact CSS/JS assets it declares.
+  let doc = null;
   try {
-    formEl = await fetchFormMarkup(formsUrl);
+    doc = await fetchFormDoc(formsUrl);
   } catch (e) {
-    formEl = null;
+    doc = null;
   }
+
+  const formEl = doc && doc.querySelector(
+    '[data-cmp-is="adaptiveFormContainer"], .cmp-adaptiveform-container, #guideContainer, .guideContainer',
+  );
 
   if (!formEl) {
     // Match the original's graceful failure message.
@@ -142,10 +148,12 @@ export default async function decorate(block) {
     return;
   }
 
-  // Load the form runtime CSS before injecting so the form isn't briefly
-  // unstyled, then inject the markup, then load the JS to make it interactive.
-  // Both come from the authored Forms Domain.
-  clientlibUrls.forEach((base) => loadStyleOnce(`${base}.css`));
+  const { styles, scripts } = collectFormAssets(doc, formsUrl);
+
+  // Load the form's own stylesheets BEFORE injecting so it isn't briefly
+  // unstyled. These are the exact <link>s the runtime page ships (clientlibs +
+  // theme), resolved against the Forms Domain.
+  styles.forEach((href) => loadStyleOnce(href));
 
   afsection.appendChild(formEl);
   loading.remove();
@@ -159,5 +167,11 @@ export default async function decorate(block) {
   ];
   containers.forEach((c) => { c.style.display = 'block'; });
 
-  await Promise.all(clientlibUrls.map((base) => loadScriptOnce(`${base}.js`)));
+  // Load every script the form runtime page declares, IN ORDER (jQuery and
+  // other deps must run before the components that depend on them).
+  // eslint-disable-next-line no-restricted-syntax
+  for (const src of scripts) {
+    // eslint-disable-next-line no-await-in-loop
+    await loadScriptOnce(src);
+  }
 }
