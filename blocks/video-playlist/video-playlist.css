@@ -133,15 +133,15 @@
   height: 0;
   border-top: 18px solid transparent;
   border-bottom: 18px solid transparent;
-  border-left: 30px solid var(--linz-dark-purple, #422e83);
+  border-left: 30px solid var(--linz-dark-purple, var(--brand-primary, #422e83));
   transform: translate(-50%, -50%);
 }
 
 /* Purple metadata panel */
 .video-carousel-meta {
   flex: 0 0 30%;
-  background: var(--linz-light-purple, #d9d7f9);
-  color: var(--linz-dark-purple, #422e83);
+  background: var(--linz-light-purple, var(--brand-surface, #d9d7f9));
+  color: var(--linz-dark-purple, var(--brand-primary, #422e83));
   padding: 32px 28px;
   display: flex;
   flex-direction: column;
@@ -169,7 +169,7 @@
 .video-carousel-transcript {
   font-size: 16px;
   font-weight: 700;
-  color: var(--linz-dark-purple, #422e83);
+  color: var(--linz-dark-purple, var(--brand-primary, #422e83));
   text-decoration: underline;
 }
 
@@ -216,7 +216,7 @@
 }
 
 .video-carousel-thumb.active > button {
-  border-color: var(--linz-orange, #faa633);
+  border-color: var(--linz-orange, var(--brand-accent, #faa633));
 }
 
 .video-carousel-thumb > button .video-carousel-play {
@@ -235,7 +235,7 @@
   margin-top: 8px;
   font-size: 14px;
   font-weight: 700;
-  color: var(--linz-dark-purple, #422e83);
+  color: var(--linz-dark-purple, var(--brand-primary, #422e83));
 }
 
 /* Prev / next arrow buttons */
@@ -246,7 +246,7 @@
   height: 36px;
   border-radius: 50%;
   border: 0;
-  background: var(--linz-dark-purple, #422e83);
+  background: var(--linz-dark-purple, var(--brand-primary, #422e83));
   color: #fff;
   cursor: pointer;
   position: relative;

@@ -1,5 +1,6 @@
 {
   "mappings": [
-    "/content/nishant-test/:/"
+    "/content/nishant-test/:/",
+    "/content/rinvoq/:/"
   ]
 }

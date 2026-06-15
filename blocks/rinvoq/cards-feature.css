@@ -1,0 +1,334 @@
+/* Block override: cards-feature — RINVOQ ("Choose Your Condition" grid)
+ *
+ * The shared cards-feature decorator (blocks/cards-feature/cards-feature.js)
+ * emits AbbVie framework DOM with alternating dark/light PURPLE filled cards,
+ * overflowing icon images, and pill CTA buttons — the Linzess look. RINVOQ's
+ * "Choose Your Condition" grid is completely different: a WRAPPING multi-column
+ * grid of identical WHITE cards with a thin PLUM (#90124a) border, 5px radius,
+ * a bold plum condition name left-aligned, and a plum ">" chevron on the right.
+ *
+ * This file restyles ONLY for RINVOQ (scoped to body.brand-rinvoq) and is loaded
+ * AFTER the base CSS, so its rules win the cascade. It does NOT touch the base
+ * block CSS/JS or the decorator (same-DOM rule). Values come from the live site
+ * computed styles (viewport 1440): card border 2px solid rgb(144,18,74),
+ * border-radius 5px, white bg, padding 0 0 0 8px, height ~54px; container is a
+ * wrapping grid with row-gap 10px / column-gap 13px; condition name 15px plum
+ * (Neue Haas heading font); chevron plum ~30px on the right edge.
+ */
+
+/* === Container: wrapping multi-column grid (override base flex nowrap) === */
+body.brand-rinvoq .cards-feature .abbv-flex-container-v2.flexbox-cards {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px 13px;
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 0 16px;
+  justify-content: center;
+  box-sizing: border-box;
+}
+
+/* Flex item wrapper — let the grid size it; neutralize base flex:1 1 0%.
+   height:100% so the wrapper fills its grid track (the grid stretches it), and
+   the card inside can then fill the wrapper for equal card heights. */
+body.brand-rinvoq .cards-feature .flexboxitem-v2 {
+  display: block;
+  flex: none;
+  width: auto;
+  height: 100%;
+}
+
+/* === Card: white rectangle, thin plum border, 5px radius (no fill) === */
+body.brand-rinvoq .cards-feature .abbv-flex-item-v2,
+body.brand-rinvoq .cards-feature .abbv-flex-item-v2.background-dark-purple,
+body.brand-rinvoq .cards-feature .abbv-flex-item-v2.background-light-purple {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  width: 100%;
+  height: 100%; /* fill the wrapper/grid track so all cards are equal height */
+  min-height: 54px;
+  box-sizing: border-box;
+  padding: 8px 36px 8px 12px; /* room for chevron on the right */
+  background-color: var(--brand-white);
+  border: 2px solid var(--brand-primary);
+  border-radius: var(--brand-card-radius);
+  text-align: left;
+  transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+
+/* Hover emphasis — subtle plum tint + darker border, like the original */
+body.brand-rinvoq .cards-feature .abbv-flex-item-v2:hover {
+  background-color: rgb(144 18 74 / 6%);
+  border-color: var(--brand-primary-hover);
+}
+
+/* === Neutralize the empty icon-image cell (height 0, negative-margin img) === */
+body.brand-rinvoq .cards-feature .abbv-image-content-container-v2 {
+  display: none;
+}
+
+/* Text containers — collapse the deep framework nesting padding */
+body.brand-rinvoq .cards-feature .abbv-image-text-v2,
+body.brand-rinvoq .cards-feature .abbv-image-text-content-container-v2.abbv-image-text-out,
+body.brand-rinvoq .cards-feature .abbv-image-text-content-v2,
+body.brand-rinvoq .cards-feature .abbv-image-text-display-v2,
+body.brand-rinvoq .cards-feature .abbv-stretched-card-body {
+  display: block;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  min-height: 0;
+  text-align: left;
+}
+
+/* === Condition name (decorator emits the clean name as p.heading-2) === */
+body.brand-rinvoq .cards-feature .heading-2,
+body.brand-rinvoq .cards-feature .c-linz-white .heading-2,
+body.brand-rinvoq .cards-feature .abbv-flex-item-v2.background-light-purple .heading-2 {
+  margin: 0;
+  font-family: var(--brand-heading-font);
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 1.05;
+  color: var(--brand-primary);
+  text-align: left;
+}
+
+/* === Grey eyebrow ("Moderate to Severe"/"Active") above the bold plum name,
+       and the grey parenthetical sub-line below it. The rinvoq cards-feature JS
+       override (blocks/rinvoq/cards-feature.js) emits these as p.card-eyebrow /
+       p.card-subline. Source: ~11px grey, tight leading, body font. === */
+body.brand-rinvoq .cards-feature .card-eyebrow {
+  margin: 0 0 1px;
+  font-family: var(--brand-body-font);
+  font-size: 11px;
+  font-weight: 400;
+  line-height: 1.2;
+  color: #25282a;
+  text-align: left;
+}
+
+body.brand-rinvoq .cards-feature .card-subline {
+  margin: 1px 0 0;
+  font-family: var(--brand-body-font);
+  font-size: 11px;
+  font-weight: 400;
+  line-height: 1.2;
+  color: #25282a;
+  text-align: left;
+}
+
+/* === Whole card is the link: stretch the CTA <a> over the card, hide its
+       (redundant, concatenated) text but keep it clickable/accessible === */
+body.brand-rinvoq .cards-feature .cta {
+  position: static;
+  margin: 0;
+}
+
+body.brand-rinvoq .cards-feature .cta a,
+body.brand-rinvoq .cards-feature .cta a.abbv-button-secondary,
+body.brand-rinvoq .cards-feature .cta a.abbv-button-primary,
+body.brand-rinvoq .cards-feature .cta a.i-a {
+  position: absolute;
+  inset: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  background: none !important;
+  border: 0;
+  border-radius: var(--brand-card-radius);
+
+  /* Hide the concatenated label text without removing it from the a11y tree */
+  font-size: 0;
+  color: transparent !important;
+  text-indent: -9999px;
+  overflow: hidden;
+  z-index: 1;
+}
+
+/* Kill the base CTA pill arrow icon (icon font) */
+body.brand-rinvoq .cards-feature .cta a.i-a::after,
+body.brand-rinvoq .cards-feature .cta a.i-a::before {
+  content: none;
+}
+
+body.brand-rinvoq .cards-feature .cta a:hover {
+  background: none !important;
+}
+
+/* === Plum ">" chevron on the right edge, vertically centered ===
+   Drawn on the card itself (CSS border arrow) so it shows even when the
+   AbbVie icon font is unavailable on EDS. */
+body.brand-rinvoq .cards-feature .abbv-flex-item-v2::after {
+  content: "";
+  position: absolute;
+  right: 16px;
+  top: 50%;
+  width: 8px;
+  height: 8px;
+  border-top: 2px solid var(--brand-primary);
+  border-right: 2px solid var(--brand-primary);
+  transform: translateY(-50%) rotate(45deg);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* === Heading "Choose Your Condition" left aligned (section default-content) ===
+   The block sits in a light-grey section; the heading is authored as a sibling
+   <p> before the block. Keep it left-aligned and plum-accented if the brand
+   section centers content. (Scoped tightly to avoid touching other sections.) */
+
+/* === Desktop: 4 columns, COLUMN-MAJOR fill ===
+   The live grid fills top-to-bottom then left-to-right (row 1: Eczema, PsA,
+   Nr-axSpA, Crohn's; row 2: RA, AS, UC, GCA). The DOM order is
+   Eczema, RA, PsA, AS, Nr-axSpA, UC, Crohn's, GCA, so a 2-row grid filled
+   column-wise reproduces the original card order. */
+@media (width >= 900px) {
+  body.brand-rinvoq .cards-feature .abbv-flex-container-v2.flexbox-cards {
+    grid-template-columns: none;
+    grid-template-rows: repeat(2, 1fr); /* both rows equal height */
+    grid-auto-flow: column;
+    grid-auto-columns: 1fr; /* all columns equal width */
+    align-items: stretch; /* stretch items to fill their track height */
+    padding: 0;
+  }
+}
+
+/* === Tablet: 3 columns === */
+@media (width >= 600px) and (width <= 899px) {
+  body.brand-rinvoq .cards-feature .abbv-flex-container-v2.flexbox-cards {
+    grid-template-columns: repeat(3, 1fr);
+    flex-direction: row;
+    gap: 10px 13px;
+  }
+}
+
+/* "Choose Your Condition" heading — authored as a bare <p> in the section's
+   first default-content block, above the card grid. The live site styles it as
+   a small bold charcoal label with a 3px GOLD (#ffd100) underline accent,
+   left-aligned. Source computed: 14px / 700 / Neue Haas / #25282a, margin
+   0 0 15px, border-bottom 3px solid rgb(255,209,0), inline-block so the rule is
+   only as wide as the text. Scoped to the first default-content <p> in the
+   cards-feature section so it doesn't touch the LQ callout default content. */
+body.brand-rinvoq .cards-feature-container .default-content-wrapper {
+  /* Align the section's default content (heading + LQ callout + footnotes) with
+     the centered 1140px card grid (which sits at x=150 in a 1440 viewport)
+     instead of the full-width section edge. */
+  max-width: 1140px;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+body.brand-rinvoq .cards-feature-container .default-content-wrapper:first-of-type > p {
+  display: inline-block;
+  margin: 0 0 15px;
+  padding: 0 0 2px;
+  font-family: var(--brand-heading-font);
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1.2;
+  color: #25282a;
+  text-align: left;
+  border-bottom: 3px solid #ffd100;
+}
+
+/* pJIA & JPsA condition cards in the LQ callout default-content. These are
+   authored as plain <p><a href="/pjia-jpsa">…</a></p> links, which the framework
+   otherwise renders as solid plum pill buttons. On the live site they are the
+   SAME white card style as the main condition grid (white bg, 2px plum border,
+   5px radius, plum bold name, plum chevron right). Match that here. The eyebrow
+   ("Active"/"Active Polyarticular") is concatenated in the text so it can't be
+   split via CSS; the card look is what matters most. */
+body.brand-rinvoq .cards-feature-container .default-content-wrapper a[href="/pjia-jpsa"] {
+  position: relative;
+  display: block;
+  width: 100%;
+  max-width: 410px;
+  min-height: 54px;
+  box-sizing: border-box;
+  margin: 0 0 13px;
+  padding: 14px 36px 14px 12px;
+  background: var(--brand-white) !important;
+  border: 2px solid var(--brand-primary);
+  border-radius: var(--brand-card-radius);
+  font-family: var(--brand-heading-font);
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 1.15;
+  color: var(--brand-primary) !important;
+  text-decoration: none;
+  text-align: left;
+}
+
+body.brand-rinvoq .cards-feature-container .default-content-wrapper a[href="/pjia-jpsa"]:hover {
+  background: rgb(144 18 74 / 6%) !important;
+  border-color: var(--brand-primary-hover);
+}
+
+/* Neutralize the framework pill arrow icon, draw the plum chevron like the grid */
+body.brand-rinvoq .cards-feature-container .default-content-wrapper a[href="/pjia-jpsa"]::before {
+  content: none;
+}
+
+body.brand-rinvoq .cards-feature-container .default-content-wrapper a[href="/pjia-jpsa"]::after {
+  content: "";
+  position: absolute;
+  right: 16px;
+  top: 50%;
+  width: 8px;
+  height: 8px;
+  border-top: 2px solid var(--brand-primary);
+  border-right: 2px solid var(--brand-primary);
+  transform: translateY(-50%) rotate(45deg);
+}
+
+/* Put the two pJIA/JPsA cards side by side on desktop, like the live site.
+   Each link sits in its own block <p>; float those paragraphs so the two cards
+   sit in one row, then clear the float on the following sibling. */
+@media (width >= 600px) {
+  body.brand-rinvoq .cards-feature-container .default-content-wrapper p:has(> a[href="/pjia-jpsa"]) {
+    float: left;
+    width: 410px;
+    margin: 0 13px 13px 0;
+  }
+
+  /* Clear the float so the footnote paragraphs (which follow the pJIA/JPsA
+     card paragraphs) sit BELOW the cards, not wrapped beside them. The
+     footnotes are the <p>s that start with the *, † or ‡ symbols. */
+  body.brand-rinvoq .cards-feature-container .default-content-wrapper p:has(> a[href="/pjia-jpsa"]) ~ p {
+    clear: both;
+  }
+}
+
+/* RINVOQ LQ oral-solution logo (the LQ callout below the condition grid).
+   The source displays this thin RINVOQ/RINVOQ LQ wordmark at 340px wide; the
+   migrated img otherwise renders at its full 2x natural size (672px). Cap it to
+   match the live site. Scoped to the cards-feature section's default content so
+   it only affects this LQ callout image. */
+body.brand-rinvoq .cards-feature-container .default-content-wrapper img[src*="oral-solution"] {
+  width: 340px;
+  max-width: 100%;
+  height: auto;
+}
+
+/* === Mobile: 2 columns (override base column stack) === */
+@media (width <= 599px) {
+  body.brand-rinvoq .cards-feature .abbv-flex-container-v2.flexbox-cards {
+    grid-template-columns: repeat(2, 1fr);
+    flex-direction: row;
+    gap: 10px;
+  }
+
+  body.brand-rinvoq .cards-feature .abbv-flex-item-v2 {
+    padding: 8px 30px 8px 10px;
+  }
+
+  body.brand-rinvoq .cards-feature .heading-2 {
+    font-size: 13px;
+  }
+}

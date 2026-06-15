@@ -41,11 +41,11 @@
 
 /* Alternating card backgrounds */
 .cards-stats .flexboxitem-v2:nth-child(odd) .abbv-flex-item-v2 {
-  background-color: var(--linz-light-purple, #d9d7f9);
+  background-color: var(--linz-light-purple, var(--brand-surface, #d9d7f9));
 }
 
 .cards-stats .flexboxitem-v2:nth-child(even) .abbv-flex-item-v2 {
-  background-color: var(--linz-off-white, #f4f6fb);
+  background-color: var(--linz-off-white, var(--brand-bg-muted, #f4f6fb));
 }
 
 /* Circle indicator — 136px diameter, overlaps top of card */
@@ -62,11 +62,11 @@
 
 /* Alternating circle backgrounds (opposite of card) */
 .cards-stats .flexboxitem-v2:nth-child(odd) .circle {
-  background-color: var(--linz-off-white, #f4f6fb);
+  background-color: var(--linz-off-white, var(--brand-bg-muted, #f4f6fb));
 }
 
 .cards-stats .flexboxitem-v2:nth-child(even) .circle {
-  background-color: var(--linz-light-purple, #d9d7f9);
+  background-color: var(--linz-light-purple, var(--brand-surface, #d9d7f9));
 }
 
 /* Large stat numbers inside circles */
@@ -74,7 +74,7 @@
   font-size: 48px;
   font-weight: 700;
   line-height: normal;
-  color: var(--dark-color, #422e83);
+  color: var(--dark-color, var(--brand-primary, #422e83));
   font-family: var(--body-font-family, Lato, sans-serif);
 }
 
@@ -82,13 +82,13 @@
 .cards-stats .font-size-md {
   font-size: 24px;
   line-height: normal;
-  color: var(--dark-color, #422e83);
+  color: var(--dark-color, var(--brand-primary, #422e83));
   font-family: var(--body-font-family, Lato, sans-serif);
 }
 
 /* Rich text container */
 .cards-stats .abbv-rich-text {
-  color: var(--dark-color, #422e83);
+  color: var(--dark-color, var(--brand-primary, #422e83));
   font-family: var(--body-font-family, Lato, sans-serif);
   text-align: center;
 }
@@ -98,7 +98,7 @@
   font-size: 16px;
   font-weight: 700;
   line-height: normal;
-  color: var(--dark-color, #422e83);
+  color: var(--dark-color, var(--brand-primary, #422e83));
   margin: 16px 0;
   font-family: var(--body-font-family, Lato, sans-serif);
 }

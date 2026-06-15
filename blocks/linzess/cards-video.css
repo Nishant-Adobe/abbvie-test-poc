@@ -1,0 +1,7 @@
+/* Brand override — LINZESS · cards-video
+ *
+ * The base blocks/cards-video/cards-video.css is brand-agnostic (structure + --brand-*
+ * tokens). Linzess needs no extra rules here — its look comes from the brand
+ * tokens in styles/brands/linzess.css. Add a rule ONLY for a Linzess-unique
+ * tweak the base + tokens can't express. Registered in
+ * blocks/block-brand-overrides.json. */

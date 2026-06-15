@@ -1,0 +1,166 @@
+/* stylelint-disable selector-class-pattern, no-descending-specificity */
+
+/* ============================================================
+   Brand override — RINVOQ · hero-pharma
+   Source: https://www.rinvoq.com/  (.abbv-background-container.home-hero)
+   ------------------------------------------------------------
+   The base blocks/hero-pharma/hero-pharma.css + linzess-global.css assume a
+   LINZESS hero: the .hero-container is pulled up (top: -138px) under the nav
+   and the FOLLOWING section is pulled up (-200px in styles.css) so a white
+   arch dome curves over the photo. RINVOQ has NO arch dome — its hero is a
+   self-contained full-width charcoal band (~300px) with the photo bleeding
+   edge-to-edge and the text overlaid on the LEFT third. Reusing the Linzess
+   negative offsets makes the "Choose Your Condition" cards crash up into the
+   hero photo (visible overlap).
+
+   This file is loaded AFTER the base CSS and ONLY for the RINVOQ brand
+   (registered in blocks/block-brand-overrides.json -> cssOverrides.hero-pharma).
+   Every rule is additionally scoped to body.brand-rinvoq so it can never leak
+   to Linzess (or any other brand) even if the manifest were misconfigured.
+   We touch ONLY this file + the manifest — no base CSS/JS, no content, no
+   decorator changes (same-DOM rule).
+   ============================================================ */
+
+/* ---- 1. KILL THE OVERLAP (the core bug) ---------------------------------
+   linzess-global.css gives the hero .hero-container `position: relative;
+   top: -138px` and styles.css pulls the next section up by -200px so the
+   Linzess dome overlaps the photo. RINVOQ wants neither: the band sits in
+   normal flow and the next section sits directly below it. */
+
+body.brand-rinvoq main .hero-pharma .hero-container {
+  position: relative;
+  top: 0; /* was -138px (linzess-global.css): no nav underlap for RINVOQ */
+  height: 225px; /* mobile band height (source: height-225) */
+
+  /* the band: charcoal background, full-bleed cover photo */
+  display: block;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  background-color: #25282a; /* source: rgb(37,40,42) charcoal = --brand-text */
+  overflow: hidden;
+}
+
+/* Neutralize the inherited negative top-margin on the section that follows
+   the hero so the condition-card grid no longer crashes up into the photo.
+   :not(.tabs-navigation-container) mirrors the base selector so we override
+   the exact rule from styles.css line 294. */
+body.brand-rinvoq main > .section.hero-pharma-container + .section:not(.tabs-navigation-container) {
+  margin-top: 0; /* was -200px — this is the overlap fix */
+  position: static;
+  z-index: auto;
+}
+
+/* The hero section/wrapper should be a clean full-width band with no max-width
+   clamp and no stray spacing. */
+body.brand-rinvoq main > .section.hero-pharma-container {
+  margin: 0;
+  padding: 0;
+  overflow: hidden; /* clip the cover photo to the band */
+}
+
+body.brand-rinvoq .hero-pharma-wrapper {
+  max-width: 100% !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+/* ---- 2. THE BAND: full-bleed cover photo --------------------------------- */
+
+/* Photo container fills the band; photo covers it (was object-fit: fill -> distorted). */
+body.brand-rinvoq main .hero-pharma .abbv-image-content-container-v2 {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body.brand-rinvoq main .hero-pharma .abbv-image-content-container-v2 picture {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+body.brand-rinvoq main .hero-pharma .abbv-image-content-container-v2 img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center right; /* keep the subject (right side) visible */
+  display: block;
+}
+
+/* ---- 3. THE TEXT OVERLAY on the LEFT third ------------------------------- */
+
+body.brand-rinvoq main .hero-pharma .abbv-image-text-content-container-v2 {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start; /* override framework .middle-middle center -> pin copy LEFT */
+  width: 100%;
+  max-width: none;
+  margin: 0;
+  padding: 0 110px; /* source content margin: 0 110px */
+  z-index: 2; /* above the photo */
+  color: #fff;
+  pointer-events: none; /* let underlying carousel/photo not block; links re-enable below */
+}
+
+body.brand-rinvoq main .hero-pharma .abbv-image-text-content-v2,
+body.brand-rinvoq main .hero-pharma .abbv-image-text-display-v2,
+body.brand-rinvoq main .hero-pharma .abbv-stretched-card-body {
+  pointer-events: auto;
+  width: 100%;
+  max-width: 460px; /* clamp the copy to the left third of a 1440 band */
+  text-align: left;
+  margin: 0;
+  padding: 0;
+}
+
+/* Eyebrow "RINVOQ" — source: 32px / 400 / white / mb 20px */
+body.brand-rinvoq main .hero-pharma .abbv-stretched-card-body > p.tl-m {
+  margin: 0 0 12px;
+  font-size: 32px;
+  font-weight: 400;
+  line-height: 1.1;
+  color: #fff;
+}
+
+/* "with a ONCE-DAILY PILL" — source: 22px / white. The decorator places this
+   as the description paragraph (.mb15-m). */
+body.brand-rinvoq main .hero-pharma .abbv-stretched-card-body > p.mb15-m {
+  margin: 8px 0 0;
+  font-size: 22px;
+  font-weight: 700;
+  line-height: 1.2;
+  color: #fff;
+}
+
+/* Subheading H1 "See how RINVOQ helps tame symptoms in 9 conditions" —
+   white, regular weight, sits below the wordmark area. linzess-global.css +
+   linzess.css force `.home-hero-title { font-size: 56px !important }`, so we
+   must use !important to win — otherwise the 56px Bebas heading fills the band,
+   pushing the eyebrow to the top and breaking the vertical centering. */
+body.brand-rinvoq main .hero-pharma .abbv-stretched-card-body h1,
+body.brand-rinvoq main .hero-pharma .abbv-stretched-card-body h1.home-hero-title {
+  margin: 14px 0 0 !important;
+  max-width: 420px;
+  font-size: 22px !important;
+  font-weight: 400 !important;
+  line-height: 1.25 !important;
+  color: #fff;
+}
+
+/* RINVOQ has no orange Linzess divider — hide the decorator's divider span. */
+body.brand-rinvoq main .hero-pharma .hero-container span.divider {
+  display: none;
+}
+
+/* ---- 4. DESKTOP band height (source: height-md-300 = 300px) -------------- */
+@media (width >= 900px) {
+  body.brand-rinvoq main .hero-pharma .hero-container {
+    height: 300px;
+  }
+}

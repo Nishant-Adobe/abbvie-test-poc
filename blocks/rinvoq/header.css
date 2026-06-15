@@ -1,0 +1,477 @@
+/* stylelint-disable selector-class-pattern, no-descending-specificity, property-no-vendor-prefix */
+
+/* ============================================================
+   Brand override — RINVOQ · header
+   Source: https://www.rinvoq.com/  (3-band header)
+   ------------------------------------------------------------
+   Paired with the RINVOQ JS override (blocks/rinvoq/header.js, registered in
+   blocks/block-brand-overrides.json -> jsOverrides.header). The override emits
+   RINVOQ's exact desktop chrome (magenta eyebrow, light-grey utility row,
+   charcoal content bar with logo + right cluster + search + mobile hamburger).
+   This stylesheet loads AFTER blocks/header/header.css and ONLY for rinvoq;
+   every rule is additionally scoped to body.brand-rinvoq so it can never leak to
+   Linzess (which keeps its inline desktop primary nav and base decorator).
+
+   Original measurements (desktop 1440):
+     - Magenta strip  : bg #90124a, white text, centered, ~38px tall, links underlined.
+     - Utility row    : bg #f3f3f3, plum (#90124a) ~14.4px text, right-aligned,
+                        leads with home-icon "All Conditions Home", vertical rules.
+     - Charcoal bar   : bg #25282a, full-bleed, ~88px; logo ~185x64 (contained);
+                        right cluster (white labels, plum-underlined links, "•"
+                        separators) + plum search icon. No desktop hamburger.
+   ============================================================ */
+
+/* ---- Neutralize EDS wrapper constraints ---------------------------------- */
+body.brand-rinvoq header .header {
+  visibility: visible !important;
+  height: auto;
+  max-width: none;
+}
+
+body.brand-rinvoq header {
+  height: auto !important;
+}
+
+/* =========================================================================
+   1. MAGENTA EYEBROW STRIP (#90124a)
+   Original (desktop): strip ~36px tall, content top ~10px; <p> white,
+   font-size 12.992px, line-height 18px, centered; links white + underlined
+   (bold). Mirrors getComputedStyle from www.rinvoq.com.
+   ========================================================================= */
+body.brand-rinvoq .abbv-eyebrow {
+  display: block !important;
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  margin-left: -50vw;
+  background-color: #90124a;
+  color: #fff;
+  text-align: center;
+  padding: 9px 16px;
+  box-sizing: border-box;
+}
+
+body.brand-rinvoq .abbv-header-v2.abbv-fixed .abbv-eyebrow {
+  display: none !important;
+}
+
+body.brand-rinvoq .abbv-eyebrow p,
+body.brand-rinvoq .abbv-eyebrow p.abbv-eyebrow-large {
+  display: block !important; /* framework hides .abbv-eyebrow-large at <=985px */
+  margin: 0;
+  font-size: 13px;
+  line-height: 18px;
+  color: #fff;
+  text-align: center;
+}
+
+body.brand-rinvoq .abbv-eyebrow a {
+  color: #fff !important;
+  font-weight: 700;
+  text-decoration: underline !important;
+  text-underline-offset: 1px;
+}
+
+/* =========================================================================
+   2. UTILITY NAVIGATION (light-grey #f3f3f3 row)
+   ========================================================================= */
+body.brand-rinvoq .abbv-header-v2-utility-navigation {
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  margin-left: -50vw;
+  background-color: #f3f3f3;
+}
+
+body.brand-rinvoq .abbv-header-v2-utility-navigation nav {
+  max-width: 1264px;
+  min-height: 32px;
+  margin: 0 auto;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body.brand-rinvoq .abbv-header-v2-utility-navigation ul {
+  list-style: none;
+  display: flex;
+  align-items: stretch;
+  justify-content: flex-end;
+  gap: 0;
+  margin: 0;
+  padding: 0;
+  height: 32px;
+}
+
+/* "All Conditions Home" leads on the LEFT (margin-right:auto pushes the rest
+   to the far right, matching the original split). */
+body.brand-rinvoq .abbv-header-v2-utility-navigation li:first-child {
+  margin-right: auto;
+}
+
+body.brand-rinvoq .abbv-header-v2-utility-navigation li {
+  display: flex;
+  align-items: center;
+}
+
+/* Thin GOLD vertical rules between items (original separator = #ffd100). Not
+   before the first, not after the home tab (auto-margin gap separates it). */
+body.brand-rinvoq .abbv-header-v2-utility-navigation li + li {
+  border-left: 1px solid #ffd100;
+}
+
+body.brand-rinvoq .abbv-header-v2-utility-navigation li:first-child + li {
+  border-left: none;
+}
+
+/* Default utility link: plum (#90124a), 12px bold, padding 5px 17px. */
+body.brand-rinvoq .abbv-header-v2-utility-navigation a {
+  display: flex;
+  align-items: center;
+  color: #90124a !important;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 22px;
+  text-decoration: none;
+  padding: 5px 17px !important;
+  white-space: nowrap;
+}
+
+body.brand-rinvoq .abbv-header-v2-utility-navigation a:hover {
+  text-decoration: underline !important;
+}
+
+/* Framework adds a leading icon pseudo on .i-b links — suppress it, EXCEPT on
+   the home link which intentionally draws its own gold-circle icon below. */
+body.brand-rinvoq .abbv-header-v2-utility-navigation a.i-b:not(.home-condition-link)::before {
+  display: none !important;
+  content: none !important;
+}
+
+/* "Full Prescribing Information & Patient Information" carries a plum caret. */
+body.brand-rinvoq .abbv-header-v2-utility-navigation a.has-caret::after {
+  content: "";
+  display: inline-block;
+  width: 0;
+  height: 0;
+  margin-left: 8px;
+  border-left: 4px solid transparent;
+  border-right: 4px solid transparent;
+  border-top: 5px solid #90124a;
+  flex: 0 0 auto;
+}
+
+/* "All Conditions Home": BLACK text and a GOLD (#ffd100) filled circle holding
+   a black home glyph — overrides the plum default above. */
+body.brand-rinvoq .abbv-header-v2-utility-navigation a.home-condition-link {
+  color: #000 !important;
+}
+
+body.brand-rinvoq .abbv-header-v2-utility-navigation a.home-condition-link::before {
+  content: "" !important;
+  display: inline-block !important;
+  width: 16px;
+  height: 16px;
+  margin-right: 10px;
+  border-radius: 50%;
+
+  /* gold circle (background-color) with a black home glyph drawn on top via an
+     inline SVG, so the glyph reads black on the gold fill (matches original). */
+  background-color: #ffd100;
+  background-image: url("data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20width='20'%20height='22'%20viewBox='0%200%2020%2022'%20fill='none'%3E%3Cpath%20d='M2.11524%2021H5.83271C6.44865%2021%206.94796%2020.5007%206.94796%2019.8848V15.8327C6.94796%2015.2007%207.43123%2014.7175%208.0632%2014.7175H11.8922C12.5242%2014.7175%2013.0074%2015.2007%2013.0074%2015.8327V19.8848C13.0074%2020.5007%2013.5067%2021%2014.1227%2021H17.7286C18.3606%2021%2018.8439%2020.5167%2018.8439%2019.8848V8.80669C18.8439%208.50929%2018.7323%208.2119%2018.5093%208.02602L10.7026%201.33457C10.2565%200.888476%209.55019%200.888476%209.14126%201.33457L1.33457%208.02602C1.11152%208.24907%201%208.50929%201%208.80669V19.8848C1%2020.5167%201.48327%2021%202.11524%2021Z'%20fill='%23000'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 9px 10px;
+  flex: 0 0 auto;
+}
+
+/* =========================================================================
+   3. CHARCOAL CONTENT BAR (#25282a, full-bleed)
+   ========================================================================= */
+body.brand-rinvoq .abbv-header-content-container {
+  background-color: #25282a;
+  width: 100vw;
+  max-width: none !important; /* override framework .abbv-header-content-container max-width:1220px */
+  position: relative;
+  left: 50%;
+  margin-left: -50vw;
+  margin-right: 0;
+}
+
+body.brand-rinvoq .abbv-header-v2-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1150px;
+  height: 88px;
+  margin: 0 auto;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ---- Logo: contained within the bar (cap ~44px tall, never overflow) ----- */
+body.brand-rinvoq .abbv-header-v2-left {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+}
+
+body.brand-rinvoq .abbv-header-v2-left a {
+  display: inline-flex;
+  align-items: center;
+  line-height: 0;
+}
+
+body.brand-rinvoq .abbv-header-v2-left img {
+  display: block;
+  width: 185px !important;
+  height: 64px !important;
+  max-height: 64px !important;
+  object-fit: contain;
+}
+
+/* ---- Right region: link cluster + search + (mobile) hamburger ------------ */
+body.brand-rinvoq .abbv-header-v2-right {
+  display: flex !important;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 22px;
+}
+
+/* Inline link list: call / Cost & Savings / Sign up. White labels, PLUM
+   underline, white "•" separators between items. Original: <a> white, 12px,
+   line-height 22px; separator is an a::before "•" (white) with margin
+   0 18px 0 7px; 2nd/3rd <li> carry padding-left:10px. */
+body.brand-rinvoq .abbv-link-list ul {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 0;
+  margin: 0;
+  padding: 0;
+}
+
+body.brand-rinvoq .abbv-link-list li {
+  display: flex;
+  align-items: center;
+  white-space: nowrap;
+}
+
+/* white "•" separator before every item except the first (on the <li> so it is
+   never caught by the anchor's plum underline). margin 0 18px 0 7px per source. */
+body.brand-rinvoq .abbv-link-list li + li::before {
+  content: "•";
+  color: #fff;
+  margin: 0 18px 0 7px;
+  font-size: 12px;
+  line-height: 22px;
+  display: inline-block;
+}
+
+body.brand-rinvoq .abbv-link-list a {
+  color: #fff !important;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 22px;
+  text-decoration: underline;
+  text-decoration-color: #90124a;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+}
+
+body.brand-rinvoq .abbv-link-list a:hover {
+  text-decoration-color: #fff;
+}
+
+/* ---- Search icon (plum) -------------------------------------------------- */
+body.brand-rinvoq .util-icons-container {
+  display: inline-flex !important;
+  align-items: center;
+  gap: 18px;
+}
+
+body.brand-rinvoq .abbv-header-util {
+  display: flex !important;
+  align-items: center;
+}
+
+body.brand-rinvoq .abbv-search-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  width: 28px;
+  height: 28px;
+}
+
+/* Clean WHITE magnifying-glass icon (original .abbv-icon-search renders white,
+   ~25px, on the charcoal bar). We mask the project search.svg so the glyph is a
+   crisp solid white shape regardless of icon-font availability. */
+body.brand-rinvoq .abbv-search-toggle .abbv-icon-search {
+  display: block;
+  width: 24px;
+  height: 24px;
+  background-color: #fff;
+  mask: url("/icons/search.svg") no-repeat center;
+  mask-size: 24px 24px;
+  -webkit-mask: url("/icons/search.svg") no-repeat center;
+  -webkit-mask-size: 24px 24px;
+}
+
+/* Suppress any inherited icon-font glyph so it cannot double-render. */
+body.brand-rinvoq .abbv-search-toggle .abbv-icon-search::before {
+  content: none !important;
+}
+
+/* =========================================================================
+   HAMBURGER — mobile only (hidden on desktop, matching the original)
+   ========================================================================= */
+body.brand-rinvoq #abbv-menu-toggle {
+  display: none !important;
+}
+
+body.brand-rinvoq .abbv-header-v2-mobile-primary-navigation {
+  position: relative;
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+}
+
+body.brand-rinvoq .abbv-header-v2-mobile-primary-navigation .line {
+  display: block;
+  position: absolute;
+  left: 0;
+  width: 30px;
+  height: 2px;
+  background: #fff;
+}
+
+body.brand-rinvoq .abbv-header-v2-mobile-primary-navigation .line:nth-child(1) { top: 3px; }
+body.brand-rinvoq .abbv-header-v2-mobile-primary-navigation .line:nth-child(2) { top: 11px; }
+body.brand-rinvoq .abbv-header-v2-mobile-primary-navigation .line:nth-child(3) { top: 19px; }
+
+/* "MENU" caption beneath the bars (matches the original mobile hamburger). */
+body.brand-rinvoq .abbv-header-v2-mobile-primary-navigation::after {
+  content: "MENU";
+  position: absolute;
+  top: 26px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  color: #fff;
+}
+
+/* =========================================================================
+   PRIMARY CONDITION NAV — behind the mobile flyout at all breakpoints
+   ========================================================================= */
+body.brand-rinvoq .abbv-header-v2-primary-navigation {
+  display: none !important;
+}
+
+body.brand-rinvoq .abbv-header-v2-primary-navigation.abbv-submenu-open {
+  display: block !important;
+}
+
+/* =========================================================================
+   STICKY
+   ========================================================================= */
+body.brand-rinvoq .abbv-header-v2.abbv-fixed {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 9999;
+  box-shadow: 0 2px 8px rgb(0 0 0 / 15%);
+}
+
+/* =========================================================================
+   MOBILE (<= 985px)
+   Original mobile layout = magenta strip, THEN the charcoal bar (logo + white
+   search + MENU hamburger), THEN a slim light-grey row that collapses the
+   utility nav down to a single plum "Full Prescribing Information & Patient
+   Information ▾" item. The inline desktop link cluster is hidden.
+   ========================================================================= */
+@media (width <= 985px) {
+  /* Lay the three bands out as an explicit column so the utility row can move
+     BELOW the charcoal bar (matching the original mobile order). */
+  body.brand-rinvoq .abbv-header-v2 {
+    display: flex;
+    flex-direction: column;
+  }
+
+  body.brand-rinvoq .abbv-eyebrow {
+    order: 1;
+  }
+
+  body.brand-rinvoq .abbv-header-content-container {
+    order: 2;
+  }
+
+  body.brand-rinvoq .abbv-header-v2-utility-navigation {
+    order: 3;
+  }
+
+  /* Bands are already full width on mobile — drop the desktop full-bleed
+     negative-margin trick so nothing overflows or overlaps. */
+  body.brand-rinvoq .abbv-eyebrow,
+  body.brand-rinvoq .abbv-header-v2-utility-navigation,
+  body.brand-rinvoq .abbv-header-content-container {
+    width: 100%;
+    left: auto;
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  /* Hide the inline desktop link cluster; reveal the hamburger. */
+  body.brand-rinvoq .abbv-link-list {
+    display: none !important;
+  }
+
+  /* Belt-and-braces: drop the "•" separators on the hidden cluster so they can
+     never leak into the layout or the accessibility tree on mobile. */
+  body.brand-rinvoq .abbv-link-list li + li::before {
+    content: none;
+  }
+
+  body.brand-rinvoq #abbv-menu-toggle {
+    display: flex !important;
+  }
+
+  /* Charcoal bar: logo left, search + hamburger right. */
+  body.brand-rinvoq .abbv-header-v2-content {
+    height: 88px;
+    padding: 0 16px;
+  }
+
+  body.brand-rinvoq .abbv-header-v2-right {
+    gap: 18px;
+  }
+
+  /* Utility row collapses to ONLY the Full Prescribing item (centered, plum),
+     matching the original mobile chrome. */
+  body.brand-rinvoq .abbv-header-v2-utility-navigation nav {
+    max-width: none;
+  }
+
+  body.brand-rinvoq .abbv-header-v2-utility-navigation ul {
+    justify-content: center;
+    height: auto;
+    min-height: 36px;
+  }
+
+  body.brand-rinvoq .abbv-header-v2-utility-navigation li {
+    display: none;
+  }
+
+  body.brand-rinvoq .abbv-header-v2-utility-navigation li:has(a.has-caret) {
+    display: flex;
+    margin-right: 0;
+    border-left: none;
+  }
+
+  body.brand-rinvoq .abbv-header-v2-utility-navigation li:first-child {
+    margin-right: 0;
+  }
+}

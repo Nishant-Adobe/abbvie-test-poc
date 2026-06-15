@@ -20,31 +20,31 @@
   display: flex;
   align-items: center;
   gap: 24px;
-  background-color: var(--linz-off-white, #f4f6fb);
+  background-color: var(--linz-off-white, var(--brand-bg-muted, #f4f6fb));
   border-radius: var(--linz-rounded-corner, 16px);
-  border-left: 4px solid var(--linz-light-purple, #d9d7f9);
+  border-left: 4px solid var(--linz-light-purple, var(--brand-surface, #d9d7f9));
   padding: 40px 48px 40px 48px;
   overflow: visible;
   position: relative;
 }
 
 .cards-icon > ul > li:nth-child(even) {
-  background-color: var(--linz-light-purple, #d9d7f9);
+  background-color: var(--linz-light-purple, var(--brand-surface, #d9d7f9));
 }
 
 /* Dark purple section variant */
 .section.dark-purple .cards-icon > ul > li:nth-child(odd) {
-  background-color: var(--linz-off-white, #f4f6fb);
+  background-color: var(--linz-off-white, var(--brand-bg-muted, #f4f6fb));
 }
 
 .section.dark-purple .cards-icon > ul > li:nth-child(even) {
-  background-color: var(--linz-light-purple, #d9d7f9);
+  background-color: var(--linz-light-purple, var(--brand-surface, #d9d7f9));
 }
 
 .section.dark-purple .cards-icon .cards-icon-card-body p,
 .section.dark-purple .cards-icon .cards-icon-card-body li,
 .section.dark-purple .cards-icon .cards-icon-card-body strong {
-  color: var(--linz-dark-purple, #422e83) !important;
+  color: var(--linz-dark-purple, var(--brand-primary, #422e83)) !important;
 }
 
 /* Bullet list horizontal on desktop */
@@ -68,13 +68,13 @@
   top: 6px;
   width: 8px;
   height: 8px;
-  background: var(--linz-dark-purple, #422e83);
+  background: var(--linz-dark-purple, var(--brand-primary, #422e83));
   border-radius: 50%;
 }
 
 /* Off-white section variant — alternating dark/light purple cards */
 .section.off-white .cards-icon > ul > li:nth-child(odd) {
-  background-color: var(--linz-dark-purple, #422e83);
+  background-color: var(--linz-dark-purple, var(--brand-primary, #422e83));
   color: var(--linz-white);
 }
 
@@ -100,7 +100,7 @@
   top: 10px;
   width: 8px;
   height: 8px;
-  background: var(--linz-dark-purple, #422e83);
+  background: var(--linz-dark-purple, var(--brand-primary, #422e83));
   border-radius: 50%;
 }
 
@@ -111,7 +111,7 @@
 }
 
 .section.off-white .cards-icon > ul > li:nth-child(even) {
-  background-color: var(--linz-light-purple, #d9d7f9);
+  background-color: var(--linz-light-purple, var(--brand-surface, #d9d7f9));
 }
 
 /* Icon image — overlaps outside card left edge */
@@ -127,7 +127,7 @@
   width: 160px;
   height: 160px;
   object-fit: contain;
-  background: var(--linz-light-purple, #d9d7f9);
+  background: var(--linz-light-purple, var(--brand-surface, #d9d7f9));
   border-radius: 50%;
   padding: 20px;
   box-sizing: border-box;
@@ -142,7 +142,7 @@
 .cards-icon .cards-icon-card-body p {
   font-size: 18px;
   font-weight: 400;
-  color: var(--linz-dark-purple, #422e83);
+  color: var(--linz-dark-purple, var(--brand-primary, #422e83));
   line-height: 1.6;
   margin: 0 0 12px;
 }
@@ -155,7 +155,7 @@
 .cards-icon .cards-icon-card-body li {
   font-size: 18px;
   font-weight: 400;
-  color: var(--linz-dark-purple, #422e83);
+  color: var(--linz-dark-purple, var(--brand-primary, #422e83));
   line-height: 1.6;
   margin-bottom: 6px;
 }

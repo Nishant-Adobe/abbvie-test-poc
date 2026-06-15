@@ -20,10 +20,12 @@ authored `<img>` survival.** Query semantically and supply code-repo assets from
 
 ## Header Decorator Rules (`blocks/header/header.js`)
 
-- **Logo image is stripped** — never read it from the fragment. Hardcode the brand
-  asset with a code-base fallback:
+- **Logo image is stripped** — never read it from the fragment. Restore the brand
+  asset from the per-brand icon folder (`/icons/<brand>/`) via the `brandIcon()`
+  helper, with the (stripped) fragment src as the first choice:
   ```js
-  img.src = logoImg?.getAttribute('src') || `${window.hlx?.codeBasePath || ''}/icons/linzess-logo-nav.png`;
+  import { brandIcon } from '../../scripts/scripts.js';
+  img.src = logoImg?.getAttribute('src') || brandIcon('logo-nav.png');
   ```
 - **Find nav parts semantically**, not by div index:
   ```js
@@ -40,9 +42,11 @@ authored `<img>` survival.** Query semantically and supply code-repo assets from
 - Footer logos are also stripped. Restore from code repo by matching the link
   href, with a source-order fallback for ambiguous links (e.g. Ironwood's `#`):
   ```js
+  // abbvie = universal AbbVie corporate mark (shared, flat /icons/);
+  // the partner mark (ironwood for linzess) is brand-specific (/icons/<brand>/).
   const brandLogos = [
     { match: 'abbvie', src: `${base}/icons/abbvie-logo.png`, alt: 'Abbvie logo' },
-    { match: 'ironwood', src: `${base}/icons/ironwood-logo.png`, alt: 'Ironwood logo' },
+    { match: 'ironwood', src: brandIcon('ironwood-logo.png'), alt: 'Ironwood logo' },
   ];
   // if no <img>: fallback = brandLogos.find(l => href.includes(l.match)) || brandLogos[order]
   ```

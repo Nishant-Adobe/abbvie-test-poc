@@ -11,18 +11,49 @@
  */
 
 :root {
-  /* colors — Linzess brand */
-  --background-color: white;
-  --light-color: #f4f6fb;
-  --dark-color: #422e83;
-  --text-color: #4d4d4f;
-  --link-color: #422e83;
-  --link-hover-color: #60579e;
+  /* ==========================================================================
+     BRAND TOKEN LAYER — the ONLY thing a brand overrides.
+     Generic, brand-agnostic names with Linzess defaults. Each brand ships a
+     styles/brands/<brand>.css that redefines just these in its own :root.
+     Blocks and the EDS tokens below must reference --brand-* (never raw hex).
+     See .claude/skills/abbvie-multisite-migration.md.
+     ========================================================================== */
+  --brand-primary: #422e83;          /* primary brand color (Linzess dark purple) */
+  --brand-primary-hover: #60579e;    /* hover/secondary shade */
+  --brand-primary-contrast: #fff;    /* text on top of --brand-primary */
+  --brand-accent: #faa633;           /* accent (Linzess orange) */
+  --brand-surface: #d9d7f9;          /* tinted surface (Linzess light purple) */
+  --brand-bg-muted: #f4f6fb;         /* muted page background (Linzess off-white) */
+  --brand-text: #4d4d4f;             /* body text */
+  --brand-white: #fff;
+  --brand-black: #000;
+  --brand-radius: 16px;
+  --brand-radius-sm: 8px;
+  --brand-heading-font: "Bebas Neue", sans-serif;
+  --brand-body-font: lato, sans-serif;
+
+  /* Brand "shape" language — these DIFFER per brand (e.g. Linzess uses pill
+     buttons + soft shadows; SKYRIZI uses square buttons + no shadow). Blocks
+     must reference these for brand-identity radius/shadow, NOT hard-code them.
+     Structural spacing (card gaps, section padding) stays literal in block CSS;
+     a brand that truly diverges overrides via styles/brands/<brand>.css. */
+  --brand-button-radius: 32px;       /* rounded (Linzess). SKYRIZI would set 0 */
+  --brand-card-radius: var(--brand-radius);
+  --brand-shadow: 0 0 10px rgb(0 0 0 / 25%);
+  --brand-card-shadow: 0 2px 8px rgb(0 0 0 / 15%);
+
+  /* colors — mapped onto the brand layer (do not hard-code hex here) */
+  --background-color: var(--brand-white);
+  --light-color: var(--brand-bg-muted);
+  --dark-color: var(--brand-primary);
+  --text-color: var(--brand-text);
+  --link-color: var(--brand-primary);
+  --link-hover-color: var(--brand-primary-hover);
   --overlay-background-color: lightgrey;
 
-  /* fonts — Linzess uses Lato (body) and Bebas Neue (headings) */
-  --body-font-family: lato, sans-serif;
-  --heading-font-family: "Bebas Neue", sans-serif;
+  /* fonts — mapped onto the brand layer */
+  --body-font-family: var(--brand-body-font);
+  --heading-font-family: var(--brand-heading-font);
 
   /* body sizes */
   --body-font-size-m: 14px;

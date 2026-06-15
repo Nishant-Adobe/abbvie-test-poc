@@ -7,7 +7,7 @@ footer .footer {
 }
 
 footer {
-  background-color: var(--linz-dark-purple, #422e83);
+  background-color: var(--linz-dark-purple, var(--brand-primary, #422e83));
   color: var(--linz-white, #fff);
   padding: 40px 0 20px;
   position: relative;
@@ -26,7 +26,7 @@ footer::before {
   transform: translateX(-50%);
   width: 130%;
   height: 255px;
-  background-color: var(--linz-dark-purple, #422e83);
+  background-color: var(--linz-dark-purple, var(--brand-primary, #422e83));
   border-radius: 100% 100% 0 0;
   z-index: -1;
 }

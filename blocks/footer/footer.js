@@ -1,4 +1,5 @@
 import { getMetadata } from '../../scripts/aem.js';
+import { getBrand, brandIcon } from '../../scripts/scripts.js';
 
 async function fetchFragment(path) {
   const resp = await fetch(path);
@@ -10,9 +11,15 @@ async function fetchFragment(path) {
 
 export default async function decorate(block) {
   const footerMeta = getMetadata('footer');
-  // footer is a site-root fragment; default to /footer so it resolves on every
-  // page regardless of depth (the content root is mounted at the site root).
-  const footerPath = footerMeta ? new URL(footerMeta, window.location).pathname : '/footer';
+  // footer is a site-root fragment. Default to /footer (content root mounted at
+  // site root). For non-default brands sharing the same site root (e.g. rinvoq
+  // under /content/rinvoq/), a root-relative /footer would collide with another
+  // brand's fragment, so resolve the brand's own fragment path.
+  const brandForFragment = getBrand();
+  const defaultFooterPath = brandForFragment && brandForFragment !== 'linzess'
+    ? `/content/${brandForFragment}/footer`
+    : '/footer';
+  const footerPath = footerMeta ? new URL(footerMeta, window.location).pathname : defaultFooterPath;
   const fragment = await fetchFragment(`${footerPath}.plain.html`);
   if (!fragment) return;
 
@@ -23,7 +30,7 @@ export default async function decorate(block) {
 
   // Build the exact original DOM
   const footer = document.createElement('footer');
-  footer.className = 'abbv-footer linzess-footer';
+  footer.className = `abbv-footer ${getBrand()}-footer`;
   const footerContent = document.createElement('div');
   footerContent.className = 'abbv-footer-content';
 
@@ -99,11 +106,13 @@ export default async function decorate(block) {
     // so a logo paragraph arrives as a bare <a>. Restore the brand logo from
     // the code repo by matching the link href.
     const base = window.hlx?.codeBasePath || '';
-    // Brand logos in source order (abbvie, then ironwood). The .plain.html
-    // pipeline strips the <img>, so restore by href domain, then by order.
+    // Footer co-brand logos in source order. The .plain.html pipeline strips the
+    // <img>, so restore by href domain, then by order. abbvie is the universal
+    // AbbVie corporate mark (shared, flat in /icons/); the partner mark (ironwood
+    // for linzess) is brand-specific (/icons/<brand>/).
     const brandLogos = [
       { match: 'abbvie', src: `${base}/icons/abbvie-logo.png`, alt: 'Abbvie logo' },
-      { match: 'ironwood', src: `${base}/icons/ironwood-logo.png`, alt: 'Ironwood logo' },
+      { match: 'ironwood', src: brandIcon('ironwood-logo.png'), alt: 'Ironwood logo' },
     ];
     let logoOrder = 0;
     [...logoParagraphs].forEach((p) => {

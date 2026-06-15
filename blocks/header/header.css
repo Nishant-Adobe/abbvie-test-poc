@@ -28,7 +28,7 @@ header {
   left: 0;
   right: 0;
   z-index: 9999;
-  box-shadow: 0 2px 8px rgb(0 0 0 / 15%);
+  box-shadow: var(--brand-card-shadow, 0 2px 8px rgb(0 0 0 / 15%));
 }
 
 /* Hide icon pseudo on utility nav links (framework adds unwanted arrows) */
@@ -48,7 +48,7 @@ header {
   left: 50%;
   transform: translateX(-50%);
   z-index: 102;
-  background-color: var(--linz-light-purple, #d9d7f9);
+  background-color: var(--linz-light-purple, var(--brand-surface, #d9d7f9));
   border-radius: 16px;
   box-shadow: rgb(153 153 153) 0 3px 5px 0;
   text-align: center;
@@ -70,7 +70,7 @@ header {
 }
 
 .abbv-header-primary-navigation-submenu a {
-  color: var(--linz-dark-purple, #422e83) !important;
+  color: var(--linz-dark-purple, var(--brand-primary, #422e83)) !important;
   font-size: 15px;
   font-weight: 400;
   text-decoration: none;
@@ -93,7 +93,7 @@ header {
   height: 0;
   border-left: 6px solid transparent;
   border-right: 6px solid transparent;
-  border-top: 7px solid #faa633;
+  border-top: 7px solid var(--brand-accent, #faa633);
   transition: all 0.2s;
 }
 
@@ -126,7 +126,7 @@ header {
 
 .abbv-header-primary-navigation-submenu a[role="menuitem"]:hover {
   font-weight: 700 !important;
-  background-color: var(--linz-off-white, #f4f6fb);
+  background-color: var(--linz-off-white, var(--brand-bg-muted, #f4f6fb));
 }
 
 /* Fix logo overlap — ensure left section doesn't overlap nav */

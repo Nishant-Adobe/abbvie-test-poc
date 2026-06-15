@@ -6,7 +6,7 @@
 }
 
 .isi .abbv-safety-bar,
-.abbv-safety-bar.linzess-safety-bar {
+.abbv-safety-bar[class*="-safety-bar"] {
   display: block;
 }
 
@@ -17,7 +17,7 @@
   right: 0;
   z-index: 9998;
   background: #fff;
-  box-shadow: 0 0 10px rgb(0 0 0 / 25%);
+  box-shadow: var(--brand-shadow, 0 0 10px rgb(0 0 0 / 25%));
   font-family: Lato, sans-serif;
   font-size: 13px;
   line-height: 1.4;
@@ -44,7 +44,7 @@
   right: 16px;
   width: 32px;
   height: 32px;
-  border: 2px solid var(--linz-dark-purple, #422e83);
+  border: 2px solid var(--linz-dark-purple, var(--brand-primary, #422e83));
   border-radius: 50%;
   background: #fff;
   cursor: pointer;
@@ -66,7 +66,7 @@
 .abbv-safety-bar-toggle-icon::after {
   content: "";
   position: absolute;
-  background: var(--linz-dark-purple, #422e83);
+  background: var(--linz-dark-purple, var(--brand-primary, #422e83));
 }
 
 .abbv-safety-bar-toggle-icon::before {
@@ -109,7 +109,7 @@
   font-family: Lato, sans-serif;
   font-size: 14px;
   font-weight: 800;
-  color: var(--linz-dark-purple, #422e83);
+  color: var(--linz-dark-purple, var(--brand-primary, #422e83));
   margin: 0 0 8px;
   text-transform: uppercase;
 }
@@ -136,7 +136,7 @@
 }
 
 .abbv-safety-bar a {
-  color: var(--linz-dark-purple, #422e83) !important;
+  color: var(--linz-dark-purple, var(--brand-primary, #422e83)) !important;
   text-decoration: underline;
 }
 
@@ -188,7 +188,7 @@
   font-size: 16px;
   font-weight: 800;
   font-family: Lato, sans-serif;
-  color: var(--linz-dark-purple, #422e83);
+  color: var(--linz-dark-purple, var(--brand-primary, #422e83));
   text-transform: none;
   margin: 10px 0 0;
 }
@@ -211,7 +211,7 @@
 }
 
 .abbv-inline-use-isi a {
-  color: var(--linz-dark-purple, #422e83);
+  color: var(--linz-dark-purple, var(--brand-primary, #422e83));
   text-decoration: underline;
 }
 

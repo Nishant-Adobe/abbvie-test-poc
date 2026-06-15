@@ -1,0 +1,33 @@
+/*
+ * Brand token overrides — LINZESS
+ *
+ * The ONLY brand-specific stylesheet. Every other style/block is shared and
+ * brand-agnostic, referencing the generic --brand-* tokens. To onboard a new
+ * brand, copy this file to styles/brands/<brand>.css and change the values.
+ *
+ * Loaded per-site via head.html based on <meta name="brand"> (default: linzess).
+ * These values are identical to the generic defaults in styles.css :root, so
+ * Linzess renders unchanged; they are restated here to make the per-brand
+ * pattern explicit and self-contained.
+ */
+:root {
+  --brand-primary: #422e83;          /* dark purple */
+  --brand-primary-hover: #60579e;    /* purple */
+  --brand-primary-contrast: #fff;
+  --brand-accent: #faa633;           /* orange */
+  --brand-surface: #d9d7f9;          /* light purple */
+  --brand-bg-muted: #f4f6fb;         /* off-white */
+  --brand-text: #4d4d4f;             /* grey */
+  --brand-white: #fff;
+  --brand-black: #000;
+  --brand-radius: 16px;
+  --brand-radius-sm: 8px;
+  --brand-heading-font: "Bebas Neue", sans-serif;
+  --brand-body-font: lato, sans-serif;
+
+  /* shape language — Linzess: rounded 32px buttons, soft shadows, 16px cards */
+  --brand-button-radius: 32px;
+  --brand-card-radius: 16px;
+  --brand-shadow: 0 0 10px rgb(0 0 0 / 25%);
+  --brand-card-shadow: 0 2px 8px rgb(0 0 0 / 15%);
+}

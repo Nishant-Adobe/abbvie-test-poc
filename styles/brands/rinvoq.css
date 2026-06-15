@@ -1,0 +1,78 @@
+/* stylelint-disable */
+/*
+ * Brand token overrides — RINVOQ (rinvoq.com)
+ *
+ * The ONLY brand-specific stylesheet for RINVOQ. Everything else is shared and
+ * brand-agnostic, referencing the generic --brand-* tokens. Loaded per-site via
+ * head.html based on <meta name="brand"> (brand=rinvoq).
+ *
+ * Fonts are BRAND-SPECIFIC and self-hosted under /fonts/ (downloaded from the
+ * live Monotype kit; the originals were obfuscated UUID woff2 files served from
+ * rinvoq.com, which CORS-blocks them). The @font-face family names below MUST
+ * match the names the AbbVie framework CSS references verbatim.
+ */
+
+@font-face {
+  font-family: "Helvetica Neue LT W05_55 Roman";
+  src: url("/fonts/HelveticaNeueLT-W05-55-Roman.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Helvetica Neue LT W05_65 Medium";
+  src: url("/fonts/HelveticaNeueLT-W05-65-Medium.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Helvetica Neue LT W05_75 Bold";
+  src: url("/fonts/HelveticaNeueLT-W05-75-Bold.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Neue Haas Grotesk Disp W0595Bl";
+  src: url("/fonts/NeueHaasGroteskDisp-W05-95Blk.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  /* brand identity */
+  --brand-primary: #90124a;          /* RINVOQ magenta/plum (CTAs, links) */
+  --brand-primary-hover: #6d0e38;    /* darker plum */
+  --brand-primary-contrast: #fff;
+  --brand-accent: #90124a;           /* RINVOQ has no separate accent; reuse plum */
+  --brand-surface: #f4f4f4;          /* neutral light surface (not lavender) */
+  --brand-bg-muted: #f4f4f4;         /* neutral off-white */
+  --brand-text: #25282a;             /* charcoal body text */
+  --brand-white: #fff;
+  --brand-black: #000;
+  --brand-radius: 5px;
+  --brand-radius-sm: 5px;
+  --brand-heading-font: "Neue Haas Grotesk Disp W0595Bl", Arial, "Helvetica Neue", Helvetica, sans-serif;
+  --brand-body-font: "Helvetica Neue LT W05_55 Roman", Arial, "Helvetica Neue", Helvetica, sans-serif;
+
+  /* shape language — RINVOQ: 5px rounded buttons, no shadow, white-bg/plum-border CTA */
+  --brand-button-radius: 5px;
+  --brand-card-radius: 5px;
+  --brand-shadow: none;
+  --brand-card-shadow: 0 2px 8px rgb(0 0 0 / 15%);
+}
+
+/* linzess-global.css and linzess.css hardcode `body { font-family: Lato;
+   color: var(--linz-grey) }` directly on the body selector (bypassing the
+   --brand-* tokens) and are loaded for every brand. Win with a higher-specificity
+   body.brand-rinvoq rule so RINVOQ uses its own Helvetica Neue body font + charcoal
+   text site-wide. This file loads last (data-brand-tokens), so it cascades over them. */
+body.brand-rinvoq {
+  font-family: var(--brand-body-font);
+  color: var(--brand-text);
+}

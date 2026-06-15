@@ -4,18 +4,23 @@
    Extracted from https://www.linzess.com/ production stylesheets
    ================================================================ */
 
-/* CSS Custom Properties — verbatim from linzess.com :root */
+/* CSS Custom Properties.
+   The --linz-* names are kept as ALIASES onto the generic --brand-* layer
+   (defined in styles.css). This makes all existing --linz-* usages resolve
+   through the brand layer, so a brand only overrides --brand-* in
+   styles/brands/<brand>.css. The Linzess values themselves live in
+   styles/brands/linzess.css. */
 :root {
-  --linz-dark-purple: #422e83;
-  --linz-light-purple: #d9d7f9;
-  --linz-purple: #60579e;
-  --linz-orange: #faa633;
-  --linz-grey: #4d4d4f;
-  --linz-off-white: #f4f6fb;
-  --linz-white: #fff;
-  --linz-black: #000;
-  --linz-rounded-corner: 16px;
-  --linz-rounded-corner-sm: 8px;
+  --linz-dark-purple: var(--brand-primary);
+  --linz-light-purple: var(--brand-surface);
+  --linz-purple: var(--brand-primary-hover);
+  --linz-orange: var(--brand-accent);
+  --linz-grey: var(--brand-text);
+  --linz-off-white: var(--brand-bg-muted);
+  --linz-white: var(--brand-white);
+  --linz-black: var(--brand-black);
+  --linz-rounded-corner: var(--brand-radius);
+  --linz-rounded-corner-sm: var(--brand-radius-sm);
   --body-font-size: 0.875rem;
   --footnote-font-size: 0.75rem;
   --eyebrow-font-size: 0.75rem;
@@ -45,10 +50,10 @@
 /* Primary heading font: Bebas Neue (loaded via Google Fonts in head.html)
    Weight used: 400 only */
 
-/* Icon font - cross-origin from original AEM instance, CSS fallback chevron used */
+/* Icon font - served locally from the EDS repo (/fonts) to avoid cross-origin/CORS */
 @font-face {
   font-family: abbv-iconFont;
-  src: url("https://www.linzess.com/etc.clientlibs/common-elements/clientlibs/clientlib-fonts/resources/framework/ui/fonts/abbv_iconFont.woff") format("woff");
+  src: url("/fonts/abbv_iconFont.woff") format("woff");
   font-weight: normal;
   font-style: normal;
 }
@@ -2298,13 +2303,15 @@ p.comp-row-label {
    the same solid dark-purple header (otherwise the gradient reads grey on white). */
 body.transcript-page,
 body.sitemap-page,
-body.page-not-found-page {
+body.page-not-found-page,
+body.savings-card-page {
   background-color: var(--linz-dark-purple, #422e83);
 }
 
 body.transcript-page main,
 body.sitemap-page main,
-body.page-not-found-page main {
+body.page-not-found-page main,
+body.savings-card-page main {
   position: relative;
   background-color: var(--linz-dark-purple, #422e83);
 }
@@ -2320,7 +2327,9 @@ body.transcript-page header .abbv-header-v2:not(.abbv-fixed),
 body.sitemap-page header .linzess-header:not(.abbv-fixed),
 body.sitemap-page header .abbv-header-v2:not(.abbv-fixed),
 body.page-not-found-page header .linzess-header:not(.abbv-fixed),
-body.page-not-found-page header .abbv-header-v2:not(.abbv-fixed) {
+body.page-not-found-page header .abbv-header-v2:not(.abbv-fixed),
+body.savings-card-page header .linzess-header:not(.abbv-fixed),
+body.savings-card-page header .abbv-header-v2:not(.abbv-fixed) {
   background-image: none;
   background-color: var(--linz-dark-purple, #422e83);
 }
@@ -2330,7 +2339,8 @@ body.page-not-found-page header .abbv-header-v2:not(.abbv-fixed) {
    arch cresting just below the nav, so keep the dome top high. */
 body.transcript-page main::before,
 body.sitemap-page main::before,
-body.page-not-found-page main::before {
+body.page-not-found-page main::before,
+body.savings-card-page main::before {
   content: "";
   position: absolute;
   top: 40px;

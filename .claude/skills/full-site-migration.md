@@ -99,9 +99,32 @@ the list of NEW blocks to be created and the functional pieces to reproduce.
   + hover states, section arc/curve values, border-radius.
 - Write tokens to `styles/styles.css` (`:root`), load the original framework CSS
   verbatim (e.g. `abbv-framework.css`, brand global CSS) so class-based styling works.
+- **DOWNLOAD font files into the repo — never reference them cross-origin.** Fonts
+  are BRAND-SPECIFIC (each brand ships its own typefaces). The original CSS points
+  `@font-face src` at the live brand domain / clientlibs (e.g.
+  `https://www.<brand>.com/.../BasicCommercialLTCom-Roman.ttf`,
+  `.../abbv_iconFont.woff`). Loading those at runtime FAILS — the origin sends no
+  `Access-Control-Allow-Origin` for fonts, so the browser blocks every face with a
+  CORS error (and many 404). Self-host instead:
+  1. Grep the framework + brand CSS for `@font-face`/`src: url(`/`fonts/` to list
+     every face (brand text faces + the shared `abbv_iconFont`).
+  2. `curl` each file into the repo `/fonts/` folder (keep original filenames).
+  3. Rewrite every `@font-face src` to a root-relative `/fonts/<file>` path.
+  4. Verify in the preview via `document.fonts.ready` + `document.fonts.check()`
+     and a `fetch('/fonts/<file>')` returning 200 — zero font CORS/404 in console.
+  Fonts ship WITH the brand: a new brand downloads ITS faces into `/fonts/` and uses
+  its own filenames; do not assume two brands share text faces (only `abbv_iconFont`
+  is common across AbbVie brands).
+- **DOWNLOAD brand icons/logos into a per-brand folder `/icons/<brand>/`** (nav
+  logo, partner co-brand marks, brand-unique glyphs) and reference them in block JS
+  via a `brandIcon('<name>')` helper that resolves `/icons/<brand>/<name>`. Keep
+  framework-generic UI icons (home, search, the universal corporate logo) flat in
+  `/icons/` (shared). Like fonts, icons are brand-specific — never reference the
+  live brand domain; download SVG/PNG into the repo.
 
-**Gate:** `:root` tokens defined and global/framework CSS loaded; a token sanity
-check renders correct fonts/colors on a blank section.
+**Gate:** `:root` tokens defined and global/framework CSS loaded; ALL fonts
+self-hosted under `/fonts/` (no cross-origin `@font-face src`); a token sanity
+check renders correct fonts/colors on a blank section with no font CORS/404 errors.
 
 ---
 

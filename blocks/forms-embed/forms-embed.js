@@ -147,6 +147,14 @@ function collectFormAssets(doc, formsUrl) {
   const toAbs = (v) => {
     try { return new URL(v, base).href; } catch (e) { return null; }
   };
+  // Stylesheets to SKIP: clientlib-site is the generic AEM site theme (WKND
+  // boilerplate) with UNSCOPED global resets (body/html font-size, main.container
+  // padding, button font, etc.) that leak onto and break the host page's header
+  // and layout. It carries no form-component styling, so exclude it. Keep
+  // clientlib-base, clientlib-dependencies, custom-forms-components-runtime-all,
+  // and the form theme.css.
+  const SKIP_STYLE = /clientlib-site(\.min)?\.css/i;
+
   // Match any <link> whose rel TOKEN list includes "stylesheet" — the form's
   // theme is linked as rel="preload stylesheet", which an exact
   // [rel="stylesheet"] selector would miss (that theme carries the actual
@@ -156,7 +164,8 @@ function collectFormAssets(doc, formsUrl) {
       .split(/\s+/)
       .includes('stylesheet'))
     .map((l) => toAbs(l.getAttribute('href')))
-    .filter(Boolean);
+    .filter(Boolean)
+    .filter((href) => !SKIP_STYLE.test(href));
   const scripts = [...doc.querySelectorAll('script[src]')]
     .map((s) => toAbs(s.getAttribute('src')))
     .filter(Boolean);

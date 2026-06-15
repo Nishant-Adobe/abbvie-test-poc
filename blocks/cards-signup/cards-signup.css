@@ -34,7 +34,7 @@
 }
 
 .cards-signup .abbv-flex-item-v2 {
-  background-color: var(--linz-light-purple, #d9d7f9);
+  background-color: var(--linz-light-purple, var(--brand-surface, #d9d7f9));
   border-radius: 20px;
   padding: 56px 28px 36px;
   text-align: center;
@@ -51,7 +51,7 @@
   transform: translateX(-50%);
   width: 120px;
   height: 120px;
-  background-color: var(--linz-dark-purple, #422e83);
+  background-color: var(--linz-dark-purple, var(--brand-primary, #422e83));
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -69,7 +69,7 @@
 
 .cards-signup .abbv-rich-text p {
   font-size: 16px;
-  color: var(--linz-grey, #4d4d4f);
+  color: var(--linz-grey, var(--brand-text, #4d4d4f));
   line-height: 1.5;
   margin: 0 0 16px;
 }
@@ -78,7 +78,7 @@
   font-family: Lato, sans-serif;
   font-size: 28px;
   font-weight: 700;
-  color: var(--linz-dark-purple, #422e83);
+  color: var(--linz-dark-purple, var(--brand-primary, #422e83));
   margin: 16px 0 12px;
   line-height: 1.2;
 }
@@ -93,7 +93,7 @@
   font-weight: 800;
   color: var(--linz-white) !important;
   background: var(--linz-dark-purple);
-  border-radius: 32px;
+  border-radius: var(--brand-button-radius, 32px);
   padding: 16px 48px 16px 32px;
   display: inline-block;
   text-decoration: none;
@@ -120,7 +120,7 @@
 
 /* Middle card (Call) has dark purple background */
 .cards-signup .flexboxitem-v2:nth-child(2) .abbv-flex-item-v2 {
-  background-color: var(--linz-dark-purple, #422e83);
+  background-color: var(--linz-dark-purple, var(--brand-primary, #422e83));
 }
 
 .cards-signup .flexboxitem-v2:nth-child(2) .abbv-rich-text p.heading-2 {
@@ -137,7 +137,7 @@
 }
 
 .cards-signup .flexboxitem-v2:nth-child(2) .icon-image {
-  background-color: var(--linz-light-purple, #d9d7f9);
+  background-color: var(--linz-light-purple, var(--brand-surface, #d9d7f9));
 }
 
 .cards-signup .flexboxitem-v2:nth-child(2) .icon-image img {

@@ -1,3 +1,5 @@
+import { getBrand } from '../../scripts/scripts.js';
+
 async function fetchFragment(path) {
   const resp = await fetch(path);
   if (!resp.ok) return null;
@@ -9,11 +11,19 @@ async function fetchFragment(path) {
 export default async function decorate(block) {
   const linkEl = block.querySelector('a[href], div');
   const fragmentPath = linkEl?.textContent?.trim() || '';
+  const brand = getBrand();
   let isiUrl;
   if (fragmentPath.startsWith('/')) {
     // Authored as an absolute fragment path (e.g. /isi). The content root is
     // mounted at the site root, so reference it directly — no /content prefix.
-    isiUrl = `${fragmentPath}.plain.html`;
+    // For non-default brands that share the same site root (e.g. rinvoq under
+    // /content/rinvoq/), a root-relative /isi would collide with another
+    // brand's fragment, so resolve the brand's own fragment path.
+    if (brand && brand !== 'linzess' && /^\/[^/]+$/.test(fragmentPath)) {
+      isiUrl = `/content/${brand}${fragmentPath}.plain.html`;
+    } else {
+      isiUrl = `${fragmentPath}.plain.html`;
+    }
   } else {
     const dir = window.location.pathname.replace(/\/$/, '');
     isiUrl = `${dir}/isi.plain.html`;
@@ -52,7 +62,7 @@ export default async function decorate(block) {
 
   // Build ISI sticky bar DOM matching original
   const isiBar = document.createElement('div');
-  isiBar.className = 'abbv-safety-bar abbv-safety-bar-minimized linzess-safety-bar';
+  isiBar.className = `abbv-safety-bar abbv-safety-bar-minimized ${brand}-safety-bar`;
 
   // Toggle button
   const toggleBtn = document.createElement('button');
@@ -94,7 +104,7 @@ export default async function decorate(block) {
   inlineIsiRegion.appendChild(useAnchor);
 
   const inlineContent = document.createElement('div');
-  inlineContent.className = 'abbv-inline-use linzess-use-statement abbv-rich-text-common';
+  inlineContent.className = `abbv-inline-use ${brand}-use-statement abbv-rich-text-common`;
   if (usesDiv) {
     const usesBlock = document.createElement('div');
     usesBlock.className = 'abbv-inline-use-uses';

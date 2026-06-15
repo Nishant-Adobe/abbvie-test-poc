@@ -545,6 +545,29 @@ function buildBlock(blockName, content) {
   return blockEl;
 }
 
+// Per-block brand override manifest (blocks/block-brand-overrides.json), loaded
+// once. Has two maps:
+//   cssOverrides: blockName -> [brands] that ship blocks/<brand>/<block>.css
+//                 (loaded AFTER the base CSS so it wins the cascade)
+//   jsOverrides:  blockName -> [brands] that ship blocks/<brand>/<block>.js
+//                 (REPLACES the base decorator for that brand)
+// Gating on this manifest means absent override files never 404. Tokens +
+// styles/brands/<brand>.css are the default; per-block CSS/JS overrides are the
+// structural-divergence escape hatch for complex blocks (header/footer/isi/hero).
+let blockBrandOverridesPromise;
+function loadBlockBrandOverrides() {
+  if (!blockBrandOverridesPromise) {
+    blockBrandOverridesPromise = fetch(`${window.hlx.codeBasePath}/blocks/block-brand-overrides.json`)
+      .then((resp) => (resp.ok ? resp.json() : {}))
+      .then((json) => ({
+        cssOverrides: json.cssOverrides || {},
+        jsOverrides: json.jsOverrides || {},
+      }))
+      .catch(() => ({ cssOverrides: {}, jsOverrides: {} }));
+  }
+  return blockBrandOverridesPromise;
+}
+
 /**
  * Loads JS and CSS for a block.
  * @param {Element} block The block element
@@ -554,14 +577,41 @@ async function loadBlock(block) {
   if (status !== 'loading' && status !== 'loaded') {
     block.dataset.blockStatus = 'loading';
     const { blockName } = block.dataset;
+    const { brand } = document.documentElement.dataset;
     try {
       const cssLoaded = loadCSS(`${window.hlx.codeBasePath}/blocks/${blockName}/${blockName}.css`);
+      // Resolve the brand-override manifest (cached) so we can decide which CSS
+      // and which JS module to load for the active brand.
+      const overrides = brand
+        ? await loadBlockBrandOverrides()
+        : { cssOverrides: {}, jsOverrides: {} };
+      // Optional brand override CSS — only when listed (so a missing file never
+      // 404s). Loaded AFTER the base block CSS so its rules win the cascade.
+      if (overrides.cssOverrides[blockName]?.includes(brand)) {
+        loadCSS(`${window.hlx.codeBasePath}/blocks/${brand}/${blockName}.css`);
+      }
+      // Brand JS override (REPLACE mode): if a brand decorator exists at
+      // blocks/<brand>/<block>.js, run it INSTEAD of the base; otherwise run the
+      // base blocks/<block>/<block>.js. Presence is decided by the jsOverrides
+      // manifest list (so a missing file never 404s); when listed, the brand
+      // module fully replaces the base decorator.
+      const useBrandJs = brand && overrides.jsOverrides[blockName]?.includes(brand);
+      const basePath = `${window.hlx.codeBasePath}/blocks/${blockName}/${blockName}.js`;
+      const brandPath = `${window.hlx.codeBasePath}/blocks/${brand}/${blockName}.js`;
       const decorationComplete = new Promise((resolve) => {
         (async () => {
           try {
-            const mod = await import(
-              `${window.hlx.codeBasePath}/blocks/${blockName}/${blockName}.js`
-            );
+            // Try the brand decorator first when present, else fall back to base.
+            let mod;
+            if (useBrandJs) {
+              try {
+                mod = await import(brandPath);
+              } catch (e) {
+                mod = await import(basePath);
+              }
+            } else {
+              mod = await import(basePath);
+            }
             if (mod.default) {
               await mod.default(block);
             }

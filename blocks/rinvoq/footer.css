@@ -1,0 +1,230 @@
+/* stylelint-disable */
+
+/*
+ * RINVOQ footer CSS override — loaded AFTER blocks/footer/footer.css, rinvoq only.
+ * Matches rinvoq.com: light-grey band, grey bold <h5> column headings, plum link
+ * lists, a thin separator under the headings, and a grey AbbVie logo + trademark
+ * text + copyright code at the bottom. Values from getComputedStyle on the live
+ * rinvoq.com footer (contentinfo.abbv-footer).
+ */
+
+/* Light-grey band — override the base purple bg + remove the purple arch dome.
+   The base blocks/footer/footer.css paints the <footer> element itself purple
+   (background: var(--brand-primary)) and adds a 255px arch via footer::before.
+   RINVOQ's footer is a flat light-grey band with NO arch, so neutralize BOTH the
+   <footer> element (which carries class footer-wrapper) and its ::before, plus
+   the inner .rinvoq-footer. */
+body.brand-rinvoq footer,
+body.brand-rinvoq footer.footer-wrapper {
+  background-color: #f3f3f3;
+  color: #25282a;
+  padding: 0;
+  z-index: auto;
+}
+
+body.brand-rinvoq footer::before {
+  content: none;
+  display: none;
+}
+
+.rinvoq-footer {
+  background-color: #f3f3f3;
+  color: #25282a;
+  padding: 0;
+  overflow: visible;
+}
+
+.rinvoq-footer::before {
+  content: none;
+  display: none;
+}
+
+.rinvoq-footer .abbv-footer-content {
+  background-color: #f3f3f3;
+  display: block;
+  max-width: 1140px;
+  margin: 0 auto;
+
+  /* Mobile keeps side padding; desktop drops it so the 1140px content matches
+     the original (which centers a 1140px row with no inner padding). */
+  padding: 32px 20px 24px;
+}
+
+/* Column rows. Mobile-first: a single stacked column. nowrap stops the
+   abbv-framework's flex-wrap from spilling tall columns into extra side
+   columns at 390px. The height:auto (high specificity, body.brand-rinvoq)
+   neutralizes the Linzess `@media (width<=899px) .abbv-footer-content
+   .abbv-row-flush { height: 490px }` rule that otherwise clamps the row and
+   makes the stacked columns overflow onto the bottom band. */
+body.brand-rinvoq .abbv-footer-content .abbv-row-flush {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  height: auto;
+  gap: 0;
+  padding: 0;
+  margin: 0;
+}
+
+/* Mobile-first: columns stack full width. The selector is intentionally as
+   specific as the Linzess base rule
+   `.abbv-footer-content .abbv-row-flush .abbv-col { width: 50% }` (and prefixed
+   with body.brand-rinvoq to win) so the abbv-framework float:left + Linzess 50%
+   width don't keep the columns side by side at 390px. */
+body.brand-rinvoq .abbv-footer-content .abbv-row-flush .abbv-col {
+  flex: 1 1 auto;
+  float: none;
+  width: 100%;
+  max-width: 100%;
+  padding: 0;
+  margin: 0 0 8px;
+  min-width: 0;
+}
+
+/* Grey bold column headings. */
+.rinvoq-footer .abbv-footer-heading {
+  display: block;
+  color: #666869;
+  font-size: 12px;
+  font-weight: 700;
+  font-family: "Helvetica Neue LT W05_75 Bold", Arial, "Helvetica Neue", Helvetica, sans-serif;
+  line-height: 14.4px;
+  text-transform: none;
+  margin: 0 0 5px;
+  padding: 0;
+}
+
+/* Plum link lists — match original ul margin 23px 0 12px, li padding 0 0 7px. */
+.rinvoq-footer .abbv-footer-vertical {
+  list-style: none;
+  padding: 0;
+  margin: 23px 0 12px;
+}
+
+.rinvoq-footer .abbv-footer-vertical li {
+  margin: 0;
+  padding: 0 0 7px;
+  line-height: 18px;
+}
+
+.rinvoq-footer p,
+.rinvoq-footer li {
+  color: #25282a;
+}
+
+/* Plum footer links (override base !important white). */
+.rinvoq-footer a:any-link {
+  color: #90124a !important;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 18px;
+  text-decoration: none;
+}
+
+.rinvoq-footer a:hover {
+  text-decoration: underline;
+}
+
+/* Bottom band: grey AbbVie logo + trademark/copyright text.
+   Mobile-first: logo stacked above the text; desktop puts them side by side. */
+.rinvoq-footer .abbv-footer-bottom {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 16px;
+  margin: 0;
+  padding: 24px 0 0;
+  border-top: 1px solid #d8d8d8;
+}
+
+.rinvoq-footer .abbv-footer-logos {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+}
+
+.rinvoq-footer .abbv-footer-logos img {
+  width: 130px;
+  height: auto;
+  display: block;
+
+  /* Render the corporate mark in grey to match the original muted footer logo. */
+  filter: grayscale(100%) opacity(45%);
+}
+
+.rinvoq-footer .abbv-footer-legal-text {
+  flex: 1 1 auto;
+}
+
+.rinvoq-footer .abbv-footer-trademark,
+.rinvoq-footer .abbv-footer-copyright {
+  color: #666869;
+  font-size: 11px;
+  line-height: 16px;
+  margin: 0 0 6px;
+}
+
+.rinvoq-footer .abbv-footer-copyright {
+  margin-bottom: 0;
+}
+
+/* Desktop: 3 columns side by side (flex row), each column keeping its heading
+   and link list together so they pair correctly when stacked on mobile. A
+   single full-width row-level ::after draws ONE continuous separator line
+   spanning all three columns and the gutters, directly beneath the (single-line)
+   headings — matching the original (not three per-column underlines). */
+@media (width >= 900px) {
+  .rinvoq-footer .abbv-footer-content {
+    padding: 45px 0 30px;
+  }
+
+  body.brand-rinvoq .abbv-footer-content .abbv-footer-nav-row {
+    flex-direction: row;
+    gap: 0;
+    position: relative;
+    padding-bottom: 30px;
+    border-bottom: 1px solid #d8d8d8;
+  }
+
+  /* Desktop: restore 3 equal columns. Specificity matches the mobile rule above
+     (body.brand-rinvoq + 3 classes) so it wins. */
+  body.brand-rinvoq .abbv-footer-content .abbv-footer-nav-row .abbv-col {
+    flex: 1 1 0;
+    width: auto;
+    margin: 0;
+    padding-right: 30px;
+  }
+
+  /* Heading sits at the top of each column; its bottom margin opens the gap the
+     continuous separator occupies (heading line 14.4px + 12px gap + 1px line +
+     23px before the list ≈ aligns with the original 23px ul top margin). */
+  .rinvoq-footer .abbv-footer-nav-row .abbv-footer-heading {
+    margin: 0 0 12px;
+  }
+
+  .rinvoq-footer .abbv-footer-nav-row .abbv-footer-vertical {
+    margin: 12px 0 0;
+  }
+
+  /* ONE continuous separator line under the row of headings, spanning all three
+     columns and the gutters. Drawn as a row-level pseudo positioned just below
+     the (single-line) headings rather than as three per-column underlines.
+     Heading box: 14.4px line-height + 12px bottom margin ≈ 26px from row top. */
+  .rinvoq-footer .abbv-footer-nav-row::after {
+    content: "";
+    position: absolute;
+    top: 26px;
+    left: 0;
+    right: 0;
+    border-top: 1px solid #d8d8d8;
+  }
+
+  /* Desktop bottom band: logo left, trademark/copyright text to its right. */
+  .rinvoq-footer .abbv-footer-bottom {
+    flex-direction: row;
+    gap: 24px;
+  }
+}

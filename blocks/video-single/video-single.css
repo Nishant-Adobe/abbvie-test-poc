@@ -18,7 +18,7 @@
 }
 
 .video-single .abbv-flex-item-v2 {
-  background-color: var(--linz-light-purple, #d9d7f9);
+  background-color: var(--linz-light-purple, var(--brand-surface, #d9d7f9));
   border-radius: var(--linz-rounded-corner, 16px);
   overflow: hidden;
 }
@@ -77,7 +77,7 @@
   height: 0;
   border-style: solid;
   border-width: 10px 0 10px 18px;
-  border-color: transparent transparent transparent var(--linz-dark-purple, #422e83);
+  border-color: transparent transparent transparent var(--linz-dark-purple, var(--brand-primary, #422e83));
   margin-left: 4px;
 }
 
@@ -94,19 +94,19 @@
   display: flex;
   align-items: baseline;
   gap: 16px;
-  background-color: var(--linz-light-purple, #d9d7f9);
+  background-color: var(--linz-light-purple, var(--brand-surface, #d9d7f9));
 }
 
 .video-single .abbv-video-card-content h3 {
   font-family: var(--body-font-family);
   font-size: 14px;
   font-weight: 700;
-  color: var(--linz-dark-purple, #422e83);
+  color: var(--linz-dark-purple, var(--brand-primary, #422e83));
   margin: 0;
 }
 
 .video-single .video-transcript-link {
-  color: var(--linz-dark-purple, #422e83) !important;
+  color: var(--linz-dark-purple, var(--brand-primary, #422e83)) !important;
   text-decoration: underline;
   font-size: 14px;
   font-weight: 700;

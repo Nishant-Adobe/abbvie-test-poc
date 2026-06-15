@@ -32,13 +32,13 @@
    linzess.css sets `main a.abbv-button-primary:any-link { color: var(--linz-white) !important }`
    which makes ALL .abbv-button-primary links white. The hero variant needs dark purple text.
    Source computed: color: rgb(66, 46, 131) = var(--linz-dark-purple) */
-main .hero-pharma-wrapper .hero-container.Linzess-home-hero-belly-bnr a.abbv-button-primary:any-link {
-  color: var(--linz-dark-purple) !important;
+main .hero-pharma-wrapper .hero-container a.abbv-button-primary:any-link {
+  color: var(--brand-primary) !important;
 }
 
-main .hero-pharma-wrapper .hero-container.Linzess-home-hero-belly-bnr a.abbv-button-primary:hover {
-  color: var(--linz-dark-purple) !important;
-  background-color: var(--linz-light-purple);
+main .hero-pharma-wrapper .hero-container a.abbv-button-primary:hover {
+  color: var(--brand-primary) !important;
+  background-color: var(--brand-surface);
 }
 
 /* Note: The section-to-section spacing/overlap is handled in styles.css via:

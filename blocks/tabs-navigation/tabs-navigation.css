@@ -33,7 +33,7 @@ main > .section.tabs-navigation-container {
 }
 
 main > .section.tabs-navigation-container.tabs-stuck {
-  background-color: var(--linz-dark-purple, #422e83);
+  background-color: var(--linz-dark-purple, var(--brand-primary, #422e83));
   margin-top: 0;
   padding: 8px 0;
   border-radius: 0;
@@ -58,8 +58,8 @@ main > .section.tabs-navigation-container.tabs-stuck .section-navigation-list {
 
 /* Navigation container — pill shape overlaid on hero */
 .tabs-navigation .abbv-section-navigation {
-  background-color: var(--linz-dark-purple, #422e83);
-  border-radius: 32px;
+  background-color: var(--linz-dark-purple, var(--brand-primary, #422e83));
+  border-radius: var(--brand-button-radius, 32px);
   position: relative;
   display: inline-block;
 }
@@ -104,7 +104,7 @@ main > .section.tabs-navigation-container.tabs-stuck .section-navigation-list {
     right: 0;
     flex-direction: column;
     align-items: stretch;
-    background: var(--linz-dark-purple, #422e83) !important;
+    background: var(--linz-dark-purple, var(--brand-primary, #422e83)) !important;
     border-radius: 0 0 16px 16px;
     z-index: 101;
     transition: height 0.3s;
@@ -137,10 +137,10 @@ main > .section.tabs-navigation-container.tabs-stuck .section-navigation-list {
   .tabs-navigation .current-pos {
     display: flex !important;
     align-items: center;
-    background: var(--linz-dark-purple, #422e83);
+    background: var(--linz-dark-purple, var(--brand-primary, #422e83));
     color: var(--linz-white, #fff);
     padding: 18px 32px;
-    border-radius: 32px;
+    border-radius: var(--brand-button-radius, 32px);
     font-weight: 700;
     font-size: 14px;
     font-family: Lato, sans-serif;
@@ -211,7 +211,7 @@ main > .section.tabs-navigation-container.tabs-stuck .section-navigation-list {
 }
 
 .tabs-navigation .section-navigation-list a:hover {
-  border-bottom-color: var(--linz-orange, #faa633);
+  border-bottom-color: var(--linz-orange, var(--brand-accent, #faa633));
   text-decoration: none;
 }
 

@@ -31,8 +31,8 @@
   content: "";
   width: 48px;
   height: 48px;
-  border: 4px solid var(--linz-light-purple, #d9d7f9);
-  border-top-color: var(--linz-dark-purple, #422e83);
+  border: 4px solid var(--linz-light-purple, var(--brand-surface, #d9d7f9));
+  border-top-color: var(--linz-dark-purple, var(--brand-primary, #422e83));
   border-radius: 50%;
   animation: forms-embed-spin 0.8s linear infinite;
 }
@@ -45,10 +45,16 @@
   width: 100%;
 }
 
+/* The injected adaptive-form container ships hidden (inline display:none);
+   keep it visible once embedded. */
+.forms-embed .cmp-adaptiveform-container {
+  display: block !important;
+}
+
 /* Graceful failure message matches the original's fallback copy. */
 .forms-embed .afsection > p {
   text-align: center;
-  color: var(--text-color, #4d4d4f);
+  color: var(--text-color, var(--brand-text, #4d4d4f));
   font-size: 16px;
   padding: 40px 0;
 }

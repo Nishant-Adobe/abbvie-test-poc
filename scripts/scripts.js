@@ -891,11 +891,112 @@ export function decorateMain(main) {
 }
 
 /**
+ * Returns the active brand slug (e.g. "linzess", "rinvoq"). Set on
+ * <html data-brand> by loadBrandTokens(); falls back to the `brand` metadata,
+ * then "linzess". Use for brand-prefixed framework class names and asset paths
+ * so blocks stay brand-agnostic.
+ * @returns {string}
+ */
+export function getBrand() {
+  return (document.documentElement.dataset.brand
+    || getMetadata('brand')
+    || 'linzess').trim().toLowerCase();
+}
+
+/**
+ * Resolves a brand-specific icon/logo path. Brand assets live in
+ * `/icons/<brand>/<name>` (e.g. `/icons/linzess/logo-nav.png`); framework/shared
+ * icons (home, search, abbvie corporate) stay flat in `/icons/`. Keeps blocks
+ * brand-agnostic — onboarding a brand drops its assets in `/icons/<brand>/`.
+ * @param {string} name asset filename within the brand folder (e.g. 'logo-nav.png')
+ * @returns {string} code-base-relative URL
+ */
+export function brandIcon(name) {
+  const base = window.hlx?.codeBasePath || '';
+  return `${base}/icons/${getBrand()}/${name}`;
+}
+
+/**
+ * Loads the per-brand token stylesheet based on the page's `brand` metadata.
+ * Defaults to `linzess`. This is the ONLY brand-specific stylesheet; everything
+ * else is shared and references the generic --brand-* tokens. See
+ * .claude/skills/abbvie-multisite-migration.md.
+ * @returns {string} the resolved brand name
+ */
+function loadBrandTokens() {
+  const brand = (getMetadata('brand') || 'linzess').trim().toLowerCase();
+  // Expose the brand for CSS/JS targeting in three ways:
+  //   <html data-brand="rinvoq">  → attribute selector html[data-brand="x"]
+  //   <body class="brand-rinvoq">  → class selector body.brand-x (namespaced to
+  //     avoid colliding with content/template class names)
+  document.documentElement.dataset.brand = brand;
+  document.body?.classList.add(`brand-${brand}`);
+  const link = document.querySelector('link[data-brand-tokens]');
+  const href = `${window.hlx?.codeBasePath || ''}/styles/brands/${brand}.css`;
+  if (link) {
+    // Only swap if it differs from the default already in head.html.
+    if (!link.getAttribute('href').endsWith(`/brands/${brand}.css`)) {
+      link.setAttribute('href', href);
+    }
+  } else {
+    const el = document.createElement('link');
+    el.rel = 'stylesheet';
+    el.href = href;
+    el.setAttribute('data-brand-tokens', '');
+    document.head.appendChild(el);
+  }
+  return brand;
+}
+
+/**
+ * Promotes an authored `metadata` block (the trailing page-metadata table) into
+ * <head> <meta> tags, then removes it from the DOM. The production aem.live
+ * pipeline does this server-side, but the local dev server does not — so a bare
+ * `metadata` block would otherwise render as visible content and 404 trying to
+ * load a metadata block module. Running this client-side makes getMetadata()
+ * (e.g. `brand`) resolve consistently in every environment.
+ * @param {Element} doc The container element
+ */
+function extractInlineMetadata(doc) {
+  doc.querySelectorAll('.metadata').forEach((block) => {
+    // Rows may be direct children OR nested one level under a wrapper <div>
+    // (raw, pre-section-decoration markup). Only unwrap when that single child
+    // is a multi-row wrapper (its children are rows that each hold 2+ cells) —
+    // NOT a single key/value row, whose children ARE the two cells (unwrapping
+    // that would turn the cells into rows and drop the metadata).
+    let rows = [...block.children];
+    if (rows.length === 1) {
+      const inner = [...rows[0].children];
+      const looksLikeRows = inner.length > 1 && inner.every((c) => c.children.length >= 2);
+      if (looksLikeRows) rows = inner;
+    }
+    rows.forEach((row) => {
+      const cells = [...row.children];
+      if (cells.length < 2) return;
+      const name = cells[0].textContent.trim();
+      if (!name) return;
+      const value = cells[1].textContent.trim();
+      const attr = name.includes(':') ? 'property' : 'name';
+      if (!document.head.querySelector(`meta[${attr}="${name}"]`)) {
+        const meta = document.createElement('meta');
+        meta.setAttribute(attr, name);
+        meta.setAttribute('content', value);
+        document.head.appendChild(meta);
+      }
+    });
+    // Remove the wrapping section/div so it never renders as content.
+    (block.closest('.section') || block).remove();
+  });
+}
+
+/**
  * Loads everything needed to get to LCP.
  * @param {Element} doc The container element
  */
 async function loadEager(doc) {
   document.documentElement.lang = 'en';
+  extractInlineMetadata(doc);
+  loadBrandTokens();
   decorateTemplateAndTheme();
   if (getMetadata('breadcrumbs').toLowerCase() === 'true') {
     doc.body.dataset.breadcrumbs = true;
@@ -916,6 +1017,12 @@ async function loadEager(doc) {
   // links (not pill buttons) apply.
   if (window.location.pathname.endsWith('/sitemap')) {
     document.body.classList.add('sitemap-page');
+  }
+  // Savings-card: a hero-less form page. Tag the body so it gets the same
+  // uniform dark-purple header as the other hero-less pages (transcript/sitemap)
+  // instead of the hero darkening gradient showing as a dark band.
+  if (window.location.pathname.endsWith('/savings-card')) {
+    document.body.classList.add('savings-card-page');
   }
 
   const main = doc.querySelector('main');

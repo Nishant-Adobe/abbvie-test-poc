@@ -1,4 +1,5 @@
 import { getMetadata } from '../../scripts/aem.js';
+import { getBrand, brandIcon } from '../../scripts/scripts.js';
 
 async function fetchFragment(path) {
   const resp = await fetch(path);
@@ -10,9 +11,15 @@ async function fetchFragment(path) {
 
 export default async function decorate(block) {
   const navMeta = getMetadata('nav');
-  // nav is a site-root fragment; default to /nav so it resolves on every page
-  // regardless of depth (the content root is mounted at the site root).
-  const navPath = navMeta ? new URL(navMeta, window.location).pathname : '/nav';
+  // nav is a site-root fragment. Default to /nav (content root mounted at site
+  // root). For non-default brands whose content shares the same site root
+  // (e.g. rinvoq under /content/rinvoq/), a root-relative /nav would collide
+  // with another brand's fragment, so resolve the brand's own fragment path.
+  const brandForFragment = getBrand();
+  const defaultNavPath = brandForFragment && brandForFragment !== 'linzess'
+    ? `/content/${brandForFragment}/nav`
+    : '/nav';
+  const navPath = navMeta ? new URL(navMeta, window.location).pathname : defaultNavPath;
   const fragment = await fetchFragment(`${navPath}.plain.html`);
   if (!fragment) return;
 
@@ -41,7 +48,8 @@ export default async function decorate(block) {
 
   // Build the exact original DOM
   const header = document.createElement('header');
-  header.className = 'abbv-header-v2 linzess-header linzess-header-classic abbv-sticky search-box-classic';
+  const brand = getBrand();
+  header.className = `abbv-header-v2 ${brand}-header ${brand}-header-classic abbv-sticky search-box-classic`;
 
   // Skip nav link
   const skipLink = document.createElement('a');
@@ -117,9 +125,9 @@ export default async function decorate(block) {
   const img = document.createElement('img');
   // Fall back to the brand logo in the code repo: the .plain.html pipeline
   // strips the authored <img> from the nav fragment.
-  img.src = logoImg?.getAttribute('src') || `${window.hlx?.codeBasePath || ''}/icons/linzess-logo-nav.png`;
-  img.alt = logoImg?.getAttribute('alt') || 'LINZESS logo';
-  img.title = 'Linzess logo';
+  img.src = logoImg?.getAttribute('src') || brandIcon('logo-nav.png');
+  img.alt = logoImg?.getAttribute('alt') || `${brand} logo`;
+  img.title = `${brand} logo`;
   img.width = 253;
   img.height = 126;
   logoA.appendChild(img);

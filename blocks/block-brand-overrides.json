@@ -1,0 +1,72 @@
+{
+  "_comment": "Per-block brand override manifest. cssOverrides: block -> [brands] that ship blocks/<brand>/<block>.css (loaded AFTER base CSS so it wins the cascade). jsOverrides: block -> [brands] that ship blocks/<brand>/<block>.js, which REPLACES the base decorator (the base blocks/<block>/<block>.js is NOT run for that brand). loadBlock() only loads an override when listed here, so absent files never 404. Tokens + styles/brands/<brand>.css are the default for styling; per-block CSS/JS overrides are escape hatches for structural divergence in complex blocks (header, footer, isi, hero). Example: { \"cssOverrides\": { \"hero-pharma\": [\"skyrizi\"] }, \"jsOverrides\": { \"header\": [\"skyrizi\"] } }.",
+  "cssOverrides": {
+    "cards-checklist": [
+      "linzess"
+    ],
+    "cards-feature": [
+      "linzess",
+      "rinvoq"
+    ],
+    "cards-icon": [
+      "linzess"
+    ],
+    "cards-info": [
+      "linzess"
+    ],
+    "cards-signup": [
+      "linzess"
+    ],
+    "cards-stats": [
+      "linzess"
+    ],
+    "cards-video": [
+      "linzess"
+    ],
+    "columns-cta": [
+      "linzess"
+    ],
+    "footer": [
+      "linzess",
+      "rinvoq"
+    ],
+    "forms-embed": [
+      "linzess"
+    ],
+    "header": [
+      "linzess",
+      "rinvoq"
+    ],
+    "hero-pharma": [
+      "linzess",
+      "rinvoq"
+    ],
+    "isi": [
+      "linzess"
+    ],
+    "promo-tout": [
+      "linzess",
+      "rinvoq"
+    ],
+    "tabs-navigation": [
+      "linzess"
+    ],
+    "video-playlist": [
+      "linzess"
+    ],
+    "video-single": [
+      "linzess"
+    ]
+  },
+  "jsOverrides": {
+    "header": [
+      "rinvoq"
+    ],
+    "footer": [
+      "rinvoq"
+    ],
+    "cards-feature": [
+      "rinvoq"
+    ]
+  }
+}

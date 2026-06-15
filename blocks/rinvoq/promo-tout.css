@@ -1,0 +1,318 @@
+/* stylelint-disable selector-class-pattern, no-descending-specificity */
+
+/* ============================================================
+   Brand override — RINVOQ · promo-tout (+ savings/About/SPEAK section)
+   Source: https://www.rinvoq.com/  (the yellow savings band + About column
+   + the SPEAK "Your story can help others" dark brushstroke band).
+   ------------------------------------------------------------
+   The shared promo-tout decorator (blocks/promo-tout/promo-tout.js) + the base
+   blocks/promo-tout/promo-tout.css assume a LINZESS look (lavender card, purple
+   pill CTA). RINVOQ's homepage body renders as ONE section
+   (.section.yellow.promo-tout-container.isi-container) whose direct children
+   are, in DOM order:
+     [0] .promo-tout-wrapper      -> SAVINGS card (RINVOQ Complete, "$0/month")
+     [1] .default-content-wrapper -> "About RINVOQ" (lightbulb icon + bottle img)
+     [2] .promo-tout-wrapper      -> SPEAK band   ("Your story can help others")
+     [3] .default-content-wrapper -> eligibility footnote
+     [4] .isi-wrapper             -> inline ISI use statement
+   NOTE: the decorator's content heuristic labels [0] as `.discussion-tout` and
+   [2] as `.savings-card-tout` (it counts paragraphs), so those variant class
+   names are NOT reliable here — we therefore target by POSITION in the section
+   (:first-child = savings, :nth-child(3) = SPEAK).
+
+   On the original, [0] (yellow LEFT) + [1] (white RIGHT) form a single two-col
+   row inside a 1140px centered container; [2] is a full-width dark brushstroke
+   band. Rebuilt here with CSS only (no DOM/content edits), scoped to
+   body.brand-rinvoq, loaded AFTER the base CSS. Registered in
+   blocks/block-brand-overrides.json -> cssOverrides.promo-tout.
+
+   Exact values from the live site (viewport 1440):
+     yellow column bg        rgb(255,209,0)
+     body/heading text       rgb(37,40,42)  (charcoal = --brand-text)
+     two-col container       max-width 1140px, centered
+     savings CTA             white bg, 2px solid rgb(144,18,74), 5px radius,
+                             plum text 15px/400, padding 7px 40px 7px 10px
+     savings body            16px / 400 / 22px line-height / charcoal
+     heading                 20px / 400 / 32px / Neue Haas / charcoal
+     SPEAK heading           26px / 700 / Neue Haas / white
+     Complete logo           ~250x70
+   ============================================================ */
+
+/* ============================================================
+   1. SAVINGS + ABOUT two-column row (desktop)
+   Make the section a 2-col grid; place savings [0] left, About [1] right, and
+   span SPEAK / footnote / ISI full width. align-items:stretch (grid default)
+   makes both columns the same height so the yellow fill matches.
+   ============================================================ */
+@media (width >= 900px) {
+  body.brand-rinvoq main > .section.yellow.promo-tout-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 0;
+    max-width: 1140px;
+    margin: 0 auto;
+    padding: 0;
+  }
+
+  body.brand-rinvoq main > .section.yellow.promo-tout-container > .promo-tout-wrapper:first-child {
+    grid-column: 1;
+    grid-row: 1;
+  }
+
+  body.brand-rinvoq main > .section.yellow.promo-tout-container > .default-content-wrapper:nth-child(2) {
+    grid-column: 2;
+    grid-row: 1;
+  }
+
+  body.brand-rinvoq main > .section.yellow.promo-tout-container > .promo-tout-wrapper:nth-child(3),
+  body.brand-rinvoq main > .section.yellow.promo-tout-container > .default-content-wrapper:nth-child(4),
+  body.brand-rinvoq main > .section.yellow.promo-tout-container > .isi-wrapper {
+    grid-column: 1 / -1;
+  }
+}
+
+/* ============================================================
+   2. SAVINGS — yellow LEFT column (section child [0])
+   ============================================================ */
+body.brand-rinvoq main > .section.yellow.promo-tout-container > .promo-tout-wrapper:first-child {
+  box-sizing: border-box;
+  padding: 30px 35px 30px 0;
+  background-color: rgb(255 209 0); /* source: background-yellow */
+}
+
+/* The savings tout was built as a 2-col abbv-row (image col + text col);
+   collapse to a single column so the Complete logo sits ABOVE the heading. */
+body.brand-rinvoq .section.yellow > .promo-tout-wrapper:first-child .abbv-row-container {
+  max-width: none;
+  margin: 0;
+  padding: 0;
+  background-color: transparent;
+}
+
+body.brand-rinvoq .section.yellow > .promo-tout-wrapper:first-child .abbv-row {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+body.brand-rinvoq .section.yellow > .promo-tout-wrapper:first-child .abbv-col {
+  width: 100%;
+  max-width: 100%;
+  padding: 0;
+  text-align: left;
+}
+
+/* RINVOQ Complete logo (white brushstroke wordmark) — ~250px, top of the card */
+body.brand-rinvoq .section.yellow > .promo-tout-wrapper:first-child .abbv-image-content-container-v2 {
+  margin: 0 0 8px;
+}
+
+body.brand-rinvoq .section.yellow > .promo-tout-wrapper:first-child .abbv-image-content-container-v2 img {
+  width: 250px;
+  max-width: 100%;
+  height: auto;
+}
+
+/* Heading "You could pay $0 a month for RINVOQ" — 20px / Neue Haas / charcoal.
+   Base .promo-tout .heading-2 forces 24px !important, so override with
+   !important to land the source 20px. */
+body.brand-rinvoq .section.yellow > .promo-tout-wrapper:first-child .heading-2,
+body.brand-rinvoq .section.yellow > .promo-tout-wrapper:first-child .abbv-rich-text p.heading-2 {
+  margin: 10px 0;
+  font-family: var(--brand-heading-font);
+  font-size: 20px !important;
+  font-weight: 400 !important;
+  line-height: 32px !important;
+  color: var(--brand-text);
+}
+
+/* Savings body + footnote copy — charcoal (was white / plum) */
+body.brand-rinvoq .section.yellow > .promo-tout-wrapper:first-child .abbv-rich-text p,
+body.brand-rinvoq .section.yellow > .promo-tout-wrapper:first-child .rich-text p,
+body.brand-rinvoq .section.yellow > .promo-tout-wrapper:first-child p {
+  margin: 0 0 14px;
+  font-size: 16px !important;
+  font-weight: 400;
+  line-height: 22px !important;
+  color: var(--brand-text) !important;
+}
+
+/* Inline "here" footnote link stays plum (links that sit INSIDE a sentence,
+   i.e. their <p> has other text too — not a standalone button link). */
+body.brand-rinvoq .section.yellow > .promo-tout-wrapper:first-child p a:any-link {
+  color: var(--brand-primary) !important;
+  text-decoration: underline;
+}
+
+/* ---- 2a. Savings CTA: white pill, plum outline + plum text ---------------
+   The decorator left "Discover ways to save and more" as a bare <a> that is
+   the ONLY child of its <p> (a standalone link). Style THAT as the pill button;
+   the inline footnote "here" link (mixed with sentence text) keeps the plain
+   plum-underline rule above. */
+body.brand-rinvoq .section.yellow > .promo-tout-wrapper:first-child p > a:only-child:any-link,
+body.brand-rinvoq .section.yellow > .promo-tout-wrapper:first-child .cta a:any-link,
+body.brand-rinvoq .section.yellow > .promo-tout-wrapper:first-child a.abbv-button-primary:any-link {
+  display: inline-block;
+  width: auto;
+  margin: 6px 0 16px;
+  padding: 7px 40px 7px 14px;
+  font-family: var(--brand-body-font);
+  font-size: 15px !important;
+  font-weight: 400;
+  line-height: normal !important;
+  color: var(--brand-primary) !important;
+  background-color: var(--brand-white) !important;
+  border: 2px solid var(--brand-primary);
+  border-radius: var(--brand-button-radius);
+  text-decoration: none !important;
+}
+
+body.brand-rinvoq .section.yellow > .promo-tout-wrapper:first-child p > a:only-child:hover,
+body.brand-rinvoq .section.yellow > .promo-tout-wrapper:first-child .cta a:hover,
+body.brand-rinvoq .section.yellow > .promo-tout-wrapper:first-child a.abbv-button-primary:hover {
+  color: var(--brand-white) !important;
+  background-color: var(--brand-primary) !important;
+}
+
+/* ============================================================
+   3. ABOUT RINVOQ — white RIGHT column (section child [1])
+   default-content: lightbulb icon (in <p>), h2 "About RINVOQ", 2 paragraphs,
+   bottle pill image (in <p>) + "Pill not actual size" caption.
+   ============================================================ */
+body.brand-rinvoq main > .section.yellow.promo-tout-container > .default-content-wrapper:nth-child(2) {
+  box-sizing: border-box;
+  padding: 30px 0 30px 35px;
+  background-color: var(--brand-white);
+  text-align: left; /* the brand .section.yellow centers content; About is left */
+}
+
+/* lightbulb badge + heading + paragraphs are LEFT aligned like the original */
+body.brand-rinvoq .section.yellow > .default-content-wrapper:nth-child(2) > p,
+body.brand-rinvoq .section.yellow > .default-content-wrapper:nth-child(2) h2 {
+  text-align: left;
+}
+
+/* lightbulb icon — small inline brushstroke badge, NOT a stray full-width img */
+body.brand-rinvoq .section.yellow > .default-content-wrapper:nth-child(2) > p:first-child {
+  margin: 0 0 6px;
+}
+
+body.brand-rinvoq .section.yellow > .default-content-wrapper:nth-child(2) > p:first-child img {
+  width: auto;
+  max-width: 110px;
+  height: auto;
+}
+
+/* "About RINVOQ" heading — 20px / Neue Haas / charcoal */
+body.brand-rinvoq .section.yellow > .default-content-wrapper:nth-child(2) h2 {
+  margin: 6px 0 16px;
+  font-family: var(--brand-heading-font);
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 32px;
+  color: var(--brand-text);
+}
+
+body.brand-rinvoq .section.yellow > .default-content-wrapper:nth-child(2) p {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 22px;
+  color: var(--brand-text);
+}
+
+/* Bottle pill image ("Pill not actual size") — constrain so it never breaks the
+   flow full-width/left-aligned. On the original it is a centred image in the
+   About column. */
+body.brand-rinvoq .section.yellow > .default-content-wrapper:nth-child(2) > p:last-child {
+  margin: 12px 0 0;
+  text-align: center;
+}
+
+body.brand-rinvoq .section.yellow > .default-content-wrapper:nth-child(2) > p:last-child img {
+  width: auto;
+  max-width: 240px;
+  height: auto;
+  margin: 0 auto;
+}
+
+/* ============================================================
+   4. SPEAK "Your story can help others" — dark band (section child [3])
+   The original places the copy over a black brushstroke background image
+   (stripped to an inline <img> on import). Reproduce a dark charcoal band so
+   the white text reads as a distinct section like the original.
+   ============================================================ */
+body.brand-rinvoq main > .section.yellow.promo-tout-container > .promo-tout-wrapper:nth-child(3) {
+  box-sizing: border-box;
+  padding: 36px 40px;
+  background-color: #1a1a1a; /* dark band behind the SPEAK text */
+}
+
+body.brand-rinvoq .section.yellow > .promo-tout-wrapper:nth-child(3) .abbv-row-container {
+  max-width: none;
+  margin: 0;
+  padding: 0;
+  background-color: transparent;
+}
+
+body.brand-rinvoq .section.yellow > .promo-tout-wrapper:nth-child(3) .abbv-row {
+  flex-direction: column;
+}
+
+body.brand-rinvoq .section.yellow > .promo-tout-wrapper:nth-child(3) .abbv-col {
+  width: 100%;
+  max-width: 100%;
+  padding: 0;
+  text-align: left;
+}
+
+/* The brushstroke png the importer kept as an inline <img>: keep it small so it
+   never blows up the row (it is decorative; the dark band carries the look). */
+body.brand-rinvoq .section.yellow > .promo-tout-wrapper:nth-child(3) .abbv-image-content-container-v2 {
+  display: none;
+}
+
+/* SPEAK heading — 26px bold Neue Haas, WHITE. The base
+   .promo-tout .heading-2 { font-size: 24px !important } forces 24px, so use
+   !important to land the source 26px. */
+body.brand-rinvoq .section.yellow > .promo-tout-wrapper:nth-child(3) .heading-2,
+body.brand-rinvoq .section.yellow > .promo-tout-wrapper:nth-child(3) .abbv-rich-text p.heading-2 {
+  margin: 0 0 16px;
+  font-family: var(--brand-heading-font);
+  font-size: 26px !important;
+  font-weight: 700 !important;
+  line-height: 26px;
+  color: var(--brand-white) !important;
+}
+
+/* SPEAK body — white */
+body.brand-rinvoq .section.yellow > .promo-tout-wrapper:nth-child(3) .abbv-rich-text p,
+body.brand-rinvoq .section.yellow > .promo-tout-wrapper:nth-child(3) .rich-text p,
+body.brand-rinvoq .section.yellow > .promo-tout-wrapper:nth-child(3) p {
+  color: var(--brand-white) !important;
+}
+
+body.brand-rinvoq .section.yellow > .promo-tout-wrapper:nth-child(3) a:any-link {
+  color: var(--brand-white) !important;
+  text-decoration: underline;
+}
+
+/* ============================================================
+   5. Mobile (< 900px): stack savings over About over SPEAK, full width
+   ============================================================ */
+@media (width <= 899px) {
+  body.brand-rinvoq main > .section.yellow.promo-tout-container > .promo-tout-wrapper:first-child {
+    padding: 24px 16px;
+  }
+
+  body.brand-rinvoq main > .section.yellow.promo-tout-container > .default-content-wrapper:nth-child(2) {
+    padding: 24px 16px;
+  }
+
+  body.brand-rinvoq main > .section.yellow.promo-tout-container > .promo-tout-wrapper:nth-child(3) {
+    padding: 28px 20px;
+  }
+
+  body.brand-rinvoq .section.yellow > .promo-tout-wrapper:first-child .abbv-image-content-container-v2 img {
+    width: 200px;
+  }
+}

@@ -47,9 +47,9 @@ main .section.dark-purple .columns-cta a.button:any-link {
   font-family: Lato, sans-serif !important;
   font-size: 16px !important;
   font-weight: 800 !important;
-  color: var(--linz-dark-purple, #422e83) !important;
-  background: var(--linz-orange, #faa633) !important;
-  border-radius: 32px !important;
+  color: var(--linz-dark-purple, var(--brand-primary, #422e83)) !important;
+  background: var(--linz-orange, var(--brand-accent, #faa633)) !important;
+  border-radius: var(--brand-button-radius, 32px) !important;
   padding: 16px 48px 16px 32px !important;
   cursor: pointer !important;
   text-decoration: none !important;
