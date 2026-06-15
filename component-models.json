@@ -424,6 +424,14 @@
         "component": "text",
         "name": "formsUrl",
         "label": "Adaptive Form URL",
+        "description": "Path or full URL of the adaptive form, e.g. /abbviecloud/content/forms/af/.../linzess-savings-program.html",
+        "valueType": "string"
+      },
+      {
+        "component": "text",
+        "name": "formsDomain",
+        "label": "Forms Domain",
+        "description": "Base domain to fetch the form markup AND its runtime clientlibs from, e.g. https://www.linzess.com. Leave blank to use the current site origin.",
         "valueType": "string"
       }
     ]

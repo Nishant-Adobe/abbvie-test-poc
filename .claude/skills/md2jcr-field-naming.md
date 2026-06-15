@@ -1,5 +1,53 @@
 # md2jcr Field Naming Rules — Avoiding _fixFieldOrder Bugs
 
+> Scope: every md2jcr / xwalk conversion pitfall hit during the Linzess
+> migration. Read this BEFORE building or renaming any block model, and when
+> debugging "component does not exist" / "content isn't mapping" / missing-block
+> errors. Each rule below caused a real, reproduced failure.
+
+## Quick Triage: md2jcr error → cause
+
+| md2jcr error | Root cause | Section |
+|---|---|---|
+| `The component 'X' does not exist` | Block has JS/CSS but no `_block.json` model file, OR title case mismatch | "Block Name Must Match", "Every Block Needs a Model File" |
+| `… has errors! The content isn't mapping to the model` | Field count ≠ column/row count, OR model field-groups don't match the authored table layout | "Field Groups Map to ROWS", "Never Add a Column-less Field" |
+| `Cannot read properties of null (reading 'name')` | A field-group ROW was emitted EMPTY (e.g. optional image with no value) | "Never Emit an Empty Field Row" |
+| Block silently rendered as generic `columns` (loses its class + decorator) | Block name starts with `columns` — md2jcr force-converts it | "Reserved Block-Name Prefix: columns*" |
+| Heading line breaks gone / `<sup>` markers gone on deployed page | md2jcr strips `<br>` in headings and mangles `<sup>` | "Inline HTML md2jcr Drops" |
+
+## Every Block Needs a Model File (`_blockname.json`)
+
+A block with `blocks/foo/foo.js` + `foo.css` but **no `blocks/foo/_foo.json`** is
+NOT registered as a component. md2jcr throws `The component 'Foo' does not exist`.
+
+- Run this sweep before any import to catch unregistered blocks:
+  ```bash
+  for d in blocks/*/; do b=$(basename "$d"); \
+    [ -f "$d/$b.js" ] && [ ! -f "$d/_$b.json" ] && echo "MISSING MODEL: $b"; done
+  ```
+- `header` and `footer` are the only legitimate model-less blocks (fragment-based, no xwalk model).
+- After adding a model file, rebuild the aggregated JSON: `npm run build:json`.
+- Container blocks that repeat items (cards) reuse the shared `card` model — copy the
+  pattern from `cards-feature/_cards-feature.json` (definition + `card` item + filter).
+  Duplicate identical `card` models across blocks are harmless (md2jcr uses first match).
+
+## Reserved Block-Name Prefix: `columns*`
+
+md2jcr (`mdast-columns-block.js`) hardcodes: **any block whose table header name
+starts with `columns` (case-insensitive) is force-converted to the core
+`columns/v1/columns` component — IGNORING your model's `resourceType`.**
+
+Consequence: the block renders as generic `<div class="columns">`, dropping its
+real class (e.g. `columns-promo`), so its JS decorator never runs and its CSS
+never applies. Layout silently breaks on the deployed site.
+
+**Fix: never name a custom block `columns-*`.** Rename it to something that does
+not start with `columns` (e.g. `columns-promo` → `promo-tout`). Renaming touches:
+block folder + `{name}.js`/`.css`/`_{name}.json`, `scripts/scripts.js`,
+`styles/*.css`, importer parser (`name:` in `createBlock`), `import-*.js`
+registries + templates, `page-templates.json`, all content `class="…"`, then
+`npm run build:json`.
+
 ## Critical Rule: Block Name Must Match Component Title EXACTLY
 
 md2jcr resolves blocks by matching the block table header name against the component `title` in `component-definition.json`. This match is **case-sensitive**.
@@ -128,6 +176,85 @@ models.forEach(model => {
 });
 "
 ```
+
+## Field Groups Map to ROWS (not columns) — content layout must match
+
+md2jcr groups model fields with `FieldGroup._groupFields()`: fields collapse by
+shared prefix-before-`_` and by the Alt/MimeType/Type/Text/Title suffixes. Each
+resulting **group becomes one TABLE ROW** (single column). The authored block
+table MUST present one row per field group, in order — NOT all fields packed
+into one multi-column row.
+
+Worked example — `video-playlist` / `video` model groups into 2 rows:
+- row 1 = `uri`
+- row 2 = `placeholder` (with `placeholder_image` + collapsed `placeholder_imageAlt`)
+
+So the parser must emit `cells = [[uriCell], [placeholderCell]]` (two rows), each
+with its `<!-- field:name -->` hint. A single row with 3 columns
+(`uri | image | alt`) → `content isn't mapping` error.
+
+For a parser, mirror the field-group count exactly:
+```js
+const cells = [[uriCell]];               // row 1: uri
+if (placeholderSrc) cells.push([placeholderCell]); // row 2: placeholder (only if present)
+WebImporter.Blocks.createBlock(document, { name: 'video-playlist', cells });
+```
+
+A JS decorator that reads these blocks must read **rows**, not columns:
+```js
+const rows = [...block.querySelectorAll(':scope > div')];
+const [imgCell, textCell] = rows.map((r) => r.querySelector(':scope > div') || r);
+// fall back to legacy single-row-2-cell layout if rows.length === 1
+```
+
+Collapsed sub-fields (e.g. `imageAlt`, `placeholder_imageAlt`) ride on their base
+field's element (the `<img alt="…">`), NOT as a separate cell node. Emitting a
+separate node for the collapsed sub-field also breaks mapping.
+
+## Never Add a Column-less Field (e.g. `classes`)
+
+A `multiselect` field named `classes` (block-variant options) has NO authored
+column — the variant comes from the block-name suffix the decorator reads via
+`block.classList`. Declaring `classes` as a model field makes md2jcr expect an
+extra column and misalign every following field. **Remove `classes` from the
+model**; keep variant logic in the block name + decorator.
+
+## Never Emit an Empty Field Row
+
+If an optional field-group row is emitted with NO content (e.g. a placeholder
+image that doesn't exist), md2jcr throws `Cannot read properties of null
+(reading 'name')`. Only push the row when it has content:
+```js
+const cells = [[uriCell]];
+if (placeholderSrc) cells.push([placeholderCell]); // omit entirely when empty
+```
+
+## Inline HTML md2jcr Drops (verified against the real library)
+
+When AEM converts markdown headings/text to JCR:
+- `<br>` inside a **heading** is STRIPPED (titles are a plain-text attribute).
+  `# Get Ahead of Your<br>Returning` → `title="Get Ahead of YourReturning"`.
+  `<br>` inside a `<p>` survives.
+- `<sup>…</sup>` is mangled to `<div>…</div>` then dropped. Plain unicode
+  superscript chars (†, ‡, ®) with NO `<sup>` wrapper are preserved cleanly.
+
+Implication for content: don't rely on `<br>` in headings or `<sup>` wrappers for
+footnote markers — use unicode characters directly.
+
+## Reproducing md2jcr Locally (don't guess)
+
+Use the real `@adobe/helix-md2jcr` library to reproduce errors before/after a fix
+(found at `…/import-validator/node_modules/@adobe/helix-md2jcr`):
+```js
+import { md2jcr } from '@adobe/helix-md2jcr';
+const opts = { models, definition, filters }; // the three component-*.json
+const xml = (await md2jcr(gridTableMarkdown, opts)).toString();
+```
+Build the grid-table markdown with EXACT column-boundary alignment (`+---+---+`
+separators must line up) — a malformed fixture produces misleading
+`component 'X' does not exist` errors that are fixture bugs, not real bugs. When
+in doubt, validate the parser output via the parser-validator hook (which loads
+the live page) instead of hand-writing tables.
 
 ## Applied Fixes in This Project
 

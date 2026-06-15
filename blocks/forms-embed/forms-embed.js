@@ -18,10 +18,12 @@
  *   /abbviecloud/content/forms/af/admp/linzess/.../<form>.html
  */
 
-// The form's own runtime clientlibs (served under the same /abbviecloud proxy).
-// The live form runtime page loads matching .css and .js for each clientlib;
-// without the CSS the injected form renders unstyled, so load both.
-const FORM_RUNTIME_CLIENTLIBS = [
+// The form's own runtime clientlibs, as DOMAIN-RELATIVE paths. The live form
+// runtime page loads matching .css and .js for each clientlib; without the CSS
+// the injected form renders unstyled, so load both. These paths are resolved
+// against the authored "Forms Domain" so the clientlibs come from the same host
+// as the form markup (default: current site origin).
+const FORM_RUNTIME_CLIENTLIB_PATHS = [
   '/abbviecloud/etc.clientlibs/abbviecloudforms/clientlibs/clientlib-dependencies.min',
   '/abbviecloud/etc.clientlibs/abbviecloudforms/clientlibs/clientlib-base.min',
   '/abbviecloud/etc.clientlibs/abbviecloudforms/clientlibs/clientlib-site.min',
@@ -51,10 +53,34 @@ function loadScriptOnce(src) {
   });
 }
 
+function isAbsoluteUrl(s) {
+  return /^https?:\/\//i.test(s);
+}
+
+// Resolve a form path/URL against the authored Forms Domain.
+//  - An absolute http(s) value is used as-is (its own host wins).
+//  - Otherwise the path is resolved against `domain` (the authored base
+//    domain), or the current site origin when no domain is authored.
+function resolveAgainstDomain(value, domain) {
+  if (!value) return value;
+  if (isAbsoluteUrl(value)) return value;
+  const base = domain && isAbsoluteUrl(domain) ? domain : window.location.origin;
+  try {
+    return new URL(value, base).href;
+  } catch (e) {
+    return value;
+  }
+}
+
 async function fetchFormMarkup(formsUrl) {
-  // Same-origin fetch (the /abbviecloud/* path is reverse-proxied onto this
-  // origin), so no CORS preflight and submission cookies/CSRF stay first-party.
-  const resp = await fetch(formsUrl, { credentials: 'same-origin' });
+  // Same-origin paths keep first-party cookies/CSRF. Cross-origin absolute URLs
+  // (e.g. fetched directly from www.linzess.com) are fetched without credentials
+  // — handled by a browser CORS plugin in this setup.
+  const crossOrigin = isAbsoluteUrl(formsUrl)
+    && new URL(formsUrl).origin !== window.location.origin;
+  const resp = await fetch(formsUrl, {
+    credentials: crossOrigin ? 'omit' : 'same-origin',
+  });
   if (!resp.ok) return null;
   const html = await resp.text();
   const doc = new DOMParser().parseFromString(html, 'text/html');
@@ -63,21 +89,28 @@ async function fetchFormMarkup(formsUrl) {
 }
 
 export default async function decorate(block) {
-  // Resolve the form path from the authored cell (text or link).
-  const link = block.querySelector('a[href]');
-  const raw = (link?.getAttribute('href') || block.textContent || '').trim();
-  if (!raw) {
+  // The model has two fields → two rows: [0] Adaptive Form URL, [1] Forms Domain.
+  const rows = [...block.querySelectorAll(':scope > div')];
+  const cellText = (row) => {
+    if (!row) return '';
+    const a = row.querySelector('a[href]');
+    return (a?.getAttribute('href') || row.textContent || '').trim();
+  };
+  // Back-compat: a single-row block (legacy authoring) has only the form URL.
+  const rawUrl = cellText(rows[0]);
+  const formsDomain = rows.length > 1 ? cellText(rows[1]) : '';
+
+  if (!rawUrl) {
     block.textContent = '';
     return;
   }
-  // Normalize to a same-origin absolute path under /abbviecloud.
-  let formsUrl = raw;
-  try {
-    formsUrl = new URL(raw, window.location.origin).pathname
-      + (raw.includes('?') ? raw.slice(raw.indexOf('?')) : '');
-  } catch (e) {
-    // keep raw if URL parsing fails
-  }
+
+  // Resolve the form markup URL and the runtime clientlib URLs against the
+  // authored Forms Domain so EVERYTHING is fetched from that single host.
+  const formsUrl = resolveAgainstDomain(rawUrl, formsDomain);
+  const clientlibUrls = FORM_RUNTIME_CLIENTLIB_PATHS.map(
+    (p) => resolveAgainstDomain(p, formsDomain),
+  );
 
   // Rebuild the original embed widget DOM exactly.
   block.textContent = '';
@@ -111,10 +144,20 @@ export default async function decorate(block) {
 
   // Load the form runtime CSS before injecting so the form isn't briefly
   // unstyled, then inject the markup, then load the JS to make it interactive.
-  FORM_RUNTIME_CLIENTLIBS.forEach((base) => loadStyleOnce(`${base}.css`));
+  // Both come from the authored Forms Domain.
+  clientlibUrls.forEach((base) => loadStyleOnce(`${base}.css`));
 
   afsection.appendChild(formEl);
   loading.remove();
 
-  await Promise.all(FORM_RUNTIME_CLIENTLIBS.map((base) => loadScriptOnce(`${base}.js`)));
+  // The fetched adaptive-form container ships with an inline `display: none`
+  // (the runtime normally reveals it after init). Reveal it now so the form is
+  // visible once injected. Cover the container itself and any nested ones.
+  const containers = [
+    ...(formEl.matches('.cmp-adaptiveform-container') ? [formEl] : []),
+    ...formEl.querySelectorAll('.cmp-adaptiveform-container'),
+  ];
+  containers.forEach((c) => { c.style.display = 'block'; });
+
+  await Promise.all(clientlibUrls.map((base) => loadScriptOnce(`${base}.js`)));
 }

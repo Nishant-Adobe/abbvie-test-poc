@@ -97,6 +97,8 @@ See `.claude/skills/iterative-visual-refinement.md` for per-element comparison m
 See `.claude/skills/validate-page-structure.md` for structural validation (header, footer, hero, ISI, blocks, abbv-containers).
 See `.claude/skills/full-site-migration.md` for complete site migration (URL discovery → page-by-page migration → cross-page verification).
 See `.claude/skills/abbvie-multisite-migration.md` for the FLEET workflow (118 AbbVie brand sites share one framework → shared `abbv-base` library + per-brand token swap + deterministic style-differ + batch orchestrator).
+See `.claude/skills/md2jcr-field-naming.md` for ALL md2jcr/xwalk conversion pitfalls (component title match, missing model files, `columns*` reserved prefix, field-groups-map-to-rows, no column-less/empty-row fields, dropped `<br>`/`<sup>`, local reproduction).
+See `.claude/skills/fragment-and-path-resilience.md` for header/footer/ISI fragment decorators surviving the `.plain.html` pipeline (flattened divs, stripped logos, root-relative fragment paths) and `paths.json` ↔ `.migration/project.json` content-path alignment.
 
 ## Quick Commands
 
