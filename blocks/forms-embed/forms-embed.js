@@ -66,12 +66,27 @@ async function fetchFormDoc(formsUrl) {
   // — handled by a browser CORS plugin in this setup.
   const crossOrigin = isAbsoluteUrl(formsUrl)
     && new URL(formsUrl).origin !== window.location.origin;
-  const resp = await fetch(formsUrl, {
-    credentials: crossOrigin ? 'omit' : 'same-origin',
-  });
-  if (!resp.ok) return null;
-  const html = await resp.text();
-  return new DOMParser().parseFromString(html, 'text/html');
+  try {
+    const resp = await fetch(formsUrl, {
+      credentials: crossOrigin ? 'omit' : 'same-origin',
+    });
+    if (!resp.ok) {
+      // eslint-disable-next-line no-console
+      console.warn(`[forms-embed] fetch ${formsUrl} returned HTTP ${resp.status}`);
+      return null;
+    }
+    const html = await resp.text();
+    return new DOMParser().parseFromString(html, 'text/html');
+  } catch (err) {
+    // A TypeError here on a cross-origin URL is almost always a CORS block:
+    // www.linzess.com sends NO Access-Control-Allow-Origin, so even a CORS
+    // browser plugin must be configured to rewrite headers for THIS request
+    // (and the form's CSS/JS/font requests). Log the exact URL to diagnose.
+    // eslint-disable-next-line no-console
+    console.error(`[forms-embed] fetch FAILED for ${formsUrl} (likely CORS — `
+      + 'the response has no Access-Control-Allow-Origin). Original error:', err);
+    return null;
+  }
 }
 
 // Collect every stylesheet href and script src the form runtime page declares,
@@ -149,6 +164,29 @@ export default async function decorate(block) {
   }
 
   const { styles, scripts } = collectFormAssets(doc, formsUrl);
+
+  // The form runtime JS reads site-absolute paths from the markup (e.g.
+  // data-cmp-path / data-cmp-adaptiveformcontainer-path) and fetches
+  // `${path}.model.json`, recaptcha images, etc. Those paths start with
+  // `/abbviecloud` or `/content` and would otherwise resolve against THIS origin
+  // (the aem.page site) and 404. Rewrite every such absolute path/attribute in
+  // the injected form to the Forms Domain origin so the runtime's follow-up
+  // fetches go to www.linzess.com (where the CORS plugin allows them).
+  const formOrigin = isAbsoluteUrl(formsUrl) ? new URL(formsUrl).origin : '';
+  if (formOrigin) {
+    const PATH_ATTRS = ['data-cmp-path', 'data-cmp-adaptiveformcontainer-path', 'src', 'href', 'action', 'data-action'];
+    const rewriteEl = (el) => {
+      PATH_ATTRS.forEach((attr) => {
+        const v = el.getAttribute && el.getAttribute(attr);
+        // Site-absolute path (starts with a single slash, not "//") → prefix host.
+        if (v && /^\/(?!\/)/.test(v)) {
+          el.setAttribute(attr, formOrigin + v);
+        }
+      });
+    };
+    rewriteEl(formEl);
+    formEl.querySelectorAll('*').forEach(rewriteEl);
+  }
 
   // Load the form's own stylesheets BEFORE injecting so it isn't briefly
   // unstyled. These are the exact <link>s the runtime page ships (clientlibs +
