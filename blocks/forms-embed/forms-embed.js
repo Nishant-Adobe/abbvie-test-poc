@@ -45,6 +45,55 @@ function isAbsoluteUrl(s) {
   return /^https?:\/\//i.test(s);
 }
 
+// Path prefixes the AEM Forms runtime requests at execution time using BARE
+// site-absolute paths (built inside the minified bundle, so they can't be
+// rewritten in the DOM). On this EDS site they'd resolve against the current
+// origin and 404 — they must go to the Forms Domain instead.
+const FORMS_RUNTIME_PATH_PREFIXES = [
+  '/adobe/forms/af/', // model variants, custom functions, DoR, submit
+  '/abbviecloud/', // clientlibs, csrf token, libs
+  '/etc.clientlibs/', // core forms i18n + component clientlibs
+  '/content/dam/', // form images
+  '/content/forms/', // form assets
+];
+
+function shouldRedirectFormPath(pathname) {
+  return FORMS_RUNTIME_PATH_PREFIXES.some((p) => pathname.startsWith(p));
+}
+
+// Install a one-time fetch + XHR shim that reroutes the form runtime's
+// same-origin requests for the above paths to `formOrigin`. Idempotent and
+// scoped to those path prefixes, so it never touches normal EDS requests.
+function installFormsRequestRerouter(formOrigin) {
+  if (!formOrigin || window.formsEmbedRerouterOrigin === formOrigin) return;
+  window.formsEmbedRerouterOrigin = formOrigin;
+
+  const reroute = (url) => {
+    try {
+      const u = new URL(url, window.location.origin);
+      if (u.origin === window.location.origin && shouldRedirectFormPath(u.pathname)) {
+        return formOrigin + u.pathname + u.search + u.hash;
+      }
+    } catch (e) { /* leave url as-is */ }
+    return url;
+  };
+
+  const origFetch = window.fetch.bind(window);
+  window.fetch = (input, init) => {
+    if (typeof input === 'string') return origFetch(reroute(input), init);
+    if (input instanceof Request) {
+      const next = reroute(input.url);
+      if (next !== input.url) return origFetch(new Request(next, input), init);
+    }
+    return origFetch(input, init);
+  };
+
+  const OrigOpen = window.XMLHttpRequest.prototype.open;
+  window.XMLHttpRequest.prototype.open = function open(method, url, ...rest) {
+    return OrigOpen.call(this, method, reroute(url), ...rest);
+  };
+}
+
 // Resolve a form path/URL against the authored Forms Domain.
 //  - An absolute http(s) value is used as-is (its own host wins).
 //  - Otherwise the path is resolved against `domain` (the authored base
@@ -127,6 +176,14 @@ export default async function decorate(block) {
   // Resolve the form markup URL against the authored Forms Domain so the form
   // AND every asset it declares are fetched from that single host.
   const formsUrl = resolveAgainstDomain(rawUrl, formsDomain);
+
+  // Install the request rerouter BEFORE any runtime script runs, so the form's
+  // execution-time fetches (custom functions, i18n, model variants, submit,
+  // images, CSRF) for bare site-absolute paths go to the Forms Domain.
+  const formsOrigin = isAbsoluteUrl(formsUrl) ? new URL(formsUrl).origin : '';
+  if (formsOrigin && formsOrigin !== window.location.origin) {
+    installFormsRequestRerouter(formsOrigin);
+  }
 
   // Rebuild the original embed widget DOM exactly.
   block.textContent = '';
