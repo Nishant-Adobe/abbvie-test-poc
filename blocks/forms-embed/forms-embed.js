@@ -147,7 +147,14 @@ function collectFormAssets(doc, formsUrl) {
   const toAbs = (v) => {
     try { return new URL(v, base).href; } catch (e) { return null; }
   };
-  const styles = [...doc.querySelectorAll('link[rel="stylesheet"][href]')]
+  // Match any <link> whose rel TOKEN list includes "stylesheet" — the form's
+  // theme is linked as rel="preload stylesheet", which an exact
+  // [rel="stylesheet"] selector would miss (that theme carries the actual
+  // AbbVie/Linzess form styling, so missing it leaves the form unstyled).
+  const styles = [...doc.querySelectorAll('link[href]')]
+    .filter((l) => (l.getAttribute('rel') || '')
+      .split(/\s+/)
+      .includes('stylesheet'))
     .map((l) => toAbs(l.getAttribute('href')))
     .filter(Boolean);
   const scripts = [...doc.querySelectorAll('script[src]')]
