@@ -87,7 +87,7 @@ body.brand-rinvoq main .hero-pharma .abbv-image-content-container-v2 img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center right; /* keep the subject (right side) visible */
+  object-position: 54% 50%; /* match live hero background-position: 54% 50% */
   display: block;
 }
 
@@ -121,11 +121,27 @@ body.brand-rinvoq main .hero-pharma .abbv-stretched-card-body {
 
 /* Eyebrow "RINVOQ" — source: 32px / 400 / white / mb 20px */
 body.brand-rinvoq main .hero-pharma .abbv-stretched-card-body > p.tl-m {
-  margin: 0 0 12px;
+  margin: 0 0 4px;
   font-size: 32px;
   font-weight: 400;
   line-height: 1.1;
   color: #fff;
+}
+
+/* Large yellow "RELIEF" brushstroke graphic — the dominant hero visual on the
+   live site, sitting between the "RINVOQ" eyebrow and "with a ONCE-DAILY PILL".
+   Self-hosted brand asset (icons/rinvoq/relief-brushstroke.svg, never hot-linked
+   cross-origin). Rendered as a block-level pseudo-element after the eyebrow so we
+   reproduce the graphic without hand-editing the generated hero content. Source
+   render ~200x70 on a 1440 band. */
+body.brand-rinvoq main .hero-pharma .abbv-stretched-card-body > p.tl-m:not(.mb15-m)::after {
+  content: "";
+  display: block;
+  width: 200px;
+  height: 70px;
+  margin: 2px 0 6px;
+  background: url("/icons/rinvoq/relief-brushstroke.svg") no-repeat left center;
+  background-size: contain;
 }
 
 /* "with a ONCE-DAILY PILL" — source: 22px / white. The decorator places this
@@ -162,5 +178,113 @@ body.brand-rinvoq main .hero-pharma .hero-container span.divider {
 @media (width >= 900px) {
   body.brand-rinvoq main .hero-pharma .hero-container {
     height: 300px;
+  }
+}
+
+/* ============================================================
+   5. CAROUSEL (6-slide owl-style rotator)
+   The rinvoq hero JS override (blocks/rinvoq/hero-pharma.js) wraps 6 identical
+   .hero-container slides in a horizontal track. The per-slide .hero-container
+   keeps all the styling above (charcoal band, full-bleed photo, left copy,
+   RELIEF brushstroke). Here we lay out the track/slides and add prev/next
+   arrows + red dots like the source.
+   ============================================================ */
+
+body.brand-rinvoq main .hero-pharma .rinvoq-hero-carousel {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+body.brand-rinvoq main .hero-pharma .rinvoq-hero-track {
+  display: flex;
+  width: 100%;
+  transition: transform 0.5s ease;
+}
+
+/* Each slide is exactly one viewport-width wide; the band height comes from the
+   inner .hero-container rule above (225px / 300px). */
+body.brand-rinvoq main .hero-pharma .rinvoq-hero-slide {
+  position: relative;
+  flex: 0 0 100%;
+  width: 100%;
+}
+
+/* The carousel hosts the band height directly so the track has a defined box
+   even before the inner container lays out. */
+body.brand-rinvoq main .hero-pharma .rinvoq-hero-slide .hero-container {
+  width: 100%;
+}
+
+/* ---- Prev/next arrows: white chevrons, vertically centered ---- */
+body.brand-rinvoq main .hero-pharma .rinvoq-hero-arrow {
+  position: absolute;
+  top: 50%;
+  z-index: 3;
+  width: 40px;
+  height: 40px;
+  padding: 0;
+  background: none;
+  border: 0;
+  cursor: pointer;
+  transform: translateY(-50%);
+}
+
+body.brand-rinvoq main .hero-pharma .rinvoq-hero-arrow::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 14px;
+  height: 14px;
+  border-top: 3px solid #fff;
+  border-right: 3px solid #fff;
+}
+
+body.brand-rinvoq main .hero-pharma .rinvoq-hero-prev {
+  left: 16px;
+}
+
+body.brand-rinvoq main .hero-pharma .rinvoq-hero-prev::before {
+  transform: translate(-30%, -50%) rotate(-135deg);
+}
+
+body.brand-rinvoq main .hero-pharma .rinvoq-hero-next {
+  right: 16px;
+}
+
+body.brand-rinvoq main .hero-pharma .rinvoq-hero-next::before {
+  transform: translate(-70%, -50%) rotate(45deg);
+}
+
+/* ---- Red dots, bottom-center (source: carousel-red-dots) ---- */
+body.brand-rinvoq main .hero-pharma .rinvoq-hero-dots {
+  position: absolute;
+  bottom: 16px;
+  left: 0;
+  z-index: 3;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+}
+
+body.brand-rinvoq main .hero-pharma .rinvoq-hero-dot {
+  width: 12px;
+  height: 12px;
+  padding: 0;
+  background: transparent;
+  border: 2px solid var(--brand-primary, #90124a);
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+body.brand-rinvoq main .hero-pharma .rinvoq-hero-dot.is-active {
+  background: var(--brand-primary, #90124a);
+}
+
+@media (width >= 900px) {
+  body.brand-rinvoq main .hero-pharma .rinvoq-hero-dots {
+    bottom: 24px;
   }
 }

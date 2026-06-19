@@ -1,0 +1,15 @@
+{
+  "status": "success",
+  "url": "https://www.linzess.com/resources",
+  "path": "resources",
+  "timestamp": "2026-06-13T08:03:46.678Z",
+  "title": "Resources & Helpful Information | LINZESS® (linaclotide)",
+  "template": "content-page",
+  "blocks": [
+    "hero-pharma",
+    "tabs-navigation",
+    "video-single",
+    "promo-tout",
+    "columns-cta"
+  ]
+}

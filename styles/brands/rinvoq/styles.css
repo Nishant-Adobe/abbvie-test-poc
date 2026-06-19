@@ -1,10 +1,15 @@
 /* stylelint-disable */
 /*
- * Brand token overrides — RINVOQ (rinvoq.com)
+ * Brand bundle — RINVOQ (rinvoq.com)
  *
- * The ONLY brand-specific stylesheet for RINVOQ. Everything else is shared and
- * brand-agnostic, referencing the generic --brand-* tokens. Loaded per-site via
- * head.html based on <meta name="brand"> (brand=rinvoq).
+ * The single per-brand stylesheet loaded for brand=rinvoq (swapped in by
+ * scripts.js / head.html based on <meta name="brand">). Bundles RINVOQ's
+ * self-hosted @font-face declarations + the --brand-* design tokens + the
+ * site-wide body.brand-rinvoq base rule. RINVOQ has NO verbatim global sheet —
+ * its section styling lives in the scoped per-block overrides (blocks/rinvoq/*).
+ * Shared framework (abbv-framework.css, abbv-fonts.css, styles.css) stays global
+ * in head.html; this file is the only RINVOQ-specific CSS, so RINVOQ never
+ * inherits Linzess's global brand CSS.
  *
  * Fonts are BRAND-SPECIFIC and self-hosted under /fonts/ (downloaded from the
  * live Monotype kit; the originals were obfuscated UUID woff2 files served from

@@ -1,0 +1,21 @@
+{
+  "status": "success",
+  "url": "https://www.linzess.com/why-linzess",
+  "path": "why-linzess",
+  "timestamp": "2026-06-13T08:03:29.718Z",
+  "title": "What is LINZESS & How Does It Work | LINZESS® (linaclotide)",
+  "template": "content-page",
+  "blocks": [
+    "hero-pharma",
+    "tabs-navigation",
+    "cards-checklist",
+    "cards-checklist",
+    "cards-icon",
+    "cards-icon",
+    "cards-video",
+    "video-playlist",
+    "video-playlist",
+    "promo-tout",
+    "columns-cta"
+  ]
+}

@@ -932,10 +932,13 @@ function loadBrandTokens() {
   document.documentElement.dataset.brand = brand;
   document.body?.classList.add(`brand-${brand}`);
   const link = document.querySelector('link[data-brand-tokens]');
-  const href = `${window.hlx?.codeBasePath || ''}/styles/brands/${brand}.css`;
+  // Per-brand bundle lives at /styles/brands/<brand>/styles.css (tokens + that
+  // brand's global/site CSS). Swapping the single link means a brand never loads
+  // another brand's global CSS.
+  const href = `${window.hlx?.codeBasePath || ''}/styles/brands/${brand}/styles.css`;
   if (link) {
     // Only swap if it differs from the default already in head.html.
-    if (!link.getAttribute('href').endsWith(`/brands/${brand}.css`)) {
+    if (!link.getAttribute('href').endsWith(`/brands/${brand}/styles.css`)) {
       link.setAttribute('href', href);
     }
   } else {

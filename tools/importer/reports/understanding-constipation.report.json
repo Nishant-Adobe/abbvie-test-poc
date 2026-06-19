@@ -1,0 +1,16 @@
+{
+  "status": "success",
+  "url": "https://www.linzess.com/understanding-constipation",
+  "path": "understanding-constipation",
+  "timestamp": "2026-06-13T08:04:00.728Z",
+  "title": "Understanding Symptoms & Types of Constipation | LINZESS® (linaclotide)",
+  "template": "content-page",
+  "blocks": [
+    "hero-pharma",
+    "tabs-navigation",
+    "video-single",
+    "video-single",
+    "promo-tout",
+    "columns-cta"
+  ]
+}

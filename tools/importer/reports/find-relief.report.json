@@ -1,0 +1,16 @@
+{
+  "status": "success",
+  "url": "https://www.linzess.com/find-relief",
+  "path": "find-relief",
+  "timestamp": "2026-06-13T08:03:37.915Z",
+  "title": "Find Relief | LINZESS® (linaclotide)",
+  "template": "content-page",
+  "blocks": [
+    "hero-pharma",
+    "tabs-navigation",
+    "video-single",
+    "video-single",
+    "promo-tout",
+    "columns-cta"
+  ]
+}

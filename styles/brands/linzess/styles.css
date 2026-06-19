@@ -1,15 +1,21 @@
+/* stylelint-disable */
 /*
- * Brand token overrides — LINZESS
+ * Brand bundle — LINZESS
  *
- * The ONLY brand-specific stylesheet. Every other style/block is shared and
- * brand-agnostic, referencing the generic --brand-* tokens. To onboard a new
- * brand, copy this file to styles/brands/<brand>.css and change the values.
+ * The single per-brand stylesheet loaded for brand=linzess (swapped in by
+ * scripts.js / head.html based on <meta name="brand">). It bundles, in cascade
+ * order:
+ *   1. linzess-global.css — verbatim linzess.com global site CSS
+ *   2. linzess.css        — linzess.com brand site CSS (Bebas/Lato, purple)
+ *   3. the --brand-* design tokens (defined last so they win)
  *
- * Loaded per-site via head.html based on <meta name="brand"> (default: linzess).
- * These values are identical to the generic defaults in styles.css :root, so
- * Linzess renders unchanged; they are restated here to make the per-brand
- * pattern explicit and self-contained.
+ * Shared framework (abbv-framework.css, abbv-fonts.css, styles.css) stays global
+ * in head.html for every brand; only THIS file is brand-specific, so a different
+ * brand never inherits Linzess's global CSS.
  */
+@import url("/styles/linzess-global.css");
+@import url("/styles/linzess.css");
+
 :root {
   --brand-primary: #422e83;          /* dark purple */
   --brand-primary-hover: #60579e;    /* purple */

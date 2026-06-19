@@ -1,0 +1,14 @@
+{
+  "status": "success",
+  "url": "https://www.linzess.com/savings-and-support",
+  "path": "savings-and-support",
+  "timestamp": "2026-06-13T08:03:53.368Z",
+  "title": "Cost Savings & Financial Support | LINZESS® (linaclotide)",
+  "template": "content-page",
+  "blocks": [
+    "hero-pharma",
+    "tabs-navigation",
+    "promo-tout",
+    "columns-cta"
+  ]
+}

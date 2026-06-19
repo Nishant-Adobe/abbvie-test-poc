@@ -48,9 +48,9 @@
   body.brand-rinvoq main > .section.yellow.promo-tout-container {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    column-gap: 0;
+    gap: 40px 0;
     max-width: 1140px;
-    margin: 0 auto;
+    margin: 0 auto; /* flush against the grey cards section above (no white gap) */
     padding: 0;
   }
 
@@ -73,11 +73,40 @@
 
 /* ============================================================
    2. SAVINGS — yellow LEFT column (section child [0])
+   FULL-BLEED: the yellow must reach the LEFT screen edge (not stop at the
+   1140px container). A ::before anchored to the column's right edge (which sits
+   at the viewport centre) with width:50vw paints leftward exactly to the screen
+   edge — no horizontal overflow/scroll. The column content sits above it.
    ============================================================ */
 body.brand-rinvoq main > .section.yellow.promo-tout-container > .promo-tout-wrapper:first-child {
+  position: relative;
   box-sizing: border-box;
-  padding: 30px 35px 30px 0;
-  background-color: rgb(255 209 0); /* source: background-yellow */
+
+  /* generous inner padding on ALL sides so the copy never touches the yellow
+     block edges. !important beats the base promo-tout.css rule
+     `.promo-tout-wrapper { padding: 0 !important; margin: 0 !important }`. */
+  padding: 56px 56px 56px 0 !important;
+  margin: 0 !important;
+  background-color: transparent; /* the ::before paints the full-bleed yellow */
+}
+
+@media (width >= 900px) {
+  body.brand-rinvoq main > .section.yellow.promo-tout-container > .promo-tout-wrapper:first-child::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0; /* column right edge = viewport centre */
+    width: 50vw; /* fill the entire left half of the viewport */
+    background-color: rgb(255 209 0); /* source: background-yellow */
+    z-index: 0;
+  }
+
+  /* keep the card content above the full-bleed background */
+  body.brand-rinvoq main > .section.yellow.promo-tout-container > .promo-tout-wrapper:first-child > * {
+    position: relative;
+    z-index: 1;
+  }
 }
 
 /* The savings tout was built as a 2-col abbv-row (image col + text col);
@@ -117,13 +146,14 @@ body.brand-rinvoq .section.yellow > .promo-tout-wrapper:first-child .abbv-image-
    Base .promo-tout .heading-2 forces 24px !important, so override with
    !important to land the source 20px. */
 body.brand-rinvoq .section.yellow > .promo-tout-wrapper:first-child .heading-2,
-body.brand-rinvoq .section.yellow > .promo-tout-wrapper:first-child .abbv-rich-text p.heading-2 {
+body.brand-rinvoq .section.yellow > .promo-tout-wrapper:first-child .abbv-rich-text p.heading-2,
+body.brand-rinvoq .section.yellow > .promo-tout-wrapper:first-child .abbv-col-6 > .rich-text:first-child p {
   margin: 10px 0;
   font-family: var(--brand-heading-font);
   font-size: 20px !important;
   font-weight: 400 !important;
   line-height: 32px !important;
-  color: var(--brand-text);
+  color: var(--brand-text) !important;
 }
 
 /* Savings body + footnote copy — charcoal (was white / plum) */
@@ -180,10 +210,32 @@ body.brand-rinvoq .section.yellow > .promo-tout-wrapper:first-child a.abbv-butto
    bottle pill image (in <p>) + "Pill not actual size" caption.
    ============================================================ */
 body.brand-rinvoq main > .section.yellow.promo-tout-container > .default-content-wrapper:nth-child(2) {
+  position: relative;
   box-sizing: border-box;
-  padding: 30px 0 30px 35px;
-  background-color: var(--brand-white);
+  padding: 56px 0 56px 56px;
+  background-color: transparent; /* the ::before paints the full-bleed white */
   text-align: left; /* the brand .section.yellow centers content; About is left */
+}
+
+/* FULL-BLEED white: mirror of the yellow — a ::before anchored to the column's
+   LEFT edge (viewport centre) with width:50vw paints rightward to the screen
+   edge. */
+@media (width >= 900px) {
+  body.brand-rinvoq main > .section.yellow.promo-tout-container > .default-content-wrapper:nth-child(2)::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0; /* column left edge = viewport centre */
+    width: 50vw; /* fill the entire right half of the viewport */
+    background-color: var(--brand-white);
+    z-index: 0;
+  }
+
+  body.brand-rinvoq main > .section.yellow.promo-tout-container > .default-content-wrapper:nth-child(2) > * {
+    position: relative;
+    z-index: 1;
+  }
 }
 
 /* lightbulb badge + heading + paragraphs are LEFT aligned like the original */
@@ -236,15 +288,58 @@ body.brand-rinvoq .section.yellow > .default-content-wrapper:nth-child(2) > p:la
 }
 
 /* ============================================================
-   4. SPEAK "Your story can help others" — dark band (section child [3])
-   The original places the copy over a black brushstroke background image
-   (stripped to an inline <img> on import). Reproduce a dark charcoal band so
-   the white text reads as a distinct section like the original.
+   4. SPEAK "Your story can help others" — black brushstroke band (child [3])
+   The live band is a single full-bleed background image (the painted black
+   brushstroke with the yellow "SPEAK NETWORK" logo baked in on the LEFT). The
+   copy overlays on the RIGHT half. We self-host that image (icons/rinvoq/) and
+   set it as the band background; white text sits in the right column.
    ============================================================ */
 body.brand-rinvoq main > .section.yellow.promo-tout-container > .promo-tout-wrapper:nth-child(3) {
+  position: relative;
   box-sizing: border-box;
-  padding: 36px 40px;
-  background-color: #1a1a1a; /* dark band behind the SPEAK text */
+  min-height: 360px;
+
+  /* copy sits in the RIGHT half, over the black brushstroke. !important beats
+     base promo-tout.css `.promo-tout-wrapper{padding:0!important}`. */
+  padding: 56px 56px 56px 52% !important;
+  background-color: #fff; /* white gutter top/bottom, like the live band */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* FULL-BLEED brushstroke: the painted black brushstroke (with the yellow SPEAK
+   NETWORK logo baked in) IS the visual — it must span the full viewport width so
+   its black area sits under the right-side white copy. A ::before spanning 100vw
+   carries the image with `cover`, so the brushstroke stretches edge-to-edge and
+   the copy (z-index above) reads white-on-black. */
+@media (width >= 900px) {
+  body.brand-rinvoq main > .section.yellow.promo-tout-container > .promo-tout-wrapper:nth-child(3)::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+
+    /* Start the brushstroke at the centered 1140px container's LEFT edge (aligned
+       with the "Discover ways to save" button above), leaving white to its left,
+       and bleed only off the RIGHT screen edge. max() clamps to 0 on narrow
+       viewports where the container fills the width. */
+    left: max(0px, calc((100vw - 1140px) / 2));
+    width: 100vw;
+    background-image: url("/icons/rinvoq/speak-network-bg-desktop.png");
+    background-repeat: no-repeat;
+    background-position: left center;
+
+    /* keep the brushstroke's natural aspect (cover would crop); fit its height
+       to the band and let the right end run off-screen. */
+    background-size: auto 100%;
+    z-index: 0;
+  }
+
+  body.brand-rinvoq main > .section.yellow.promo-tout-container > .promo-tout-wrapper:nth-child(3) > * {
+    position: relative;
+    z-index: 1; /* keep heading/copy above the brushstroke */
+  }
 }
 
 body.brand-rinvoq .section.yellow > .promo-tout-wrapper:nth-child(3) .abbv-row-container {
@@ -296,6 +391,40 @@ body.brand-rinvoq .section.yellow > .promo-tout-wrapper:nth-child(3) a:any-link 
   text-decoration: underline;
 }
 
+/* Envelope + phone icons before the "email us" / "call" lines, like the live
+   site (self-hosted SVGs). The icon sits left of the text via an inline-block
+   ::before; the paragraph is offset so the icon hangs in the left margin. */
+body.brand-rinvoq .section.yellow > .promo-tout-wrapper:nth-child(3) p:has(a[href^="mailto:"]),
+body.brand-rinvoq .section.yellow > .promo-tout-wrapper:nth-child(3) p:has(a[href^="tel:"]) {
+  position: relative;
+  padding-left: 44px;
+  min-height: 28px;
+  display: flex;
+  align-items: center;
+}
+
+body.brand-rinvoq .section.yellow > .promo-tout-wrapper:nth-child(3) p:has(a[href^="mailto:"])::before,
+body.brand-rinvoq .section.yellow > .promo-tout-wrapper:nth-child(3) p:has(a[href^="tel:"])::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 30px;
+  height: 28px;
+  transform: translateY(-50%);
+  background-repeat: no-repeat;
+  background-position: left center;
+  background-size: contain;
+}
+
+body.brand-rinvoq .section.yellow > .promo-tout-wrapper:nth-child(3) p:has(a[href^="mailto:"])::before {
+  background-image: url("/icons/rinvoq/speak-email.svg");
+}
+
+body.brand-rinvoq .section.yellow > .promo-tout-wrapper:nth-child(3) p:has(a[href^="tel:"])::before {
+  background-image: url("/icons/rinvoq/speak-phone.svg");
+}
+
 /* ============================================================
    5. Mobile (< 900px): stack savings over About over SPEAK, full width
    ============================================================ */
@@ -308,8 +437,16 @@ body.brand-rinvoq .section.yellow > .promo-tout-wrapper:nth-child(3) a:any-link 
     padding: 24px 16px;
   }
 
+  /* SPEAK band on mobile: stack the logo image above the copy. Use the mobile
+     brushstroke as a top band, copy below on the dark color so text stays
+     readable (the desktop side-by-side layout doesn't fit a narrow screen). */
   body.brand-rinvoq main > .section.yellow.promo-tout-container > .promo-tout-wrapper:nth-child(3) {
-    padding: 28px 20px;
+    min-height: 0;
+    padding: 200px 20px 28px !important; /* room for the brushstroke logo at the top */
+    background-color: #1a1a1a;
+    background-image: url("/icons/rinvoq/speak-network-bg-mobile.png");
+    background-position: top center;
+    background-size: contain;
   }
 
   body.brand-rinvoq .section.yellow > .promo-tout-wrapper:first-child .abbv-image-content-container-v2 img {
